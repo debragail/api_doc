@@ -18,7 +18,7 @@ search: true
 
 The following document describes the communication protocol for a cargo insurance service provided by an insurance provider to a user or a courier. It includes the format for both the request for insurance (also referred to as `need`) and the response sent by insurance providers that `bid` on providing the service.
 
-For example, an autonomous drone that is about to deliver an expensive diamond ring would send a request for an insurance service, along with the estimated value of the ring, the delivery path and the drone model.
+For example, an autonomous drone that is about to deliver an expensive diamond ring would send a request for an insurance service, along with the estimated value of the ring, and the delivery path.
 
 > Need
 
@@ -76,7 +76,7 @@ payload = {
 requests.post("discovery_endpoint_here", data=payload)
 ```
 
-In response, an insurance provider might send back a bid with the policy price, the type of coverage and the deductible amount required.
+In response, an insurance provider might send back a bid with the policy price, the type of coverage, and the deductible amount required.
 
 > Bid
 
@@ -85,9 +85,9 @@ curl "bidding_endpoint_here" \
   --data "request_uid=ae7bd8f67f3089c" \
   --data "expires_at=2017-12-11T15:18:59+03:00" \
   --data "coverage_type=all_risk" \
-  --data "price=20000000000000000,100000000000000000" \
-  --data "price_type=minute,flat" \
-  --data "price_description=Price per minute,City tax" \
+  --data "price=100000000000000000" \
+  --data "price_type=flat" \
+  --data "price_description=Policy cost" \
   --data "deductible=1400000000000000000"
 ```
 
@@ -100,9 +100,9 @@ fetch(biddingEndPoint, {
     "request_uid": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
     "coverage_type": "all_risk",
-    "price": "20000000000000000,100000000000000000",
-    "price_type": "minute,flat",
-    "price_description": "Price per minute,City tax",
+    "price": "100000000000000000",
+    "price_type": "flat",
+    "price_description": "Policy cost",
     "deductible": "1400000000000000000",
   })
 });
@@ -114,9 +114,9 @@ payload = {
     "request_uid": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
     "coverage_type": "all_risk",
-    "price": "20000000000000000,100000000000000000",
-    "price_type": "minute,flat",
-    "price_description": "Price per minute,City tax",
+    "price": "100000000000000000",
+    "price_type": "flat",
+    "price_description": "Policy cost",
     "deductible": "1400000000000000000",
   }
 requests.post("bidding_endpoint_here", data=payload)
@@ -315,14 +315,14 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">requester_name</code>
       <div class="type">optional</div>
     </td>
-    <td>The name of the person or the company requesting for the insurance service</td>
+    <td>The name of the person or the company requesting the insurance service</td>
   </tr>
   <tr>
     <td>
       <code class="field">requester_phone_number</code>
       <div class="type">optional</div>
     </td>
-    <td>The phone number of the person or the company requesting for the insurance service</td>
+    <td>The phone number of the person or the company requesting the insurance service</td>
   </tr>
   <tr>
     <td>
@@ -415,7 +415,7 @@ requests.post("discovery_endpoint_here", data=payload)
 
 # Bid
 
-A bid to provide a cargo insurance service. Typically sent from an insurance provider to a user or a courier that plans to deliver a package from one point to another.
+A bid to provide cargo insurance. Typically sent from an insurance provider to a user or a courier that plans to deliver a package from one point to another.
 
 ## Arguments
 

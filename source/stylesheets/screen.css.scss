@@ -727,3 +727,24 @@ body.index {
     margin-bottom: 25px;
   }
 }
+
+.main-thumbs{
+  list-style-type: none;
+  padding: 0px !important;
+  margin-top: 60px;
+  li{
+    display: block;
+    float: left;
+    width: 27%;
+    padding: 0 3% 3%;
+  }
+}
+@media (max-width: $phone-width) {
+  .main-thumbs {
+    margin-top: 30px; 
+    li{
+      width: 40%;
+      padding: 0 5% 5%;
+    }
+  }
+}

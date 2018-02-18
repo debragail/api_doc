@@ -16,9 +16,9 @@ search: true
 
 #  Vehicle Locating Protocol
 
-The Vehicle Locating communication protocol describes the format of a request for locating a lost vehicle (also referred to as `need`) sent by the vehicle owner or the vehicle itself, and the response (`bid`) sent by other vehicles that are able to help locating it.
+The Vehicle Locating communication protocol describes the format of a request (also referred to as `need`) for locating a lost vehicle, and the response (`bid`) sent by other vehicles that are able to help locating it. The need would typically be sent by the vehicle owner, the vehicle itself, or a rescue service.
 
-For example, a drone on a delivery mission runs out of battery and performs an emergency landing. The drone owner that lost the connection with his drone sends a request for locating assistance, along with the drone's last recorded coordinates, its model, color, and any other information that might help finding it.
+For example, a drone on a delivery mission runs out of battery and performs an emergency landing. The drone owner that lost the connection with their drone sends a request for locating assistance, along with the drone's last known coordinates, its model, color, and any other information that might help in finding it.
 
 > Need
 
@@ -72,12 +72,12 @@ In response, an autonomous robot might send back a bid with a price for the miss
 curl "bidding_endpoint_here" \
   --data "request_uid=ae7bd8f67f3089c" \
   --data "expires_at=2017-12-11T15:18:59+03:00" \
-  --data "price=20000000000000000" \
-  --data "price_type=minute" \
-  --data "price_description=Price per minute" \
+  --data "price=20000000000000000,10000000000000" \
+  --data "price_type=flat,minute" \
+  --data "price_description=Finders fee,Price per minute" \
   --data "current_latitude=55.756951" \
   --data "current_longitude=37.633839" \
-  --data "eta=2017-12-11T15:18:54+03:00" \
+  --data "arrival_at=2017-12-11T15:18:54+03:00" \
   --data "vehicle_type=robot" \
   --data "vehicle_manufacturer=Husarion" \
   --data "vehicle_model=ROSBot"
@@ -91,12 +91,12 @@ fetch(biddingEndPoint, {
   body: JSON.stringify({
     "request_uid": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
-    "price": "20000000000000000",
-    "price_type": "minute",
-    "price_description": "Price per minute",
+    "price": "20000000000000000,10000000000000",
+    "price_type": "flat,minute",
+    "price_description": "Finders fee,Price per minute",
     "current_latitude": "55.756951",
     "current_longitude": "37.633839",
-    "eta": "2017-12-11T15:18:54+03:00",
+    "arrival_at": "2017-12-11T15:18:54+03:00",
     "vehicle_type": "robot",
     "vehicle_manufacturer": "Husarion",
     "vehicle_model": "ROSBot",
@@ -109,12 +109,12 @@ import requests
 payload = {
     "request_uid": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
-    "price": "20000000000000000",
-    "price_type": "minute",
-    "price_description": "Price per minute",
+    "price": "20000000000000000,10000000000000",
+    "price_type": "flat,minute",
+    "price_description": "Finders fee,Price per minute",
     "current_latitude": "55.756951",
     "current_longitude": "37.633839",
-    "eta": "2017-12-11T15:18:54+03:00",
+    "arrival_at": "2017-12-11T15:18:54+03:00",
     "vehicle_type": "robot",
     "vehicle_manufacturer": "Husarion",
     "vehicle_model": "ROSBot",
@@ -124,7 +124,7 @@ requests.post("bidding_endpoint_here", data=payload)
 
 # Need
 
-A statement of need for locating a vehicle. Typically this will be sent by a vehicle owner that is looking for assistance in finding his lost vehicle.
+A statement of need for locating a vehicle. Typically this will be sent by a vehicle owner that is looking for assistance in finding their lost vehicle.
 
 This request is sent to the decentralized discovery engine which responds with status `200` and a unique identifier for this request. The details of this request are then broadcasted to DAV entities that can provide this service. <a href="#bid">Bids</a> are later received as separate calls.
 
@@ -249,12 +249,12 @@ A bid to provide a vehicle locating service. Typically sent by a vehicle with lo
 curl "bidding_endpoint_here" \
   --data "request_uid=ae7bd8f67f3089c" \
   --data "expires_at=2017-12-11T15:18:59+03:00" \
-  --data "price=20000000000000000" \
-  --data "price_type=minute" \
-  --data "price_description=Price per minute" \
+  --data "price=20000000000000000,10000000000000" \
+  --data "price_type=flat,minute" \
+  --data "price_description=Finders fee,Price per minute" \
   --data "current_latitude=43.611626" \
   --data "current_longitude=-116.392593" \
-  --data "eta=2017-12-11T15:18:54+03:00" \
+  --data "arrival_at=2017-12-11T15:18:54+03:00" \
   --data "vehicle_type=drone" \
   --data "vehicle_manufacturer=Dronster" \
   --data "vehicle_model=Res-Q" \
@@ -269,12 +269,12 @@ fetch(biddingEndPoint, {
   body: JSON.stringify({
     "request_uid": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
-    "price": "20000000000000000",
-    "price_type": "minute",
-    "price_description": "Price per minute",
+    "price": "20000000000000000,10000000000000",
+    "price_type": "flat,minute",
+    "price_description": "Finders fee,Price per minute",
     "current_latitude": "43.611626",
     "current_longitude": "-116.392593",
-    "eta": "2017-12-11T15:18:54+03:00",
+    "arrival_at": "2017-12-11T15:18:54+03:00",
     "vehicle_type": "drone",
     "vehicle_manufacturer": "Dronster",
     "vehicle_model": "Res-Q",
@@ -288,12 +288,12 @@ import requests
 payload = {
     "request_uid": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
-    "price": "20000000000000000",
-    "price_type": "minute",
-    "price_description": "Price per minute",
+    "price": "20000000000000000,10000000000000",
+    "price_type": "flat,minute",
+    "price_description": "Finders fee,Price per minute",
     "current_latitude": "43.611626",
     "current_longitude": "-116.392593",
-    "eta": "2017-12-11T15:18:54+03:00",
+    "arrival_at": "2017-12-11T15:18:54+03:00",
     "vehicle_type": "drone",
     "vehicle_locating_technology": "Object Recognition Camera",
     "vehicle_manufacturer": "Dronster",
@@ -355,7 +355,7 @@ requests.post("bidding_endpoint_here", data=payload)
   </tr>
   <tr>
     <td>
-      <code class="field">eta</code>
+      <code class="field">arrival_at</code>
       <div class="type required">required</div>
     </td>
     <td>The estimated time of arrival at the location where the lost vehicle was last seen. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>

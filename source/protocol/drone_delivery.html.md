@@ -18,7 +18,7 @@ search: true
 
 The following document describes the communication protocol for a cargo delivery service provided by an autonomous drone. It includes the format for both the request for a delivery service (also referred to as `need`) and the response sent by drones that `bid` on providing the delivery service.
 
-For example, a user is looking for a drone to pick up a small tube containing corrosive materials from his doorstep and deliver it to a friend's backyard.
+For example, a user is looking for a drone to pick up a small tube containing corrosive materials from their doorstep and deliver it to a friend's backyard.
 
 > Need
 
