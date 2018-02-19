@@ -69,7 +69,7 @@ In response, a charging station might send back a bid with a price per kWh, and 
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "request_uid=ae7bd8f67f3089c" \
+  --data "need_id=ae7bd8f67f3089c" \
   --data "expires_at=2017-12-11T15:18:59+03:00" \
   --data "price=2300000000000000000,30000000000000000" \
   --data "price_type=kwh,kwh" \
@@ -89,7 +89,7 @@ const biddingEndPoint = "bidding_endpoint_here";
 fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "request_uid": "ae7bd8f67f3089c",
+    "need_id": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
     "price": "2300000000000000000,30000000000000000",
     "price_type": "kwh,kwh",
@@ -108,7 +108,7 @@ fetch(biddingEndPoint, {
 ```python
 import requests
 payload = {
-    "request_uid": "ae7bd8f67f3089c",
+    "need_id": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
     "price": "2300000000000000000,30000000000000000",
     "price_type": "kwh,kwh",
@@ -302,7 +302,7 @@ A bid to provide a charging service. Typically sent from a charging station to a
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "request_uid=ae7bd8f67f3089c" \
+  --data "need_id=ae7bd8f67f3089c" \
   --data "expires_at=2017-12-11T15:18:59+03:00" \
   --data "price=2300000000000000000,30000000000000000" \
   --data "price_type=kwh,kwh" \
@@ -344,7 +344,7 @@ const biddingEndPoint = "bidding_endpoint_here";
 fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "request_uid": "ae7bd8f67f3089c",
+    "need_id": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
     "price": "2300000000000000000,30000000000000000",
     "price_type": "kwh,kwh",
@@ -385,7 +385,7 @@ fetch(biddingEndPoint, {
 ```python
 import requests
 payload = {
-    "request_uid": "ae7bd8f67f3089c",
+    "need_id": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
     "price": "2300000000000000000,30000000000000000",
     "price_type": "kwh,kwh",
@@ -426,10 +426,10 @@ requests.post("bidding_endpoint_here", data=payload)
 <table class="arguments">
   <tr>
     <td>
-      <code class="field">request_uid</code>
+      <code class="field">need_id</code>
       <div class="type required">required</div>
     </td>
-    <td>The UID of the request. This arrives as part of the request</td>
+    <td>The unique identifier of the 'need' this bid is for. This ID arrives as part of the 'need' request</td>
   </tr>
   <tr>
     <td>
