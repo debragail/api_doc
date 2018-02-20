@@ -1,0 +1,681 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Vehicle Locating</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="../images/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="../stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all.js"></script>
+  </head>
+
+  <body class="protocol protocol_vehicle_locating" data-languages="[&quot;shell&quot;,&quot;javascript&quot;,&quot;python&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="/"><img src="../images/logo.png" class="logo" alt="Logo" /></a>
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="python">python</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#vehicle-locating-protocol" class="toc-h1 toc-link" data-title="Vehicle Locating Protocol">Vehicle Locating Protocol</a>
+          </li>
+          <li>
+            <a href="#need" class="toc-h1 toc-link" data-title="Need">Need</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#arguments" class="toc-h2 toc-link" data-title="Arguments">Arguments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#bid" class="toc-h1 toc-link" data-title="Bid">Bid</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#arguments-2" class="toc-h2 toc-link" data-title="Arguments">Arguments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#vehicle-types" class="toc-h1 toc-link" data-title="Vehicle Types">Vehicle Types</a>
+          </li>
+          <li>
+            <a href="#price-types" class="toc-h1 toc-link" data-title="Price Types">Price Types</a>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li>Documentation powered by <a href="https://github.com/lord/slate" target="blank">Slate</a>.</li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <p class="header-image"><img src="../images/vehicle_locating/header.png" alt="Vehicle Locating"></p>
+<h1 id='vehicle-locating-protocol'>Vehicle Locating Protocol</h1>
+<p>The Vehicle Locating communication protocol describes the format of a request (also referred to as <code>need</code>) for locating a lost vehicle, and the response (<code>bid</code>) sent by other vehicles that are able to help locating it. The need would typically be sent by the vehicle owner, the vehicle itself, or a rescue service.</p>
+
+<p>For example, a drone on a delivery mission runs out of battery and performs an emergency landing. The drone owner that lost the connection with their drone sends a request for locating assistance, along with the drone&#39;s last known coordinates, its model, color, and any other information that might help in finding it.</p>
+
+<blockquote>
+<p>Need</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"last_latitude=55.770279"</span> <span class="se">\</span>
+  --data <span class="s2">"last_longitude=37.781467"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_type=drone"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_manufacturer=Copter Express"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_model=COPTEREXPRESS X1"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_color=White"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_contact=Andrei Ivanov, mobile: +7 555-338-5943"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"last_latitude"</span><span class="p">:</span> <span class="s2">"55.770279"</span><span class="p">,</span>
+    <span class="s2">"last_longitude"</span><span class="p">:</span> <span class="s2">"37.781467"</span><span class="p">,</span>
+    <span class="s2">"vehicle_type"</span><span class="p">:</span> <span class="s2">"drone"</span><span class="p">,</span>
+    <span class="s2">"vehicle_manufacturer"</span><span class="p">:</span> <span class="s2">"Copter Express"</span><span class="p">,</span>
+    <span class="s2">"vehicle_model"</span><span class="p">:</span> <span class="s2">"COPTEREXPRESS X1"</span><span class="p">,</span>
+    <span class="s2">"vehicle_color"</span><span class="p">:</span> <span class="s2">"White"</span><span class="p">,</span>
+    <span class="s2">"vehicle_contact"</span><span class="p">:</span> <span class="s2">"Andrei Ivanov, mobile: +7 555-338-5943"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"last_latitude"</span><span class="p">:</span> <span class="s">"55.770279"</span><span class="p">,</span>
+    <span class="s">"last_longitude"</span><span class="p">:</span> <span class="s">"37.781467"</span><span class="p">,</span>
+    <span class="s">"vehicle_type"</span><span class="p">:</span> <span class="s">"drone"</span><span class="p">,</span>
+    <span class="s">"vehicle_manufacturer"</span><span class="p">:</span> <span class="s">"Copter Express"</span><span class="p">,</span>
+    <span class="s">"vehicle_model"</span><span class="p">:</span> <span class="s">"COPTEREXPRESS X1"</span><span class="p">,</span>
+    <span class="s">"vehicle_color"</span><span class="p">:</span> <span class="s">"White"</span><span class="p">,</span>
+    <span class="s">"vehicle_contact"</span><span class="p">:</span> <span class="s">"Andrei Ivanov, mobile: +7 555-338-5943"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"discovery_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre>
+<p>In response, an autonomous robot might send back a bid with a price for the mission, the distance from the lost vehicle&#39;s location and the estimated time of arrival at the location.</p>
+
+<blockquote>
+<p>Bid</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"request_uid=ae7bd8f67f3089c"</span> <span class="se">\</span>
+  --data <span class="s2">"expires_at=2017-12-11T15:18:59+03:00"</span> <span class="se">\</span>
+  --data <span class="s2">"price=20000000000000000,10000000000000"</span> <span class="se">\</span>
+  --data <span class="s2">"price_type=flat,minute"</span> <span class="se">\</span>
+  --data <span class="s2">"price_description=Finders fee,Price per minute"</span> <span class="se">\</span>
+  --data <span class="s2">"current_latitude=55.756951"</span> <span class="se">\</span>
+  --data <span class="s2">"current_longitude=37.633839"</span> <span class="se">\</span>
+  --data <span class="s2">"arrival_at=2017-12-11T15:18:54+03:00"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_type=robot"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_manufacturer=Husarion"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_model=ROSBot"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"request_uid"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
+    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
+    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"20000000000000000,10000000000000"</span><span class="p">,</span>
+    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"flat,minute"</span><span class="p">,</span>
+    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Finders fee,Price per minute"</span><span class="p">,</span>
+    <span class="s2">"current_latitude"</span><span class="p">:</span> <span class="s2">"55.756951"</span><span class="p">,</span>
+    <span class="s2">"current_longitude"</span><span class="p">:</span> <span class="s2">"37.633839"</span><span class="p">,</span>
+    <span class="s2">"arrival_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s2">"vehicle_type"</span><span class="p">:</span> <span class="s2">"robot"</span><span class="p">,</span>
+    <span class="s2">"vehicle_manufacturer"</span><span class="p">:</span> <span class="s2">"Husarion"</span><span class="p">,</span>
+    <span class="s2">"vehicle_model"</span><span class="p">:</span> <span class="s2">"ROSBot"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"request_uid"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
+    <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
+    <span class="s">"price"</span><span class="p">:</span> <span class="s">"20000000000000000,10000000000000"</span><span class="p">,</span>
+    <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"flat,minute"</span><span class="p">,</span>
+    <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Finders fee,Price per minute"</span><span class="p">,</span>
+    <span class="s">"current_latitude"</span><span class="p">:</span> <span class="s">"55.756951"</span><span class="p">,</span>
+    <span class="s">"current_longitude"</span><span class="p">:</span> <span class="s">"37.633839"</span><span class="p">,</span>
+    <span class="s">"arrival_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s">"vehicle_type"</span><span class="p">:</span> <span class="s">"robot"</span><span class="p">,</span>
+    <span class="s">"vehicle_manufacturer"</span><span class="p">:</span> <span class="s">"Husarion"</span><span class="p">,</span>
+    <span class="s">"vehicle_model"</span><span class="p">:</span> <span class="s">"ROSBot"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre><h1 id='need'>Need</h1>
+<p>A statement of need for locating a vehicle. Typically this will be sent by a vehicle owner that is looking for assistance in finding their lost vehicle.</p>
+
+<p>This request is sent to the decentralized discovery engine which responds with status <code>200</code> and a unique identifier for this request. The details of this request are then broadcasted to DAV entities that can provide this service. <a href="#bid">Bids</a> are later received as separate calls.</p>
+<h2 id='arguments'>Arguments</h2>
+<blockquote>
+<p>Post request to a local/remote discovery endpoint</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"last_latitude=43.610159"</span> <span class="se">\</span>
+  --data <span class="s2">"last_longitude=-116.783196"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_type=car"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_manufacturer=Tesla"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_model=Model S"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_color=Black"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_license_number=6GDG486"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_contact=James McGill, mobile: 555-338-5943"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"last_latitude"</span><span class="p">:</span> <span class="s2">"43.610159"</span><span class="p">,</span>
+    <span class="s2">"last_longitude"</span><span class="p">:</span> <span class="s2">"-116.783196"</span><span class="p">,</span>
+    <span class="s2">"vehicle_type"</span><span class="p">:</span> <span class="s2">"car"</span><span class="p">,</span>
+    <span class="s2">"vehicle_manufacturer"</span><span class="p">:</span> <span class="s2">"Tesla"</span><span class="p">,</span>
+    <span class="s2">"vehicle_model"</span><span class="p">:</span> <span class="s2">"Model S"</span><span class="p">,</span>
+    <span class="s2">"vehicle_color"</span><span class="p">:</span> <span class="s2">"Black"</span><span class="p">,</span>
+    <span class="s2">"vehicle_license_number"</span><span class="p">:</span> <span class="s2">"6GDG486"</span><span class="p">,</span>
+    <span class="s2">"vehicle_contact"</span><span class="p">:</span> <span class="s2">"James McGill, mobile: 555-338-5943"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"last_latitude"</span><span class="p">:</span> <span class="s">"43.610159"</span><span class="p">,</span>
+    <span class="s">"last_longitude"</span><span class="p">:</span> <span class="s">"-116.783196"</span><span class="p">,</span>
+    <span class="s">"vehicle_type"</span><span class="p">:</span> <span class="s">"car"</span><span class="p">,</span>
+    <span class="s">"vehicle_manufacturer"</span><span class="p">:</span> <span class="s">"Tesla"</span><span class="p">,</span>
+    <span class="s">"vehicle_model"</span><span class="p">:</span> <span class="s">"Model S"</span><span class="p">,</span>
+    <span class="s">"vehicle_color"</span><span class="p">:</span> <span class="s">"Black"</span><span class="p">,</span>
+    <span class="s">"vehicle_license_number"</span><span class="p">:</span> <span class="s">"6GDG486"</span><span class="p">,</span>
+    <span class="s">"vehicle_contact"</span><span class="p">:</span> <span class="s">"James McGill, mobile: 555-338-5943"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"discovery_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre>
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">last_latitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The last recorded latitude coordinate of the lost vehicle</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">last_longitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The last recorded longitude coordinate of the lost vehicle</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">vehicle_type</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The type of vehicle that was lost. See full list of options <a href="#vehicle-types">here</a></td>
+  </tr>
+  <tr>
+  <tr>
+    <td>
+      <code class="field">vehicle_manufacturer</code>
+      <div class="type required">required</div>
+    </td>
+    <td>Name of the manufacturer of the lost vehicle</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">vehicle_model</code>
+      <div class="type required">required</div>
+    </td>
+    <td>Name of the model of the lost vehicle</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">vehicle_color</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The color of the lost vehicle</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">vehicle_license_number</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The license plate number of the lost vehicle</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">vehicle_contact</code>
+      <div class="type">optional</div>
+    </td>
+    <td>Human readable information regarding the lost vehicle (e.g., <code>Vehicle owner: James McGill, mobile: 555-338-5943</code>)</td>
+  </tr>
+</table>
+<h1 id='bid'>Bid</h1>
+<p>A bid to provide a vehicle locating service. Typically sent by a vehicle with locating capabilities, with the price for the mission, the distance from the lost vehicle&#39;s location and the estimated time of arrival.</p>
+<h2 id='arguments-2'>Arguments</h2>
+<blockquote>
+<p>Post request to a local/remote endpoint representing the rider</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"request_uid=ae7bd8f67f3089c"</span> <span class="se">\</span>
+  --data <span class="s2">"expires_at=2017-12-11T15:18:59+03:00"</span> <span class="se">\</span>
+  --data <span class="s2">"price=20000000000000000,10000000000000"</span> <span class="se">\</span>
+  --data <span class="s2">"price_type=flat,minute"</span> <span class="se">\</span>
+  --data <span class="s2">"price_description=Finders fee,Price per minute"</span> <span class="se">\</span>
+  --data <span class="s2">"current_latitude=43.611626"</span> <span class="se">\</span>
+  --data <span class="s2">"current_longitude=-116.392593"</span> <span class="se">\</span>
+  --data <span class="s2">"arrival_at=2017-12-11T15:18:54+03:00"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_type=drone"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_manufacturer=Dronster"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_model=Res-Q"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_contact=Dronster Rescue Missions LTD. www.dronster.com"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"request_uid"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
+    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
+    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"20000000000000000,10000000000000"</span><span class="p">,</span>
+    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"flat,minute"</span><span class="p">,</span>
+    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Finders fee,Price per minute"</span><span class="p">,</span>
+    <span class="s2">"current_latitude"</span><span class="p">:</span> <span class="s2">"43.611626"</span><span class="p">,</span>
+    <span class="s2">"current_longitude"</span><span class="p">:</span> <span class="s2">"-116.392593"</span><span class="p">,</span>
+    <span class="s2">"arrival_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s2">"vehicle_type"</span><span class="p">:</span> <span class="s2">"drone"</span><span class="p">,</span>
+    <span class="s2">"vehicle_manufacturer"</span><span class="p">:</span> <span class="s2">"Dronster"</span><span class="p">,</span>
+    <span class="s2">"vehicle_model"</span><span class="p">:</span> <span class="s2">"Res-Q"</span><span class="p">,</span>
+    <span class="s2">"vehicle_contact"</span><span class="p">:</span> <span class="s2">"Dronster Rescue Missions LTD. www.dronster.com"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"request_uid"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
+    <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
+    <span class="s">"price"</span><span class="p">:</span> <span class="s">"20000000000000000,10000000000000"</span><span class="p">,</span>
+    <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"flat,minute"</span><span class="p">,</span>
+    <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Finders fee,Price per minute"</span><span class="p">,</span>
+    <span class="s">"current_latitude"</span><span class="p">:</span> <span class="s">"43.611626"</span><span class="p">,</span>
+    <span class="s">"current_longitude"</span><span class="p">:</span> <span class="s">"-116.392593"</span><span class="p">,</span>
+    <span class="s">"arrival_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s">"vehicle_type"</span><span class="p">:</span> <span class="s">"drone"</span><span class="p">,</span>
+    <span class="s">"vehicle_locating_technology"</span><span class="p">:</span> <span class="s">"Object Recognition Camera"</span><span class="p">,</span>
+    <span class="s">"vehicle_manufacturer"</span><span class="p">:</span> <span class="s">"Dronster"</span><span class="p">,</span>
+    <span class="s">"vehicle_model"</span><span class="p">:</span> <span class="s">"Res-Q"</span><span class="p">,</span>
+    <span class="s">"vehicle_contact"</span><span class="p">:</span> <span class="s">"Dronster Rescue Missions LTD. www.dronster.com"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre>
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">request_uid</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The UID of the request. This arrives as part of the request</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">expires_at</code>
+      <div class="type required">required</div>
+    </td>
+    <td>This bid will expire at this time. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">price</code>
+      <div class="type required">required</div>
+    </td>
+    <td>A comma separated list of prices. Specified as an integer representing DAV tokens without the decimal point padded to 18 decimals (1 DAV is 1000000000000000000)</td>
+  </tr>
+    <tr>
+    <td>
+      <code class="field">price_type</code>
+      <div class="type required">required</div>
+    </td>
+    <td>A list of price types describing the <code>price</code> parameter(s). Specified as a comma separated list. See <a href="#price-types">Price Types</a> for available values</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">price_description</code>
+      <div class="type required">required</div>
+    </td>
+    <td>A comma separated list of strings describing the <code>price</code> parameter(s) in human readable terms</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_latitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The latitude coordinate of of where the vehicle is currently located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_longitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The longitude coordinate of where the vehicle is currently located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">arrival_at</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The estimated time of arrival at the location where the lost vehicle was last seen. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">vehicle_type</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The type of vehicle used for the locating mission. See full list of options <a href="#vehicle-types">here</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">vehicle_manufacturer</code>
+      <div class="type">optional</div>
+    </td>
+    <td>Name of the manufacturer of the vehicle</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">vehicle_model</code>
+      <div class="type">optional</div>
+    </td>
+    <td>Name of the model of the vehicle</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">vehicle_contact</code>
+      <div class="type">optional</div>
+    </td>
+    <td>Human readable information regarding the vehicle (e.g <code>James McGill, mobile: 555-338-5943</code>)</td>
+  </tr>
+</table>
+<h1 id='vehicle-types'>Vehicle Types</h1>
+<p>The type of vehicles and their unique identifier.</p>
+
+<table class="lost_vehicles">
+  <tr>
+    <th>Vehicle Type</th>
+  </tr>
+  <tr>
+    <td><code>drone</code></td>
+  </tr>
+  <tr>
+    <td><code>car</code></td>
+  </tr>
+  <tr>
+    <td><code>truck</code></td>
+  </tr>
+  <tr>
+    <td><code>van</code></td>
+  </tr>
+  <tr>
+    <td><code>ship</code></td>
+  </tr>
+  <tr>
+    <td><code>robot</code></td>
+  </tr>
+ <tr>
+    <td><code>bike</code></td>
+  </tr>
+</table>
+<h1 id='price-types'>Price Types</h1>
+<p>Price types and their unique identifier.</p>
+
+<table class="price_types">
+  <tr>
+    <th>Price Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>second</code></td>
+    <td>The listed <code>price</code> is per second</td>
+  </tr>
+  <tr>
+    <td><code>minute</code></td>
+    <td>The listed <code>price</code> is per minute</td>
+  </tr>
+  <tr>
+    <td><code>hour</code></td>
+    <td>The listed <code>price</code> is per hour</td>
+  </tr>
+  <tr>
+    <td><code>day</code></td>
+    <td>The listed <code>price</code> is per day</td>
+  </tr>
+  <tr>
+    <td><code>week</code></td>
+    <td>The listed <code>price</code> is per week</td>
+  </tr>
+  <tr>
+    <td><code>flat</code></td>
+    <td>The listed <code>price</code> is a flat price</td>
+  </tr>
+  <tr>
+    <td><code>km</code></td>
+    <td>The listed <code>price</code> is per km</td>
+  </tr>
+  <tr>
+    <td><code>mile</code></td>
+    <td>The listed <code>price</code> is per mile</td>
+  </tr>
+</table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="python">python</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

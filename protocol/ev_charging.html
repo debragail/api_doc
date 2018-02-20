@@ -6,6 +6,10 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Electric Vehicle Charging</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="../images/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
 
     <style>
       .highlight table td { padding: 5px; }
@@ -251,6 +255,9 @@
           <li>
             <a href="#amenities" class="toc-h1 toc-link" data-title="Amenities">Amenities</a>
           </li>
+          <li>
+            <a href="#price-types" class="toc-h1 toc-link" data-title="Price Types">Price Types</a>
+          </li>
       </div>
         <ul class="toc-footer">
             <li>Parts of the EV charging API were</li>
@@ -309,7 +316,9 @@
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"request_uid=ae7bd8f67f3089c"</span> <span class="se">\</span>
   --data <span class="s2">"expires_at=2017-12-11T15:18:59+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"price=2300000000000000000"</span> <span class="se">\</span>
+  --data <span class="s2">"price=2300000000000000000,30000000000000000"</span> <span class="se">\</span>
+  --data <span class="s2">"price_type=kwh,kwh"</span> <span class="se">\</span>
+  --data <span class="s2">"price_description=Price per kWh,VAT per kWh"</span> <span class="se">\</span>
   --data <span class="s2">"latitude=32.785889"</span> <span class="se">\</span>
   --data <span class="s2">"longitude=-79.935569"</span> <span class="se">\</span>
   --data <span class="s2">"available_from=2017-12-11T15:18:54+03:00"</span> <span class="se">\</span>
@@ -324,7 +333,9 @@
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
     <span class="s2">"request_uid"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
     <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
-    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2300000000000000000"</span><span class="p">,</span>
+    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
+    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"kwh,kwh"</span><span class="p">,</span>
+    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
     <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"32.785889"</span><span class="p">,</span>
     <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-79.935569"</span><span class="p">,</span>
     <span class="s2">"available_from"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
@@ -338,7 +349,9 @@
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">"request_uid"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
     <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
-    <span class="s">"price"</span><span class="p">:</span> <span class="s">"2300000000000000000"</span><span class="p">,</span>
+    <span class="s">"price"</span><span class="p">:</span> <span class="s">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
+    <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"kwh,kwh"</span><span class="p">,</span>
+    <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
     <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"32.785889"</span><span class="p">,</span>
     <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-79.935569"</span><span class="p">,</span>
     <span class="s">"available_from"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
@@ -514,7 +527,9 @@
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"request_uid=ae7bd8f67f3089c"</span> <span class="se">\</span>
   --data <span class="s2">"expires_at=2017-12-11T15:18:59+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"price=2300000000000000000"</span> <span class="se">\</span>
+  --data <span class="s2">"price=2300000000000000000,30000000000000000"</span> <span class="se">\</span>
+  --data <span class="s2">"price_type=kwh,kwh"</span> <span class="se">\</span>
+  --data <span class="s2">"price_description=Price per kWh,VAT per kWh"</span> <span class="se">\</span>
   --data <span class="s2">"latitude=32.785889"</span> <span class="se">\</span>
   --data <span class="s2">"longitude=-79.935569"</span> <span class="se">\</span>
   --data <span class="s2">"entrance_latitude=32.785878"</span> <span class="se">\</span>
@@ -551,7 +566,9 @@
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
     <span class="s2">"request_uid"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
     <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
-    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2300000000000000000"</span><span class="p">,</span>
+    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
+    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"kwh,kwh"</span><span class="p">,</span>
+    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
     <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"32.785889"</span><span class="p">,</span>
     <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-79.935569"</span><span class="p">,</span>
     <span class="s2">"entrance_latitude"</span><span class="p">:</span> <span class="s2">"32.785878"</span><span class="p">,</span>
@@ -587,7 +604,9 @@
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">"request_uid"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
     <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
-    <span class="s">"price"</span><span class="p">:</span> <span class="s">"2300000000000000000"</span><span class="p">,</span>
+    <span class="s">"price"</span><span class="p">:</span> <span class="s">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
+    <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"kwh,kwh"</span><span class="p">,</span>
+    <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
     <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"32.785889"</span><span class="p">,</span>
     <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-79.935569"</span><span class="p">,</span>
     <span class="s">"entrance_latitude"</span><span class="p">:</span> <span class="s">"32.785878"</span><span class="p">,</span>
@@ -640,7 +659,21 @@
       <code class="field">price</code>
       <div class="type required">required</div>
     </td>
-    <td>The price per kWh. Specified as an integer representing DAV tokens without the decimal point padded to 18 decimals (1 DAV is 1000000000000000000)</td>
+    <td>A comma separated list of prices. Specified as an integer representing DAV tokens without the decimal point padded to 18 decimals (1 DAV is 1000000000000000000)</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">price_type</code>
+      <div class="type required">required</div>
+    </td>
+    <td>A list of price types describing the <code>price</code> parameter(s). Specified as a comma separated list. See <a href="#price-types">Price Types</a> for available values</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">price_description</code>
+      <div class="type required">required</div>
+    </td>
+    <td>A comma separated list of strings describing the <code>price</code> parameter(s) in human readable terms</td>
   </tr>
   <tr>
     <td>
@@ -925,7 +958,7 @@
 <h1 id='energy-sources'>Energy Sources</h1>
 <p>The energy source used by the station.</p>
 
-<table class="reference levels">
+<table class="energy_sources">
   <tr>
     <th>Level</th>
     <th>Description</th>
@@ -998,6 +1031,43 @@
   <tr>
     <td><code>9</code></td>
     <td>Grocery</td>
+  </tr>
+</table>
+<h1 id='price-types'>Price Types</h1>
+<p>Price types and their unique identifier.</p>
+
+<table class="price_types">
+  <tr>
+    <th>Price Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>kwh</code></td>
+    <td>The listed <code>price</code> is per kWh</td>
+  </tr>
+  <tr>
+    <td><code>second</code></td>
+    <td>The listed <code>price</code> is per second</td>
+  </tr>
+  <tr>
+    <td><code>minute</code></td>
+    <td>The listed <code>price</code> is per minute</td>
+  </tr>
+  <tr>
+    <td><code>hour</code></td>
+    <td>The listed <code>price</code> is per hour</td>
+  </tr>
+  <tr>
+    <td><code>day</code></td>
+    <td>The listed <code>price</code> is per day</td>
+  </tr>
+  <tr>
+    <td><code>week</code></td>
+    <td>The listed <code>price</code> is per week</td>
+  </tr>
+  <tr>
+    <td><code>flat</code></td>
+    <td>The listed <code>price</code> is a flat price</td>
   </tr>
 </table>
 

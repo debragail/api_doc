@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Drone Delivery</title>
+    <title>Cargo Insurance</title>
     <link rel="icon" type="image/png" sizes="192x192"  href="../images/favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon.png">
@@ -205,7 +205,7 @@
       <script src="../javascripts/all.js"></script>
   </head>
 
-  <body class="protocol protocol_drone_delivery" data-languages="[&quot;shell&quot;,&quot;javascript&quot;,&quot;python&quot;]">
+  <body class="protocol protocol_cargo_insurance" data-languages="[&quot;shell&quot;,&quot;javascript&quot;,&quot;python&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -225,7 +225,7 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#drone-delivery-protocol" class="toc-h1 toc-link" data-title="Drone Delivery Protocol">Drone Delivery Protocol</a>
+            <a href="#cargo-insurance-protocol" class="toc-h1 toc-link" data-title="Cargo Insurance Protocol">Cargo Insurance Protocol</a>
           </li>
           <li>
             <a href="#need" class="toc-h1 toc-link" data-title="Need">Need</a>
@@ -244,10 +244,16 @@
               </ul>
           </li>
           <li>
+            <a href="#vehicle-types" class="toc-h1 toc-link" data-title="Vehicle Types">Vehicle Types</a>
+          </li>
+          <li>
             <a href="#cargo-types" class="toc-h1 toc-link" data-title="Cargo Types">Cargo Types</a>
           </li>
           <li>
             <a href="#hazardous-goods" class="toc-h1 toc-link" data-title="Hazardous Goods">Hazardous Goods</a>
+          </li>
+          <li>
+            <a href="#insurance-coverage-types" class="toc-h1 toc-link" data-title="Insurance Coverage Types">Insurance Coverage Types</a>
           </li>
           <li>
             <a href="#ip-protection-level" class="toc-h1 toc-link" data-title="IP Protection Level">IP Protection Level</a>
@@ -263,50 +269,62 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <p class="header-image"><img src="../images/drone_delivery/header.png" alt="Drone Delivery"></p>
-<h1 id='drone-delivery-protocol'>Drone Delivery Protocol</h1>
-<p>The following document describes the communication protocol for a cargo delivery service provided by an autonomous drone. It includes the format for both the request for a delivery service (also referred to as <code>need</code>) and the response sent by drones that <code>bid</code> on providing the delivery service.</p>
+        <p class="header-image"><img src="../images/cargo_insurance/header.png" alt="Cargo Insurance"></p>
+<h1 id='cargo-insurance-protocol'>Cargo Insurance Protocol</h1>
+<p>The following document describes the communication protocol for a cargo insurance service provided by an insurance provider to a user or a courier. It includes the format for both the request for insurance (also referred to as <code>need</code>) and the response sent by insurance providers that <code>bid</code> on providing the service.</p>
 
-<p>For example, a user is looking for a drone to pick up a small tube containing corrosive materials from their doorstep and deliver it to a friend&#39;s backyard.</p>
+<p>For example, an autonomous drone that is about to deliver an expensive diamond ring would send a request for an insurance service, along with the estimated value of the ring, and the delivery path.</p>
 
 <blockquote>
 <p>Need</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"start_at=2017-12-11T15:18:54+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"pickup_latitude=32.787793"</span> <span class="se">\</span>
-  --data <span class="s2">"pickup_longitude=-79.500593"</span> <span class="se">\</span>
-  --data <span class="s2">"dropoff_latitude=32.937778"</span> <span class="se">\</span>
-  --data <span class="s2">"dropoff_longitude=-79.500593"</span> <span class="se">\</span>
+  --data <span class="s2">"end_at=2017-12-11T16:00:00+03:00"</span> <span class="se">\</span>
+  --data <span class="s2">"pickup_latitude=40.958123"</span> <span class="se">\</span>
+  --data <span class="s2">"pickup_longitude=-74.169388"</span> <span class="se">\</span>
+  --data <span class="s2">"dropoff_latitude=40.875103"</span> <span class="se">\</span>
+  --data <span class="s2">"dropoff_longitude=-74.570389"</span> <span class="se">\</span>
+  --data <span class="s2">"planned_path=40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_type=drone"</span> <span class="se">\</span>
   --data <span class="s2">"cargo_type=11"</span> <span class="se">\</span>
-  --data <span class="s2">"hazardous_goods=8"</span>
+  --data <span class="s2">"insured_value=3000.00"</span> <span class="se">\</span>
+  --data <span class="s2">"insured_value_currency=USD"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
     <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
-    <span class="s2">"pickup_latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
-    <span class="s2">"pickup_longitude"</span><span class="p">:</span> <span class="s2">"-79.500593"</span><span class="p">,</span>
-    <span class="s2">"dropoff_latitude"</span><span class="p">:</span> <span class="s2">"32.937778"</span><span class="p">,</span>
-    <span class="s2">"dropoff_longitude"</span><span class="p">:</span> <span class="s2">"-79.500593"</span><span class="p">,</span>
+    <span class="s2">"end_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T16:00:00+03:00"</span><span class="p">,</span>
+    <span class="s2">"pickup_latitude"</span><span class="p">:</span> <span class="s2">"40.958123"</span><span class="p">,</span>
+    <span class="s2">"pickup_longitude"</span><span class="p">:</span> <span class="s2">"-74.169388"</span><span class="p">,</span>
+    <span class="s2">"dropoff_latitude"</span><span class="p">:</span> <span class="s2">"40.875103"</span><span class="p">,</span>
+    <span class="s2">"dropoff_longitude"</span><span class="p">:</span> <span class="s2">"-74.570389"</span><span class="p">,</span>
+    <span class="s2">"planned_path"</span><span class="p">:</span> <span class="s2">"40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389"</span><span class="p">,</span>
+    <span class="s2">"vehicle_type"</span><span class="p">:</span> <span class="s2">"drone"</span><span class="p">,</span>
     <span class="s2">"cargo_type"</span><span class="p">:</span> <span class="s2">"11"</span><span class="p">,</span>
-    <span class="s2">"hazardous_goods"</span><span class="p">:</span> <span class="s2">"8"</span><span class="p">,</span>
+    <span class="s2">"insured_value"</span><span class="p">:</span> <span class="s2">"3000.00"</span><span class="p">,</span>
+    <span class="s2">"insured_value_currency"</span><span class="p">:</span> <span class="s2">"USD"</span><span class="p">,</span>
   <span class="p">})</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
-    <span class="s">"pickup_latitude"</span><span class="p">:</span> <span class="s">"32.787793"</span><span class="p">,</span>
-    <span class="s">"pickup_longitude"</span><span class="p">:</span> <span class="s">"-79.500593"</span><span class="p">,</span>
-    <span class="s">"dropoff_latitude"</span><span class="p">:</span> <span class="s">"32.937778"</span><span class="p">,</span>
-    <span class="s">"dropoff_longitude"</span><span class="p">:</span> <span class="s">"-79.500593"</span><span class="p">,</span>
+    <span class="s">"end_at"</span><span class="p">:</span> <span class="s">"2017-12-11T16:00:00+03:00"</span><span class="p">,</span>
+    <span class="s">"pickup_latitude"</span><span class="p">:</span> <span class="s">"40.958123"</span><span class="p">,</span>
+    <span class="s">"pickup_longitude"</span><span class="p">:</span> <span class="s">"-74.169388"</span><span class="p">,</span>
+    <span class="s">"dropoff_latitude"</span><span class="p">:</span> <span class="s">"40.875103"</span><span class="p">,</span>
+    <span class="s">"dropoff_longitude"</span><span class="p">:</span> <span class="s">"-74.570389"</span><span class="p">,</span>
+    <span class="s">"planned_path"</span><span class="p">:</span> <span class="s">"40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389"</span><span class="p">,</span>
+    <span class="s">"vehicle_type"</span><span class="p">:</span> <span class="s">"drone"</span><span class="p">,</span>
     <span class="s">"cargo_type"</span><span class="p">:</span> <span class="s">"11"</span><span class="p">,</span>
-    <span class="s">"hazardous_goods"</span><span class="p">:</span> <span class="s">"8"</span><span class="p">,</span>
+    <span class="s">"insured_value"</span><span class="p">:</span> <span class="s">"3000.00"</span><span class="p">,</span>
+    <span class="s">"insured_value_currency"</span><span class="p">:</span> <span class="s">"USD"</span><span class="p">,</span>
   <span class="p">}</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"discovery_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </code></pre>
-<p>In response, a drone might send back a bid with a price, the estimated time of arrival at the pickup location, and the estimated time of arrival at the dropoff location.</p>
+<p>In response, an insurance provider might send back a bid with the policy price, the type of coverage, and the deductible amount required.</p>
 
 <blockquote>
 <p>Bid</p>
@@ -314,11 +332,11 @@
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"request_uid=ae7bd8f67f3089c"</span> <span class="se">\</span>
   --data <span class="s2">"expires_at=2017-12-11T15:18:59+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"price=2000000000000000,20000000000000000"</span> <span class="se">\</span>
-  --data <span class="s2">"price_type=second,flat"</span> <span class="se">\</span>
-  --data <span class="s2">"price_description=Price per second,Tax"</span> <span class="se">\</span>
-  --data <span class="s2">"time_to_pickup=2017-12-11T15:21:59+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"time_to_dropoff=2017-12-11T15:34:20+03:00"</span>
+  --data <span class="s2">"coverage_type=all_risk"</span> <span class="se">\</span>
+  --data <span class="s2">"price=100000000000000000"</span> <span class="se">\</span>
+  --data <span class="s2">"price_type=flat"</span> <span class="se">\</span>
+  --data <span class="s2">"price_description=Policy cost"</span> <span class="se">\</span>
+  --data <span class="s2">"deductible=1400000000000000000"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
@@ -326,26 +344,26 @@
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
     <span class="s2">"request_uid"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
     <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
-    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2000000000000000,20000000000000000"</span><span class="p">,</span>
-    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"second,flat"</span><span class="p">,</span>
-    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per second,Tax"</span><span class="p">,</span>
-    <span class="s2">"time_to_pickup"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:21:59+03:00"</span><span class="p">,</span>
-    <span class="s2">"time_to_dropoff"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:34:20+03:00"</span><span class="p">,</span>
+    <span class="s2">"coverage_type"</span><span class="p">:</span> <span class="s2">"all_risk"</span><span class="p">,</span>
+    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"100000000000000000"</span><span class="p">,</span>
+    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"flat"</span><span class="p">,</span>
+    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Policy cost"</span><span class="p">,</span>
+    <span class="s2">"deductible"</span><span class="p">:</span> <span class="s2">"1400000000000000000"</span><span class="p">,</span>
   <span class="p">})</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">"request_uid"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
     <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
-    <span class="s">"price"</span><span class="p">:</span> <span class="s">"2000000000000000,20000000000000000"</span><span class="p">,</span>
-    <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"second,flat"</span><span class="p">,</span>
-    <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per second,Tax"</span><span class="p">,</span>
-    <span class="s">"time_to_pickup"</span><span class="p">:</span> <span class="s">"2017-12-11T15:21:59+03:00"</span><span class="p">,</span>
-    <span class="s">"time_to_dropoff"</span><span class="p">:</span> <span class="s">"2017-12-11T15:34:20+03:00"</span><span class="p">,</span>
+    <span class="s">"coverage_type"</span><span class="p">:</span> <span class="s">"all_risk"</span><span class="p">,</span>
+    <span class="s">"price"</span><span class="p">:</span> <span class="s">"100000000000000000"</span><span class="p">,</span>
+    <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"flat"</span><span class="p">,</span>
+    <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Policy cost"</span><span class="p">,</span>
+    <span class="s">"deductible"</span><span class="p">:</span> <span class="s">"1400000000000000000"</span><span class="p">,</span>
   <span class="p">}</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </code></pre><h1 id='need'>Need</h1>
-<p>A statement of need for a delivery service. Typically this will be sent by a user that is looking to deliver a package using a drone.</p>
+<p>A statement of need for a cargo insurance service. Typically this will be sent by a user or a courier that plans to deliver a package from one point to another.</p>
 
 <p>This request is sent to the decentralized discovery engine which responds with status <code>200</code> and a unique identifier for this request. The details of this request are then broadcasted to DAV entities that can provide this service. <a href="#bid">Bids</a> are later received as separate calls.</p>
 <h2 id='arguments'>Arguments</h2>
@@ -354,13 +372,21 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"start_at=2017-12-11T15:18:54+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"pickup_latitude=32.787793"</span> <span class="se">\</span>
-  --data <span class="s2">"pickup_longitude=-79.500593"</span> <span class="se">\</span>
-  --data <span class="s2">"dropoff_latitude=32.937778"</span> <span class="se">\</span>
-  --data <span class="s2">"dropoff_longitude=-79.500593"</span> <span class="se">\</span>
-  --data <span class="s2">"requester_name=Jessie Bourne"</span> <span class="se">\</span>
-  --data <span class="s2">"requester_phone_number=+1 415 123 5983"</span> <span class="se">\</span>
-  --data <span class="s2">"external_reference_id=jb84723"</span> <span class="se">\</span>
+  --data <span class="s2">"end_at=2017-12-11T16:00:00+03:00"</span> <span class="se">\</span>
+  --data <span class="s2">"start_latitude=40.746217"</span> <span class="se">\</span>
+  --data <span class="s2">"start_longitude=-73.970261"</span> <span class="se">\</span>
+  --data <span class="s2">"pickup_latitude=40.958123"</span> <span class="se">\</span>
+  --data <span class="s2">"pickup_longitude=-74.169388"</span> <span class="se">\</span>
+  --data <span class="s2">"dropoff_latitude=40.875103"</span> <span class="se">\</span>
+  --data <span class="s2">"dropoff_longitude=-74.570389"</span> <span class="se">\</span>
+  --data <span class="s2">"end_latitude=40.746217"</span> <span class="se">\</span>
+  --data <span class="s2">"end_longitude=-73.970261"</span> <span class="se">\</span>
+  --data <span class="s2">"planned_path=40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389"</span> <span class="se">\</span>
+  --data <span class="s2">"requester_name=Megadronix"</span> <span class="se">\</span>
+  --data <span class="s2">"requester_phone_number=+31-338-594332"</span> <span class="se">\</span>
+  --data <span class="s2">"external_reference_id=200982447"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_type=drone,ship,drone"</span> <span class="se">\</span>
+  --data <span class="s2">"vehicle_is_autonomous=true,false,true"</span> <span class="se">\</span>
   --data <span class="s2">"cargo_type=11"</span> <span class="se">\</span>
   --data <span class="s2">"hazardous_goods=8"</span> <span class="se">\</span>
   --data <span class="s2">"ip_protection_level=68"</span> <span class="se">\</span>
@@ -368,8 +394,7 @@
   --data <span class="s2">"width=2"</span> <span class="se">\</span>
   --data <span class="s2">"length=2"</span> <span class="se">\</span>
   --data <span class="s2">"weight=50"</span> <span class="se">\</span>
-  --data <span class="s2">"insurance_required=true"</span> <span class="se">\</span>
-  --data <span class="s2">"insured_value=675"</span> <span class="se">\</span>
+  --data <span class="s2">"insured_value=3000.00"</span> <span class="se">\</span>
   --data <span class="s2">"insured_value_currency=USD"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
 
@@ -377,13 +402,21 @@
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
     <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
-    <span class="s2">"pickup_latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
-    <span class="s2">"pickup_longitude"</span><span class="p">:</span> <span class="s2">"-79.500593"</span><span class="p">,</span>
-    <span class="s2">"dropoff_latitude"</span><span class="p">:</span> <span class="s2">"32.937778"</span><span class="p">,</span>
-    <span class="s2">"dropoff_longitude"</span><span class="p">:</span> <span class="s2">"-79.500593"</span><span class="p">,</span>
-    <span class="s2">"requester_name"</span><span class="p">:</span> <span class="s2">"Jessie Bourne"</span><span class="p">,</span>
-    <span class="s2">"requester_phone_number"</span><span class="p">:</span> <span class="s2">"+1 415 123 5983"</span><span class="p">,</span>
-    <span class="s2">"external_reference_id"</span><span class="p">:</span> <span class="s2">"jb84723"</span><span class="p">,</span>
+    <span class="s2">"end_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T16:00:00+03:00"</span><span class="p">,</span>
+    <span class="s2">"start_latitude"</span><span class="p">:</span> <span class="s2">"40.746217"</span><span class="p">,</span>
+    <span class="s2">"start_longitude"</span><span class="p">:</span> <span class="s2">"-73.970261"</span><span class="p">,</span>
+    <span class="s2">"pickup_latitude"</span><span class="p">:</span> <span class="s2">"40.958123"</span><span class="p">,</span>
+    <span class="s2">"pickup_longitude"</span><span class="p">:</span> <span class="s2">"-74.169388"</span><span class="p">,</span>
+    <span class="s2">"dropoff_latitude"</span><span class="p">:</span> <span class="s2">"40.875103"</span><span class="p">,</span>
+    <span class="s2">"dropoff_longitude"</span><span class="p">:</span> <span class="s2">"-74.570389"</span><span class="p">,</span>
+    <span class="s2">"end_latitude"</span><span class="p">:</span> <span class="s2">"40.746217"</span><span class="p">,</span>
+    <span class="s2">"end_longitude"</span><span class="p">:</span> <span class="s2">"-73.970261"</span><span class="p">,</span>
+    <span class="s2">"planned_path"</span><span class="p">:</span> <span class="s2">"40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389"</span><span class="p">,</span>
+    <span class="s2">"requester_name"</span><span class="p">:</span> <span class="s2">"Megadronix"</span><span class="p">,</span>
+    <span class="s2">"requester_phone_number"</span><span class="p">:</span> <span class="s2">"+31-338-594332"</span><span class="p">,</span>
+    <span class="s2">"external_reference_id"</span><span class="p">:</span> <span class="s2">"200982447"</span><span class="p">,</span>
+    <span class="s2">"vehicle_type"</span><span class="p">:</span> <span class="s2">"drone,ship,drone"</span><span class="p">,</span>
+    <span class="s2">"vehicle_is_autonomous"</span><span class="p">:</span> <span class="s2">"true,false,true"</span><span class="p">,</span>
     <span class="s2">"cargo_type"</span><span class="p">:</span> <span class="s2">"11"</span><span class="p">,</span>
     <span class="s2">"hazardous_goods"</span><span class="p">:</span> <span class="s2">"8"</span><span class="p">,</span>
     <span class="s2">"ip_protection_level"</span><span class="p">:</span> <span class="s2">"68"</span><span class="p">,</span>
@@ -391,21 +424,28 @@
     <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
     <span class="s2">"length"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
     <span class="s2">"weight"</span><span class="p">:</span> <span class="s2">"50"</span><span class="p">,</span>
-    <span class="s2">"insurance_required"</span><span class="p">:</span> <span class="s2">"true"</span><span class="p">,</span>
-    <span class="s2">"insured_value"</span><span class="p">:</span> <span class="s2">"675"</span><span class="p">,</span>
+    <span class="s2">"insured_value"</span><span class="p">:</span> <span class="s2">"3000.00"</span><span class="p">,</span>
     <span class="s2">"insured_value_currency"</span><span class="p">:</span> <span class="s2">"USD"</span><span class="p">,</span>
   <span class="p">})</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
-    <span class="s">"pickup_latitude"</span><span class="p">:</span> <span class="s">"32.787793"</span><span class="p">,</span>
-    <span class="s">"pickup_longitude"</span><span class="p">:</span> <span class="s">"-79.500593"</span><span class="p">,</span>
-    <span class="s">"dropoff_latitude"</span><span class="p">:</span> <span class="s">"32.937778"</span><span class="p">,</span>
-    <span class="s">"dropoff_longitude"</span><span class="p">:</span> <span class="s">"-79.500593"</span><span class="p">,</span>
-    <span class="s">"requester_name"</span><span class="p">:</span> <span class="s">"Jessie Bourne"</span><span class="p">,</span>
-    <span class="s">"requester_phone_number"</span><span class="p">:</span> <span class="s">"+1 415 123 5983"</span><span class="p">,</span>
-    <span class="s">"external_reference_id"</span><span class="p">:</span> <span class="s">"jb84723"</span><span class="p">,</span>
+    <span class="s">"end_at"</span><span class="p">:</span> <span class="s">"2017-12-11T16:00:00+03:00"</span><span class="p">,</span>
+    <span class="s">"start_latitude"</span><span class="p">:</span> <span class="s">"40.746217"</span><span class="p">,</span>
+    <span class="s">"start_longitude"</span><span class="p">:</span> <span class="s">"-73.970261"</span><span class="p">,</span>
+    <span class="s">"pickup_latitude"</span><span class="p">:</span> <span class="s">"40.958123"</span><span class="p">,</span>
+    <span class="s">"pickup_longitude"</span><span class="p">:</span> <span class="s">"-74.169388"</span><span class="p">,</span>
+    <span class="s">"dropoff_latitude"</span><span class="p">:</span> <span class="s">"40.875103"</span><span class="p">,</span>
+    <span class="s">"dropoff_longitude"</span><span class="p">:</span> <span class="s">"-74.570389"</span><span class="p">,</span>
+    <span class="s">"end_latitude"</span><span class="p">:</span> <span class="s">"40.746217"</span><span class="p">,</span>
+    <span class="s">"end_longitude"</span><span class="p">:</span> <span class="s">"-73.970261"</span><span class="p">,</span>
+    <span class="s">"planned_path"</span><span class="p">:</span> <span class="s">"40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389"</span><span class="p">,</span>
+    <span class="s">"requester_name"</span><span class="p">:</span> <span class="s">"Megadronix"</span><span class="p">,</span>
+    <span class="s">"requester_phone_number"</span><span class="p">:</span> <span class="s">"+31-338-594332"</span><span class="p">,</span>
+    <span class="s">"external_reference_id"</span><span class="p">:</span> <span class="s">"200982447"</span><span class="p">,</span>
+    <span class="s">"vehicle_type"</span><span class="p">:</span> <span class="s">"drone,ship,drone"</span><span class="p">,</span>
+    <span class="s">"vehicle_is_autonomous"</span><span class="p">:</span> <span class="s">"true,false,true"</span><span class="p">,</span>
     <span class="s">"cargo_type"</span><span class="p">:</span> <span class="s">"11"</span><span class="p">,</span>
     <span class="s">"hazardous_goods"</span><span class="p">:</span> <span class="s">"8"</span><span class="p">,</span>
     <span class="s">"ip_protection_level"</span><span class="p">:</span> <span class="s">"68"</span><span class="p">,</span>
@@ -413,8 +453,7 @@
     <span class="s">"width"</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span>
     <span class="s">"length"</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span>
     <span class="s">"weight"</span><span class="p">:</span> <span class="s">"50"</span><span class="p">,</span>
-    <span class="s">"insurance_required"</span><span class="p">:</span> <span class="s">"true"</span><span class="p">,</span>
-    <span class="s">"insured_value"</span><span class="p">:</span> <span class="s">"675"</span><span class="p">,</span>
+    <span class="s">"insured_value"</span><span class="p">:</span> <span class="s">"3000.00"</span><span class="p">,</span>
     <span class="s">"insured_value_currency"</span><span class="p">:</span> <span class="s">"USD"</span><span class="p">,</span>
   <span class="p">}</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"discovery_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -422,12 +461,35 @@
 <table class="arguments">
   <tr>
     <td>
-      <code class="field">pickup_at</code>
+      <code class="field">start_at</code>
       <div class="type">optional</div>
     </td>
     <td>
-      The time at which the requester would like the cargo to be picked up (if undefined, the pick up time will be ASAP). This should be specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC
+      The time at which the requester would like the insurance to be activated (if undefined, the activation will be immediate). This should be specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC
     </td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">end_at</code>
+      <div class="type required">required</div>
+    </td>
+    <td>
+      The time at which the requester would like the insurance to stop. This should be specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">start_latitude</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The latitude coordinate of the take off location, prior to the arrival at the pickup location</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">start_longitude</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The longitude coordinate of the take off location, prior to the arrival at the pickup location</td>
   </tr>
   <tr>
     <td>
@@ -459,24 +521,61 @@
   </tr>
   <tr>
     <td>
+      <code class="field">end_latitude</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The latitude coordinate of the end location, after the departure from the dropoff destination</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">end_longitude</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The longitude coordinate of the end location, after the departure from the dropoff destination</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">planned_path</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The planned trip described as a polyline using geodesic geometry. Specified as a comma separated list of coordinates (e.g., "lat,long,lat,long,lat,long")</td>
+  </tr>
+  <tr>
+    <td>
       <code class="field">requester_name</code>
       <div class="type">optional</div>
     </td>
-    <td>The name of the person that is asking for the delivery service</td>
+    <td>The name of the person or the company requesting the insurance service</td>
   </tr>
   <tr>
     <td>
       <code class="field">requester_phone_number</code>
       <div class="type">optional</div>
     </td>
-    <td>The phone number of the person that is asking for the delivery service</td>
+    <td>The phone number of the person or the company requesting the insurance service</td>
   </tr>
   <tr>
     <td>
       <code class="field">external_reference_id</code>
       <div class="type">optional</div>
     </td>
-    <td>An identification string that might be needed for cargo dispatch</td>
+    <td>An identification string that might be needed for providing the insurance service</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">vehicle_type</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The type of vehicle (one or more) used for the trip, specified as a comma separated list. See full list of options <a href="#vehicle-types">here</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">vehicle_is_autonomous</code>
+      <div class="type">optional</div>
+    </td>
+    <td>A boolean or a comma separated list of booleans, stating if the vehicle used for the trip is autonomous (<code>true</code>) or human controlled (<code>false</code>). Default is <code>true</code></a>
+    </td>
   </tr>
   <tr>
     <td>
@@ -498,7 +597,7 @@
       <code class="field">ip_protection_level</code>
       <div class="type">optional</div>
     </td>
-    <td>A certain level of protection to the cargo may be requested. See full list of options <a href="#ip-protection-level">here</a></td>
+    <td>A certain level of protection that may be provided to the cargo (see full list of options <a href="#ip-protection-level">here</a>). This is optional but recommended as it may affect the price of policy</td>
   </tr>
   <tr>
     <td>
@@ -530,45 +629,35 @@
   </tr>
   <tr>
     <td>
-      <code class="field">insurance_required</code>
-      <div class="type">optional</div>
-    </td>
-    <td>The requester may require that the delivery be insured. Specified as a boolean (default is false)</td>
-  </tr>
-  <tr>
-    <td>
       <code class="field">insured_value</code>
-      <div class="type">optional</div>
+      <div class="type required">required</div>
     </td>
-    <td>The declared value of the cargo to be insured</td>
+    <td>The declared value of the cargo to be insured. Specified as a float</td>
   </tr>
   <tr>
     <td>
       <code class="field">insured_value_currency</code>
-      <div class="type">optional</div>
+      <div class="type required">required</div>
     </td>
     <td>The currency in which the declared value is denoted. This should be specified as a 3-letter <a href="https://en.wikipedia.org/wiki/ISO_4217" target="blank">ISO 4217</a> code or <code>DAV</code></td>
   </tr>
 </table>
 <h1 id='bid'>Bid</h1>
-<p>A bid to provide a delivery service. Typically sent from a delivery drone to the user who requested the service.</p>
+<p>A bid to provide cargo insurance. Typically sent from an insurance provider to a user or a courier that plans to deliver a package from one point to another.</p>
 <h2 id='arguments-2'>Arguments</h2>
 <blockquote>
-<p>Post request to a local/remote endpoint representing the drone</p>
+<p>Post request to a local/remote endpoint representing the insurance requester</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"request_uid=ae7bd8f67f3089c"</span> <span class="se">\</span>
   --data <span class="s2">"expires_at=2017-12-11T15:18:59+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"price=2000000000000000,20000000000000000"</span> <span class="se">\</span>
-  --data <span class="s2">"price_type=second,flat"</span> <span class="se">\</span>
-  --data <span class="s2">"price_description=Price per second,Tax"</span> <span class="se">\</span>
-  --data <span class="s2">"time_to_pickup=2017-12-11T15:21:59+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"time_to_dropoff=2017-12-11T15:34:20+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"insured=true"</span> <span class="se">\</span>
-  --data <span class="s2">"insurer_dav_id=0x17325a469aef3472aa58dfdcf672881d79b31d58"</span> <span class="se">\</span>
-  --data <span class="s2">"drone_contact=Megadronix"</span> <span class="se">\</span>
-  --data <span class="s2">"drone_manufacturer=DXY"</span> <span class="se">\</span>
-  --data <span class="s2">"drone_model=m6000"</span>
+  --data <span class="s2">"coverage_type=all_risk"</span> <span class="se">\</span>
+  --data <span class="s2">"price=20000000000000000,100000000000000000"</span> <span class="se">\</span>
+  --data <span class="s2">"price_type=minute,flat"</span> <span class="se">\</span>
+  --data <span class="s2">"price_description=Price per minute,City tax"</span> <span class="se">\</span>
+  --data <span class="s2">"deductible=1400000000000000000"</span> <span class="se">\</span>
+  --data <span class="s2">"insurer_contact=Airsurance LTD, Tel: +1 415 982 3342"</span> <span class="se">\</span>
+  --data <span class="s2">"insurer_dav_id=0x17325a469aef3472aa58dfdcf672881d79b31d58"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
@@ -576,32 +665,26 @@
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
     <span class="s2">"request_uid"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
     <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
-    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2000000000000000,20000000000000000"</span><span class="p">,</span>
-    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"second,flat"</span><span class="p">,</span>
-    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per second,Tax"</span><span class="p">,</span>
-    <span class="s2">"time_to_pickup"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:21:59+03:00"</span><span class="p">,</span>
-    <span class="s2">"time_to_dropoff"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:34:20+03:00"</span><span class="p">,</span>
-    <span class="s2">"insured"</span><span class="p">:</span> <span class="s2">"true"</span><span class="p">,</span>
+    <span class="s2">"coverage_type"</span><span class="p">:</span> <span class="s2">"all_risk"</span><span class="p">,</span>
+    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"20000000000000000,100000000000000000"</span><span class="p">,</span>
+    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"minute,flat"</span><span class="p">,</span>
+    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per minute,City tax"</span><span class="p">,</span>
+    <span class="s2">"deductible"</span><span class="p">:</span> <span class="s2">"1400000000000000000"</span><span class="p">,</span>
+    <span class="s2">"insurer_contact"</span><span class="p">:</span> <span class="s2">"Airsurance LTD, Tel: +1 415 982 3342"</span><span class="p">,</span>
     <span class="s2">"insurer_dav_id"</span><span class="p">:</span> <span class="s2">"0x17325a469aef3472aa58dfdcf672881d79b31d58"</span><span class="p">,</span>
-    <span class="s2">"drone_contact"</span><span class="p">:</span> <span class="s2">"Megadronix"</span><span class="p">,</span>
-    <span class="s2">"drone_manufacturer"</span><span class="p">:</span> <span class="s2">"DXY"</span><span class="p">,</span>
-    <span class="s2">"drone_model"</span><span class="p">:</span> <span class="s2">"m6000"</span><span class="p">,</span>
   <span class="p">})</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">"request_uid"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
     <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
-    <span class="s">"price"</span><span class="p">:</span> <span class="s">"2000000000000000,20000000000000000"</span><span class="p">,</span>
-    <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"second,flat"</span><span class="p">,</span>
-    <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per second,Tax"</span><span class="p">,</span>
-    <span class="s">"time_to_pickup"</span><span class="p">:</span> <span class="s">"2017-12-11T15:21:59+03:00"</span><span class="p">,</span>
-    <span class="s">"time_to_dropoff"</span><span class="p">:</span> <span class="s">"2017-12-11T15:34:20+03:00"</span><span class="p">,</span>
-    <span class="s">"insured"</span><span class="p">:</span> <span class="s">"true"</span><span class="p">,</span>
+    <span class="s">"coverage_type"</span><span class="p">:</span> <span class="s">"all_risk"</span><span class="p">,</span>
+    <span class="s">"price"</span><span class="p">:</span> <span class="s">"20000000000000000,100000000000000000"</span><span class="p">,</span>
+    <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"minute,flat"</span><span class="p">,</span>
+    <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per minute,City tax"</span><span class="p">,</span>
+    <span class="s">"deductible"</span><span class="p">:</span> <span class="s">"1400000000000000000"</span><span class="p">,</span>
+    <span class="s">"insurer_contact"</span><span class="p">:</span> <span class="s">"Airsurance LTD, Tel: +1 415 982 3342"</span><span class="p">,</span>
     <span class="s">"insurer_dav_id"</span><span class="p">:</span> <span class="s">"0x17325a469aef3472aa58dfdcf672881d79b31d58"</span><span class="p">,</span>
-    <span class="s">"drone_contact"</span><span class="p">:</span> <span class="s">"Megadronix"</span><span class="p">,</span>
-    <span class="s">"drone_manufacturer"</span><span class="p">:</span> <span class="s">"DXY"</span><span class="p">,</span>
-    <span class="s">"drone_model"</span><span class="p">:</span> <span class="s">"m6000"</span><span class="p">,</span>
   <span class="p">}</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </code></pre>
@@ -622,12 +705,19 @@
   </tr>
   <tr>
     <td>
+      <code class="field">coverage_type</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The type of coverage provided in the insurance policy. See full list of options <a href="#insurance-coverage-types">here</td>
+  </tr>
+  <tr>
+    <td>
       <code class="field">price</code>
       <div class="type required">required</div>
     </td>
     <td>A comma separated list of prices. Specified as an integer representing DAV tokens without the decimal point padded to 18 decimals (1 DAV is 1000000000000000000)</td>
   </tr>
-  <tr>
+    <tr>
     <td>
       <code class="field">price_type</code>
       <div class="type required">required</div>
@@ -643,59 +733,56 @@
   </tr>
   <tr>
     <td>
-      <code class="field">time_to_pickup</code>
+      <code class="field">deductible</code>
       <div class="type required">required</div>
     </td>
-    <td>The estimate time of arrival at the pickup location. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>The amount that must be paid by the policy holder before an insurance provider will pay any expenses. Specified as an integer representing DAV tokens without the decimal point padded to 18 decimals (1 DAV is 1000000000000000000)</td>
   </tr>
   <tr>
     <td>
-      <code class="field">time_to_dropoff</code>
-      <div class="type required">required</div>
-    </td>
-    <td>The estimate time of arrival at the dropoff location. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
-  </tr>
-  <tr>
-    <td>
-      <code class="field">insured</code>
+      <code class="field">insurer_contact</code>
       <div class="type">optional</div>
     </td>
-    <td>Is this delivery insured? Specified as a boolean (default is false)</td>
+    <td>Human readable information regarding the insurance company (e.g., <code>Airsurance LTD, Tel: +1 415 982 3342</code>)</td>
   </tr>
   <tr>
     <td>
       <code class="field">insurer_dav_id</code>
       <div class="type">optional</div>
     </td>
-    <td>If this delivery is insured by another DAV Identity, include their ID here</td>
+    <td>If the insurer is a registered DAV member, include their ID here</td>
   </tr>
-    <tr>
-    <td>
-      <code class="field">ip_protection_level</code>
-      <div class="type">optional</div>
-    </td>
-    <td>A certain level of protection that a drone may provide to the cargo. See full list of options <a href="#ip-protection-level">here</a></td>
+</table>
+<h1 id='vehicle-types'>Vehicle Types</h1>
+<p>The type of vehicles and their unique identifier.</p>
+
+<table class="cargo_vehicles">
+  <tr>
+    <th>Vehicle Type</th>
   </tr>
   <tr>
-    <td>
-      <code class="field">drone_contact</code>
-      <div class="type">optional</div>
-    </td>
-    <td>Human readable information regarding the drone (e.g <code>Megadronix Deliveries LTD. +31-338-594332</code>)</td>
+    <td><code>drone</code></td>
   </tr>
   <tr>
-    <td>
-      <code class="field">drone_manufacturer</code>
-      <div class="type">optional</div>
-    </td>
-    <td>Name of the manufacturer of this drone</td>
+    <td><code>car</code></td>
   </tr>
   <tr>
-    <td>
-      <code class="field">drone_model</code>
-      <div class="type">optional</div>
-    </td>
-    <td>Name of the model of this drone</td>
+    <td><code>truck</code></td>
+  </tr>
+  <tr>
+    <td><code>van</code></td>
+  </tr>
+  <tr>
+    <td><code>ship</code></td>
+  </tr>
+  <tr>
+    <td><code>robot</code></td>
+  </tr>
+ <tr>
+    <td><code>bike</code></td>
+  </tr>
+  <tr>
+    <td><code>rail</code></td>
   </tr>
 </table>
 <h1 id='cargo-types'>Cargo Types</h1>
@@ -822,6 +909,31 @@
   <tr>
     <td><code>9</code></td>
     <td>Misc Hazardous</td>
+  </tr>
+</table>
+<h1 id='insurance-coverage-types'>Insurance Coverage Types</h1>
+<p>The type of coverage provided in the insurance policy to the cargo, according to international cargo insurance standards.</p>
+
+<table class="reference">
+  <tr>
+    <th>Coverage ID</th>
+    <th>Coverage Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>general</code></td>
+    <td>General Average</td>
+    <td>Basic coverage, only covering partial losses</td>
+  </tr>
+  <tr>
+    <td><code>fpa</code></td>
+    <td>Free From Particular Average</td>
+    <td>Limited coverage, only covering losses caused from stranding, sinking, burning, or collision</td>
+  </tr>
+  <tr>
+    <td><code>all_risk</code></td>
+    <td>All Risk</td>
+    <td>Extensive coverage, including damage or loss due to external factors</td>
   </tr>
 </table>
 <h1 id='ip-protection-level'>IP Protection Level</h1>
