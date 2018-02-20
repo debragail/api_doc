@@ -70,8 +70,8 @@ In response, an autonomous robot might send back a bid with a price for the miss
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "request_uid=ae7bd8f67f3089c" \
-  --data "expires_at=2017-12-11T15:18:59+03:00" \
+  --data "need_id=ae7bd8f67f3089c" \
+  --data "expires_at=1519093577681" \
   --data "price=20000000000000000,10000000000000" \
   --data "price_type=flat,minute" \
   --data "price_description=Finders fee,Price per minute" \
@@ -89,8 +89,8 @@ const biddingEndPoint = "bidding_endpoint_here";
 fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "request_uid": "ae7bd8f67f3089c",
-    "expires_at": "2017-12-11T15:18:59+03:00",
+    "need_id": "ae7bd8f67f3089c",
+    "expires_at": "1519093577681",
     "price": "20000000000000000,10000000000000",
     "price_type": "flat,minute",
     "price_description": "Finders fee,Price per minute",
@@ -107,8 +107,8 @@ fetch(biddingEndPoint, {
 ```python
 import requests
 payload = {
-    "request_uid": "ae7bd8f67f3089c",
-    "expires_at": "2017-12-11T15:18:59+03:00",
+    "need_id": "ae7bd8f67f3089c",
+    "expires_at": "1519093577681",
     "price": "20000000000000000,10000000000000",
     "price_type": "flat,minute",
     "price_description": "Finders fee,Price per minute",
@@ -247,8 +247,8 @@ A bid to provide a vehicle locating service. Typically sent by a vehicle with lo
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "request_uid=ae7bd8f67f3089c" \
-  --data "expires_at=2017-12-11T15:18:59+03:00" \
+  --data "need_id=ae7bd8f67f3089c" \
+  --data "expires_at=1519093577681" \
   --data "price=20000000000000000,10000000000000" \
   --data "price_type=flat,minute" \
   --data "price_description=Finders fee,Price per minute" \
@@ -267,8 +267,8 @@ const biddingEndPoint = "bidding_endpoint_here";
 fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "request_uid": "ae7bd8f67f3089c",
-    "expires_at": "2017-12-11T15:18:59+03:00",
+    "need_id": "ae7bd8f67f3089c",
+    "expires_at": "1519093577681",
     "price": "20000000000000000,10000000000000",
     "price_type": "flat,minute",
     "price_description": "Finders fee,Price per minute",
@@ -286,8 +286,8 @@ fetch(biddingEndPoint, {
 ```python
 import requests
 payload = {
-    "request_uid": "ae7bd8f67f3089c",
-    "expires_at": "2017-12-11T15:18:59+03:00",
+    "need_id": "ae7bd8f67f3089c",
+    "expires_at": "1519093577681",
     "price": "20000000000000000,10000000000000",
     "price_type": "flat,minute",
     "price_description": "Finders fee,Price per minute",
@@ -306,7 +306,7 @@ requests.post("bidding_endpoint_here", data=payload)
 <table class="arguments">
   <tr>
     <td>
-      <code class="field">request_uid</code>
+      <code class="field">need_id</code>
       <div class="type required">required</div>
     </td>
     <td>The UID of the request. This arrives as part of the request</td>
@@ -316,7 +316,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">expires_at</code>
       <div class="type required">required</div>
     </td>
-    <td>This bid will expire at this time. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -358,7 +358,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">arrival_at</code>
       <div class="type required">required</div>
     </td>
-    <td>The estimated time of arrival at the location where the lost vehicle was last seen. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>The estimated time of arrival at the location where the lost vehicle was last seen. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>

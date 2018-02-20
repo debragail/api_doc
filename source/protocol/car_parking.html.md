@@ -64,7 +64,7 @@ In response, a parking space might send back a bid with a price per hour, and th
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "request_uid=ae7bd8f67f3089c" \
+  --data "need_id=ae7bd8f67f3089c" \
   --data "expires_at=2017-12-11T15:18:59+03:00" \
   --data "price=300000000000000000,500000000000000000" \
   --data "price_type=hour,flat" \
@@ -86,7 +86,7 @@ const biddingEndPoint = "bidding_endpoint_here";
 fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "request_uid": "ae7bd8f67f3089c",
+    "need_id": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
     "price": "300000000000000000,500000000000000000",
     "price_type": "hour,flat",
@@ -107,7 +107,7 @@ fetch(biddingEndPoint, {
 ```python
 import requests
 payload = {
-    "request_uid": "ae7bd8f67f3089c",
+    "need_id": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
     "price": "300000000000000000,500000000000000000",
     "price_type": "hour,flat",
@@ -191,14 +191,14 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">start_at</code>
       <div class="type">optional</div>
     </td>
-    <td>The time at which the requester would like to arrive at the parking space (if undefined, the arrival time will be ASAP). Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>The time at which the requester would like to arrive at the parking space (if undefined, the arrival time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
     <tr>
     <td>
       <code class="field">end_at</code>
       <div class="type">optional</div>
     </td>
-    <td>The time at which the requester plans to leave the parking space. This parameter is optional but highly recommended, as it can affect how the service is priced. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>The time at which the requester plans to leave the parking space. This parameter is optional but highly recommended, as it can affect how the service is priced. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -268,7 +268,7 @@ A bid to provide a parking service. Typically sent from a parking management sys
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "request_uid=ae7bd8f67f3089c" \
+  --data "need_id=ae7bd8f67f3089c" \
   --data "expires_at=2017-12-11T15:18:59+03:00" \
   --data "price=300000000000000000,500000000000000000" \
   --data "price_type=hour,flat" \
@@ -304,7 +304,7 @@ const biddingEndPoint = "bidding_endpoint_here";
 fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "request_uid": "ae7bd8f67f3089c",
+    "need_id": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
     "price": "300000000000000000,500000000000000000",
     "price_type": "hour,flat",
@@ -339,7 +339,7 @@ fetch(biddingEndPoint, {
 ```python
 import requests
 payload = {
-    "request_uid": "ae7bd8f67f3089c",
+    "need_id": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
     "price": "300000000000000000,500000000000000000",
     "price_type": "hour,flat",
@@ -374,7 +374,7 @@ requests.post("bidding_endpoint_here", data=payload)
 <table class="arguments">
   <tr>
     <td>
-      <code class="field">request_uid</code>
+      <code class="field">need_id</code>
       <div class="type required">required</div>
     </td>
     <td>The UID of the request. This arrives as part of the request</td>
@@ -384,7 +384,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">expires_at</code>
       <div class="type required">required</div>
     </td>
-    <td>This bid will expire at this time. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -524,14 +524,14 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">available_from</code>
       <div class="type required">required</div>
     </td>
-    <td>The time from which the parking space can be made available. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>The time from which the parking space can be made available. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
       <code class="field">available_until</code>
       <div class="type required">required</div>
     </td>
-    <td>The time until which the parking space can be made available. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>The time until which the parking space can be made available. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
