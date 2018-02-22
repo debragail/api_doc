@@ -267,11 +267,13 @@
 <p>Need</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
-  --data <span class="s2">"start_at=2017-12-11T15:18:54+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"latitude=32.787793"</span> <span class="se">\</span>
-  --data <span class="s2">"longitude=-79.935005"</span> <span class="se">\</span>
-  --data <span class="s2">"radius=1000"</span> <span class="se">\</span>
-  --data <span class="s2">"length=1200"</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.787793</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935005</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">radius</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">length</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
@@ -300,20 +302,22 @@
 <p>Bid</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
-  --data <span class="s2">"request_uid=ae7bd8f67f3089c"</span> <span class="se">\</span>
-  --data <span class="s2">"expires_at=2017-12-11T15:18:59+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"price=300000000000000000,500000000000000000"</span> <span class="se">\</span>
-  --data <span class="s2">"price_type=hour,flat"</span> <span class="se">\</span>
-  --data <span class="s2">"price_description=Price per hour,City tax"</span> <span class="se">\</span>
-  --data <span class="s2">"latitude=32.785889"</span> <span class="se">\</span>
-  --data <span class="s2">"longitude=-79.935569"</span> <span class="se">\</span>
-  --data <span class="s2">"available_from=2017-12-11T15:18:54+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"available_until=2017-12-12T15:18:54+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"height=300"</span> <span class="se">\</span>
-  --data <span class="s2">"width=300"</span> <span class="se">\</span>
-  --data <span class="s2">"length=1900"</span> <span class="se">\</span>
-  --data <span class="s2">"weight=100000"</span> <span class="se">\</span>
-  --data <span class="s2">"amenities=2,3,8"</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">request_uid</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:59+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">300000000000000000,500000000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">hour,flat</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Price per hour,City tax</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785889</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935569</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">available_from</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">available_until</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-12T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">height</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">300</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">width</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">300</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">length</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1900</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">weight</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">100000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">amenities</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3,8</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
@@ -364,15 +368,17 @@
 <p>Post request to a local/remote discovery endpoint</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
-  --data <span class="s2">"start_at=2017-12-11T15:18:54+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"latitude=32.787793"</span> <span class="se">\</span>
-  --data <span class="s2">"longitude=-79.935005"</span> <span class="se">\</span>
-  --data <span class="s2">"radius=10000"</span> <span class="se">\</span>
-  --data <span class="s2">"height=200"</span> <span class="se">\</span>
-  --data <span class="s2">"width=120"</span> <span class="se">\</span>
-  --data <span class="s2">"length=330"</span> <span class="se">\</span>
-  --data <span class="s2">"weight=1200"</span> <span class="se">\</span>
-  --data <span class="s2">"amenities=2,3"</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.787793</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935005</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">radius</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">10000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">height</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">width</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">120</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">length</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">330</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">weight</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">amenities</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+}"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
@@ -482,34 +488,36 @@
 <p>Post request to a local/remote endpoint representing the vehicle</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
-  --data <span class="s2">"request_uid=ae7bd8f67f3089c"</span> <span class="se">\</span>
-  --data <span class="s2">"expires_at=2017-12-11T15:18:59+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"price=300000000000000000,500000000000000000"</span> <span class="se">\</span>
-  --data <span class="s2">"price_type=hour,flat"</span> <span class="se">\</span>
-  --data <span class="s2">"price_description=Price per hour,City tax"</span> <span class="se">\</span>
-  --data <span class="s2">"latitude=32.785889"</span> <span class="se">\</span>
-  --data <span class="s2">"longitude=-79.935569"</span> <span class="se">\</span>
-  --data <span class="s2">"entrance_latitude=32.785878"</span> <span class="se">\</span>
-  --data <span class="s2">"entrance_longitude=-79.935558"</span> <span class="se">\</span>
-  --data <span class="s2">"exit_latitude=32.785878"</span> <span class="se">\</span>
-  --data <span class="s2">"exit_longitude=-79.935558"</span> <span class="se">\</span>
-  --data <span class="s2">"location_floor=2"</span> <span class="se">\</span>
-  --data <span class="s2">"location_name=IKEA parking lot B"</span> <span class="se">\</span>
-  --data <span class="s2">"location_name_lang=eng"</span> <span class="se">\</span>
-  --data <span class="s2">"location_house_number=372"</span> <span class="se">\</span>
-  --data <span class="s2">"location_street=King"</span> <span class="se">\</span>
-  --data <span class="s2">"location_city=Charleston"</span> <span class="se">\</span>
-  --data <span class="s2">"location_postal_code=29401"</span> <span class="se">\</span>
-  --data <span class="s2">"location_county=Charleston"</span> <span class="se">\</span>
-  --data <span class="s2">"location_state=SC"</span> <span class="se">\</span>
-  --data <span class="s2">"location_country=USA"</span> <span class="se">\</span>
-  --data <span class="s2">"available_from=2017-12-11T15:18:54+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"available_until=2017-12-12T15:18:54+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"height=300"</span> <span class="se">\</span>
-  --data <span class="s2">"width=200"</span> <span class="se">\</span>
-  --data <span class="s2">"length=580"</span> <span class="se">\</span>
-  --data <span class="s2">"weight=10000"</span> <span class="se">\</span>
-  --data <span class="s2">"amenities=2,3,8"</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">request_uid</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:59+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">300000000000000000,500000000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">hour,flat</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Price per hour,City tax</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785889</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935569</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">entrance_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785878</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">entrance_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935558</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">exit_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785878</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">exit_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935558</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_floor</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">IKEA parking lot B</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_name_lang</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">eng</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_house_number</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">372</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_street</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">King</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_city</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Charleston</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_postal_code</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">29401</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_county</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Charleston</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_state</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">SC</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_country</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">USA</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">available_from</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">available_until</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-12T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">height</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">300</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">width</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">length</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">580</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">weight</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">10000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">amenities</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3,8</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>

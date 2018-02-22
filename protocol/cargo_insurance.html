@@ -279,17 +279,19 @@
 <p>Need</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
-  --data <span class="s2">"start_at=2017-12-11T15:18:54+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"end_at=2017-12-11T16:00:00+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"pickup_latitude=40.958123"</span> <span class="se">\</span>
-  --data <span class="s2">"pickup_longitude=-74.169388"</span> <span class="se">\</span>
-  --data <span class="s2">"dropoff_latitude=40.875103"</span> <span class="se">\</span>
-  --data <span class="s2">"dropoff_longitude=-74.570389"</span> <span class="se">\</span>
-  --data <span class="s2">"planned_path=40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_type=drone"</span> <span class="se">\</span>
-  --data <span class="s2">"cargo_type=11"</span> <span class="se">\</span>
-  --data <span class="s2">"insured_value=3000.00"</span> <span class="se">\</span>
-  --data <span class="s2">"insured_value_currency=USD"</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">end_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T16:00:00+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">pickup_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">40.958123</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">pickup_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-74.169388</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">dropoff_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">40.875103</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">dropoff_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-74.570389</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">planned_path</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">drone</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">cargo_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">11</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">insured_value</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">3000.00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">insured_value_currency</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">USD</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
@@ -330,13 +332,15 @@
 <p>Bid</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
-  --data <span class="s2">"request_uid=ae7bd8f67f3089c"</span> <span class="se">\</span>
-  --data <span class="s2">"expires_at=2017-12-11T15:18:59+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"coverage_type=all_risk"</span> <span class="se">\</span>
-  --data <span class="s2">"price=100000000000000000"</span> <span class="se">\</span>
-  --data <span class="s2">"price_type=flat"</span> <span class="se">\</span>
-  --data <span class="s2">"price_description=Policy cost"</span> <span class="se">\</span>
-  --data <span class="s2">"deductible=1400000000000000000"</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">request_uid</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:59+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">coverage_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">all_risk</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">100000000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">flat</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Policy cost</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">deductible</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1400000000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
@@ -371,31 +375,33 @@
 <p>Post request to a local/remote discovery endpoint</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
-  --data <span class="s2">"start_at=2017-12-11T15:18:54+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"end_at=2017-12-11T16:00:00+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"start_latitude=40.746217"</span> <span class="se">\</span>
-  --data <span class="s2">"start_longitude=-73.970261"</span> <span class="se">\</span>
-  --data <span class="s2">"pickup_latitude=40.958123"</span> <span class="se">\</span>
-  --data <span class="s2">"pickup_longitude=-74.169388"</span> <span class="se">\</span>
-  --data <span class="s2">"dropoff_latitude=40.875103"</span> <span class="se">\</span>
-  --data <span class="s2">"dropoff_longitude=-74.570389"</span> <span class="se">\</span>
-  --data <span class="s2">"end_latitude=40.746217"</span> <span class="se">\</span>
-  --data <span class="s2">"end_longitude=-73.970261"</span> <span class="se">\</span>
-  --data <span class="s2">"planned_path=40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389"</span> <span class="se">\</span>
-  --data <span class="s2">"requester_name=Megadronix"</span> <span class="se">\</span>
-  --data <span class="s2">"requester_phone_number=+31-338-594332"</span> <span class="se">\</span>
-  --data <span class="s2">"external_reference_id=200982447"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_type=drone,ship,drone"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_is_autonomous=true,false,true"</span> <span class="se">\</span>
-  --data <span class="s2">"cargo_type=11"</span> <span class="se">\</span>
-  --data <span class="s2">"hazardous_goods=8"</span> <span class="se">\</span>
-  --data <span class="s2">"ip_protection_level=68"</span> <span class="se">\</span>
-  --data <span class="s2">"height=8"</span> <span class="se">\</span>
-  --data <span class="s2">"width=2"</span> <span class="se">\</span>
-  --data <span class="s2">"length=2"</span> <span class="se">\</span>
-  --data <span class="s2">"weight=50"</span> <span class="se">\</span>
-  --data <span class="s2">"insured_value=3000.00"</span> <span class="se">\</span>
-  --data <span class="s2">"insured_value_currency=USD"</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">end_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T16:00:00+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">start_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">40.746217</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">start_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-73.970261</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">pickup_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">40.958123</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">pickup_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-74.169388</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">dropoff_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">40.875103</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">dropoff_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-74.570389</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">end_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">40.746217</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">end_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-73.970261</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">planned_path</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">requester_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Megadronix</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">requester_phone_number</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">+31-338-594332</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">external_reference_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">200982447</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">drone,ship,drone</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_is_autonomous</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">true,false,true</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">cargo_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">11</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">hazardous_goods</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">8</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">ip_protection_level</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">68</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">height</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">8</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">width</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">length</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">weight</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">50</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">insured_value</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">3000.00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">insured_value_currency</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">USD</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
@@ -649,15 +655,17 @@
 <p>Post request to a local/remote endpoint representing the insurance requester</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
-  --data <span class="s2">"request_uid=ae7bd8f67f3089c"</span> <span class="se">\</span>
-  --data <span class="s2">"expires_at=2017-12-11T15:18:59+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"coverage_type=all_risk"</span> <span class="se">\</span>
-  --data <span class="s2">"price=20000000000000000,100000000000000000"</span> <span class="se">\</span>
-  --data <span class="s2">"price_type=minute,flat"</span> <span class="se">\</span>
-  --data <span class="s2">"price_description=Price per minute,City tax"</span> <span class="se">\</span>
-  --data <span class="s2">"deductible=1400000000000000000"</span> <span class="se">\</span>
-  --data <span class="s2">"insurer_contact=Airsurance LTD, Tel: +1 415 982 3342"</span> <span class="se">\</span>
-  --data <span class="s2">"insurer_dav_id=0x17325a469aef3472aa58dfdcf672881d79b31d58"</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">request_uid</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:59+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">coverage_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">all_risk</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">20000000000000000,100000000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">minute,flat</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Price per minute,City tax</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">deductible</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1400000000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">insurer_contact</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Airsurance LTD, Tel: +1 415 982 3342</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">insurer_dav_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">0x17325a469aef3472aa58dfdcf672881d79b31d58</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>

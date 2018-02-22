@@ -267,13 +267,15 @@
 <p>Need</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
-  --data <span class="s2">"last_latitude=55.770279"</span> <span class="se">\</span>
-  --data <span class="s2">"last_longitude=37.781467"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_type=drone"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_manufacturer=Copter Express"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_model=COPTEREXPRESS X1"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_color=White"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_contact=Andrei Ivanov, mobile: +7 555-338-5943"</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">last_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">55.770279</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">last_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">37.781467</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">drone</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_manufacturer</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Copter Express</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_model</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">COPTEREXPRESS X1</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_color</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">White</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_contact</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Andrei Ivanov, mobile: +7 555-338-5943</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
@@ -306,17 +308,19 @@
 <p>Bid</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
-  --data <span class="s2">"request_uid=ae7bd8f67f3089c"</span> <span class="se">\</span>
-  --data <span class="s2">"expires_at=2017-12-11T15:18:59+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"price=20000000000000000,10000000000000"</span> <span class="se">\</span>
-  --data <span class="s2">"price_type=flat,minute"</span> <span class="se">\</span>
-  --data <span class="s2">"price_description=Finders fee,Price per minute"</span> <span class="se">\</span>
-  --data <span class="s2">"current_latitude=55.756951"</span> <span class="se">\</span>
-  --data <span class="s2">"current_longitude=37.633839"</span> <span class="se">\</span>
-  --data <span class="s2">"arrival_at=2017-12-11T15:18:54+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_type=robot"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_manufacturer=Husarion"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_model=ROSBot"</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">request_uid</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:59+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">20000000000000000,10000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">flat,minute</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Finders fee,Price per minute</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">current_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">55.756951</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">current_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">37.633839</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">arrival_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">robot</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_manufacturer</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Husarion</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_model</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ROSBot</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
@@ -359,14 +363,16 @@
 <p>Post request to a local/remote discovery endpoint</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
-  --data <span class="s2">"last_latitude=43.610159"</span> <span class="se">\</span>
-  --data <span class="s2">"last_longitude=-116.783196"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_type=car"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_manufacturer=Tesla"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_model=Model S"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_color=Black"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_license_number=6GDG486"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_contact=James McGill, mobile: 555-338-5943"</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">last_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">43.610159</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">last_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-116.783196</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">car</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_manufacturer</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Tesla</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_model</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Model S</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_color</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Black</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_license_number</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">6GDG486</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">vehicle_contact</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">James McGill, mobile: 555-338-5943</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
@@ -461,18 +467,20 @@
 <p>Post request to a local/remote endpoint representing the rider</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
-  --data <span class="s2">"request_uid=ae7bd8f67f3089c"</span> <span class="se">\</span>
-  --data <span class="s2">"expires_at=2017-12-11T15:18:59+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"price=20000000000000000,10000000000000"</span> <span class="se">\</span>
-  --data <span class="s2">"price_type=flat,minute"</span> <span class="se">\</span>
-  --data <span class="s2">"price_description=Finders fee,Price per minute"</span> <span class="se">\</span>
-  --data <span class="s2">"current_latitude=43.611626"</span> <span class="se">\</span>
-  --data <span class="s2">"current_longitude=-116.392593"</span> <span class="se">\</span>
-  --data <span class="s2">"arrival_at=2017-12-11T15:18:54+03:00"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_type=drone"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_manufacturer=Dronster"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_model=Res-Q"</span> <span class="se">\</span>
-  --data <span class="s2">"vehicle_contact=Dronster Rescue Missions LTD. www.dronster.com"</span>
+  --data <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">request_uid</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:59+03:00</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">20000000000000000,10000000000000</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">flat,minute</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Finders fee,Price per minute</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">current_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">43.611626</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">current_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-116.392593</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">arrival_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">vehicle_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">drone</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">vehicle_manufacturer</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Dronster</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">vehicle_model</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Res-Q</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">vehicle_contact</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Dronster Rescue Missions LTD. www.dronster.com</span><span class="se">\"</span><span class="s2">,
+  }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
