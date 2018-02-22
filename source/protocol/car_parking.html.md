@@ -24,11 +24,13 @@ For example, a heavy goods truck might search for an available parking space wit
 
 ```shell
 curl "discovery_endpoint_here" \
-  --data "start_at=2017-12-11T15:18:54+03:00" \
-  --data "latitude=32.787793" \
-  --data "longitude=-79.935005" \
-  --data "radius=1000" \
-  --data "length=1200"
+  --data "{ \
+    \"start_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"latitude\": \"32.787793\", \
+    \"longitude\": \"-79.935005\", \
+    \"radius\": \"1000\", \
+    \"length\": \"1200\", \
+  }"
 ```
 
 ```javascript
@@ -64,20 +66,22 @@ In response, a parking space might send back a bid with a price per hour, and th
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "request_uid=ae7bd8f67f3089c" \
-  --data "expires_at=2017-12-11T15:18:59+03:00" \
-  --data "price=300000000000000000,500000000000000000" \
-  --data "price_type=hour,flat" \
-  --data "price_description=Price per hour,City tax" \
-  --data "latitude=32.785889" \
-  --data "longitude=-79.935569" \
-  --data "available_from=2017-12-11T15:18:54+03:00" \
-  --data "available_until=2017-12-12T15:18:54+03:00" \
-  --data "height=300" \
-  --data "width=300" \
-  --data "length=1900" \
-  --data "weight=100000" \
-  --data "amenities=2,3,8"
+  --data "{ \
+    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"expires_at\": \"2017-12-11T15:18:59+03:00\", \
+    \"price\": \"300000000000000000,500000000000000000\", \
+    \"price_type\": \"hour,flat\", \
+    \"price_description\": \"Price per hour,City tax\", \
+    \"latitude\": \"32.785889\", \
+    \"longitude\": \"-79.935569\", \
+    \"available_from\": \"2017-12-11T15:18:54+03:00\", \
+    \"available_until\": \"2017-12-12T15:18:54+03:00\", \
+    \"height\": \"300\", \
+    \"width\": \"300\", \
+    \"length\": \"1900\", \
+    \"weight\": \"100000\", \
+    \"amenities\": \"2,3,8\", \
+  }"
 ```
 
 ```javascript
@@ -139,15 +143,17 @@ This request is sent to the decentralized discovery engine which responds with s
 
 ```shell
 curl "discovery_endpoint_here" \
-  --data "start_at=2017-12-11T15:18:54+03:00" \
-  --data "latitude=32.787793" \
-  --data "longitude=-79.935005" \
-  --data "radius=10000" \
-  --data "height=200" \
-  --data "width=120" \
-  --data "length=330" \
-  --data "weight=1200" \
-  --data "amenities=2,3"
+  --data "{ \
+    \"start_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"latitude\": \"32.787793\", \
+    \"longitude\": \"-79.935005\", \
+    \"radius\": \"10000\", \
+    \"height\": \"200\", \
+    \"width\": \"120\", \
+    \"length\": \"330\", \
+    \"weight\": \"1200\", \
+    \"amenities\": \"2,3\", \
+}"
 ```
 
 ```javascript
@@ -268,34 +274,36 @@ A bid to provide a parking service. Typically sent from a parking management sys
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "request_uid=ae7bd8f67f3089c" \
-  --data "expires_at=2017-12-11T15:18:59+03:00" \
-  --data "price=300000000000000000,500000000000000000" \
-  --data "price_type=hour,flat" \
-  --data "price_description=Price per hour,City tax" \
-  --data "latitude=32.785889" \
-  --data "longitude=-79.935569" \
-  --data "entrance_latitude=32.785878" \
-  --data "entrance_longitude=-79.935558" \
-  --data "exit_latitude=32.785878" \
-  --data "exit_longitude=-79.935558" \
-  --data "location_floor=2" \
-  --data "location_name=IKEA parking lot B" \
-  --data "location_name_lang=eng" \
-  --data "location_house_number=372" \
-  --data "location_street=King" \
-  --data "location_city=Charleston" \
-  --data "location_postal_code=29401" \
-  --data "location_county=Charleston" \
-  --data "location_state=SC" \
-  --data "location_country=USA" \
-  --data "available_from=2017-12-11T15:18:54+03:00" \
-  --data "available_until=2017-12-12T15:18:54+03:00" \
-  --data "height=300" \
-  --data "width=200" \
-  --data "length=580" \
-  --data "weight=10000" \
-  --data "amenities=2,3,8"
+  --data "{ \
+    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"expires_at\": \"2017-12-11T15:18:59+03:00\", \
+    \"price\": \"300000000000000000,500000000000000000\", \
+    \"price_type\": \"hour,flat\", \
+    \"price_description\": \"Price per hour,City tax\", \
+    \"latitude\": \"32.785889\", \
+    \"longitude\": \"-79.935569\", \
+    \"entrance_latitude\": \"32.785878\", \
+    \"entrance_longitude\": \"-79.935558\", \
+    \"exit_latitude\": \"32.785878\", \
+    \"exit_longitude\": \"-79.935558\", \
+    \"location_floor\": \"2\", \
+    \"location_name\": \"IKEA parking lot B\", \
+    \"location_name_lang\": \"eng\", \
+    \"location_house_number\": \"372\", \
+    \"location_street\": \"King\", \
+    \"location_city\": \"Charleston\", \
+    \"location_postal_code\": \"29401\", \
+    \"location_county\": \"Charleston\", \
+    \"location_state\": \"SC\", \
+    \"location_country\": \"USA\", \
+    \"available_from\": \"2017-12-11T15:18:54+03:00\", \
+    \"available_until\": \"2017-12-12T15:18:54+03:00\", \
+    \"height\": \"300\", \
+    \"width\": \"200\", \
+    \"length\": \"580\", \
+    \"weight\": \"10000\", \
+    \"amenities\": \"2,3,8\", \
+  }"
 ```
 
 ```javascript

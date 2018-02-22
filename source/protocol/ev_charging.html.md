@@ -26,12 +26,14 @@ For example, an electric vehicle might search for charging stations within 1 km 
 
 ```shell
 curl "discovery_endpoint_here" \
-  --data "start_at=2017-12-11T15:18:54+03:00" \
-  --data "latitude=32.787793" \
-  --data "longitude=-79.935005" \
-  --data "radius=1000" \
-  --data "connector=tesla_supercharger" \
-  --data "amenities=3"
+  --data "{ \
+    \"start_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"latitude\": \"32.787793\", \
+    \"longitude\": \"-79.935005\", \
+    \"radius\": \"1000\", \
+    \"connector\": \"tesla_supercharger\", \
+    \"amenities\": \"3\", \
+  }"
 ```
 
 ```javascript
@@ -69,18 +71,20 @@ In response, a charging station might send back a bid with a price per kWh, and 
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "request_uid=ae7bd8f67f3089c" \
-  --data "expires_at=2017-12-11T15:18:59+03:00" \
-  --data "price=2300000000000000000,30000000000000000" \
-  --data "price_type=kwh,kwh" \
-  --data "price_description=Price per kWh,VAT per kWh" \
-  --data "latitude=32.785889" \
-  --data "longitude=-79.935569" \
-  --data "available_from=2017-12-11T15:18:54+03:00" \
-  --data "available_until=2017-12-12T15:18:54+03:00" \
-  --data "connectors=tesla_hpwc,tesla_supercharger" \
-  --data "charging_levels=2,3" \
-  --data "amenities=2,3,4,7,9"
+  --data "{ \
+    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"expires_at\": \"2017-12-11T15:18:59+03:00\", \
+    \"price\": \"2300000000000000000,30000000000000000\", \
+    \"price_type\": \"kwh,kwh\", \
+    \"price_description\": \"Price per kWh,VAT per kWh\", \
+    \"latitude\": \"32.785889\", \
+    \"longitude\": \"-79.935569\", \
+    \"available_from\": \"2017-12-11T15:18:54+03:00\", \
+    \"available_until\": \"2017-12-12T15:18:54+03:00\", \
+    \"connectors\": \"tesla_hpwc,tesla_supercharger\", \
+    \"charging_levels\": \"2,3\", \
+    \"amenities\": \"2,3,4,7,9\", \
+  }"
 ```
 
 ```javascript
@@ -136,18 +140,20 @@ This request is sent to the decentralized discovery engine which responds with s
 
 ```shell
 curl "discovery_endpoint_here" \
-  --data "start_at=2017-12-11T15:18:54+03:00" \
-  --data "latitude=32.787793" \
-  --data "longitude=-79.935005" \
-  --data "radius=10000" \
-  --data "height=200" \
-  --data "width=120" \
-  --data "length=330" \
-  --data "weight=1200" \
-  --data "connector=tesla_supercharger" \
-  --data "charging_level=3" \
-  --data "energy_source=solar" \
-  --data "amenities=2,3"
+  --data "{ \
+    \"start_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"latitude\": \"32.787793\", \
+    \"longitude\": \"-79.935005\", \
+    \"radius\": \"10000\", \
+    \"height\": \"200\", \
+    \"width\": \"120\", \
+    \"length\": \"330\", \
+    \"weight\": \"1200\", \
+    \"connector\": \"tesla_supercharger\", \
+    \"charging_level\": \"3\", \
+    \"energy_source\": \"solar\", \
+    \"amenities\": \"2,3\", \
+  }"
 ```
 
 ```javascript
@@ -302,40 +308,42 @@ A bid to provide a charging service. Typically sent from a charging station to a
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "request_uid=ae7bd8f67f3089c" \
-  --data "expires_at=2017-12-11T15:18:59+03:00" \
-  --data "price=2300000000000000000,30000000000000000" \
-  --data "price_type=kwh,kwh" \
-  --data "price_description=Price per kWh,VAT per kWh" \
-  --data "latitude=32.785889" \
-  --data "longitude=-79.935569" \
-  --data "entrance_latitude=32.785878" \
-  --data "entrance_longitude=-79.935558" \
-  --data "exit_latitude=32.785878" \
-  --data "exit_longitude=-79.935558" \
-  --data "location_floor=2" \
-  --data "location_name=IKEA parking lot B" \
-  --data "location_name_lang=eng" \
-  --data "location_house_number=372" \
-  --data "location_street=King" \
-  --data "location_city=Charleston" \
-  --data "location_postal_code=29401" \
-  --data "location_county=Charleston" \
-  --data "location_state=SC" \
-  --data "location_country=USA" \
-  --data "available_from=2017-12-11T15:18:54+03:00" \
-  --data "available_until=2017-12-12T15:18:54+03:00" \
-  --data "height=300" \
-  --data "width=200" \
-  --data "length=580" \
-  --data "weight=10000" \
-  --data "connectors=tesla_hpwc,tesla_supercharger" \
-  --data "charging_levels=2,3" \
-  --data "energy_source=solar" \
-  --data "amenities=2,3,4,7,9" \
-  --data "provider=Tesla" \
-  --data "manufacturer=Tesla" \
-  --data "model=Supercharger"
+  --data "{ \
+    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"expires_at\": \"2017-12-11T15:18:59+03:00\", \
+    \"price\": \"2300000000000000000,30000000000000000\", \
+    \"price_type\": \"kwh,kwh\", \
+    \"price_description\": \"Price per kWh,VAT per kWh\", \
+    \"latitude\": \"32.785889\", \
+    \"longitude\": \"-79.935569\", \
+    \"entrance_latitude\": \"32.785878\", \
+    \"entrance_longitude\": \"-79.935558\", \
+    \"exit_latitude\": \"32.785878\", \
+    \"exit_longitude\": \"-79.935558\", \
+    \"location_floor\": \"2\", \
+    \"location_name\": \"IKEA parking lot B\", \
+    \"location_name_lang\": \"eng\", \
+    \"location_house_number\": \"372\", \
+    \"location_street\": \"King\", \
+    \"location_city\": \"Charleston\", \
+    \"location_postal_code\": \"29401\", \
+    \"location_county\": \"Charleston\", \
+    \"location_state\": \"SC\", \
+    \"location_country\": \"USA\", \
+    \"available_from\": \"2017-12-11T15:18:54+03:00\", \
+    \"available_until\": \"2017-12-12T15:18:54+03:00\", \
+    \"height\": \"300\", \
+    \"width\": \"200\", \
+    \"length\": \"580\", \
+    \"weight\": \"10000\", \
+    \"connectors\": \"tesla_hpwc,tesla_supercharger\", \
+    \"charging_levels\": \"2,3\", \
+    \"energy_source\": \"solar\", \
+    \"amenities\": \"2,3,4,7,9\", \
+    \"provider\": \"Tesla\", \
+    \"manufacturer\": \"Tesla\", \
+    \"model\": \"Supercharger\", \
+  }"
 ```
 
 ```javascript

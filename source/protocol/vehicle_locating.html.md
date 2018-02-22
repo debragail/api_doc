@@ -24,13 +24,15 @@ For example, a drone on a delivery mission runs out of battery and performs an e
 
 ```shell
 curl "discovery_endpoint_here" \
-  --data "last_latitude=55.770279" \
-  --data "last_longitude=37.781467" \
-  --data "vehicle_type=drone" \
-  --data "vehicle_manufacturer=Copter Express" \
-  --data "vehicle_model=COPTEREXPRESS X1" \
-  --data "vehicle_color=White" \
-  --data "vehicle_contact=Andrei Ivanov, mobile: +7 555-338-5943"
+  --data "{ \
+    \"last_latitude\": \"55.770279\", \
+    \"last_longitude\": \"37.781467\", \
+    \"vehicle_type\": \"drone\", \
+    \"vehicle_manufacturer\": \"Copter Express\", \
+    \"vehicle_model\": \"COPTEREXPRESS X1\", \
+    \"vehicle_color\": \"White\", \
+    \"vehicle_contact\": \"Andrei Ivanov, mobile: +7 555-338-5943\", \
+  }"
 ```
 
 ```javascript
@@ -70,17 +72,19 @@ In response, an autonomous robot might send back a bid with a price for the miss
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "request_uid=ae7bd8f67f3089c" \
-  --data "expires_at=2017-12-11T15:18:59+03:00" \
-  --data "price=20000000000000000,10000000000000" \
-  --data "price_type=flat,minute" \
-  --data "price_description=Finders fee,Price per minute" \
-  --data "current_latitude=55.756951" \
-  --data "current_longitude=37.633839" \
-  --data "arrival_at=2017-12-11T15:18:54+03:00" \
-  --data "vehicle_type=robot" \
-  --data "vehicle_manufacturer=Husarion" \
-  --data "vehicle_model=ROSBot"
+  --data "{ \
+    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"expires_at\": \"2017-12-11T15:18:59+03:00\", \
+    \"price\": \"20000000000000000,10000000000000\", \
+    \"price_type\": \"flat,minute\", \
+    \"price_description\": \"Finders fee,Price per minute\", \
+    \"current_latitude\": \"55.756951\", \
+    \"current_longitude\": \"37.633839\", \
+    \"arrival_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"vehicle_type\": \"robot\", \
+    \"vehicle_manufacturer\": \"Husarion\", \
+    \"vehicle_model\": \"ROSBot\", \
+  }"
 ```
 
 ```javascript
@@ -134,14 +138,16 @@ This request is sent to the decentralized discovery engine which responds with s
 
 ```shell
 curl "discovery_endpoint_here" \
-  --data "last_latitude=43.610159" \
-  --data "last_longitude=-116.783196" \
-  --data "vehicle_type=car" \
-  --data "vehicle_manufacturer=Tesla" \
-  --data "vehicle_model=Model S" \
-  --data "vehicle_color=Black" \
-  --data "vehicle_license_number=6GDG486" \
-  --data "vehicle_contact=James McGill, mobile: 555-338-5943"
+  --data "{ \
+    \"last_latitude\": \"43.610159\", \
+    \"last_longitude\": \"-116.783196\", \
+    \"vehicle_type\": \"car\", \
+    \"vehicle_manufacturer\": \"Tesla\", \
+    \"vehicle_model\": \"Model S\", \
+    \"vehicle_color\": \"Black\", \
+    \"vehicle_license_number\": \"6GDG486\", \
+    \"vehicle_contact\": \"James McGill, mobile: 555-338-5943\", \
+  }"
 ```
 
 ```javascript
@@ -247,18 +253,20 @@ A bid to provide a vehicle locating service. Typically sent by a vehicle with lo
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "request_uid=ae7bd8f67f3089c" \
-  --data "expires_at=2017-12-11T15:18:59+03:00" \
-  --data "price=20000000000000000,10000000000000" \
-  --data "price_type=flat,minute" \
-  --data "price_description=Finders fee,Price per minute" \
-  --data "current_latitude=43.611626" \
-  --data "current_longitude=-116.392593" \
-  --data "arrival_at=2017-12-11T15:18:54+03:00" \
-  --data "vehicle_type=drone" \
-  --data "vehicle_manufacturer=Dronster" \
-  --data "vehicle_model=Res-Q" \
-  --data "vehicle_contact=Dronster Rescue Missions LTD. www.dronster.com"
+  --data "{
+    \"request_uid\": \"ae7bd8f67f3089c\",
+    \"expires_at\": \"2017-12-11T15:18:59+03:00\",
+    \"price\": \"20000000000000000,10000000000000\",
+    \"price_type\": \"flat,minute\",
+    \"price_description\": \"Finders fee,Price per minute\",
+    \"current_latitude\": \"43.611626\",
+    \"current_longitude\": \"-116.392593\",
+    \"arrival_at\": \"2017-12-11T15:18:54+03:00\",
+    \"vehicle_type\": \"drone\",
+    \"vehicle_manufacturer\": \"Dronster\",
+    \"vehicle_model\": \"Res-Q\",
+    \"vehicle_contact\": \"Dronster Rescue Missions LTD. www.dronster.com\",
+  }"
 ```
 
 ```javascript
