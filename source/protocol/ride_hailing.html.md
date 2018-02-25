@@ -24,13 +24,15 @@ For example, a user might search for a ride together with her pet dog, within a 
 
 ```shell
 curl "discovery_endpoint_here" \
-  --data "pickup_at=2017-12-11T15:18:54+03:00" \
-  --data "pickup_latitude=32.787793" \
-  --data "pickup_longitude=-79.935005" \
-  --data "destination_latitude=32.7693531" \
-  --data "destination_longitude=-79.9296352" \
-  --data "radius=3000" \
-  --data "additional_features=pet_transport"
+  --data "{ \
+    \"pickup_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"pickup_latitude\": \"32.787793\", \
+    \"pickup_longitude\": \"-79.935005\", \
+    \"destination_latitude\": \"32.7693531\", \
+    \"destination_longitude\": \"-79.9296352\", \
+    \"radius\": \"3000\", \
+    \"additional_features\": \"pet_transport\", \
+  }"
 ```
 
 ```javascript
@@ -53,7 +55,7 @@ fetch(discoveryEndPoint, {
 ```python
 import requests
 payload = {
-    "pickup_at": "2017-12-11T15:18:54+03:00",
+    "pickup_at": "1519093577681",
     "pickup_latitude": "32.787793",
     "pickup_longitude": "-79.935005",
     "destination_latitude": "32.7693531",
@@ -70,19 +72,21 @@ In response, an autonomous vehicle might send back a bid with a price for the ri
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "need_id=ae7bd8f67f3089c" \
-  --data "expires_at=2017-12-11T15:18:59+03:00" \
-  --data "price=20000000000000000,20000000000000000" \
-  --data "price_type=km,flat" \
-  --data "price_description=Price per km,City tax" \
-  --data "current_latitude=32.785889" \
-  --data "current_longitude=-79.935569" \
-  --data "pickup_at=2017-12-11T15:18:54+03:00" \
-  --data "vehicle_type=suv" \
-  --data "vehicle_manufacturer=Luxor" \
-  --data "vehicle_model=Suave" \
-  --data "vehicle_color=Sapphire" \
-  --data "vehicle_license_number=92 321 87" \
+  --data "{ \
+    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"expires_at\": \"2017-12-11T15:18:59+03:00\", \
+    \"price\": \"20000000000000000,20000000000000000\", \
+    \"price_type\": \"km,flat\", \
+    \"price_description\": \"Price per km,City tax\", \
+    \"current_latitude\": \"32.785889\", \
+    \"current_longitude\": \"-79.935569\", \
+    \"pickup_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"vehicle_type\": \"suv\", \
+    \"vehicle_manufacturer\": \"Luxor\", \
+    \"vehicle_model\": \"Suave\", \
+    \"vehicle_color\": \"Sapphire\", \
+    \"vehicle_license_number\": \"92 321 87\", \
+  }"
 ```
 
 ```javascript
@@ -140,33 +144,35 @@ This request is sent to the decentralized discovery engine which responds with s
 
 ```shell
 curl "discovery_endpoint_here" \
-  --data "pickup_at=2017-12-11T15:18:54+03:00" \
-  --data "pickup_latitude=32.787793" \
-  --data "pickup_longitude=-79.935005" \
-  --data "pickup_street=King" \
-  --data "pickup_house_number=372" \
-  --data "pickup_city=Charleston" \
-  --data "pickup_postal_code=29401" \
-  --data "pickup_county=Charleston" \
-  --data "pickup_state=SC" \
-  --data "pickup_country=USA" \
-  --data "pickup_location_name=IKEA parking lot B" \
-  --data "pickup_location_name_lang=eng" \
-  --data "radius=1500" \
-  --data "destination_latitude=32.7693531" \
-  --data "destination_longitude=-79.9296352" \
-  --data "destination_street=Murray Blvd" \
-  --data "destination_house_number=2" \
-  --data "destination_city=Charleston" \
-  --data "destination_postal_code=29401" \
-  --data "destination_county=Charleston" \
-  --data "destination_state=SC" \
-  --data "destination_country=USA" \
-  --data "destination_location_name=Oyster Point" \
-  --data "destination_location_name_lang=eng" \
-  --data "vehicle_type=suv" \
-  --data "passengers=3" \
-  --data "additional_features=assisted"
+  --data "{ \
+    \"pickup_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"pickup_latitude\": \"32.787793\", \
+    \"pickup_longitude\": \"-79.935005\", \
+    \"pickup_street\": \"King\", \
+    \"pickup_house_number\": \"372\", \
+    \"pickup_city\": \"Charleston\", \
+    \"pickup_postal_code\": \"29401\", \
+    \"pickup_county\": \"Charleston\", \
+    \"pickup_state\": \"SC\", \
+    \"pickup_country\": \"USA\", \
+    \"pickup_location_name\": \"IKEA parking lot B\", \
+    \"pickup_location_name_lang\": \"eng\", \
+    \"radius\": \"1500\", \
+    \"destination_latitude\": \"32.7693531\", \
+    \"destination_longitude\": \"-79.9296352\", \
+    \"destination_street\": \"Murray Blvd\", \
+    \"destination_house_number\": \"2\", \
+    \"destination_city\": \"Charleston\", \
+    \"destination_postal_code\": \"29401\", \
+    \"destination_county\": \"Charleston\", \
+    \"destination_state\": \"SC\", \
+    \"destination_country\": \"USA\", \
+    \"destination_location_name\": \"Oyster Point\", \
+    \"destination_location_name_lang\": \"eng\", \
+    \"vehicle_type\": \"suv\", \
+    \"passengers\": \"3\", \
+    \"additional_features\": \"assisted\", \
+  }"
 ```
 
 ```javascript
@@ -246,7 +252,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">pickup_at</code>
       <div class="type">optional</div>
     </td>
-    <td>The time at which the requester would like to be picked up (if undefined, pick up time will be ASAP). Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>The time at which the requester would like to be picked up (if undefined, pick up time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -442,21 +448,23 @@ A bid to provide a ride service. Typically sent by a car owner with the price fo
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "need_id=ae7bd8f67f3089c" \
-  --data "expires_at=2017-12-11T15:18:59+03:00" \
-  --data "price=20000000000000000,4000000000000000" \
-  --data "price_type=km,km" \
-  --data "price_description=Price per km,VAT per km" \
-  --data "current_latitude=32.785889" \
-  --data "current_longitude=-79.935569" \
-  --data "pickup_at=2017-12-11T15:18:54+03:00" \
-  --data "vehicle_type=suv" \
-  --data "vehicle_manufacturer=Luxor" \
-  --data "vehicle_model=Suave" \
-  --data "vehicle_color=Sapphire" \
-  --data "vehicle_license_number=92 321 87" \
-  --data "vehicle_contact=James McGill, mobile: 555-338-5943" \
-  --data "additional_features=assisted"
+  --data "{ \
+    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"expires_at\": \"2017-12-11T15:18:59+03:00\", \
+    \"price\": \"20000000000000000,4000000000000000\", \
+    \"price_type\": \"km,km\", \
+    \"price_description\": \"Price per km,VAT per km\", \
+    \"current_latitude\": \"32.785889\", \
+    \"current_longitude\": \"-79.935569\", \
+    \"pickup_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"vehicle_type\": \"suv\", \
+    \"vehicle_manufacturer\": \"Luxor\", \
+    \"vehicle_model\": \"Suave\", \
+    \"vehicle_color\": \"Sapphire\", \
+    \"vehicle_license_number\": \"92 321 87\", \
+    \"vehicle_contact\": \"James McGill, mobile: 555-338-5943\", \
+    \"additional_features\": \"assisted\", \
+  }"
 ```
 
 ```javascript
@@ -519,7 +527,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">expires_at</code>
       <div class="type required">required</div>
     </td>
-    <td>This bid will expire at this time. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -561,7 +569,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">pickup_at</code>
       <div class="type required">required</div>
     </td>
-    <td>The estimated time of arrival at the pick up location. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>The estimated time of arrival at the pick up location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>

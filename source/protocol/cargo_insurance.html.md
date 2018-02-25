@@ -24,17 +24,19 @@ For example, an autonomous drone that is about to deliver an expensive diamond r
 
 ```shell
 curl "discovery_endpoint_here" \
-  --data "start_at=2017-12-11T15:18:54+03:00" \
-  --data "end_at=2017-12-11T16:00:00+03:00" \
-  --data "pickup_latitude=40.958123" \
-  --data "pickup_longitude=-74.169388" \
-  --data "dropoff_latitude=40.875103" \
-  --data "dropoff_longitude=-74.570389" \
-  --data "planned_path=40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389" \
-  --data "vehicle_type=drone" \
-  --data "cargo_type=11" \
-  --data "insured_value=3000.00" \
-  --data "insured_value_currency=USD"
+  --data "{ \
+    \"start_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"end_at\": \"2017-12-11T16:00:00+03:00\", \
+    \"pickup_latitude\": \"40.958123\", \
+    \"pickup_longitude\": \"-74.169388\", \
+    \"dropoff_latitude\": \"40.875103\", \
+    \"dropoff_longitude\": \"-74.570389\", \
+    \"planned_path\": \"40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389\", \
+    \"vehicle_type\": \"drone\", \
+    \"cargo_type\": \"11\", \
+    \"insured_value\": \"3000.00\", \
+    \"insured_value_currency\": \"USD\", \
+  }"
 ```
 
 ```javascript
@@ -43,8 +45,8 @@ const discoveryEndPoint = "discovery_endpoint_here";
 fetch(discoveryEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "start_at": "2017-12-11T15:18:54+03:00",
-    "end_at": "2017-12-11T16:00:00+03:00",
+    "start_at": "1519093577681",
+    "end_at": "1519093577681",
     "pickup_latitude": "40.958123",
     "pickup_longitude": "-74.169388",
     "dropoff_latitude": "40.875103",
@@ -61,8 +63,8 @@ fetch(discoveryEndPoint, {
 ```python
 import requests
 payload = {
-    "start_at": "2017-12-11T15:18:54+03:00",
-    "end_at": "2017-12-11T16:00:00+03:00",
+    "start_at": "1519093577681",
+    "end_at": "1519093577681",
     "pickup_latitude": "40.958123",
     "pickup_longitude": "-74.169388",
     "dropoff_latitude": "40.875103",
@@ -82,13 +84,15 @@ In response, an insurance provider might send back a bid with the policy price, 
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "need_id=ae7bd8f67f3089c" \
-  --data "expires_at=2017-12-11T15:18:59+03:00" \
-  --data "coverage_type=all_risk" \
-  --data "price=100000000000000000" \
-  --data "price_type=flat" \
-  --data "price_description=Policy cost" \
-  --data "deductible=1400000000000000000"
+--data "{ \
+    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"expires_at\": \"2017-12-11T15:18:59+03:00\", \
+    \"coverage_type\": \"all_risk\", \
+    \"price\": \"100000000000000000\", \
+    \"price_type\": \"flat\", \
+    \"price_description\": \"Policy cost\", \
+    \"deductible\": \"1400000000000000000\", \
+  }"
 ```
 
 ```javascript
@@ -98,7 +102,7 @@ fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "2017-12-11T15:18:59+03:00",
+    "expires_at": "1519093577681",
     "coverage_type": "all_risk",
     "price": "100000000000000000",
     "price_type": "flat",
@@ -134,31 +138,33 @@ This request is sent to the decentralized discovery engine which responds with s
 
 ```shell
 curl "discovery_endpoint_here" \
-  --data "start_at=2017-12-11T15:18:54+03:00" \
-  --data "end_at=2017-12-11T16:00:00+03:00" \
-  --data "start_latitude=40.746217" \
-  --data "start_longitude=-73.970261" \
-  --data "pickup_latitude=40.958123" \
-  --data "pickup_longitude=-74.169388" \
-  --data "dropoff_latitude=40.875103" \
-  --data "dropoff_longitude=-74.570389" \
-  --data "end_latitude=40.746217" \
-  --data "end_longitude=-73.970261" \
-  --data "planned_path=40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389" \
-  --data "requester_name=Megadronix" \
-  --data "requester_phone_number=+31-338-594332" \
-  --data "external_reference_id=200982447" \
-  --data "vehicle_type=drone,ship,drone" \
-  --data "vehicle_is_autonomous=true,false,true" \
-  --data "cargo_type=11" \
-  --data "hazardous_goods=8" \
-  --data "ip_protection_level=68" \
-  --data "height=8" \
-  --data "width=2" \
-  --data "length=2" \
-  --data "weight=50" \
-  --data "insured_value=3000.00" \
-  --data "insured_value_currency=USD"
+  --data "{ \
+    \"start_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"end_at\": \"2017-12-11T16:00:00+03:00\", \
+    \"start_latitude\": \"40.746217\", \
+    \"start_longitude\": \"-73.970261\", \
+    \"pickup_latitude\": \"40.958123\", \
+    \"pickup_longitude\": \"-74.169388\", \
+    \"dropoff_latitude\": \"40.875103\", \
+    \"dropoff_longitude\": \"-74.570389\", \
+    \"end_latitude\": \"40.746217\", \
+    \"end_longitude\": \"-73.970261\", \
+    \"planned_path\": \"40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389\", \
+    \"requester_name\": \"Megadronix\", \
+    \"requester_phone_number\": \"+31-338-594332\", \
+    \"external_reference_id\": \"200982447\", \
+    \"vehicle_type\": \"drone,ship,drone\", \
+    \"vehicle_is_autonomous\": \"true,false,true\", \
+    \"cargo_type\": \"11\", \
+    \"hazardous_goods\": \"8\", \
+    \"ip_protection_level\": \"68\", \
+    \"height\": \"8\", \
+    \"width\": \"2\", \
+    \"length\": \"2\", \
+    \"weight\": \"50\", \
+    \"insured_value\": \"3000.00\", \
+    \"insured_value_currency\": \"USD\", \
+  }"
 ```
 
 ```javascript
@@ -167,8 +173,8 @@ const discoveryEndPoint = "discovery_endpoint_here";
 fetch(discoveryEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "start_at": "2017-12-11T15:18:54+03:00",
-    "end_at": "2017-12-11T16:00:00+03:00",
+    "start_at": "1519093577681",
+    "end_at": "1519093577681",
     "start_latitude": "40.746217",
     "start_longitude": "-73.970261",
     "pickup_latitude": "40.958123",
@@ -199,8 +205,8 @@ fetch(discoveryEndPoint, {
 ```python
 import requests
 payload = {
-    "start_at": "2017-12-11T15:18:54+03:00",
-    "end_at": "2017-12-11T16:00:00+03:00",
+    "start_at": "1519093577681",
+    "end_at": "1519093577681",
     "start_latitude": "40.746217",
     "start_longitude": "-73.970261",
     "pickup_latitude": "40.958123",
@@ -235,7 +241,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <div class="type">optional</div>
     </td>
     <td>
-      The time at which the requester would like the insurance to be activated (if undefined, the activation will be immediate). This should be specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC
+      The time at which the requester would like the insurance to be activated (if undefined, the activation will be immediate). This should be Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a>
     </td>
   </tr>
   <tr>
@@ -244,7 +250,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <div class="type required">required</div>
     </td>
     <td>
-      The time at which the requester would like the insurance to stop. This should be specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC
+      The time at which the requester would like the insurance to stop. This should be Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a>
     </td>
   </tr>
   <tr>
@@ -423,15 +429,17 @@ A bid to provide cargo insurance. Typically sent from an insurance provider to a
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "need_id=ae7bd8f67f3089c" \
-  --data "expires_at=2017-12-11T15:18:59+03:00" \
-  --data "coverage_type=all_risk" \
-  --data "price=20000000000000000,100000000000000000" \
-  --data "price_type=minute,flat" \
-  --data "price_description=Price per minute,City tax" \
-  --data "deductible=1400000000000000000" \
-  --data "insurer_contact=Airsurance LTD, Tel: +1 415 982 3342" \
-  --data "insurer_dav_id=0x17325a469aef3472aa58dfdcf672881d79b31d58"
+  --data "{ \
+    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"expires_at\": \"2017-12-11T15:18:59+03:00\", \
+    \"coverage_type\": \"all_risk\", \
+    \"price\": \"20000000000000000,100000000000000000\", \
+    \"price_type\": \"minute,flat\", \
+    \"price_description\": \"Price per minute,City tax\", \
+    \"deductible\": \"1400000000000000000\", \
+    \"insurer_contact\": \"Airsurance LTD, Tel: +1 415 982 3342\", \
+    \"insurer_dav_id\": \"0x17325a469aef3472aa58dfdcf672881d79b31d58\", \
+  }"
 ```
 
 ```javascript
@@ -441,7 +449,7 @@ fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "2017-12-11T15:18:59+03:00",
+    "expires_at": "1519093577681",
     "coverage_type": "all_risk",
     "price": "20000000000000000,100000000000000000",
     "price_type": "minute,flat",
@@ -482,7 +490,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">expires_at</code>
       <div class="type required">required</div>
     </td>
-    <td>This bid will expire at this time. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>

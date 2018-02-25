@@ -24,13 +24,15 @@ For example, a user is looking for a drone to pick up a small tube containing co
 
 ```shell
 curl "discovery_endpoint_here" \
-  --data "start_at=2017-12-11T15:18:54+03:00" \
-  --data "pickup_latitude=32.787793" \
-  --data "pickup_longitude=-79.500593" \
-  --data "dropoff_latitude=32.937778" \
-  --data "dropoff_longitude=-79.500593" \
-  --data "cargo_type=11" \
-  --data "hazardous_goods=8"
+  --data "{ \
+    \"start_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"pickup_latitude\": \"32.787793\", \
+    \"pickup_longitude\": \"-79.500593\", \
+    \"dropoff_latitude\": \"32.937778\", \
+    \"dropoff_longitude\": \"-79.500593\", \
+    \"cargo_type\": \"11\", \
+    \"hazardous_goods\": \"8\", \
+  }"
 ```
 
 ```javascript
@@ -53,7 +55,7 @@ fetch(discoveryEndPoint, {
 ```python
 import requests
 payload = {
-    "start_at": "2017-12-11T15:18:54+03:00",
+    "start_at": "1519093577681",
     "pickup_latitude": "32.787793",
     "pickup_longitude": "-79.500593",
     "dropoff_latitude": "32.937778",
@@ -70,13 +72,15 @@ In response, a drone might send back a bid with a price, the estimated time of a
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "need_id=ae7bd8f67f3089c" \
-  --data "expires_at=2017-12-11T15:18:59+03:00" \
-  --data "price=2000000000000000,20000000000000000" \
-  --data "price_type=second,flat" \
-  --data "price_description=Price per second,Tax" \
-  --data "time_to_pickup=2017-12-11T15:21:59+03:00" \
-  --data "time_to_dropoff=2017-12-11T15:34:20+03:00"
+  --data "{ \
+    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"expires_at\": \"2017-12-11T15:18:59+03:00\", \
+    \"price\": \"2000000000000000,20000000000000000\", \
+    \"price_type\": \"second,flat\", \
+    \"price_description\": \"Price per second,Tax\", \
+    \"time_to_pickup\": \"2017-12-11T15:21:59+03:00\", \
+    \"time_to_dropoff\": \"2017-12-11T15:34:20+03:00\", \
+  }"
 ```
 
 ```javascript
@@ -90,8 +94,8 @@ fetch(biddingEndPoint, {
     "price": "2000000000000000,20000000000000000",
     "price_type": "second,flat",
     "price_description": "Price per second,Tax",
-    "time_to_pickup": "2017-12-11T15:21:59+03:00",
-    "time_to_dropoff": "2017-12-11T15:34:20+03:00",
+    "time_to_pickup": "1519093577681",
+    "time_to_dropoff": "1519093590000",
   })
 });
 ```
@@ -104,8 +108,8 @@ payload = {
     "price": "2000000000000000,20000000000000000",
     "price_type": "second,flat",
     "price_description": "Price per second,Tax",
-    "time_to_pickup": "2017-12-11T15:21:59+03:00",
-    "time_to_dropoff": "2017-12-11T15:34:20+03:00",
+    "time_to_pickup": "1519093577681",
+    "time_to_dropoff": "1519093590000",
   }
 requests.post("bidding_endpoint_here", data=payload)
 ```
@@ -122,24 +126,26 @@ This request is sent to the decentralized discovery engine which responds with s
 
 ```shell
 curl "discovery_endpoint_here" \
-  --data "start_at=2017-12-11T15:18:54+03:00" \
-  --data "pickup_latitude=32.787793" \
-  --data "pickup_longitude=-79.500593" \
-  --data "dropoff_latitude=32.937778" \
-  --data "dropoff_longitude=-79.500593" \
-  --data "requester_name=Jessie Bourne" \
-  --data "requester_phone_number=+1 415 123 5983" \
-  --data "external_reference_id=jb84723" \
-  --data "cargo_type=11" \
-  --data "hazardous_goods=8" \
-  --data "ip_protection_level=68" \
-  --data "height=8" \
-  --data "width=2" \
-  --data "length=2" \
-  --data "weight=50" \
-  --data "insurance_required=true" \
-  --data "insured_value=675" \
-  --data "insured_value_currency=USD"
+  --data "{ \
+    \"start_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"pickup_latitude\": \"32.787793\", \
+    \"pickup_longitude\": \"-79.500593\", \
+    \"dropoff_latitude\": \"32.937778\", \
+    \"dropoff_longitude\": \"-79.500593\", \
+    \"requester_name\": \"Jessie Bourne\", \
+    \"requester_phone_number\": \"+1 415 123 5983\", \
+    \"external_reference_id\": \"jb84723\", \
+    \"cargo_type\": \"11\", \
+    \"hazardous_goods\": \"8\", \
+    \"ip_protection_level\": \"68\", \
+    \"height\": \"8\", \
+    \"width\": \"2\", \
+    \"length\": \"2\", \
+    \"weight\": \"50\", \
+    \"insurance_required\": \"true\", \
+    \"insured_value\": \"675\", \
+    \"insured_value_currency\": \"USD\", \
+  }"
 ```
 
 ```javascript
@@ -148,7 +154,7 @@ const discoveryEndPoint = "discovery_endpoint_here";
 fetch(discoveryEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "start_at": "2017-12-11T15:18:54+03:00",
+    "start_at": "1519093577681",
     "pickup_latitude": "32.787793",
     "pickup_longitude": "-79.500593",
     "dropoff_latitude": "32.937778",
@@ -202,7 +208,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <div class="type">optional</div>
     </td>
     <td>
-      The time at which the requester would like the cargo to be picked up (if undefined, the pick up time will be ASAP). This should be specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC
+      The time at which the requester would like the cargo to be picked up (if undefined, the pick up time will be ASAP). This should be Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a>
     </td>
   </tr>
   <tr>
@@ -337,18 +343,20 @@ A bid to provide a delivery service. Typically sent from a delivery drone to the
 
 ```shell
 curl "bidding_endpoint_here" \
-  --data "need_id=ae7bd8f67f3089c" \
-  --data "expires_at=2017-12-11T15:18:59+03:00" \
-  --data "price=2000000000000000,20000000000000000" \
-  --data "price_type=second,flat" \
-  --data "price_description=Price per second,Tax" \
-  --data "time_to_pickup=2017-12-11T15:21:59+03:00" \
-  --data "time_to_dropoff=2017-12-11T15:34:20+03:00" \
-  --data "insured=true" \
-  --data "insurer_dav_id=0x17325a469aef3472aa58dfdcf672881d79b31d58" \
-  --data "drone_contact=Megadronix" \
-  --data "drone_manufacturer=DXY" \
-  --data "drone_model=m6000"
+  --data "{ \
+    ”request_uid”: ”ae7bd8f67f3089c”, \
+    ”expires_at”: ”2017-12-11T15:18:59+03:00”, \
+    ”price”: ”2000000000000000,20000000000000000”, \
+    ”price_type”: ”second,flat”, \
+    ”price_description”: ”Price per second,Tax”, \
+    ”time_to_pickup”: ”2017-12-11T15:21:59+03:00”, \
+    ”time_to_dropoff”: ”2017-12-11T15:34:20+03:00”, \
+    ”insured”: ”true”, \
+    ”insurer_dav_id”: ”0x17325a469aef3472aa58dfdcf672881d79b31d58”, \
+    ”drone_contact”: ”Megadronix”, \
+    ”drone_manufacturer”: ”DXY”, \
+    ”drone_model”: ”m6000”, \
+  }"
 ```
 
 ```javascript
@@ -358,12 +366,12 @@ fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "2017-12-11T15:18:59+03:00",
+    "expires_at": "1519093577681",
     "price": "2000000000000000,20000000000000000",
     "price_type": "second,flat",
     "price_description": "Price per second,Tax",
-    "time_to_pickup": "2017-12-11T15:21:59+03:00",
-    "time_to_dropoff": "2017-12-11T15:34:20+03:00",
+    "time_to_pickup": "1519093577681",
+    "time_to_dropoff": "1519093590000",
     "insured": "true",
     "insurer_dav_id": "0x17325a469aef3472aa58dfdcf672881d79b31d58",
     "drone_contact": "Megadronix",
@@ -377,12 +385,12 @@ fetch(biddingEndPoint, {
 import requests
 payload = {
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "2017-12-11T15:18:59+03:00",
+    "expires_at": "1519093577681",
     "price": "2000000000000000,20000000000000000",
     "price_type": "second,flat",
     "price_description": "Price per second,Tax",
-    "time_to_pickup": "2017-12-11T15:21:59+03:00",
-    "time_to_dropoff": "2017-12-11T15:34:20+03:00",
+    "time_to_pickup": "1519093577681",
+    "time_to_dropoff": "1519093590000",
     "insured": "true",
     "insurer_dav_id": "0x17325a469aef3472aa58dfdcf672881d79b31d58",
     "drone_contact": "Megadronix",
@@ -405,7 +413,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">expires_at</code>
       <div class="type required">required</div>
     </td>
-    <td>This bid will expire at this time. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -433,14 +441,14 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">time_to_pickup</code>
       <div class="type required">required</div>
     </td>
-    <td>The estimate time of arrival at the pickup location. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>The estimate time of arrival at the pickup location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
       <code class="field">time_to_dropoff</code>
       <div class="type required">required</div>
     </td>
-    <td>The estimate time of arrival at the dropoff location. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>The estimate time of arrival at the dropoff location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
