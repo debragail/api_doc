@@ -520,7 +520,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">need_id</code>
       <div class="type required">required</div>
     </td>
-    <td>The UID of the request. This arrives as part of the request</td>
+    <td>The unique identifier of the 'need' this bid is for. This ID arrives as part of the 'need' request</td>
   </tr>
   <tr>
     <td>

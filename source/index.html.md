@@ -6,9 +6,9 @@ search: false
 
 <p class="header-image"><img src="/images/header.png" alt="DAV Communication Protocols"></p>
 
-Welcome to the DAV communication protocols API documentation.
+Welcome to the DAV Developer Portal. 
 
-Here you will find the different protocols governing communication between the different vehicles, services, users, and applications using DAV.
+Here you will find API documentation for various protocols governing communication between the different vehicles, services, users, and applications using DAV.
 
 # Communication Protocols
 
