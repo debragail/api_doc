@@ -55,7 +55,7 @@ fetch(discoveryEndPoint, {
 ```python
 import requests
 payload = {
-    "start_at": "2017-12-11T15:18:54+03:00",
+    "start_at": "1519093577681",
     "latitude": "32.787793",
     "longitude": "-79.935005",
     "radius": "1000",
@@ -93,15 +93,15 @@ const biddingEndPoint = "bidding_endpoint_here";
 fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "request_uid": "ae7bd8f67f3089c",
+    "need_id": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
     "price": "2300000000000000000,30000000000000000",
     "price_type": "kwh,kwh",
     "price_description": "Price per kWh,VAT per kWh",
     "latitude": "32.785889",
     "longitude": "-79.935569",
-    "available_from": "2017-12-11T15:18:54+03:00",
-    "available_until": "2017-12-12T15:18:54+03:00",
+    "available_from": "1519093577681",
+    "available_until": "1519093577681",
     "connectors": "tesla_hpwc,tesla_supercharger",
     "charging_levels": "2,3",
     "amenities": "2,3,4,7,9",
@@ -112,15 +112,15 @@ fetch(biddingEndPoint, {
 ```python
 import requests
 payload = {
-    "request_uid": "ae7bd8f67f3089c",
+    "need_id": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
     "price": "2300000000000000000,30000000000000000",
     "price_type": "kwh,kwh",
     "price_description": "Price per kWh,VAT per kWh",
     "latitude": "32.785889",
     "longitude": "-79.935569",
-    "available_from": "2017-12-11T15:18:54+03:00",
-    "available_until": "2017-12-12T15:18:54+03:00",
+    "available_from": "1519093577681",
+    "available_until": "1519093577681",
     "connectors": "tesla_hpwc,tesla_supercharger",
     "charging_levels": "2,3",
     "amenities": "2,3,4,7,9",
@@ -162,7 +162,7 @@ const discoveryEndPoint = "discovery_endpoint_here";
 fetch(discoveryEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "start_at": "2017-12-11T15:18:54+03:00",
+    "start_at": "1519093577681",
     "latitude": "32.787793",
     "longitude": "-79.935005",
     "radius": "10000",
@@ -203,7 +203,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">start_at</code>
       <div class="type">optional</div>
     </td>
-    <td>The time at which the requester would like to arrive at charging station (if undefined, the arrival time will be ASAP). Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>The time at which the requester would like to arrive at charging station (if undefined, the arrival time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -352,7 +352,7 @@ const biddingEndPoint = "bidding_endpoint_here";
 fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "request_uid": "ae7bd8f67f3089c",
+    "need_id": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
     "price": "2300000000000000000,30000000000000000",
     "price_type": "kwh,kwh",
@@ -393,7 +393,7 @@ fetch(biddingEndPoint, {
 ```python
 import requests
 payload = {
-    "request_uid": "ae7bd8f67f3089c",
+    "need_id": "ae7bd8f67f3089c",
     "expires_at": "2017-12-11T15:18:59+03:00",
     "price": "2300000000000000000,30000000000000000",
     "price_type": "kwh,kwh",
@@ -434,7 +434,7 @@ requests.post("bidding_endpoint_here", data=payload)
 <table class="arguments">
   <tr>
     <td>
-      <code class="field">request_uid</code>
+      <code class="field">need_id</code>
       <div class="type required">required</div>
     </td>
     <td>The UID of the request. This arrives as part of the request</td>
@@ -444,7 +444,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">expires_at</code>
       <div class="type required">required</div>
     </td>
-    <td>This bid will expire at this time. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -584,14 +584,14 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">available_from</code>
       <div class="type required">required</div>
     </td>
-    <td>The time from which the charging station can be made available for the vehicle requesting a charge. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>The time from which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
       <code class="field">available_until</code>
       <div class="type">optional</div>
     </td>
-    <td>The time until which the charging station can be made available for the vehicle requesting a charge. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>The time until which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
