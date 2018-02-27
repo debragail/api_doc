@@ -297,8 +297,8 @@
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
-    <span class="s2">"end_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T16:00:00+03:00"</span><span class="p">,</span>
+    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1519093577681"</span><span class="p">,</span>
+    <span class="s2">"end_at"</span><span class="p">:</span> <span class="s2">"1519093577681"</span><span class="p">,</span>
     <span class="s2">"pickup_latitude"</span><span class="p">:</span> <span class="s2">"40.958123"</span><span class="p">,</span>
     <span class="s2">"pickup_longitude"</span><span class="p">:</span> <span class="s2">"-74.169388"</span><span class="p">,</span>
     <span class="s2">"dropoff_latitude"</span><span class="p">:</span> <span class="s2">"40.875103"</span><span class="p">,</span>
@@ -312,8 +312,8 @@
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
-    <span class="s">"end_at"</span><span class="p">:</span> <span class="s">"2017-12-11T16:00:00+03:00"</span><span class="p">,</span>
+    <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"1519093577681"</span><span class="p">,</span>
+    <span class="s">"end_at"</span><span class="p">:</span> <span class="s">"1519093577681"</span><span class="p">,</span>
     <span class="s">"pickup_latitude"</span><span class="p">:</span> <span class="s">"40.958123"</span><span class="p">,</span>
     <span class="s">"pickup_longitude"</span><span class="p">:</span> <span class="s">"-74.169388"</span><span class="p">,</span>
     <span class="s">"dropoff_latitude"</span><span class="p">:</span> <span class="s">"40.875103"</span><span class="p">,</span>
@@ -332,7 +332,7 @@
 <p>Bid</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
-  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+--data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">request_uid</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:59+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">coverage_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">all_risk</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
@@ -346,8 +346,8 @@
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"request_uid"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
+    <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
+    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1519093577681"</span><span class="p">,</span>
     <span class="s2">"coverage_type"</span><span class="p">:</span> <span class="s2">"all_risk"</span><span class="p">,</span>
     <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"100000000000000000"</span><span class="p">,</span>
     <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"flat"</span><span class="p">,</span>
@@ -357,7 +357,7 @@
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">"request_uid"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
+    <span class="s">"need_id"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
     <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
     <span class="s">"coverage_type"</span><span class="p">:</span> <span class="s">"all_risk"</span><span class="p">,</span>
     <span class="s">"price"</span><span class="p">:</span> <span class="s">"100000000000000000"</span><span class="p">,</span>
@@ -407,8 +407,8 @@
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
-    <span class="s2">"end_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T16:00:00+03:00"</span><span class="p">,</span>
+    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1519093577681"</span><span class="p">,</span>
+    <span class="s2">"end_at"</span><span class="p">:</span> <span class="s2">"1519093577681"</span><span class="p">,</span>
     <span class="s2">"start_latitude"</span><span class="p">:</span> <span class="s2">"40.746217"</span><span class="p">,</span>
     <span class="s2">"start_longitude"</span><span class="p">:</span> <span class="s2">"-73.970261"</span><span class="p">,</span>
     <span class="s2">"pickup_latitude"</span><span class="p">:</span> <span class="s2">"40.958123"</span><span class="p">,</span>
@@ -436,8 +436,8 @@
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
-    <span class="s">"end_at"</span><span class="p">:</span> <span class="s">"2017-12-11T16:00:00+03:00"</span><span class="p">,</span>
+    <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"1519093577681"</span><span class="p">,</span>
+    <span class="s">"end_at"</span><span class="p">:</span> <span class="s">"1519093577681"</span><span class="p">,</span>
     <span class="s">"start_latitude"</span><span class="p">:</span> <span class="s">"40.746217"</span><span class="p">,</span>
     <span class="s">"start_longitude"</span><span class="p">:</span> <span class="s">"-73.970261"</span><span class="p">,</span>
     <span class="s">"pickup_latitude"</span><span class="p">:</span> <span class="s">"40.958123"</span><span class="p">,</span>
@@ -471,7 +471,7 @@
       <div class="type">optional</div>
     </td>
     <td>
-      The time at which the requester would like the insurance to be activated (if undefined, the activation will be immediate). This should be specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC
+      The time at which the requester would like the insurance to be activated (if undefined, the activation will be immediate). This should be Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a>
     </td>
   </tr>
   <tr>
@@ -480,7 +480,7 @@
       <div class="type required">required</div>
     </td>
     <td>
-      The time at which the requester would like the insurance to stop. This should be specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC
+      The time at which the requester would like the insurance to stop. This should be Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a>
     </td>
   </tr>
   <tr>
@@ -671,8 +671,8 @@
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"request_uid"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
+    <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
+    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1519093577681"</span><span class="p">,</span>
     <span class="s2">"coverage_type"</span><span class="p">:</span> <span class="s2">"all_risk"</span><span class="p">,</span>
     <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"20000000000000000,100000000000000000"</span><span class="p">,</span>
     <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"minute,flat"</span><span class="p">,</span>
@@ -684,7 +684,7 @@
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">"request_uid"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
+    <span class="s">"need_id"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
     <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
     <span class="s">"coverage_type"</span><span class="p">:</span> <span class="s">"all_risk"</span><span class="p">,</span>
     <span class="s">"price"</span><span class="p">:</span> <span class="s">"20000000000000000,100000000000000000"</span><span class="p">,</span>
@@ -699,17 +699,17 @@
 <table class="arguments">
   <tr>
     <td>
-      <code class="field">request_uid</code>
+      <code class="field">need_id</code>
       <div class="type required">required</div>
     </td>
-    <td>The UID of the request. This arrives as part of the request</td>
+    <td>The unique identifier of the 'need' this bid is for. This ID arrives as part of the 'need' request</td>
   </tr>
   <tr>
     <td>
       <code class="field">expires_at</code>
       <div class="type required">required</div>
     </td>
-    <td>This bid will expire at this time. Specified in <a href="https://en.wikipedia.org/wiki/ISO_8601" target="blank">ISO 8601</a> including date, time, and time offset from UTC</td>
+    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
