@@ -276,7 +276,7 @@ fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1519093577681",
+    "expires_at": "1513005539000",
     "price": "20000000000000000,10000000000000",
     "price_type": "flat,minute",
     "price_description": "Finders fee,Price per minute",
@@ -295,7 +295,7 @@ fetch(biddingEndPoint, {
 import requests
 payload = {
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1519093577681",
+    "expires_at": "1513005539000",
     "price": "20000000000000000,10000000000000",
     "price_type": "flat,minute",
     "price_description": "Finders fee,Price per minute",
