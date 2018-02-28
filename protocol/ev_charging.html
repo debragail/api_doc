@@ -279,7 +279,7 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.787793</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935005</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">radius</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
@@ -291,7 +291,7 @@
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
     <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
     <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-79.935005"</span><span class="p">,</span>
     <span class="s2">"radius"</span><span class="p">:</span> <span class="s2">"1000"</span><span class="p">,</span>
@@ -301,7 +301,7 @@
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"1519093577681"</span><span class="p">,</span>
+    <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
     <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"32.787793"</span><span class="p">,</span>
     <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-79.935005"</span><span class="p">,</span>
     <span class="s">"radius"</span><span class="p">:</span> <span class="s">"1000"</span><span class="p">,</span>
@@ -317,15 +317,15 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">request_uid</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:59+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">need_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005539000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2300000000000000000,30000000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">kwh,kwh</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Price per kWh,VAT per kWh</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785889</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935569</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">available_from</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">available_until</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-12T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">available_from</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">available_until</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513091934000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">connectors</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">tesla_hpwc,tesla_supercharger</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">charging_levels</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">amenities</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3,4,7,9</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
@@ -336,14 +336,14 @@
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
     <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
+    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
     <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
     <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"kwh,kwh"</span><span class="p">,</span>
     <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
     <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"32.785889"</span><span class="p">,</span>
     <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-79.935569"</span><span class="p">,</span>
-    <span class="s2">"available_from"</span><span class="p">:</span> <span class="s2">"1519093577681"</span><span class="p">,</span>
-    <span class="s2">"available_until"</span><span class="p">:</span> <span class="s2">"1519093577681"</span><span class="p">,</span>
+    <span class="s2">"available_from"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
+    <span class="s2">"available_until"</span><span class="p">:</span> <span class="s2">"1513091934000"</span><span class="p">,</span>
     <span class="s2">"connectors"</span><span class="p">:</span> <span class="s2">"tesla_hpwc,tesla_supercharger"</span><span class="p">,</span>
     <span class="s2">"charging_levels"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
     <span class="s2">"amenities"</span><span class="p">:</span> <span class="s2">"2,3,4,7,9"</span><span class="p">,</span>
@@ -352,14 +352,14 @@
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">"need_id"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
+    <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"1513005539000"</span><span class="p">,</span>
     <span class="s">"price"</span><span class="p">:</span> <span class="s">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
     <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"kwh,kwh"</span><span class="p">,</span>
     <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
     <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"32.785889"</span><span class="p">,</span>
     <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-79.935569"</span><span class="p">,</span>
-    <span class="s">"available_from"</span><span class="p">:</span> <span class="s">"1519093577681"</span><span class="p">,</span>
-    <span class="s">"available_until"</span><span class="p">:</span> <span class="s">"1519093577681"</span><span class="p">,</span>
+    <span class="s">"available_from"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
+    <span class="s">"available_until"</span><span class="p">:</span> <span class="s">"1513091934000"</span><span class="p">,</span>
     <span class="s">"connectors"</span><span class="p">:</span> <span class="s">"tesla_hpwc,tesla_supercharger"</span><span class="p">,</span>
     <span class="s">"charging_levels"</span><span class="p">:</span> <span class="s">"2,3"</span><span class="p">,</span>
     <span class="s">"amenities"</span><span class="p">:</span> <span class="s">"2,3,4,7,9"</span><span class="p">,</span>
@@ -375,7 +375,7 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.787793</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935005</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">radius</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">10000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
@@ -393,7 +393,7 @@
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1519093577681"</span><span class="p">,</span>
+    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
     <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
     <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-79.935005"</span><span class="p">,</span>
     <span class="s2">"radius"</span><span class="p">:</span> <span class="s2">"10000"</span><span class="p">,</span>
@@ -409,7 +409,7 @@
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
     <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"32.787793"</span><span class="p">,</span>
     <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-79.935005"</span><span class="p">,</span>
     <span class="s">"radius"</span><span class="p">:</span> <span class="s">"10000"</span><span class="p">,</span>
@@ -532,8 +532,8 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">request_uid</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:59+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">need_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005539000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2300000000000000000,30000000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">kwh,kwh</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Price per kWh,VAT per kWh</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
@@ -553,8 +553,8 @@
     </span><span class="se">\"</span><span class="s2">location_county</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Charleston</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">location_state</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">SC</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">location_country</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">USA</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">available_from</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">available_until</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-12T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">available_from</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">available_until</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513091934000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">height</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">300</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">width</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">length</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">580</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
@@ -573,7 +573,7 @@
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
     <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
+    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
     <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
     <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"kwh,kwh"</span><span class="p">,</span>
     <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
@@ -593,8 +593,8 @@
     <span class="s2">"location_county"</span><span class="p">:</span> <span class="s2">"Charleston"</span><span class="p">,</span>
     <span class="s2">"location_state"</span><span class="p">:</span> <span class="s2">"SC"</span><span class="p">,</span>
     <span class="s2">"location_country"</span><span class="p">:</span> <span class="s2">"USA"</span><span class="p">,</span>
-    <span class="s2">"available_from"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
-    <span class="s2">"available_until"</span><span class="p">:</span> <span class="s2">"2017-12-12T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s2">"available_from"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
+    <span class="s2">"available_until"</span><span class="p">:</span> <span class="s2">"1513091934000"</span><span class="p">,</span>
     <span class="s2">"height"</span><span class="p">:</span> <span class="s2">"300"</span><span class="p">,</span>
     <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
     <span class="s2">"length"</span><span class="p">:</span> <span class="s2">"580"</span><span class="p">,</span>
@@ -611,7 +611,7 @@
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">"need_id"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
+    <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"1513005539000"</span><span class="p">,</span>
     <span class="s">"price"</span><span class="p">:</span> <span class="s">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
     <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"kwh,kwh"</span><span class="p">,</span>
     <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
@@ -631,8 +631,8 @@
     <span class="s">"location_county"</span><span class="p">:</span> <span class="s">"Charleston"</span><span class="p">,</span>
     <span class="s">"location_state"</span><span class="p">:</span> <span class="s">"SC"</span><span class="p">,</span>
     <span class="s">"location_country"</span><span class="p">:</span> <span class="s">"USA"</span><span class="p">,</span>
-    <span class="s">"available_from"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
-    <span class="s">"available_until"</span><span class="p">:</span> <span class="s">"2017-12-12T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s">"available_from"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
+    <span class="s">"available_until"</span><span class="p">:</span> <span class="s">"1513091934000"</span><span class="p">,</span>
     <span class="s">"height"</span><span class="p">:</span> <span class="s">"300"</span><span class="p">,</span>
     <span class="s">"width"</span><span class="p">:</span> <span class="s">"200"</span><span class="p">,</span>
     <span class="s">"length"</span><span class="p">:</span> <span class="s">"580"</span><span class="p">,</span>

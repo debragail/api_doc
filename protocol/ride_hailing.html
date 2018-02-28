@@ -271,7 +271,7 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">pickup_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">pickup_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">pickup_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.787793</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">pickup_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935005</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">destination_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.7693531</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
@@ -284,7 +284,7 @@
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"pickup_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s2">"pickup_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
     <span class="s2">"pickup_latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
     <span class="s2">"pickup_longitude"</span><span class="p">:</span> <span class="s2">"-79.935005"</span><span class="p">,</span>
     <span class="s2">"destination_latitude"</span><span class="p">:</span> <span class="s2">"32.7693531"</span><span class="p">,</span>
@@ -295,7 +295,7 @@
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">"pickup_at"</span><span class="p">:</span> <span class="s">"1519093577681"</span><span class="p">,</span>
+    <span class="s">"pickup_at"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
     <span class="s">"pickup_latitude"</span><span class="p">:</span> <span class="s">"32.787793"</span><span class="p">,</span>
     <span class="s">"pickup_longitude"</span><span class="p">:</span> <span class="s">"-79.935005"</span><span class="p">,</span>
     <span class="s">"destination_latitude"</span><span class="p">:</span> <span class="s">"32.7693531"</span><span class="p">,</span>
@@ -312,14 +312,14 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">request_uid</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:59+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">need_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005539000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">20000000000000000,20000000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">km,flat</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Price per km,City tax</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">current_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785889</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">current_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935569</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">pickup_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">pickup_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">vehicle_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">suv</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">vehicle_manufacturer</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Luxor</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">vehicle_model</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Suave</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
@@ -332,13 +332,13 @@
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
     <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
+    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
     <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"20000000000000000,20000000000000000"</span><span class="p">,</span>
     <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"km,flat"</span><span class="p">,</span>
     <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per km,City tax"</span><span class="p">,</span>
     <span class="s2">"current_latitude"</span><span class="p">:</span> <span class="s2">"32.785889"</span><span class="p">,</span>
     <span class="s2">"current_longitude"</span><span class="p">:</span> <span class="s2">"-79.935569"</span><span class="p">,</span>
-    <span class="s2">"pickup_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s2">"pickup_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
     <span class="s2">"vehicle_type"</span><span class="p">:</span> <span class="s2">"suv"</span><span class="p">,</span>
     <span class="s2">"vehicle_manufacturer"</span><span class="p">:</span> <span class="s2">"Luxor"</span><span class="p">,</span>
     <span class="s2">"vehicle_model"</span><span class="p">:</span> <span class="s2">"Suave"</span><span class="p">,</span>
@@ -349,13 +349,13 @@
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">"need_id"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
+    <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"1513005539000"</span><span class="p">,</span>
     <span class="s">"price"</span><span class="p">:</span> <span class="s">"20000000000000000,20000000000000000"</span><span class="p">,</span>
     <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"km,flat"</span><span class="p">,</span>
     <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per km,City tax"</span><span class="p">,</span>
     <span class="s">"current_latitude"</span><span class="p">:</span> <span class="s">"32.785889"</span><span class="p">,</span>
     <span class="s">"current_longitude"</span><span class="p">:</span> <span class="s">"-79.935569"</span><span class="p">,</span>
-    <span class="s">"pickup_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s">"pickup_at"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
     <span class="s">"vehicle_type"</span><span class="p">:</span> <span class="s">"suv"</span><span class="p">,</span>
     <span class="s">"vehicle_manufacturer"</span><span class="p">:</span> <span class="s">"Luxor"</span><span class="p">,</span>
     <span class="s">"vehicle_model"</span><span class="p">:</span> <span class="s">"Suave"</span><span class="p">,</span>
@@ -373,7 +373,7 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">pickup_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">pickup_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">pickup_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.787793</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">pickup_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935005</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">pickup_street</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">King</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
@@ -406,7 +406,7 @@
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"pickup_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s2">"pickup_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
     <span class="s2">"pickup_latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
     <span class="s2">"pickup_longitude"</span><span class="p">:</span> <span class="s2">"-79.935005"</span><span class="p">,</span>
     <span class="s2">"pickup_street"</span><span class="p">:</span> <span class="s2">"King"</span><span class="p">,</span>
@@ -437,7 +437,7 @@
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">"pickup_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s">"pickup_at"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
     <span class="s">"pickup_latitude"</span><span class="p">:</span> <span class="s">"32.787793"</span><span class="p">,</span>
     <span class="s">"pickup_longitude"</span><span class="p">:</span> <span class="s">"-79.935005"</span><span class="p">,</span>
     <span class="s">"pickup_street"</span><span class="p">:</span> <span class="s">"King"</span><span class="p">,</span>
@@ -666,14 +666,14 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">request_uid</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:59+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">need_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005539000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">20000000000000000,4000000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">km,km</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Price per km,VAT per km</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">current_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785889</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">current_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935569</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">pickup_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">pickup_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">vehicle_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">suv</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">vehicle_manufacturer</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Luxor</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">vehicle_model</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Suave</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
@@ -688,13 +688,13 @@
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
     <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
+    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
     <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"20000000000000000,4000000000000000"</span><span class="p">,</span>
     <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"km,km"</span><span class="p">,</span>
     <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per km,VAT per km"</span><span class="p">,</span>
     <span class="s2">"current_latitude"</span><span class="p">:</span> <span class="s2">"32.785889"</span><span class="p">,</span>
     <span class="s2">"current_longitude"</span><span class="p">:</span> <span class="s2">"-79.935569"</span><span class="p">,</span>
-    <span class="s2">"pickup_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s2">"pickup_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
     <span class="s2">"vehicle_type"</span><span class="p">:</span> <span class="s2">"suv"</span><span class="p">,</span>
     <span class="s2">"vehicle_manufacturer"</span><span class="p">:</span> <span class="s2">"Luxor"</span><span class="p">,</span>
     <span class="s2">"vehicle_model"</span><span class="p">:</span> <span class="s2">"Suave"</span><span class="p">,</span>
@@ -707,13 +707,13 @@
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">"need_id"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
+    <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"1513005539000"</span><span class="p">,</span>
     <span class="s">"price"</span><span class="p">:</span> <span class="s">"20000000000000000,4000000000000000"</span><span class="p">,</span>
     <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"km,km"</span><span class="p">,</span>
     <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per km,VAT per km"</span><span class="p">,</span>
     <span class="s">"current_latitude"</span><span class="p">:</span> <span class="s">"32.785889"</span><span class="p">,</span>
     <span class="s">"current_longitude"</span><span class="p">:</span> <span class="s">"-79.935569"</span><span class="p">,</span>
-    <span class="s">"pickup_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s">"pickup_at"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
     <span class="s">"vehicle_type"</span><span class="p">:</span> <span class="s">"suv"</span><span class="p">,</span>
     <span class="s">"vehicle_manufacturer"</span><span class="p">:</span> <span class="s">"Luxor"</span><span class="p">,</span>
     <span class="s">"vehicle_model"</span><span class="p">:</span> <span class="s">"Suave"</span><span class="p">,</span>

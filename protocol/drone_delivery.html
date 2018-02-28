@@ -330,7 +330,7 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">pickup_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.787793</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">pickup_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.500593</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">dropoff_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.937778</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
@@ -343,7 +343,7 @@
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
     <span class="s2">"pickup_latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
     <span class="s2">"pickup_longitude"</span><span class="p">:</span> <span class="s2">"-79.500593"</span><span class="p">,</span>
     <span class="s2">"dropoff_latitude"</span><span class="p">:</span> <span class="s2">"32.937778"</span><span class="p">,</span>
@@ -354,7 +354,7 @@
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"1519093577681"</span><span class="p">,</span>
+    <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
     <span class="s">"pickup_latitude"</span><span class="p">:</span> <span class="s">"32.787793"</span><span class="p">,</span>
     <span class="s">"pickup_longitude"</span><span class="p">:</span> <span class="s">"-79.500593"</span><span class="p">,</span>
     <span class="s">"dropoff_latitude"</span><span class="p">:</span> <span class="s">"32.937778"</span><span class="p">,</span>
@@ -371,13 +371,13 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">request_uid</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:59+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">need_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005539000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2000000000000000,20000000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">second,flat</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Price per second,Tax</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">time_to_pickup</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:21:59+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">time_to_dropoff</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:34:20+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">time_to_pickup</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005719000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">time_to_dropoff</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513006460000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
   }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
 
@@ -385,23 +385,23 @@
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
     <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
+    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
     <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2000000000000000,20000000000000000"</span><span class="p">,</span>
     <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"second,flat"</span><span class="p">,</span>
     <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per second,Tax"</span><span class="p">,</span>
-    <span class="s2">"time_to_pickup"</span><span class="p">:</span> <span class="s2">"1519093577681"</span><span class="p">,</span>
-    <span class="s2">"time_to_dropoff"</span><span class="p">:</span> <span class="s2">"1519093590000"</span><span class="p">,</span>
+    <span class="s2">"time_to_pickup"</span><span class="p">:</span> <span class="s2">"1513005719000"</span><span class="p">,</span>
+    <span class="s2">"time_to_dropoff"</span><span class="p">:</span> <span class="s2">"1513006460000"</span><span class="p">,</span>
   <span class="p">})</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">"need_id"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:59+03:00"</span><span class="p">,</span>
+    <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"1513005539000"</span><span class="p">,</span>
     <span class="s">"price"</span><span class="p">:</span> <span class="s">"2000000000000000,20000000000000000"</span><span class="p">,</span>
     <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"second,flat"</span><span class="p">,</span>
     <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per second,Tax"</span><span class="p">,</span>
-    <span class="s">"time_to_pickup"</span><span class="p">:</span> <span class="s">"1519093577681"</span><span class="p">,</span>
-    <span class="s">"time_to_dropoff"</span><span class="p">:</span> <span class="s">"1519093590000"</span><span class="p">,</span>
+    <span class="s">"time_to_pickup"</span><span class="p">:</span> <span class="s">"1513005719000"</span><span class="p">,</span>
+    <span class="s">"time_to_dropoff"</span><span class="p">:</span> <span class="s">"1513006460000"</span><span class="p">,</span>
   <span class="p">}</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </code></pre><h1 id='need'>Need</h1>
@@ -414,7 +414,7 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2017-12-11T15:18:54+03:00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">pickup_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.787793</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">pickup_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.500593</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">dropoff_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.937778</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
@@ -438,7 +438,7 @@
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1519093577681"</span><span class="p">,</span>
+    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
     <span class="s2">"pickup_latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
     <span class="s2">"pickup_longitude"</span><span class="p">:</span> <span class="s2">"-79.500593"</span><span class="p">,</span>
     <span class="s2">"dropoff_latitude"</span><span class="p">:</span> <span class="s2">"32.937778"</span><span class="p">,</span>
@@ -460,7 +460,7 @@
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"2017-12-11T15:18:54+03:00"</span><span class="p">,</span>
+    <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
     <span class="s">"pickup_latitude"</span><span class="p">:</span> <span class="s">"32.787793"</span><span class="p">,</span>
     <span class="s">"pickup_longitude"</span><span class="p">:</span> <span class="s">"-79.500593"</span><span class="p">,</span>
     <span class="s">"dropoff_latitude"</span><span class="p">:</span> <span class="s">"32.937778"</span><span class="p">,</span>
@@ -620,13 +620,13 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
-    ”request_uid”: ”ae7bd8f67f3089c”, </span><span class="se">\</span><span class="s2">
-    ”expires_at”: ”2017-12-11T15:18:59+03:00”, </span><span class="se">\</span><span class="s2">
+    ”need_id”: ”ae7bd8f67f3089c”, </span><span class="se">\</span><span class="s2">
+    ”expires_at”: ”1519093577681”, </span><span class="se">\</span><span class="s2">
     ”price”: ”2000000000000000,20000000000000000”, </span><span class="se">\</span><span class="s2">
     ”price_type”: ”second,flat”, </span><span class="se">\</span><span class="s2">
     ”price_description”: ”Price per second,Tax”, </span><span class="se">\</span><span class="s2">
-    ”time_to_pickup”: ”2017-12-11T15:21:59+03:00”, </span><span class="se">\</span><span class="s2">
-    ”time_to_dropoff”: ”2017-12-11T15:34:20+03:00”, </span><span class="se">\</span><span class="s2">
+    ”time_to_pickup”: ”1513005719000”, </span><span class="se">\</span><span class="s2">
+    ”time_to_dropoff”: ”1513006460000”, </span><span class="se">\</span><span class="s2">
     ”insured”: ”true”, </span><span class="se">\</span><span class="s2">
     ”insurer_dav_id”: ”0x17325a469aef3472aa58dfdcf672881d79b31d58”, </span><span class="se">\</span><span class="s2">
     ”drone_contact”: ”Megadronix”, </span><span class="se">\</span><span class="s2">
@@ -643,8 +643,8 @@
     <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2000000000000000,20000000000000000"</span><span class="p">,</span>
     <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"second,flat"</span><span class="p">,</span>
     <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per second,Tax"</span><span class="p">,</span>
-    <span class="s2">"time_to_pickup"</span><span class="p">:</span> <span class="s2">"1519093577681"</span><span class="p">,</span>
-    <span class="s2">"time_to_dropoff"</span><span class="p">:</span> <span class="s2">"1519093590000"</span><span class="p">,</span>
+    <span class="s2">"time_to_pickup"</span><span class="p">:</span> <span class="s2">"1513005719000"</span><span class="p">,</span>
+    <span class="s2">"time_to_dropoff"</span><span class="p">:</span> <span class="s2">"1513006460000"</span><span class="p">,</span>
     <span class="s2">"insured"</span><span class="p">:</span> <span class="s2">"true"</span><span class="p">,</span>
     <span class="s2">"insurer_dav_id"</span><span class="p">:</span> <span class="s2">"0x17325a469aef3472aa58dfdcf672881d79b31d58"</span><span class="p">,</span>
     <span class="s2">"drone_contact"</span><span class="p">:</span> <span class="s2">"Megadronix"</span><span class="p">,</span>
@@ -659,8 +659,8 @@
     <span class="s">"price"</span><span class="p">:</span> <span class="s">"2000000000000000,20000000000000000"</span><span class="p">,</span>
     <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"second,flat"</span><span class="p">,</span>
     <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per second,Tax"</span><span class="p">,</span>
-    <span class="s">"time_to_pickup"</span><span class="p">:</span> <span class="s">"1519093577681"</span><span class="p">,</span>
-    <span class="s">"time_to_dropoff"</span><span class="p">:</span> <span class="s">"1519093590000"</span><span class="p">,</span>
+    <span class="s">"time_to_pickup"</span><span class="p">:</span> <span class="s">"1513005719000"</span><span class="p">,</span>
+    <span class="s">"time_to_dropoff"</span><span class="p">:</span> <span class="s">"1513006460000"</span><span class="p">,</span>
     <span class="s">"insured"</span><span class="p">:</span> <span class="s">"true"</span><span class="p">,</span>
     <span class="s">"insurer_dav_id"</span><span class="p">:</span> <span class="s">"0x17325a469aef3472aa58dfdcf672881d79b31d58"</span><span class="p">,</span>
     <span class="s">"drone_contact"</span><span class="p">:</span> <span class="s">"Megadronix"</span><span class="p">,</span>
@@ -791,7 +791,7 @@
     <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2000000000000000,20000000000000000"</span><span class="p">,</span>
     <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"second,flat"</span><span class="p">,</span>
     <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per second,Tax"</span><span class="p">,</span>
-    <span class="s2">"time_to_pickup"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:21:59+03:00"</span><span class="p">,</span>
+    <span class="s2">"time_to_pickup"</span><span class="p">:</span> <span class="s2">"1513005719000"</span><span class="p">,</span>
     <span class="s2">"time_to_dropoff"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:34:20+03:00"</span><span class="p">,</span>
     <span class="s2">"insured"</span><span class="p">:</span> <span class="s2">"true"</span><span class="p">,</span>
     <span class="s2">"insurer_dav_id"</span><span class="p">:</span> <span class="s2">"0x17325a469aef3472aa58dfdcf672881d79b31d58"</span><span class="p">,</span>
@@ -807,7 +807,7 @@
     <span class="s">"price"</span><span class="p">:</span> <span class="s">"2000000000000000,20000000000000000"</span><span class="p">,</span>
     <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"second,flat"</span><span class="p">,</span>
     <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per second,Tax"</span><span class="p">,</span>
-    <span class="s">"time_to_pickup"</span><span class="p">:</span> <span class="s">"2017-12-11T15:21:59+03:00"</span><span class="p">,</span>
+    <span class="s">"time_to_pickup"</span><span class="p">:</span> <span class="s">"1513005719000"</span><span class="p">,</span>
     <span class="s">"time_to_dropoff"</span><span class="p">:</span> <span class="s">"2017-12-11T15:34:20+03:00"</span><span class="p">,</span>
     <span class="s">"insured"</span><span class="p">:</span> <span class="s">"true"</span><span class="p">,</span>
     <span class="s">"insurer_dav_id"</span><span class="p">:</span> <span class="s">"0x17325a469aef3472aa58dfdcf672881d79b31d58"</span><span class="p">,</span>
@@ -845,7 +845,7 @@
   --data <span class="s2">"price=2000000000000000,20000000000000000"</span> <span class="se">\</span>
   --data <span class="s2">"price_type=second,flat"</span> <span class="se">\</span>
   --data <span class="s2">"price_description=Price per second,Tax"</span> <span class="se">\</span>
-  --data <span class="s2">"time_to_pickup=2017-12-11T15:21:59+03:00"</span> <span class="se">\</span>
+  --data <span class="s2">"time_to_pickup=1513005719000"</span> <span class="se">\</span>
   --data <span class="s2">"time_to_dropoff=2017-12-11T15:34:20+03:00"</span> <span class="se">\</span>
   --data <span class="s2">"insured=true"</span> <span class="se">\</span>
   --data <span class="s2">"insurer_dav_id=0x17325a469aef3472aa58dfdcf672881d79b31d58"</span> <span class="se">\</span>
@@ -862,7 +862,7 @@
     <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2000000000000000,20000000000000000"</span><span class="p">,</span>
     <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"second,flat"</span><span class="p">,</span>
     <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per second,Tax"</span><span class="p">,</span>
-    <span class="s2">"time_to_pickup"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:21:59+03:00"</span><span class="p">,</span>
+    <span class="s2">"time_to_pickup"</span><span class="p">:</span> <span class="s2">"1513005719000"</span><span class="p">,</span>
     <span class="s2">"time_to_dropoff"</span><span class="p">:</span> <span class="s2">"2017-12-11T15:34:20+03:00"</span><span class="p">,</span>
     <span class="s2">"insured"</span><span class="p">:</span> <span class="s2">"true"</span><span class="p">,</span>
     <span class="s2">"insurer_dav_id"</span><span class="p">:</span> <span class="s2">"0x17325a469aef3472aa58dfdcf672881d79b31d58"</span><span class="p">,</span>
@@ -878,7 +878,7 @@
     <span class="s">"price"</span><span class="p">:</span> <span class="s">"2000000000000000,20000000000000000"</span><span class="p">,</span>
     <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"second,flat"</span><span class="p">,</span>
     <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per second,Tax"</span><span class="p">,</span>
-    <span class="s">"time_to_pickup"</span><span class="p">:</span> <span class="s">"2017-12-11T15:21:59+03:00"</span><span class="p">,</span>
+    <span class="s">"time_to_pickup"</span><span class="p">:</span> <span class="s">"1513005719000"</span><span class="p">,</span>
     <span class="s">"time_to_dropoff"</span><span class="p">:</span> <span class="s">"2017-12-11T15:34:20+03:00"</span><span class="p">,</span>
     <span class="s">"insured"</span><span class="p">:</span> <span class="s">"true"</span><span class="p">,</span>
     <span class="s">"insurer_dav_id"</span><span class="p">:</span> <span class="s">"0x17325a469aef3472aa58dfdcf672881d79b31d58"</span><span class="p">,</span>
