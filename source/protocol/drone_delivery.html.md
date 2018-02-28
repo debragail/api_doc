@@ -73,7 +73,7 @@ In response, a drone might send back a bid with a price, the estimated time of a
 ```shell
 curl "bidding_endpoint_here" \
   --data "{ \
-    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"need_id\": \"ae7bd8f67f3089c\", \
     \"expires_at\": \"1513005539000\", \
     \"price\": \"2000000000000000,20000000000000000\", \
     \"price_type\": \"second,flat\", \
@@ -344,7 +344,7 @@ A bid to provide a delivery service. Typically sent from a delivery drone to the
 ```shell
 curl "bidding_endpoint_here" \
   --data "{ \
-    ”request_uid”: ”ae7bd8f67f3089c”, \
+    ”need_id”: ”ae7bd8f67f3089c”, \
     ”expires_at”: ”1519093577681”, \
     ”price”: ”2000000000000000,20000000000000000”, \
     ”price_type”: ”second,flat”, \

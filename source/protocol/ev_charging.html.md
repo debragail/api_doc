@@ -72,7 +72,7 @@ In response, a charging station might send back a bid with a price per kWh, and 
 ```shell
 curl "bidding_endpoint_here" \
   --data "{ \
-    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"need_id\": \"ae7bd8f67f3089c\", \
     \"expires_at\": \"1513005539000\", \
     \"price\": \"2300000000000000000,30000000000000000\", \
     \"price_type\": \"kwh,kwh\", \
@@ -309,7 +309,7 @@ A bid to provide a charging service. Typically sent from a charging station to a
 ```shell
 curl "bidding_endpoint_here" \
   --data "{ \
-    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"need_id\": \"ae7bd8f67f3089c\", \
     \"expires_at\": \"1513005539000\", \
     \"price\": \"2300000000000000000,30000000000000000\", \
     \"price_type\": \"kwh,kwh\", \

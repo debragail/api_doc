@@ -73,7 +73,7 @@ In response, an autonomous vehicle might send back a bid with a price for the ri
 ```shell
 curl "bidding_endpoint_here" \
   --data "{ \
-    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"need_id\": \"ae7bd8f67f3089c\", \
     \"expires_at\": \"1513005539000\", \
     \"price\": \"20000000000000000,20000000000000000\", \
     \"price_type\": \"km,flat\", \
@@ -449,7 +449,7 @@ A bid to provide a ride service. Typically sent by a car owner with the price fo
 ```shell
 curl "bidding_endpoint_here" \
   --data "{ \
-    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"need_id\": \"ae7bd8f67f3089c\", \
     \"expires_at\": \"1513005539000\", \
     \"price\": \"20000000000000000,4000000000000000\", \
     \"price_type\": \"km,km\", \

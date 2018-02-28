@@ -85,7 +85,7 @@ In response, an insurance provider might send back a bid with the policy price, 
 ```shell
 curl "bidding_endpoint_here" \
 --data "{ \
-    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"need_id\": \"ae7bd8f67f3089c\", \
     \"expires_at\": \"1513005539000\", \
     \"coverage_type\": \"all_risk\", \
     \"price\": \"100000000000000000\", \
@@ -430,7 +430,7 @@ A bid to provide cargo insurance. Typically sent from an insurance provider to a
 ```shell
 curl "bidding_endpoint_here" \
   --data "{ \
-    \"request_uid\": \"ae7bd8f67f3089c\", \
+    \"need_id\": \"ae7bd8f67f3089c\", \
     \"expires_at\": \"1513005539000\", \
     \"coverage_type\": \"all_risk\", \
     \"price\": \"20000000000000000,100000000000000000\", \
