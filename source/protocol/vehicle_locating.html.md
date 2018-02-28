@@ -74,13 +74,13 @@ In response, an autonomous robot might send back a bid with a price for the miss
 curl "bidding_endpoint_here" \
   --data "{ \
     \"request_uid\": \"ae7bd8f67f3089c\", \
-    \"expires_at\": \"2017-12-11T15:18:59+03:00\", \
+    \"expires_at\": \"1513005539000\", \
     \"price\": \"20000000000000000,10000000000000\", \
     \"price_type\": \"flat,minute\", \
     \"price_description\": \"Finders fee,Price per minute\", \
     \"current_latitude\": \"55.756951\", \
     \"current_longitude\": \"37.633839\", \
-    \"arrival_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"arrival_at\": \"1513005534000\", \
     \"vehicle_type\": \"robot\", \
     \"vehicle_manufacturer\": \"Husarion\", \
     \"vehicle_model\": \"ROSBot\", \
@@ -94,13 +94,13 @@ fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1519093577681",
+    "expires_at": "1513005539000",
     "price": "20000000000000000,10000000000000",
     "price_type": "flat,minute",
     "price_description": "Finders fee,Price per minute",
     "current_latitude": "55.756951",
     "current_longitude": "37.633839",
-    "arrival_at": "2017-12-11T15:18:54+03:00",
+    "arrival_at": "1513005534000",
     "vehicle_type": "robot",
     "vehicle_manufacturer": "Husarion",
     "vehicle_model": "ROSBot",
@@ -112,13 +112,13 @@ fetch(biddingEndPoint, {
 import requests
 payload = {
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1519093577681",
+    "expires_at": "1513005539000",
     "price": "20000000000000000,10000000000000",
     "price_type": "flat,minute",
     "price_description": "Finders fee,Price per minute",
     "current_latitude": "55.756951",
     "current_longitude": "37.633839",
-    "arrival_at": "2017-12-11T15:18:54+03:00",
+    "arrival_at": "1513005534000",
     "vehicle_type": "robot",
     "vehicle_manufacturer": "Husarion",
     "vehicle_model": "ROSBot",
@@ -255,13 +255,13 @@ A bid to provide a vehicle locating service. Typically sent by a vehicle with lo
 curl "bidding_endpoint_here" \
   --data "{
     \"request_uid\": \"ae7bd8f67f3089c\",
-    \"expires_at\": \"2017-12-11T15:18:59+03:00\",
+    \"expires_at\": \"1513005539000\",
     \"price\": \"20000000000000000,10000000000000\",
     \"price_type\": \"flat,minute\",
     \"price_description\": \"Finders fee,Price per minute\",
     \"current_latitude\": \"43.611626\",
     \"current_longitude\": \"-116.392593\",
-    \"arrival_at\": \"2017-12-11T15:18:54+03:00\",
+    \"arrival_at\": \"1513005534000\",
     \"vehicle_type\": \"drone\",
     \"vehicle_manufacturer\": \"Dronster\",
     \"vehicle_model\": \"Res-Q\",
@@ -282,7 +282,7 @@ fetch(biddingEndPoint, {
     "price_description": "Finders fee,Price per minute",
     "current_latitude": "43.611626",
     "current_longitude": "-116.392593",
-    "arrival_at": "2017-12-11T15:18:54+03:00",
+    "arrival_at": "1513005534000",
     "vehicle_type": "drone",
     "vehicle_manufacturer": "Dronster",
     "vehicle_model": "Res-Q",
@@ -301,7 +301,7 @@ payload = {
     "price_description": "Finders fee,Price per minute",
     "current_latitude": "43.611626",
     "current_longitude": "-116.392593",
-    "arrival_at": "2017-12-11T15:18:54+03:00",
+    "arrival_at": "1513005534000",
     "vehicle_type": "drone",
     "vehicle_locating_technology": "Object Recognition Camera",
     "vehicle_manufacturer": "Dronster",

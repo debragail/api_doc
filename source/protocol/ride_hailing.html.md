@@ -25,7 +25,7 @@ For example, a user might search for a ride together with her pet dog, within a 
 ```shell
 curl "discovery_endpoint_here" \
   --data "{ \
-    \"pickup_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"pickup_at\": \"1513005534000\", \
     \"pickup_latitude\": \"32.787793\", \
     \"pickup_longitude\": \"-79.935005\", \
     \"destination_latitude\": \"32.7693531\", \
@@ -41,7 +41,7 @@ const discoveryEndPoint = "discovery_endpoint_here";
 fetch(discoveryEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "pickup_at": "2017-12-11T15:18:54+03:00",
+    "pickup_at": "1513005534000",
     "pickup_latitude": "32.787793",
     "pickup_longitude": "-79.935005",
     "destination_latitude": "32.7693531",
@@ -55,7 +55,7 @@ fetch(discoveryEndPoint, {
 ```python
 import requests
 payload = {
-    "pickup_at": "1519093577681",
+    "pickup_at": "1513005534000",
     "pickup_latitude": "32.787793",
     "pickup_longitude": "-79.935005",
     "destination_latitude": "32.7693531",
@@ -74,13 +74,13 @@ In response, an autonomous vehicle might send back a bid with a price for the ri
 curl "bidding_endpoint_here" \
   --data "{ \
     \"request_uid\": \"ae7bd8f67f3089c\", \
-    \"expires_at\": \"2017-12-11T15:18:59+03:00\", \
+    \"expires_at\": \"1513005539000\", \
     \"price\": \"20000000000000000,20000000000000000\", \
     \"price_type\": \"km,flat\", \
     \"price_description\": \"Price per km,City tax\", \
     \"current_latitude\": \"32.785889\", \
     \"current_longitude\": \"-79.935569\", \
-    \"pickup_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"pickup_at\": \"1513005534000\", \
     \"vehicle_type\": \"suv\", \
     \"vehicle_manufacturer\": \"Luxor\", \
     \"vehicle_model\": \"Suave\", \
@@ -96,13 +96,13 @@ fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "2017-12-11T15:18:59+03:00",
+    "expires_at": "1513005539000",
     "price": "20000000000000000,20000000000000000",
     "price_type": "km,flat",
     "price_description": "Price per km,City tax",
     "current_latitude": "32.785889",
     "current_longitude": "-79.935569",
-    "pickup_at": "2017-12-11T15:18:54+03:00",
+    "pickup_at": "1513005534000",
     "vehicle_type": "suv",
     "vehicle_manufacturer": "Luxor",
     "vehicle_model": "Suave",
@@ -116,13 +116,13 @@ fetch(biddingEndPoint, {
 import requests
 payload = {
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "2017-12-11T15:18:59+03:00",
+    "expires_at": "1513005539000",
     "price": "20000000000000000,20000000000000000",
     "price_type": "km,flat",
     "price_description": "Price per km,City tax",
     "current_latitude": "32.785889",
     "current_longitude": "-79.935569",
-    "pickup_at": "2017-12-11T15:18:54+03:00",
+    "pickup_at": "1513005534000",
     "vehicle_type": "suv",
     "vehicle_manufacturer": "Luxor",
     "vehicle_model": "Suave",
@@ -145,7 +145,7 @@ This request is sent to the decentralized discovery engine which responds with s
 ```shell
 curl "discovery_endpoint_here" \
   --data "{ \
-    \"pickup_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"pickup_at\": \"1513005534000\", \
     \"pickup_latitude\": \"32.787793\", \
     \"pickup_longitude\": \"-79.935005\", \
     \"pickup_street\": \"King\", \
@@ -181,7 +181,7 @@ const discoveryEndPoint = "discovery_endpoint_here";
 fetch(discoveryEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "pickup_at": "2017-12-11T15:18:54+03:00",
+    "pickup_at": "1513005534000",
     "pickup_latitude": "32.787793",
     "pickup_longitude": "-79.935005",
     "pickup_street": "King",
@@ -215,7 +215,7 @@ fetch(discoveryEndPoint, {
 ```python
 import requests
 payload = {
-    "pickup_at": "2017-12-11T15:18:54+03:00",
+    "pickup_at": "1513005534000",
     "pickup_latitude": "32.787793",
     "pickup_longitude": "-79.935005",
     "pickup_street": "King",
@@ -450,13 +450,13 @@ A bid to provide a ride service. Typically sent by a car owner with the price fo
 curl "bidding_endpoint_here" \
   --data "{ \
     \"request_uid\": \"ae7bd8f67f3089c\", \
-    \"expires_at\": \"2017-12-11T15:18:59+03:00\", \
+    \"expires_at\": \"1513005539000\", \
     \"price\": \"20000000000000000,4000000000000000\", \
     \"price_type\": \"km,km\", \
     \"price_description\": \"Price per km,VAT per km\", \
     \"current_latitude\": \"32.785889\", \
     \"current_longitude\": \"-79.935569\", \
-    \"pickup_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"pickup_at\": \"1513005534000\", \
     \"vehicle_type\": \"suv\", \
     \"vehicle_manufacturer\": \"Luxor\", \
     \"vehicle_model\": \"Suave\", \
@@ -474,13 +474,13 @@ fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "2017-12-11T15:18:59+03:00",
+    "expires_at": "1513005539000",
     "price": "20000000000000000,4000000000000000",
     "price_type": "km,km",
     "price_description": "Price per km,VAT per km",
     "current_latitude": "32.785889",
     "current_longitude": "-79.935569",
-    "pickup_at": "2017-12-11T15:18:54+03:00",
+    "pickup_at": "1513005534000",
     "vehicle_type": "suv",
     "vehicle_manufacturer": "Luxor",
     "vehicle_model": "Suave",
@@ -496,13 +496,13 @@ fetch(biddingEndPoint, {
 import requests
 payload = {
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "2017-12-11T15:18:59+03:00",
+    "expires_at": "1513005539000",
     "price": "20000000000000000,4000000000000000",
     "price_type": "km,km",
     "price_description": "Price per km,VAT per km",
     "current_latitude": "32.785889",
     "current_longitude": "-79.935569",
-    "pickup_at": "2017-12-11T15:18:54+03:00",
+    "pickup_at": "1513005534000",
     "vehicle_type": "suv",
     "vehicle_manufacturer": "Luxor",
     "vehicle_model": "Suave",

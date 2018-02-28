@@ -25,7 +25,7 @@ For example, a drone may look for a charging station that supports 2mm bullet co
 ```shell
 curl "discovery_endpoint_here" \
   --data "{ \
-    \"start_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"start_at\": \"1513005534000\", \
     \"latitude\": \"32.787793\", \
     \"longitude\": \"-79.935005\", \
     \"radius\": \"2000\", \
@@ -39,7 +39,7 @@ const discoveryEndPoint = "discovery_endpoint_here";
 fetch(discoveryEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "start_at": "2017-12-11T15:18:54+03:00",
+    "start_at": "1513005534000",
     "latitude": "32.787793",
     "longitude": "-79.935005",
     "radius": "2000",
@@ -68,14 +68,14 @@ In response, a charging station might send back a bid with a price per kWh.
 curl "bidding_endpoint_here" \
   --data "{ \
     \"request_uid\": \"ae7bd8f67f3089c\", \
-    \"expires_at\": \"2017-12-11T15:18:59+03:00\", \
+    \"expires_at\": \"1513005539000\", \
     \"price\": \"2300000000000000000,30000000000000000\", \
     \"price_type\": \"kwh,kwh\", \
     \"price_description\": \"Price per kWh,VAT per kWh\", \
     \"latitude\": \"32.785889\", \
     \"longitude\": \"-79.935569\", \
-    \"available_from\": \"2017-12-11T15:18:54+03:00\", \
-    \"available_until\": \"2017-12-12T15:18:54+03:00\", \
+    \"available_from\": \"1513005534000\", \
+    \"available_until\": \"1513091934000\", \
   }"
 ```
 
@@ -86,14 +86,14 @@ fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1519093577681",
+    "expires_at": "1513005539000",
     "price": "2300000000000000000,30000000000000000",
     "price_type": "kwh,kwh",
     "price_description": "Price per kWh,VAT per kWh",
     "latitude": "32.785889",
     "longitude": "-79.935569",
-    "available_from": "1519093577681",
-    "available_until": "2017-12-12T15:18:54+03:00",
+    "available_from": "1513005534000",
+    "available_until": "1513091934000",
   })
 });
 ```
@@ -108,8 +108,8 @@ payload = {
     "price_description": "Price per kWh,VAT per kWh",
     "latitude": "32.785889",
     "longitude": "-79.935569",
-    "available_from": "1519093577681",
-    "available_until": "1519093577681",
+    "available_from": "1513005534000",
+    "available_until": "1513091934000",
   }
 requests.post("bidding_endpoint_here", data=payload)
 ```
@@ -127,7 +127,7 @@ This request is sent to the decentralized discovery engine which responds with s
 ```shell
 curl "discovery_endpoint_here" \
   --data "{ \
-    \"start_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"start_at\": \"1513005534000\", \
     \"latitude\": \"32.787793\", \
     \"longitude\": \"-79.935005\", \
     \"radius\": \"10000\", \
@@ -151,7 +151,7 @@ const discoveryEndPoint = "discovery_endpoint_here";
 fetch(discoveryEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "start_at": "1519093577681",
+    "start_at": "1513005534000",
     "latitude": "32.787793",
     "longitude": "-79.935005",
     "radius": "10000",
@@ -173,7 +173,7 @@ fetch(discoveryEndPoint, {
 ```python
 import requests
 payload = {
-    "start_at": "2017-12-11T15:18:54+03:00",
+    "start_at": "1513005534000",
     "latitude": "32.787793",
     "longitude": "-79.935005",
     "radius": "10000",
@@ -312,14 +312,14 @@ A bid to provide a charging service. Typically sent from a charging station to a
 curl "bidding_endpoint_here" \
   --data "{ \
     \"request_uid\": \"ae7bd8f67f3089c\", \
-    \"expires_at\": \"2017-12-11T15:18:59+03:00\", \
+    \"expires_at\": \"1513005539000\", \
     \"price\": \"2300000000000000000,30000000000000000\", \
     \"price_type\": \"kwh,kwh\", \
     \"price_description\": \"Price per kWh,VAT per kWh\", \
     \"latitude\": \"32.785889\", \
     \"longitude\": \"-79.935569\", \
-    \"available_from\": \"2017-12-11T15:18:54+03:00\", \
-    \"available_until\": \"2017-12-12T15:18:54+03:00\", \
+    \"available_from\": \"1513005534000\", \
+    \"available_until\": \"1513091934000\", \
     \"location_name\": \"IKEA parking lot B\", \
     \"location_name_lang\": \"eng\", \
     \"location_house_number\": \"372\", \
@@ -348,14 +348,14 @@ fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1519093577681",
+    "expires_at": "1513005539000",
     "price": "2300000000000000000,30000000000000000",
     "price_type": "kwh,kwh",
     "price_description": "Price per kWh,VAT per kWh",
     "latitude": "32.785889",
     "longitude": "-79.935569",
-    "available_from": "1519093577681",
-    "available_until": "1519093577681",
+    "available_from": "1513005534000",
+    "available_until": "1513091934000",
     "location_name": "IKEA parking lot B",
     "location_name_lang": "eng",
     "location_house_number": "372",
@@ -382,14 +382,14 @@ fetch(biddingEndPoint, {
 import requests
 payload = {
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "2017-12-11T15:18:59+03:00",
+    "expires_at": "1513005539000",
     "price": "2300000000000000000,30000000000000000",
     "price_type": "kwh,kwh",
     "price_description": "Price per kWh,VAT per kWh",
     "latitude": "32.785889",
     "longitude": "-79.935569",
-    "available_from": "1519093577681",
-    "available_until": "1519093577681",
+    "available_from": "1513005534000",
+    "available_until": "1513091934000",
     "location_name": "IKEA parking lot B",
     "location_name_lang": "eng",
     "location_house_number": "372",

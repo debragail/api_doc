@@ -25,7 +25,7 @@ For example, a user is looking for a drone to pick up a small tube containing co
 ```shell
 curl "discovery_endpoint_here" \
   --data "{ \
-    \"start_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"start_at\": \"1513005534000\", \
     \"pickup_latitude\": \"32.787793\", \
     \"pickup_longitude\": \"-79.500593\", \
     \"dropoff_latitude\": \"32.937778\", \
@@ -41,7 +41,7 @@ const discoveryEndPoint = "discovery_endpoint_here";
 fetch(discoveryEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "start_at": "2017-12-11T15:18:54+03:00",
+    "start_at": "1513005534000",
     "pickup_latitude": "32.787793",
     "pickup_longitude": "-79.500593",
     "dropoff_latitude": "32.937778",
@@ -55,7 +55,7 @@ fetch(discoveryEndPoint, {
 ```python
 import requests
 payload = {
-    "start_at": "1519093577681",
+    "start_at": "1513005534000",
     "pickup_latitude": "32.787793",
     "pickup_longitude": "-79.500593",
     "dropoff_latitude": "32.937778",
@@ -74,12 +74,12 @@ In response, a drone might send back a bid with a price, the estimated time of a
 curl "bidding_endpoint_here" \
   --data "{ \
     \"request_uid\": \"ae7bd8f67f3089c\", \
-    \"expires_at\": \"2017-12-11T15:18:59+03:00\", \
+    \"expires_at\": \"1513005539000\", \
     \"price\": \"2000000000000000,20000000000000000\", \
     \"price_type\": \"second,flat\", \
     \"price_description\": \"Price per second,Tax\", \
-    \"time_to_pickup\": \"2017-12-11T15:21:59+03:00\", \
-    \"time_to_dropoff\": \"2017-12-11T15:34:20+03:00\", \
+    \"time_to_pickup\": \"1513005719000\", \
+    \"time_to_dropoff\": \"1513006460000\", \
   }"
 ```
 
@@ -90,12 +90,12 @@ fetch(biddingEndPoint, {
   method: "POST",
   body: JSON.stringify({
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "2017-12-11T15:18:59+03:00",
+    "expires_at": "1513005539000",
     "price": "2000000000000000,20000000000000000",
     "price_type": "second,flat",
     "price_description": "Price per second,Tax",
-    "time_to_pickup": "1519093577681",
-    "time_to_dropoff": "1519093590000",
+    "time_to_pickup": "1513005719000",
+    "time_to_dropoff": "1513006460000",
   })
 });
 ```
@@ -104,12 +104,12 @@ fetch(biddingEndPoint, {
 import requests
 payload = {
     "need_id": "ae7bd8f67f3089c",
-    "expires_at": "2017-12-11T15:18:59+03:00",
+    "expires_at": "1513005539000",
     "price": "2000000000000000,20000000000000000",
     "price_type": "second,flat",
     "price_description": "Price per second,Tax",
-    "time_to_pickup": "1519093577681",
-    "time_to_dropoff": "1519093590000",
+    "time_to_pickup": "1513005719000",
+    "time_to_dropoff": "1513006460000",
   }
 requests.post("bidding_endpoint_here", data=payload)
 ```
@@ -127,7 +127,7 @@ This request is sent to the decentralized discovery engine which responds with s
 ```shell
 curl "discovery_endpoint_here" \
   --data "{ \
-    \"start_at\": \"2017-12-11T15:18:54+03:00\", \
+    \"start_at\": \"1513005534000\", \
     \"pickup_latitude\": \"32.787793\", \
     \"pickup_longitude\": \"-79.500593\", \
     \"dropoff_latitude\": \"32.937778\", \
@@ -154,7 +154,7 @@ const discoveryEndPoint = "discovery_endpoint_here";
 fetch(discoveryEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "start_at": "1519093577681",
+    "start_at": "1513005534000",
     "pickup_latitude": "32.787793",
     "pickup_longitude": "-79.500593",
     "dropoff_latitude": "32.937778",
@@ -179,7 +179,7 @@ fetch(discoveryEndPoint, {
 ```python
 import requests
 payload = {
-    "start_at": "2017-12-11T15:18:54+03:00",
+    "start_at": "1513005534000",
     "pickup_latitude": "32.787793",
     "pickup_longitude": "-79.500593",
     "dropoff_latitude": "32.937778",
@@ -345,12 +345,12 @@ A bid to provide a delivery service. Typically sent from a delivery drone to the
 curl "bidding_endpoint_here" \
   --data "{ \
     ”request_uid”: ”ae7bd8f67f3089c”, \
-    ”expires_at”: ”2017-12-11T15:18:59+03:00”, \
+    ”expires_at”: ”1519093577681”, \
     ”price”: ”2000000000000000,20000000000000000”, \
     ”price_type”: ”second,flat”, \
     ”price_description”: ”Price per second,Tax”, \
-    ”time_to_pickup”: ”2017-12-11T15:21:59+03:00”, \
-    ”time_to_dropoff”: ”2017-12-11T15:34:20+03:00”, \
+    ”time_to_pickup”: ”1513005719000”, \
+    ”time_to_dropoff”: ”1513006460000”, \
     ”insured”: ”true”, \
     ”insurer_dav_id”: ”0x17325a469aef3472aa58dfdcf672881d79b31d58”, \
     ”drone_contact”: ”Megadronix”, \
@@ -370,8 +370,8 @@ fetch(biddingEndPoint, {
     "price": "2000000000000000,20000000000000000",
     "price_type": "second,flat",
     "price_description": "Price per second,Tax",
-    "time_to_pickup": "1519093577681",
-    "time_to_dropoff": "1519093590000",
+    "time_to_pickup": "1513005719000",
+    "time_to_dropoff": "1513006460000",
     "insured": "true",
     "insurer_dav_id": "0x17325a469aef3472aa58dfdcf672881d79b31d58",
     "drone_contact": "Megadronix",
@@ -389,8 +389,8 @@ payload = {
     "price": "2000000000000000,20000000000000000",
     "price_type": "second,flat",
     "price_description": "Price per second,Tax",
-    "time_to_pickup": "1519093577681",
-    "time_to_dropoff": "1519093590000",
+    "time_to_pickup": "1513005719000",
+    "time_to_dropoff": "1513006460000",
     "insured": "true",
     "insurer_dav_id": "0x17325a469aef3472aa58dfdcf672881d79b31d58",
     "drone_contact": "Megadronix",
@@ -529,7 +529,7 @@ fetch(biddingEndPoint, {
     "price": "2000000000000000,20000000000000000",
     "price_type": "second,flat",
     "price_description": "Price per second,Tax",
-    "time_to_pickup": "2017-12-11T15:21:59+03:00",
+    "time_to_pickup": "1513005719000",
     "time_to_dropoff": "2017-12-11T15:34:20+03:00",
     "insured": "true",
     "insurer_dav_id": "0x17325a469aef3472aa58dfdcf672881d79b31d58",
@@ -548,7 +548,7 @@ payload = {
     "price": "2000000000000000,20000000000000000",
     "price_type": "second,flat",
     "price_description": "Price per second,Tax",
-    "time_to_pickup": "2017-12-11T15:21:59+03:00",
+    "time_to_pickup": "1513005719000",
     "time_to_dropoff": "2017-12-11T15:34:20+03:00",
     "insured": "true",
     "insurer_dav_id": "0x17325a469aef3472aa58dfdcf672881d79b31d58",
@@ -591,7 +591,7 @@ curl "bidding_endpoint_here" \
   --data "price=2000000000000000,20000000000000000" \
   --data "price_type=second,flat" \
   --data "price_description=Price per second,Tax" \
-  --data "time_to_pickup=2017-12-11T15:21:59+03:00" \
+  --data "time_to_pickup=1513005719000" \
   --data "time_to_dropoff=2017-12-11T15:34:20+03:00" \
   --data "insured=true" \
   --data "insurer_dav_id=0x17325a469aef3472aa58dfdcf672881d79b31d58" \
@@ -611,7 +611,7 @@ fetch(biddingEndPoint, {
     "price": "2000000000000000,20000000000000000",
     "price_type": "second,flat",
     "price_description": "Price per second,Tax",
-    "time_to_pickup": "2017-12-11T15:21:59+03:00",
+    "time_to_pickup": "1513005719000",
     "time_to_dropoff": "2017-12-11T15:34:20+03:00",
     "insured": "true",
     "insurer_dav_id": "0x17325a469aef3472aa58dfdcf672881d79b31d58",
@@ -630,7 +630,7 @@ payload = {
     "price": "2000000000000000,20000000000000000",
     "price_type": "second,flat",
     "price_description": "Price per second,Tax",
-    "time_to_pickup": "2017-12-11T15:21:59+03:00",
+    "time_to_pickup": "1513005719000",
     "time_to_dropoff": "2017-12-11T15:34:20+03:00",
     "insured": "true",
     "insurer_dav_id": "0x17325a469aef3472aa58dfdcf672881d79b31d58",
