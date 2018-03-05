@@ -26,4 +26,4 @@ Here you will find API documentation for various protocols governing communicati
 
 The communication protocols are based on the work of researchers and engineers in many countries. They are an open living standard by the community, for the community.
 
-We invite you to join and contribute to them on <a href="https://github.com/davfoundation" target="blank">Github</a>.
+We invite you to join and contribute to them on <a href="https://github.com/DAVFoundation" target="blank">GitHub</a>.
