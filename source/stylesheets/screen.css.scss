@@ -741,10 +741,14 @@ body.index {
 }
 @media (max-width: $phone-width) {
   .main-thumbs {
-    margin-top: 30px; 
+    margin-top: 30px;
     li{
       width: 40%;
       padding: 0 5% 5%;
     }
   }
+}
+
+p a, td a {
+  color: blue;
 }
