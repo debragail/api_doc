@@ -18,8 +18,9 @@ Here you will find API documentation for various protocols governing communicati
   <li><a href="./protocol/drone_charging.html"><img src="images/thumbnails/drone_charging_thumbnail.png" /></a></li>
   <li><a href="./protocol/drone_delivery.html"><img src="images/thumbnails/drone_delivery_thumbnail.png" /></a></li>
   <li><a href="./protocol/ev_charging.html"><img src="images/thumbnails/ev_charging_thumbnail.png" /></a></li>
+  <li><a href="./protocol/photo_shooting.html"><img src="images/thumbnails/photo_shooting_thumbnail.png" /></a></li>
   <li><a href="./protocol/ride_hailing.html"><img src="images/thumbnails/ride_hailing_thumbnail.png" /></a></li>
-  <li><a href="./protocol/vehicle_locating.html"><img src="images/thumbnails/vehicle_locating_thumbnail.png" /></a></li>
+  <li><a href="./protocol/vehicle_locating.html"><img src="images/thumbnails/vehicle_locating_thumbnail.png" /></a>
 </ul>
 
 # Contribution
