@@ -223,7 +223,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">object_altitude</code>
       <div class="type required">required</div>
     </td>
-    <td>The altidude coordinate of the object that needs to be photographed. Specified as meters above sea level. For example, if the object is located 50 meters above sea level, the <code>object_altitude</code> will be <code>50</code></td>
+    <td>The altitude coordinate of the object that needs to be photographed. Specified as meters above sea level. For example, if the object is located 50 meters above sea level, the <code>object_altitude</code> will be <code>50</code></td>
   </tr>
   <tr>
     <td>
