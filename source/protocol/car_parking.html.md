@@ -270,7 +270,7 @@ A bid to provide a parking service. Typically sent from a parking management sys
 
 ## Arguments
 
-> Post request to a local/remote endpoint representing the vehicle
+> Post request to a local/remote bidding endpoint
 
 ```shell
 curl "bidding_endpoint_here" \

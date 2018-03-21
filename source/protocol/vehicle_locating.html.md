@@ -249,7 +249,7 @@ A bid to provide a vehicle locating service. Typically sent by a vehicle with lo
 
 ## Arguments
 
-> Post request to a local/remote endpoint representing the rider
+> Post request to a local/remote bidding endpoint
 
 ```shell
 curl "bidding_endpoint_here" \

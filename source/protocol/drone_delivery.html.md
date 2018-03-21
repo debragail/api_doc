@@ -339,7 +339,7 @@ A bid to provide a delivery service. Typically sent from a delivery drone to the
 
 ## Arguments
 
-> Post request to a local/remote endpoint representing the drone
+> Post request to a local/remote bidding endpoint
 
 ```shell
 curl "bidding_endpoint_here" \

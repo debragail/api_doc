@@ -306,7 +306,7 @@ A bid to provide a charging service. Typically sent from a charging station to a
 
 ## Arguments
 
-> Post request to a local/remote endpoint representing the drone
+> Post request to a local/remote bidding endpoint
 
 ```shell
 curl "bidding_endpoint_here" \

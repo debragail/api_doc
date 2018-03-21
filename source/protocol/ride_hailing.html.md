@@ -444,7 +444,7 @@ A bid to provide a ride service. Typically sent by a car owner with the price fo
 
 ## Arguments
 
-> Post request to a local/remote endpoint representing the rider
+> Post request to a local/remote bidding endpoint
 
 ```shell
 curl "bidding_endpoint_here" \

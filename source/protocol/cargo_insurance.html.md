@@ -425,7 +425,7 @@ A bid to provide cargo insurance. Typically sent from an insurance provider to a
 
 ## Arguments
 
-> Post request to a local/remote endpoint representing the insurance requester
+> Post request to a local/remote bidding endpoint
 
 ```shell
 curl "bidding_endpoint_here" \

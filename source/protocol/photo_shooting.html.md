@@ -261,7 +261,7 @@ A bid to provide a photo shoot service. Typically sent by a camera owner such as
 
 ## Arguments
 
-> Post request to a local/remote endpoint representing the rider
+> Post request to a local/remote bidding endpoint
 
 ```shell
 curl "bidding_endpoint_here" \
