@@ -244,6 +244,78 @@
               </ul>
           </li>
           <li>
+            <a href="#select-bid" class="toc-h1 toc-link" data-title="Select Bid">Select Bid</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#arguments-3" class="toc-h2 toc-link" data-title="Arguments">Arguments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#starting" class="toc-h1 toc-link" data-title="Starting">Starting</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#arguments-4" class="toc-h2 toc-link" data-title="Arguments">Arguments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#decline" class="toc-h1 toc-link" data-title="Decline">Decline</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#arguments-5" class="toc-h2 toc-link" data-title="Arguments">Arguments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#request-status" class="toc-h1 toc-link" data-title="Request Status">Request Status</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#arguments-6" class="toc-h2 toc-link" data-title="Arguments">Arguments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#status" class="toc-h1 toc-link" data-title="Status">Status</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#arguments-7" class="toc-h2 toc-link" data-title="Arguments">Arguments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#pickup-arrival" class="toc-h1 toc-link" data-title="Pickup Arrival">Pickup Arrival</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#arguments-8" class="toc-h2 toc-link" data-title="Arguments">Arguments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#pickup-leave" class="toc-h1 toc-link" data-title="Pickup Leave">Pickup Leave</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#arguments-9" class="toc-h2 toc-link" data-title="Arguments">Arguments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#dropoff-arrival" class="toc-h1 toc-link" data-title="Dropoff Arrival">Dropoff Arrival</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#arguments-10" class="toc-h2 toc-link" data-title="Arguments">Arguments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#dropoff-leave" class="toc-h1 toc-link" data-title="Dropoff Leave">Dropoff Leave</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#arguments-11" class="toc-h2 toc-link" data-title="Arguments">Arguments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#cargo-types" class="toc-h1 toc-link" data-title="Cargo Types">Cargo Types</a>
           </li>
           <li>
@@ -274,7 +346,7 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">pickup_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">pickup_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.787793</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">pickup_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.500593</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">dropoff_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.937778</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
@@ -287,7 +359,7 @@
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
+    <span class="s2">"pickup_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
     <span class="s2">"pickup_latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
     <span class="s2">"pickup_longitude"</span><span class="p">:</span> <span class="s2">"-79.500593"</span><span class="p">,</span>
     <span class="s2">"dropoff_latitude"</span><span class="p">:</span> <span class="s2">"32.937778"</span><span class="p">,</span>
@@ -298,7 +370,7 @@
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
+    <span class="s">"pickup_at"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
     <span class="s">"pickup_latitude"</span><span class="p">:</span> <span class="s">"32.787793"</span><span class="p">,</span>
     <span class="s">"pickup_longitude"</span><span class="p">:</span> <span class="s">"-79.500593"</span><span class="p">,</span>
     <span class="s">"dropoff_latitude"</span><span class="p">:</span> <span class="s">"32.937778"</span><span class="p">,</span>
@@ -320,8 +392,8 @@
     </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2000000000000000,20000000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">second,flat</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Price per second,Tax</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">time_to_pickup</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005719000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">time_to_dropoff</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513006460000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">eta_pickup</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005719000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">eta_dropoff</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513006460000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
   }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
 
@@ -333,8 +405,8 @@
     <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2000000000000000,20000000000000000"</span><span class="p">,</span>
     <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"second,flat"</span><span class="p">,</span>
     <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per second,Tax"</span><span class="p">,</span>
-    <span class="s2">"time_to_pickup"</span><span class="p">:</span> <span class="s2">"1513005719000"</span><span class="p">,</span>
-    <span class="s2">"time_to_dropoff"</span><span class="p">:</span> <span class="s2">"1513006460000"</span><span class="p">,</span>
+    <span class="s2">"eta_pickup"</span><span class="p">:</span> <span class="s2">"1513005719000"</span><span class="p">,</span>
+    <span class="s2">"eta_dropoff"</span><span class="p">:</span> <span class="s2">"1513006460000"</span><span class="p">,</span>
   <span class="p">})</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
@@ -344,8 +416,8 @@
     <span class="s">"price"</span><span class="p">:</span> <span class="s">"2000000000000000,20000000000000000"</span><span class="p">,</span>
     <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"second,flat"</span><span class="p">,</span>
     <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per second,Tax"</span><span class="p">,</span>
-    <span class="s">"time_to_pickup"</span><span class="p">:</span> <span class="s">"1513005719000"</span><span class="p">,</span>
-    <span class="s">"time_to_dropoff"</span><span class="p">:</span> <span class="s">"1513006460000"</span><span class="p">,</span>
+    <span class="s">"eta_pickup"</span><span class="p">:</span> <span class="s">"1513005719000"</span><span class="p">,</span>
+    <span class="s">"eta_dropoff"</span><span class="p">:</span> <span class="s">"1513006460000"</span><span class="p">,</span>
   <span class="p">}</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </code></pre><h1 id='need'>Need</h1>
@@ -358,7 +430,7 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">pickup_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">pickup_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.787793</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">pickup_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.500593</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">dropoff_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.937778</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
@@ -382,7 +454,7 @@
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
+    <span class="s2">"pickup_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
     <span class="s2">"pickup_latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
     <span class="s2">"pickup_longitude"</span><span class="p">:</span> <span class="s2">"-79.500593"</span><span class="p">,</span>
     <span class="s2">"dropoff_latitude"</span><span class="p">:</span> <span class="s2">"32.937778"</span><span class="p">,</span>
@@ -404,7 +476,7 @@
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
+    <span class="s">"pickup_at"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
     <span class="s">"pickup_latitude"</span><span class="p">:</span> <span class="s">"32.787793"</span><span class="p">,</span>
     <span class="s">"pickup_longitude"</span><span class="p">:</span> <span class="s">"-79.500593"</span><span class="p">,</span>
     <span class="s">"dropoff_latitude"</span><span class="p">:</span> <span class="s">"32.937778"</span><span class="p">,</span>
@@ -432,7 +504,7 @@
       <div class="type">optional</div>
     </td>
     <td>
-      The time at which the requester would like the cargo to be picked up (if undefined, the pick up time will be ASAP). This should be Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a>
+      The time at which the service requester would like the cargo to be picked up (if undefined, the pick up time will be ASAP). This should be Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a>
     </td>
   </tr>
   <tr>
@@ -539,7 +611,7 @@
       <code class="field">insurance_required</code>
       <div class="type">optional</div>
     </td>
-    <td>The requester may require that the delivery be insured. Specified as a boolean (default is false)</td>
+    <td>the service requester may require that the delivery be insured. Specified as a boolean (default is false)</td>
   </tr>
   <tr>
     <td>
@@ -557,25 +629,25 @@
   </tr>
 </table>
 <h1 id='bid'>Bid</h1>
-<p>A bid to provide a delivery service. Typically sent from a delivery drone to the user who requested the service.</p>
+<p>A bid to provide a delivery service. Typically sent from a delivery drone to the user who requested the service</p>
 <h2 id='arguments-2'>Arguments</h2>
 <blockquote>
 <p>Post request to a local/remote bidding endpoint</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
-    ”need_id”: ”ae7bd8f67f3089c”, </span><span class="se">\</span><span class="s2">
-    ”expires_at”: ”1519093577681”, </span><span class="se">\</span><span class="s2">
-    ”price”: ”2000000000000000,20000000000000000”, </span><span class="se">\</span><span class="s2">
-    ”price_type”: ”second,flat”, </span><span class="se">\</span><span class="s2">
-    ”price_description”: ”Price per second,Tax”, </span><span class="se">\</span><span class="s2">
-    ”time_to_pickup”: ”1513005719000”, </span><span class="se">\</span><span class="s2">
-    ”time_to_dropoff”: ”1513006460000”, </span><span class="se">\</span><span class="s2">
-    ”insured”: ”true”, </span><span class="se">\</span><span class="s2">
-    ”insurer_dav_id”: ”0x17325a469aef3472aa58dfdcf672881d79b31d58”, </span><span class="se">\</span><span class="s2">
-    ”drone_contact”: ”Megadronix”, </span><span class="se">\</span><span class="s2">
-    ”drone_manufacturer”: ”DXY”, </span><span class="se">\</span><span class="s2">
-    ”drone_model”: ”m6000”, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">need_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1519093577681</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">200000000000000</span><span class="se">\"</span><span class="s2">,20000000000000000”, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">secon</span><span class="se">\"</span><span class="s2">,flat”, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Pric</span><span class="se">\"</span><span class="s2"> per second,Tax”, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">eta_pickup</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005719000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">eta_dropoff</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513006460000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">insured</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">true</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">insurer_dav_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">0x17325a469aef3472aa58dfdcf672881d79b31d58</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">drone_contact</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Megadronix</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">drone_manufacturer</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">DXY</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">drone_model</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">m6000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
   }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
 
@@ -587,8 +659,8 @@
     <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2000000000000000,20000000000000000"</span><span class="p">,</span>
     <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"second,flat"</span><span class="p">,</span>
     <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per second,Tax"</span><span class="p">,</span>
-    <span class="s2">"time_to_pickup"</span><span class="p">:</span> <span class="s2">"1513005719000"</span><span class="p">,</span>
-    <span class="s2">"time_to_dropoff"</span><span class="p">:</span> <span class="s2">"1513006460000"</span><span class="p">,</span>
+    <span class="s2">"eta_pickup"</span><span class="p">:</span> <span class="s2">"1513005719000"</span><span class="p">,</span>
+    <span class="s2">"eta_dropoff"</span><span class="p">:</span> <span class="s2">"1513006460000"</span><span class="p">,</span>
     <span class="s2">"insured"</span><span class="p">:</span> <span class="s2">"true"</span><span class="p">,</span>
     <span class="s2">"insurer_dav_id"</span><span class="p">:</span> <span class="s2">"0x17325a469aef3472aa58dfdcf672881d79b31d58"</span><span class="p">,</span>
     <span class="s2">"drone_contact"</span><span class="p">:</span> <span class="s2">"Megadronix"</span><span class="p">,</span>
@@ -603,8 +675,8 @@
     <span class="s">"price"</span><span class="p">:</span> <span class="s">"2000000000000000,20000000000000000"</span><span class="p">,</span>
     <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"second,flat"</span><span class="p">,</span>
     <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per second,Tax"</span><span class="p">,</span>
-    <span class="s">"time_to_pickup"</span><span class="p">:</span> <span class="s">"1513005719000"</span><span class="p">,</span>
-    <span class="s">"time_to_dropoff"</span><span class="p">:</span> <span class="s">"1513006460000"</span><span class="p">,</span>
+    <span class="s">"eta_pickup"</span><span class="p">:</span> <span class="s">"1513005719000"</span><span class="p">,</span>
+    <span class="s">"eta_dropoff"</span><span class="p">:</span> <span class="s">"1513006460000"</span><span class="p">,</span>
     <span class="s">"insured"</span><span class="p">:</span> <span class="s">"true"</span><span class="p">,</span>
     <span class="s">"insurer_dav_id"</span><span class="p">:</span> <span class="s">"0x17325a469aef3472aa58dfdcf672881d79b31d58"</span><span class="p">,</span>
     <span class="s">"drone_contact"</span><span class="p">:</span> <span class="s">"Megadronix"</span><span class="p">,</span>
@@ -651,14 +723,14 @@
   </tr>
   <tr>
     <td>
-      <code class="field">time_to_pickup</code>
+      <code class="field">eta_pickup</code>
       <div class="type required">required</div>
     </td>
     <td>The estimate time of arrival at the pickup location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
-      <code class="field">time_to_dropoff</code>
+      <code class="field">eta_dropoff</code>
       <div class="type required">required</div>
     </td>
     <td>The estimate time of arrival at the dropoff location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
@@ -706,8 +778,435 @@
     <td>Name of the model of this drone</td>
   </tr>
 </table>
+<h1 id='select-bid'>Select Bid</h1>
+<p>A selection of one bid that wins over the rest. Sent by the service requseter (a user that is looking to deliver a package using a drone)</p>
+<h2 id='arguments-3'>Arguments</h2>
+<blockquote>
+<p>Post request to a local/remote endpoint representing the service provider</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">bid_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">bv43nmw65eef03e</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"bid_id"</span><span class="p">:</span> <span class="s2">"bv43nmw65eef03e"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"bid_id"</span><span class="p">:</span> <span class="s">"bv43nmw65eef03e"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"discovery_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre>
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the selected 'bid'. This ID arrives as part of the 'bid' request</td>
+  </tr>
+</table>
+<h1 id='starting'>Starting</h1>
+<p>A message sent by the service provider (the delivery drone) to the service requester, notifying that the delivery mission has started</p>
+<h2 id='arguments-4'>Arguments</h2>
+<blockquote>
+<p>Post request to a local/remote endpoint representing the service requester</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">bid_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">bv43nmw65eef03e</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">current_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785889</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">current_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935569</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">current_altitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">80</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">azimuth_angle</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">15</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">eta_pickup</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005719000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">eta_dropoff</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513006460000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"bid_id"</span><span class="p">:</span> <span class="s2">"bv43nmw65eef03e"</span><span class="p">,</span>
+    <span class="s2">"current_latitude"</span><span class="p">:</span> <span class="s2">"32.785889"</span><span class="p">,</span>
+    <span class="s2">"current_longitude"</span><span class="p">:</span> <span class="s2">"-79.935569"</span><span class="p">,</span>
+    <span class="s2">"current_altitude"</span><span class="p">:</span> <span class="s2">"80"</span><span class="p">,</span>
+    <span class="s2">"azimuth_angle"</span><span class="p">:</span> <span class="s2">"15"</span><span class="p">,</span>
+    <span class="s2">"eta_pickup"</span><span class="p">:</span> <span class="s2">"1513005719000"</span><span class="p">,</span>
+    <span class="s2">"eta_dropoff"</span><span class="p">:</span> <span class="s2">"1513006460000"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"bid_id"</span><span class="p">:</span> <span class="s">"bv43nmw65eef03e"</span><span class="p">,</span>
+    <span class="s">"current_latitude"</span><span class="p">:</span> <span class="s">"32.785889"</span><span class="p">,</span>
+    <span class="s">"current_longitude"</span><span class="p">:</span> <span class="s">"-79.935569"</span><span class="p">,</span>
+    <span class="s">"current_altitude"</span><span class="p">:</span> <span class="s">"80"</span><span class="p">,</span>
+    <span class="s">"azimuth_angle"</span><span class="p">:</span> <span class="s">"15"</span><span class="p">,</span>
+    <span class="s">"eta_pickup"</span><span class="p">:</span> <span class="s">"1513005719000"</span><span class="p">,</span>
+    <span class="s">"eta_dropoff"</span><span class="p">:</span> <span class="s">"1513006460000"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre>
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that initiated the delivery mission</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_latitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The latitude coordinate of of where the drone is currently located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_longitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The longitude coordinate of where the drone is currently located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_altitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The current altitude coordinate of the drone. Specified as meters above sea level. For example, if the drone is located 50 meters above sea level, the <code>current_altitude</code> will be <code>50</code></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">azimuth_angle</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The horizontal angle the drone is currently aiming at. Specified as an integer representing degrees</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">eta_pickup</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The estimate time of arrival at the pickup location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">eta_dropoff</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The estimate time of arrival at the dropoff location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+  </tr>
+</table>
+<h1 id='decline'>Decline</h1>
+<p>A cancellation message sent by the service provider (the delivery drone) to the service requester, notifying that the mission has been declined</p>
+<h2 id='arguments-5'>Arguments</h2>
+<blockquote>
+<p>Post request to a local/remote endpoint representing the service requester</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">bid_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">bv43nmw65eef03e</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"bid_id"</span><span class="p">:</span> <span class="s2">"bv43nmw65eef03e"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"bid_id"</span><span class="p">:</span> <span class="s">"bv43nmw65eef03e"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre>
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that declined the delivery mission</td>
+  </tr>
+</table>
+<h1 id='request-status'>Request Status</h1>
+<p>A request message sent by the service requester to the service provider, asking for a status update</p>
+<h2 id='arguments-6'>Arguments</h2>
+<blockquote>
+<p>Post request to a local/remote endpoint representing the service provider</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">bid_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">bv43nmw65eef03e</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"bid_id"</span><span class="p">:</span> <span class="s2">"bv43nmw65eef03e"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"bid_id"</span><span class="p">:</span> <span class="s">"bv43nmw65eef03e"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"discovery_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre>
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that is currently on the delivery mission</td>
+  </tr>
+</table>
+<h1 id='status'>Status</h1>
+<p>A status update sent by the service provider to the service requseter</p>
+<h2 id='arguments-7'>Arguments</h2>
+<blockquote>
+<p>Post request to a local/remote endpoint representing the service requester</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">bid_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">bv43nmw65eef03e</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">current_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785889</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">current_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935569</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">current_altitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">80</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">azimuth_angle</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">15</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">eta_pickup</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005719000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">eta_dropoff</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513006460000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"bid_id"</span><span class="p">:</span> <span class="s2">"bv43nmw65eef03e"</span><span class="p">,</span>
+    <span class="s2">"current_latitude"</span><span class="p">:</span> <span class="s2">"32.785889"</span><span class="p">,</span>
+    <span class="s2">"current_longitude"</span><span class="p">:</span> <span class="s2">"-79.935569"</span><span class="p">,</span>
+    <span class="s2">"current_altitude"</span><span class="p">:</span> <span class="s2">"80"</span><span class="p">,</span>
+    <span class="s2">"azimuth_angle"</span><span class="p">:</span> <span class="s2">"15"</span><span class="p">,</span>
+    <span class="s2">"eta_pickup"</span><span class="p">:</span> <span class="s2">"1513005719000"</span><span class="p">,</span>
+    <span class="s2">"eta_dropoff"</span><span class="p">:</span> <span class="s2">"1513006460000"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"bid_id"</span><span class="p">:</span> <span class="s">"bv43nmw65eef03e"</span><span class="p">,</span>
+    <span class="s">"current_latitude"</span><span class="p">:</span> <span class="s">"32.785889"</span><span class="p">,</span>
+    <span class="s">"current_longitude"</span><span class="p">:</span> <span class="s">"-79.935569"</span><span class="p">,</span>
+    <span class="s">"current_altitude"</span><span class="p">:</span> <span class="s">"80"</span><span class="p">,</span>
+    <span class="s">"azimuth_angle"</span><span class="p">:</span> <span class="s">"15"</span><span class="p">,</span>
+    <span class="s">"eta_pickup"</span><span class="p">:</span> <span class="s">"1513005719000"</span><span class="p">,</span>
+    <span class="s">"eta_dropoff"</span><span class="p">:</span> <span class="s">"1513006460000"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre>
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that is currently on the delivery mission</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_latitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The latitude coordinate of of where the drone is currently located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_longitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The longitude coordinate of where the drone is currently located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_altitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The current altitude coordinate of the drone. Specified as meters above sea level. For example, if the drone is located 50 meters above sea level, the <code>current_altitude</code> will be <code>50</code></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">azimuth_angle</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The horizontal angle the drone is currently aiming at. Specified as an integer representing degrees</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">eta_pickup</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The estimate time of arrival at the pickup location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">eta_dropoff</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The estimate time of arrival at the dropoff location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+  </tr>
+</table>
+<h1 id='pickup-arrival'>Pickup Arrival</h1>
+<p>A message sent by the service provider to the service requester, notifying that the drone has arrived at the pickup location (for the user to load the package)</p>
+<h2 id='arguments-8'>Arguments</h2>
+<blockquote>
+<p>Post request to a local/remote endpoint representing the service requester</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">bid_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">bv43nmw65eef03e</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"bid_id"</span><span class="p">:</span> <span class="s2">"bv43nmw65eef03e"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"bid_id"</span><span class="p">:</span> <span class="s">"bv43nmw65eef03e"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre>
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that is currently on the delivery mission</td>
+  </tr>
+</table>
+<h1 id='pickup-leave'>Pickup Leave</h1>
+<p>A message sent by the service provider to the service requester, notifying that the drone has left the pickup location</p>
+<h2 id='arguments-9'>Arguments</h2>
+<blockquote>
+<p>Post request to a local/remote endpoint representing the service requester</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">bid_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">bv43nmw65eef03e</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">eta_dropoff</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513006460000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"bid_id"</span><span class="p">:</span> <span class="s2">"bv43nmw65eef03e"</span><span class="p">,</span>
+    <span class="s2">"eta_dropoff"</span><span class="p">:</span> <span class="s2">"1513006460000"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"bid_id"</span><span class="p">:</span> <span class="s">"bv43nmw65eef03e"</span><span class="p">,</span>
+    <span class="s">"eta_dropoff"</span><span class="p">:</span> <span class="s">"1513006460000"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre>
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that is currently on the delivery mission</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">eta_dropoff</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The estimate time of arrival at the dropoff location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+  </tr>
+</table>
+<h1 id='dropoff-arrival'>Dropoff Arrival</h1>
+<p>A message sent by the service provider to the service requester, notifying that the drone has arrived at the dropoff location</p>
+<h2 id='arguments-10'>Arguments</h2>
+<blockquote>
+<p>Post request to a local/remote endpoint representing the service requester</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">bid_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">bv43nmw65eef03e</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"bid_id"</span><span class="p">:</span> <span class="s2">"bv43nmw65eef03e"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"bid_id"</span><span class="p">:</span> <span class="s">"bv43nmw65eef03e"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre>
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that is currently on the delivery mission</td>
+  </tr>
+</table>
+<h1 id='dropoff-leave'>Dropoff Leave</h1>
+<p>A message sent by the service provider to the service requester, notifying that the drone has left the dropoff location</p>
+<h2 id='arguments-11'>Arguments</h2>
+<blockquote>
+<p>Post request to a local/remote endpoint representing the service requester</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">bid_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">bv43nmw65eef03e</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"bid_id"</span><span class="p">:</span> <span class="s2">"bv43nmw65eef03e"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"bid_id"</span><span class="p">:</span> <span class="s">"bv43nmw65eef03e"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre>
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that had just finished the delivery mission</td>
+  </tr>
+</table>
 <h1 id='cargo-types'>Cargo Types</h1>
-<p>The following table describes the different types of cargo according to international delivery standards.</p>
+<p>The following table describes the different types of cargo according to international delivery standards</p>
 
 <table class="cargo">
   <tr>
@@ -788,7 +1287,7 @@
   </tr>
 </table>
 <h1 id='hazardous-goods'>Hazardous Goods</h1>
-<p>The following table describes the different types of hazardous goods according to international delivery standards.</p>
+<p>The following table describes the different types of hazardous goods according to international delivery standards</p>
 
 <table class="hazardous">
   <tr>
@@ -839,7 +1338,7 @@
 
 <p>The second digit indicates the level of protection that the enclosure provides against harmful ingress of water.</p>
 
-<p>For a full listing of all available codes, read more about <a href="https://en.wikipedia.org/wiki/IP_Code" target="_blank">International Protection Marking, IEC standard 60529</a>.</p>
+<p>For a full listing of all available codes, read more about <a href="https://en.wikipedia.org/wiki/IP_Code" target="_blank">International Protection Marking, IEC standard 60529</a></p>
 
 <table class="iplevel">
   <tr>
@@ -940,7 +1439,7 @@
   </tr>
 </table>
 <h1 id='price-types'>Price Types</h1>
-<p>Price types and their unique identifier.</p>
+<p>Price types and their unique identifier</p>
 
 <table class="price_types">
   <tr>
