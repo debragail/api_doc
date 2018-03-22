@@ -25,7 +25,7 @@ For example, a user is looking for a drone to pick up a small tube containing co
 ```shell
 curl "discovery_endpoint_here" \
   --data "{ \
-    \"start_at\": \"1513005534000\", \
+    \"pickup_at\": \"1513005534000\", \
     \"pickup_latitude\": \"32.787793\", \
     \"pickup_longitude\": \"-79.500593\", \
     \"dropoff_latitude\": \"32.937778\", \
@@ -41,7 +41,7 @@ const discoveryEndPoint = "discovery_endpoint_here";
 fetch(discoveryEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "start_at": "1513005534000",
+    "pickup_at": "1513005534000",
     "pickup_latitude": "32.787793",
     "pickup_longitude": "-79.500593",
     "dropoff_latitude": "32.937778",
@@ -55,7 +55,7 @@ fetch(discoveryEndPoint, {
 ```python
 import requests
 payload = {
-    "start_at": "1513005534000",
+    "pickup_at": "1513005534000",
     "pickup_latitude": "32.787793",
     "pickup_longitude": "-79.500593",
     "dropoff_latitude": "32.937778",
@@ -78,8 +78,8 @@ curl "bidding_endpoint_here" \
     \"price\": \"2000000000000000,20000000000000000\", \
     \"price_type\": \"second,flat\", \
     \"price_description\": \"Price per second,Tax\", \
-    \"time_to_pickup\": \"1513005719000\", \
-    \"time_to_dropoff\": \"1513006460000\", \
+    \"eta_pickup\": \"1513005719000\", \
+    \"eta_dropoff\": \"1513006460000\", \
   }"
 ```
 
@@ -94,8 +94,8 @@ fetch(biddingEndPoint, {
     "price": "2000000000000000,20000000000000000",
     "price_type": "second,flat",
     "price_description": "Price per second,Tax",
-    "time_to_pickup": "1513005719000",
-    "time_to_dropoff": "1513006460000",
+    "eta_pickup": "1513005719000",
+    "eta_dropoff": "1513006460000",
   })
 });
 ```
@@ -108,8 +108,8 @@ payload = {
     "price": "2000000000000000,20000000000000000",
     "price_type": "second,flat",
     "price_description": "Price per second,Tax",
-    "time_to_pickup": "1513005719000",
-    "time_to_dropoff": "1513006460000",
+    "eta_pickup": "1513005719000",
+    "eta_dropoff": "1513006460000",
   }
 requests.post("bidding_endpoint_here", data=payload)
 ```
@@ -127,7 +127,7 @@ This request is sent to the decentralized discovery engine which responds with s
 ```shell
 curl "discovery_endpoint_here" \
   --data "{ \
-    \"start_at\": \"1513005534000\", \
+    \"pickup_at\": \"1513005534000\", \
     \"pickup_latitude\": \"32.787793\", \
     \"pickup_longitude\": \"-79.500593\", \
     \"dropoff_latitude\": \"32.937778\", \
@@ -154,7 +154,7 @@ const discoveryEndPoint = "discovery_endpoint_here";
 fetch(discoveryEndPoint, {
   method: "POST",
   body: JSON.stringify({
-    "start_at": "1513005534000",
+    "pickup_at": "1513005534000",
     "pickup_latitude": "32.787793",
     "pickup_longitude": "-79.500593",
     "dropoff_latitude": "32.937778",
@@ -179,7 +179,7 @@ fetch(discoveryEndPoint, {
 ```python
 import requests
 payload = {
-    "start_at": "1513005534000",
+    "pickup_at": "1513005534000",
     "pickup_latitude": "32.787793",
     "pickup_longitude": "-79.500593",
     "dropoff_latitude": "32.937778",
@@ -208,7 +208,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <div class="type">optional</div>
     </td>
     <td>
-      The time at which the requester would like the cargo to be picked up (if undefined, the pick up time will be ASAP). This should be Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a>
+      The time at which the service requester would like the cargo to be picked up (if undefined, the pick up time will be ASAP). This should be Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a>
     </td>
   </tr>
   <tr>
@@ -315,7 +315,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">insurance_required</code>
       <div class="type">optional</div>
     </td>
-    <td>The requester may require that the delivery be insured. Specified as a boolean (default is false)</td>
+    <td>the service requester may require that the delivery be insured. Specified as a boolean (default is false)</td>
   </tr>
   <tr>
     <td>
@@ -335,7 +335,7 @@ requests.post("discovery_endpoint_here", data=payload)
 
 # Bid
 
-A bid to provide a delivery service. Typically sent from a delivery drone to the user who requested the service.
+A bid to provide a delivery service. Typically sent from a delivery drone to the user who requested the service
 
 ## Arguments
 
@@ -344,18 +344,18 @@ A bid to provide a delivery service. Typically sent from a delivery drone to the
 ```shell
 curl "bidding_endpoint_here" \
   --data "{ \
-    ”need_id”: ”ae7bd8f67f3089c”, \
-    ”expires_at”: ”1519093577681”, \
-    ”price”: ”2000000000000000,20000000000000000”, \
-    ”price_type”: ”second,flat”, \
-    ”price_description”: ”Price per second,Tax”, \
-    ”time_to_pickup”: ”1513005719000”, \
-    ”time_to_dropoff”: ”1513006460000”, \
-    ”insured”: ”true”, \
-    ”insurer_dav_id”: ”0x17325a469aef3472aa58dfdcf672881d79b31d58”, \
-    ”drone_contact”: ”Megadronix”, \
-    ”drone_manufacturer”: ”DXY”, \
-    ”drone_model”: ”m6000”, \
+    \"need_id\": \"ae7bd8f67f3089c\", \
+    \"expires_at\": \"1519093577681\", \
+    \"price\": \"200000000000000\",20000000000000000”, \
+    \"price_type\": \"secon\",flat”, \
+    \"price_description\": \"Pric\" per second,Tax”, \
+    \"eta_pickup\": \"1513005719000\", \
+    \"eta_dropoff\": \"1513006460000\", \
+    \"insured\": \"true\", \
+    \"insurer_dav_id\": \"0x17325a469aef3472aa58dfdcf672881d79b31d58\", \
+    \"drone_contact\": \"Megadronix\", \
+    \"drone_manufacturer\": \"DXY\", \
+    \"drone_model\": \"m6000\", \
   }"
 ```
 
@@ -370,8 +370,8 @@ fetch(biddingEndPoint, {
     "price": "2000000000000000,20000000000000000",
     "price_type": "second,flat",
     "price_description": "Price per second,Tax",
-    "time_to_pickup": "1513005719000",
-    "time_to_dropoff": "1513006460000",
+    "eta_pickup": "1513005719000",
+    "eta_dropoff": "1513006460000",
     "insured": "true",
     "insurer_dav_id": "0x17325a469aef3472aa58dfdcf672881d79b31d58",
     "drone_contact": "Megadronix",
@@ -389,8 +389,8 @@ payload = {
     "price": "2000000000000000,20000000000000000",
     "price_type": "second,flat",
     "price_description": "Price per second,Tax",
-    "time_to_pickup": "1513005719000",
-    "time_to_dropoff": "1513006460000",
+    "eta_pickup": "1513005719000",
+    "eta_dropoff": "1513006460000",
     "insured": "true",
     "insurer_dav_id": "0x17325a469aef3472aa58dfdcf672881d79b31d58",
     "drone_contact": "Megadronix",
@@ -438,14 +438,14 @@ requests.post("bidding_endpoint_here", data=payload)
   </tr>
   <tr>
     <td>
-      <code class="field">time_to_pickup</code>
+      <code class="field">eta_pickup</code>
       <div class="type required">required</div>
     </td>
     <td>The estimate time of arrival at the pickup location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
-      <code class="field">time_to_dropoff</code>
+      <code class="field">eta_dropoff</code>
       <div class="type required">required</div>
     </td>
     <td>The estimate time of arrival at the dropoff location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
@@ -494,9 +494,535 @@ requests.post("bidding_endpoint_here", data=payload)
   </tr>
 </table>
 
+# Select Bid
+
+A selection of one bid that wins over the rest. Sent by the service requseter (a user that is looking to deliver a package using a drone)
+
+## Arguments
+
+> Post request to a local/remote endpoint representing the service provider
+
+```shell
+curl "discovery_endpoint_here" \
+  --data "{ \
+    \"bid_id\": \"bv43nmw65eef03e\", \
+  }"
+```
+
+```javascript
+const discoveryEndPoint = "discovery_endpoint_here";
+
+fetch(discoveryEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "bid_id": "bv43nmw65eef03e",
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "bid_id": "bv43nmw65eef03e",
+  }
+requests.post("discovery_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the selected 'bid'. This ID arrives as part of the 'bid' request</td>
+  </tr>
+</table>
+
+# Starting
+
+A message sent by the service provider (the delivery drone) to the service requester, notifying that the delivery mission has started
+
+## Arguments
+
+> Post request to a local/remote endpoint representing the service requester
+
+```shell
+curl "bidding_endpoint_here" \
+  --data "{ \
+    \"bid_id\": \"bv43nmw65eef03e\", \
+    \"current_latitude\": \"32.785889\", \
+    \"current_longitude\": \"-79.935569\", \
+    \"current_altitude\": \"80\", \
+    \"azimuth_angle\": \"15\", \
+    \"eta_pickup\": \"1513005719000\", \
+    \"eta_dropoff\": \"1513006460000\", \
+  }"
+```
+
+```javascript
+const biddingEndPoint = "bidding_endpoint_here";
+
+fetch(biddingEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "bid_id": "bv43nmw65eef03e",
+    "current_latitude": "32.785889",
+    "current_longitude": "-79.935569",
+    "current_altitude": "80",
+    "azimuth_angle": "15",
+    "eta_pickup": "1513005719000",
+    "eta_dropoff": "1513006460000",
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "bid_id": "bv43nmw65eef03e",
+    "current_latitude": "32.785889",
+    "current_longitude": "-79.935569",
+    "current_altitude": "80",
+    "azimuth_angle": "15",
+    "eta_pickup": "1513005719000",
+    "eta_dropoff": "1513006460000",
+  }
+requests.post("bidding_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that initiated the delivery mission</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_latitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The latitude coordinate of of where the drone is currently located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_longitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The longitude coordinate of where the drone is currently located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_altitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The current altitude coordinate of the drone. Specified as meters above sea level. For example, if the drone is located 50 meters above sea level, the <code>current_altitude</code> will be <code>50</code></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">azimuth_angle</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The horizontal angle the drone is currently aiming at. Specified as an integer representing degrees</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">eta_pickup</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The estimate time of arrival at the pickup location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">eta_dropoff</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The estimate time of arrival at the dropoff location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+  </tr>
+</table>
+
+# Decline
+
+A cancellation message sent by the service provider (the delivery drone) to the service requester, notifying that the mission has been declined
+
+## Arguments
+
+> Post request to a local/remote endpoint representing the service requester
+
+```shell
+curl "bidding_endpoint_here" \
+  --data "{ \
+    \"bid_id\": \"bv43nmw65eef03e\", \
+  }"
+```
+
+```javascript
+const biddingEndPoint = "bidding_endpoint_here";
+
+fetch(biddingEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "bid_id": "bv43nmw65eef03e",
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "bid_id": "bv43nmw65eef03e",
+  }
+requests.post("bidding_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that declined the delivery mission</td>
+  </tr>
+</table>
+
+# Request Status
+
+A request message sent by the service requester to the service provider, asking for a status update
+
+## Arguments
+
+> Post request to a local/remote endpoint representing the service provider
+
+```shell
+curl "discovery_endpoint_here" \
+  --data "{ \
+    \"bid_id\": \"bv43nmw65eef03e\", \
+  }"
+```
+
+```javascript
+const discoveryEndPoint = "discovery_endpoint_here";
+
+fetch(discoveryEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "bid_id": "bv43nmw65eef03e",
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "bid_id": "bv43nmw65eef03e",
+  }
+requests.post("discovery_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that is currently on the delivery mission</td>
+  </tr>
+</table>
+
+# Status
+
+A status update sent by the service provider to the service requseter
+
+## Arguments
+
+> Post request to a local/remote endpoint representing the service requester
+
+```shell
+curl "bidding_endpoint_here" \
+  --data "{ \
+    \"bid_id\": \"bv43nmw65eef03e\", \
+    \"current_latitude\": \"32.785889\", \
+    \"current_longitude\": \"-79.935569\", \
+    \"current_altitude\": \"80\", \
+    \"azimuth_angle\": \"15\", \
+    \"eta_pickup\": \"1513005719000\", \
+    \"eta_dropoff\": \"1513006460000\", \
+  }"
+```
+
+```javascript
+const biddingEndPoint = "bidding_endpoint_here";
+
+fetch(biddingEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "bid_id": "bv43nmw65eef03e",
+    "current_latitude": "32.785889",
+    "current_longitude": "-79.935569",
+    "current_altitude": "80",
+    "azimuth_angle": "15",
+    "eta_pickup": "1513005719000",
+    "eta_dropoff": "1513006460000",
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "bid_id": "bv43nmw65eef03e",
+    "current_latitude": "32.785889",
+    "current_longitude": "-79.935569",
+    "current_altitude": "80",
+    "azimuth_angle": "15",
+    "eta_pickup": "1513005719000",
+    "eta_dropoff": "1513006460000",
+  }
+requests.post("bidding_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that is currently on the delivery mission</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_latitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The latitude coordinate of of where the drone is currently located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_longitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The longitude coordinate of where the drone is currently located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_altitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The current altitude coordinate of the drone. Specified as meters above sea level. For example, if the drone is located 50 meters above sea level, the <code>current_altitude</code> will be <code>50</code></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">azimuth_angle</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The horizontal angle the drone is currently aiming at. Specified as an integer representing degrees</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">eta_pickup</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The estimate time of arrival at the pickup location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">eta_dropoff</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The estimate time of arrival at the dropoff location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+  </tr>
+</table>
+
+# Pickup Arrival
+
+A message sent by the service provider to the service requester, notifying that the drone has arrived at the pickup location (for the user to load the package)
+
+## Arguments
+
+> Post request to a local/remote endpoint representing the service requester
+
+```shell
+curl "bidding_endpoint_here" \
+  --data "{ \
+    \"bid_id\": \"bv43nmw65eef03e\", \
+  }"
+```
+
+```javascript
+const biddingEndPoint = "bidding_endpoint_here";
+
+fetch(biddingEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "bid_id": "bv43nmw65eef03e",
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "bid_id": "bv43nmw65eef03e",
+  }
+requests.post("bidding_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that is currently on the delivery mission</td>
+  </tr>
+</table>
+
+# Pickup Leave
+
+A message sent by the service provider to the service requester, notifying that the drone has left the pickup location
+
+## Arguments
+
+> Post request to a local/remote endpoint representing the service requester
+
+```shell
+curl "bidding_endpoint_here" \
+  --data "{ \
+    \"bid_id\": \"bv43nmw65eef03e\", \
+    \"eta_dropoff\": \"1513006460000\", \
+  }"
+```
+
+```javascript
+const biddingEndPoint = "bidding_endpoint_here";
+
+fetch(biddingEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "bid_id": "bv43nmw65eef03e",
+    "eta_dropoff": "1513006460000",
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "bid_id": "bv43nmw65eef03e",
+    "eta_dropoff": "1513006460000",
+  }
+requests.post("bidding_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that is currently on the delivery mission</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">eta_dropoff</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The estimate time of arrival at the dropoff location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+  </tr>
+</table>
+
+# Dropoff Arrival
+
+A message sent by the service provider to the service requester, notifying that the drone has arrived at the dropoff location
+
+## Arguments
+
+> Post request to a local/remote endpoint representing the service requester
+
+```shell
+curl "bidding_endpoint_here" \
+  --data "{ \
+    \"bid_id\": \"bv43nmw65eef03e\", \
+  }"
+```
+
+```javascript
+const biddingEndPoint = "bidding_endpoint_here";
+
+fetch(biddingEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "bid_id": "bv43nmw65eef03e",
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "bid_id": "bv43nmw65eef03e",
+  }
+requests.post("bidding_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that is currently on the delivery mission</td>
+  </tr>
+</table>
+
+# Dropoff Leave
+
+A message sent by the service provider to the service requester, notifying that the drone has left the dropoff location
+
+## Arguments
+
+> Post request to a local/remote endpoint representing the service requester
+
+```shell
+curl "bidding_endpoint_here" \
+  --data "{ \
+    \"bid_id\": \"bv43nmw65eef03e\", \
+  }"
+```
+
+```javascript
+const biddingEndPoint = "bidding_endpoint_here";
+
+fetch(biddingEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "bid_id": "bv43nmw65eef03e",
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "bid_id": "bv43nmw65eef03e",
+  }
+requests.post("bidding_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that had just finished the delivery mission</td>
+  </tr>
+</table>
+
 # Cargo Types
 
-The following table describes the different types of cargo according to international delivery standards.
+The following table describes the different types of cargo according to international delivery standards
 
 <table class="cargo">
   <tr>
@@ -579,7 +1105,7 @@ The following table describes the different types of cargo according to internat
 
 # Hazardous Goods
 
-The following table describes the different types of hazardous goods according to international delivery standards.
+The following table describes the different types of hazardous goods according to international delivery standards
 
 <table class="hazardous">
   <tr>
@@ -632,7 +1158,7 @@ The first digit indicates the level of protection that the enclosure provides ag
 
 The second digit indicates the level of protection that the enclosure provides against harmful ingress of water.
 
-For a full listing of all available codes, read more about <a href="https://en.wikipedia.org/wiki/IP_Code" target="_blank">International Protection Marking, IEC standard 60529</a>.
+For a full listing of all available codes, read more about <a href="https://en.wikipedia.org/wiki/IP_Code" target="_blank">International Protection Marking, IEC standard 60529</a>
 
 <table class="iplevel">
   <tr>
@@ -735,7 +1261,7 @@ For a full listing of all available codes, read more about <a href="https://en.w
 
 # Price Types
 
-Price types and their unique identifier.
+Price types and their unique identifier
 
 <table class="price_types">
   <tr>
