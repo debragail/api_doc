@@ -358,7 +358,7 @@
   <span class="p">}</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </code></pre>
-<p><b>Note:</b> For charging while parking, see the <a href="../protocol/ev_charging.html">Electric Vehicle Charging Protocol</a>, as some charging stations include a parking service. If a <code>bid</code> is given in response to a Car Parking <code>need</code> from a location offering EV Charging, the <code>bid</code> price will not include any charging services.</p>
+<p><b>Note:</b> For charging while parking, see the <a href="../protocol/ev_charging.html" target="blank">Electric Vehicle Charging Protocol</a>, as some charging stations include a parking service. If a <code>bid</code> is given in response to a Car Parking <code>need</code> from a location offering EV Charging, the <code>bid</code> price will not include any charging services.</p>
 <h1 id='need'>Need</h1>
 <p>A statement of need for parking spaces. Typically this will be sent by a vehicle that is looking for a parking space around certain coordinates.</p>
 
@@ -415,14 +415,14 @@
       <code class="field">start_at</code>
       <div class="type">optional</div>
     </td>
-    <td>The time at which the requester would like to arrive at the parking space (if undefined, the arrival time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>The time at which the requester would like to arrive at the parking space (if undefined, the arrival time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
     <tr>
     <td>
       <code class="field">end_at</code>
       <div class="type">optional</div>
     </td>
-    <td>The time at which the requester plans to leave the parking space. This parameter is optional but highly recommended, as it can affect how the service is priced. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>The time at which the requester plans to leave the parking space. This parameter is optional but highly recommended, as it can affect how the service is priced. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -599,7 +599,7 @@
       <code class="field">expires_at</code>
       <div class="type required">required</div>
     </td>
-    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -739,14 +739,14 @@
       <code class="field">available_from</code>
       <div class="type required">required</div>
     </td>
-    <td>The time from which the parking space can be made available. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>The time from which the parking space can be made available. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
       <code class="field">available_until</code>
       <div class="type required">required</div>
     </td>
-    <td>The time until which the parking space can be made available. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>The time until which the parking space can be made available. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>

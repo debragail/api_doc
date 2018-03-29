@@ -244,12 +244,6 @@
               </ul>
           </li>
           <li>
-            <a href="#connector-types" class="toc-h1 toc-link" data-title="Connector Types">Connector Types</a>
-          </li>
-          <li>
-            <a href="#charging-levels" class="toc-h1 toc-link" data-title="Charging Levels">Charging Levels</a>
-          </li>
-          <li>
             <a href="#energy-sources" class="toc-h1 toc-link" data-title="Energy Sources">Energy Sources</a>
           </li>
           <li>
@@ -272,7 +266,7 @@
 <h1 id='vessel-charging-protocol'>Vessel Charging Protocol</h1>
 <p>The communication protocol for vessel charging describes the format of a request for a charging service (<code>need</code>), and the response sent by a charging provider (<code>bid</code>).</p>
 
-<p>For example, an autonomous boat might search for charging stations within 1 km of a given coordinate that support a Micro USB plug.</p>
+<p>For example, an autonomous boat might search for charging stations within 2 km of a given coordinate that is capable of docking a 1200 kg boat.</p>
 
 <blockquote>
 <p>Need</p>
@@ -280,11 +274,13 @@
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.787793</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935005</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">radius</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">connector</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">tesla_supercharger</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">amenities</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">3</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">38.066516</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-122.240688</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">radius</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">height</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">width</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">120</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">length</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">330</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">weight</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
   }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
 
@@ -292,25 +288,29 @@
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
     <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
-    <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
-    <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-79.935005"</span><span class="p">,</span>
-    <span class="s2">"radius"</span><span class="p">:</span> <span class="s2">"1000"</span><span class="p">,</span>
-    <span class="s2">"connector"</span><span class="p">:</span> <span class="s2">"tesla_supercharger"</span><span class="p">,</span>
-    <span class="s2">"amenities"</span><span class="p">:</span> <span class="s2">"3"</span><span class="p">,</span>
+    <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"38.066516"</span><span class="p">,</span>
+    <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-122.240688"</span><span class="p">,</span>
+    <span class="s2">"radius"</span><span class="p">:</span> <span class="s2">"2000"</span><span class="p">,</span>
+    <span class="s2">"height"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"120"</span><span class="p">,</span>
+    <span class="s2">"length"</span><span class="p">:</span> <span class="s2">"330"</span><span class="p">,</span>
+    <span class="s2">"weight"</span><span class="p">:</span> <span class="s2">"1200"</span><span class="p">,</span>
   <span class="p">})</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
-    <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"32.787793"</span><span class="p">,</span>
-    <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-79.935005"</span><span class="p">,</span>
-    <span class="s">"radius"</span><span class="p">:</span> <span class="s">"1000"</span><span class="p">,</span>
-    <span class="s">"connector"</span><span class="p">:</span> <span class="s">"tesla_supercharger"</span><span class="p">,</span>
-    <span class="s">"amenities"</span><span class="p">:</span> <span class="s">"3"</span><span class="p">,</span>
+    <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"38.066516"</span><span class="p">,</span>
+    <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-122.240688"</span><span class="p">,</span>
+    <span class="s">"radius"</span><span class="p">:</span> <span class="s">"2000"</span><span class="p">,</span>
+    <span class="s">"height"</span><span class="p">:</span> <span class="s">"200"</span><span class="p">,</span>
+    <span class="s">"width"</span><span class="p">:</span> <span class="s">"120"</span><span class="p">,</span>
+    <span class="s">"length"</span><span class="p">:</span> <span class="s">"330"</span><span class="p">,</span>
+    <span class="s">"weight"</span><span class="p">:</span> <span class="s">"1200"</span><span class="p">,</span>
   <span class="p">}</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"discovery_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </code></pre>
-<p>In response, a charging station might send back a bid with a price per mAh, and the full details of the services it offers.</p>
+<p>In response, a charging station might send back a bid with a price for the service, the opening and closing times, and the full list of services it offers.</p>
 
 <blockquote>
 <p>Bid</p>
@@ -320,15 +320,13 @@
     </span><span class="se">\"</span><span class="s2">need_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005539000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2300000000000000000,30000000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">kwh,kwh</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Price per kWh,VAT per kWh</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785889</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935569</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">flat,flat</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Total price,Tax</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">38.066088</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-122.230219</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">available_from</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">available_until</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513091934000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">connectors</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">tesla_hpwc,tesla_supercharger</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">charging_levels</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">amenities</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3,4,7,9</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">amenities</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3,4,6,8</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
   }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
 
@@ -338,15 +336,13 @@
     <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
     <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
     <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
-    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"kwh,kwh"</span><span class="p">,</span>
-    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
-    <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"32.785889"</span><span class="p">,</span>
-    <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-79.935569"</span><span class="p">,</span>
+    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"flat,flat"</span><span class="p">,</span>
+    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Total price,Tax"</span><span class="p">,</span>
+    <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"38.066088"</span><span class="p">,</span>
+    <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-122.230219"</span><span class="p">,</span>
     <span class="s2">"available_from"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
     <span class="s2">"available_until"</span><span class="p">:</span> <span class="s2">"1513091934000"</span><span class="p">,</span>
-    <span class="s2">"connectors"</span><span class="p">:</span> <span class="s2">"tesla_hpwc,tesla_supercharger"</span><span class="p">,</span>
-    <span class="s2">"charging_levels"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
-    <span class="s2">"amenities"</span><span class="p">:</span> <span class="s2">"2,3,4,7,9"</span><span class="p">,</span>
+    <span class="s2">"amenities"</span><span class="p">:</span> <span class="s2">"2,3,4,6,8"</span><span class="p">,</span>
   <span class="p">})</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
@@ -354,19 +350,17 @@
     <span class="s">"need_id"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
     <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"1513005539000"</span><span class="p">,</span>
     <span class="s">"price"</span><span class="p">:</span> <span class="s">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
-    <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"kwh,kwh"</span><span class="p">,</span>
-    <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
-    <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"32.785889"</span><span class="p">,</span>
-    <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-79.935569"</span><span class="p">,</span>
+    <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"flat,flat"</span><span class="p">,</span>
+    <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Total price,Tax"</span><span class="p">,</span>
+    <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"38.066088"</span><span class="p">,</span>
+    <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-122.230219"</span><span class="p">,</span>
     <span class="s">"available_from"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
     <span class="s">"available_until"</span><span class="p">:</span> <span class="s">"1513091934000"</span><span class="p">,</span>
-    <span class="s">"connectors"</span><span class="p">:</span> <span class="s">"tesla_hpwc,tesla_supercharger"</span><span class="p">,</span>
-    <span class="s">"charging_levels"</span><span class="p">:</span> <span class="s">"2,3"</span><span class="p">,</span>
-    <span class="s">"amenities"</span><span class="p">:</span> <span class="s">"2,3,4,7,9"</span><span class="p">,</span>
+    <span class="s">"amenities"</span><span class="p">:</span> <span class="s">"2,3,4,6,8"</span><span class="p">,</span>
   <span class="p">}</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </code></pre><h1 id='need'>Need</h1>
-<p>A statement of need for charging stations. Typically this will be sent by an electric vehicle that is looking for a charging station around certain coordinates.</p>
+<p>A statement of need for charging stations. Typically this will be sent by an electric boat that is looking for a charging station around certain coordinates.</p>
 
 <p>This request is sent to the decentralized discovery engine which responds with status <code>200</code> and a unique identifier for this request. The details of this request are then broadcasted to DAV entities that can provide this service. <a href="#bid">Bids</a> are later received as separate calls.</p>
 <h2 id='arguments'>Arguments</h2>
@@ -376,16 +370,16 @@
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
   --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.787793</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935005</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">radius</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">10000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">38.066516</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-122.240688</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">radius</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">height</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">width</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">120</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">length</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">330</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">weight</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">connector</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">tesla_supercharger</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">charging_level</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">3</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">energy_source</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">solar</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">battery_capacity</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">56</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">current_battery_charge</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">26</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">energy_source</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">hydro</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">amenities</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
   }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
@@ -394,32 +388,32 @@
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
     <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
-    <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
-    <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-79.935005"</span><span class="p">,</span>
-    <span class="s2">"radius"</span><span class="p">:</span> <span class="s2">"10000"</span><span class="p">,</span>
+    <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"38.066516"</span><span class="p">,</span>
+    <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-122.240688"</span><span class="p">,</span>
+    <span class="s2">"radius"</span><span class="p">:</span> <span class="s2">"2000"</span><span class="p">,</span>
     <span class="s2">"height"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
     <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"120"</span><span class="p">,</span>
     <span class="s2">"length"</span><span class="p">:</span> <span class="s2">"330"</span><span class="p">,</span>
     <span class="s2">"weight"</span><span class="p">:</span> <span class="s2">"1200"</span><span class="p">,</span>
-    <span class="s2">"connector"</span><span class="p">:</span> <span class="s2">"tesla_supercharger"</span><span class="p">,</span>
-    <span class="s2">"charging_level"</span><span class="p">:</span> <span class="s2">"3"</span><span class="p">,</span>
-    <span class="s2">"energy_source"</span><span class="p">:</span> <span class="s2">"solar"</span><span class="p">,</span>
+    <span class="s2">"battery_capacity"</span><span class="p">:</span> <span class="s2">"56"</span><span class="p">,</span>
+    <span class="s2">"current_battery_charge"</span><span class="p">:</span> <span class="s2">"26"</span><span class="p">,</span>
+    <span class="s2">"energy_source"</span><span class="p">:</span> <span class="s2">"hydro"</span><span class="p">,</span>
     <span class="s2">"amenities"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
   <span class="p">})</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
-    <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"32.787793"</span><span class="p">,</span>
-    <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-79.935005"</span><span class="p">,</span>
-    <span class="s">"radius"</span><span class="p">:</span> <span class="s">"10000"</span><span class="p">,</span>
+    <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"38.066516"</span><span class="p">,</span>
+    <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-122.240688"</span><span class="p">,</span>
+    <span class="s">"radius"</span><span class="p">:</span> <span class="s">"2000"</span><span class="p">,</span>
     <span class="s">"height"</span><span class="p">:</span> <span class="s">"200"</span><span class="p">,</span>
     <span class="s">"width"</span><span class="p">:</span> <span class="s">"120"</span><span class="p">,</span>
     <span class="s">"length"</span><span class="p">:</span> <span class="s">"330"</span><span class="p">,</span>
     <span class="s">"weight"</span><span class="p">:</span> <span class="s">"1200"</span><span class="p">,</span>
-    <span class="s">"connector"</span><span class="p">:</span> <span class="s">"tesla_supercharger"</span><span class="p">,</span>
-    <span class="s">"charging_level"</span><span class="p">:</span> <span class="s">"3"</span><span class="p">,</span>
-    <span class="s">"energy_source"</span><span class="p">:</span> <span class="s">"solar"</span><span class="p">,</span>
+    <span class="s">"battery_capacity"</span><span class="p">:</span> <span class="s">"56"</span><span class="p">,</span>
+    <span class="s">"current_battery_charge"</span><span class="p">:</span> <span class="s">"26"</span><span class="p">,</span>
+    <span class="s">"energy_source"</span><span class="p">:</span> <span class="s">"hydro"</span><span class="p">,</span>
     <span class="s">"amenities"</span><span class="p">:</span> <span class="s">"2,3"</span><span class="p">,</span>
   <span class="p">}</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"discovery_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -430,7 +424,7 @@
       <code class="field">start_at</code>
       <div class="type">optional</div>
     </td>
-    <td>The time at which the requester would like to arrive at charging station (if undefined, the arrival time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>The time at which the requester would like to arrive at charging station (if undefined, the arrival time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -483,20 +477,6 @@
   </tr>
   <tr>
     <td>
-      <code class="field">connector</code>
-      <div class="type required">required</div>
-    </td>
-    <td>The connector type required by the EV. Specified as a connector id. See <a href="#connector-types">Connector Types</a> for available values</td>
-  </tr>
-  <tr>
-    <td>
-      <code class="field">charging_level</code>
-      <div class="type">optional</div>
-    </td>
-    <td>The charging level as defined by SAE standards. Specified as an integer. See <a href="#charging-levels">Charging Levels</a></td>
-  </tr>
-  <tr>
-    <td>
       <code class="field">battery_capacity</code>
       <div class="type">optional</div>
     </td>
@@ -525,7 +505,7 @@
   </tr>
 </table>
 <h1 id='bid'>Bid</h1>
-<p>A bid to provide a charging service. Typically sent from a charging station to an electric vehicle.</p>
+<p>A bid to provide a charging service. Typically sent from a charging station to an electric boat.</p>
 <h2 id='arguments-2'>Arguments</h2>
 <blockquote>
 <p>Post request to a local/remote bidding endpoint</p>
@@ -535,23 +515,22 @@
     </span><span class="se">\"</span><span class="s2">need_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005539000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2300000000000000000,30000000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">kwh,kwh</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Price per kWh,VAT per kWh</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785889</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935569</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">entrance_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785878</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">entrance_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935558</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">exit_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785878</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">exit_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935558</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">location_floor</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">location_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">IKEA parking lot B</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">flat,flat</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Total price,Tax</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">38.066088</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-122.230219</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">entrance_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">38.066088</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">entrance_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-122.230219</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">exit_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">38.066088</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">exit_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-122.230219</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Marine Programs Naval Science</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">location_name_lang</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">eng</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">location_house_number</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">372</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">location_street</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">King</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">location_city</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Charleston</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">location_postal_code</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">29401</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">location_county</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Charleston</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">location_state</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">SC</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_house_number</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">5</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_street</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Morrow Cove Drive</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_city</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Vallejo</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_postal_code</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">94590</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_county</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Solano</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_state</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">CA</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">location_country</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">USA</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">available_from</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">available_until</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513091934000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
@@ -559,13 +538,11 @@
     </span><span class="se">\"</span><span class="s2">width</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">length</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">580</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">weight</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">10000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">connectors</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">tesla_hpwc,tesla_supercharger</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">charging_levels</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">energy_source</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">solar</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">amenities</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3,4,7,9</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">provider</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Tesla</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">manufacturer</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Tesla</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
-    </span><span class="se">\"</span><span class="s2">model</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Supercharger</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">energy_source</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">hydro</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">amenities</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3,4,6,8</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">provider</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">General Dynamics</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">manufacturer</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">General Dynamics</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">model</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">100</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
   }"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
 
@@ -575,23 +552,22 @@
     <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
     <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
     <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
-    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"kwh,kwh"</span><span class="p">,</span>
-    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
-    <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"32.785889"</span><span class="p">,</span>
-    <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-79.935569"</span><span class="p">,</span>
-    <span class="s2">"entrance_latitude"</span><span class="p">:</span> <span class="s2">"32.785878"</span><span class="p">,</span>
-    <span class="s2">"entrance_longitude"</span><span class="p">:</span> <span class="s2">"-79.935558"</span><span class="p">,</span>
-    <span class="s2">"exit_latitude"</span><span class="p">:</span> <span class="s2">"32.785878"</span><span class="p">,</span>
-    <span class="s2">"exit_longitude"</span><span class="p">:</span> <span class="s2">"-79.935558"</span><span class="p">,</span>
-    <span class="s2">"location_floor"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
-    <span class="s2">"location_name"</span><span class="p">:</span> <span class="s2">"IKEA parking lot B"</span><span class="p">,</span>
+    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"flat,flat"</span><span class="p">,</span>
+    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Total price,Tax"</span><span class="p">,</span>
+    <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"38.066088"</span><span class="p">,</span>
+    <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-122.230219"</span><span class="p">,</span>
+    <span class="s2">"entrance_latitude"</span><span class="p">:</span> <span class="s2">"38.066088"</span><span class="p">,</span>
+    <span class="s2">"entrance_longitude"</span><span class="p">:</span> <span class="s2">"-122.230219"</span><span class="p">,</span>
+    <span class="s2">"exit_latitude"</span><span class="p">:</span> <span class="s2">"38.066088"</span><span class="p">,</span>
+    <span class="s2">"exit_longitude"</span><span class="p">:</span> <span class="s2">"-122.230219"</span><span class="p">,</span>
+    <span class="s2">"location_name"</span><span class="p">:</span> <span class="s2">"Marine Programs Naval Science"</span><span class="p">,</span>
     <span class="s2">"location_name_lang"</span><span class="p">:</span> <span class="s2">"eng"</span><span class="p">,</span>
-    <span class="s2">"location_house_number"</span><span class="p">:</span> <span class="s2">"372"</span><span class="p">,</span>
-    <span class="s2">"location_street"</span><span class="p">:</span> <span class="s2">"King"</span><span class="p">,</span>
-    <span class="s2">"location_city"</span><span class="p">:</span> <span class="s2">"Charleston"</span><span class="p">,</span>
-    <span class="s2">"location_postal_code"</span><span class="p">:</span> <span class="s2">"29401"</span><span class="p">,</span>
-    <span class="s2">"location_county"</span><span class="p">:</span> <span class="s2">"Charleston"</span><span class="p">,</span>
-    <span class="s2">"location_state"</span><span class="p">:</span> <span class="s2">"SC"</span><span class="p">,</span>
+    <span class="s2">"location_house_number"</span><span class="p">:</span> <span class="s2">"5"</span><span class="p">,</span>
+    <span class="s2">"location_street"</span><span class="p">:</span> <span class="s2">"Morrow Cove Drive"</span><span class="p">,</span>
+    <span class="s2">"location_city"</span><span class="p">:</span> <span class="s2">"Vallejo"</span><span class="p">,</span>
+    <span class="s2">"location_postal_code"</span><span class="p">:</span> <span class="s2">"94590"</span><span class="p">,</span>
+    <span class="s2">"location_county"</span><span class="p">:</span> <span class="s2">"Solano"</span><span class="p">,</span>
+    <span class="s2">"location_state"</span><span class="p">:</span> <span class="s2">"CA"</span><span class="p">,</span>
     <span class="s2">"location_country"</span><span class="p">:</span> <span class="s2">"USA"</span><span class="p">,</span>
     <span class="s2">"available_from"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
     <span class="s2">"available_until"</span><span class="p">:</span> <span class="s2">"1513091934000"</span><span class="p">,</span>
@@ -599,13 +575,11 @@
     <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
     <span class="s2">"length"</span><span class="p">:</span> <span class="s2">"580"</span><span class="p">,</span>
     <span class="s2">"weight"</span><span class="p">:</span> <span class="s2">"10000"</span><span class="p">,</span>
-    <span class="s2">"connectors"</span><span class="p">:</span> <span class="s2">"tesla_hpwc,tesla_supercharger"</span><span class="p">,</span>
-    <span class="s2">"charging_levels"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
-    <span class="s2">"energy_source"</span><span class="p">:</span> <span class="s2">"solar"</span><span class="p">,</span>
-    <span class="s2">"amenities"</span><span class="p">:</span> <span class="s2">"2,3,4,7,9"</span><span class="p">,</span>
-    <span class="s2">"provider"</span><span class="p">:</span> <span class="s2">"Tesla"</span><span class="p">,</span>
-    <span class="s2">"manufacturer"</span><span class="p">:</span> <span class="s2">"Tesla"</span><span class="p">,</span>
-    <span class="s2">"model"</span><span class="p">:</span> <span class="s2">"Supercharger"</span><span class="p">,</span>
+    <span class="s2">"energy_source"</span><span class="p">:</span> <span class="s2">"hydro"</span><span class="p">,</span>
+    <span class="s2">"amenities"</span><span class="p">:</span> <span class="s2">"2,3,4,6,8"</span><span class="p">,</span>
+    <span class="s2">"provider"</span><span class="p">:</span> <span class="s2">"General Dynamics"</span><span class="p">,</span>
+    <span class="s2">"manufacturer"</span><span class="p">:</span> <span class="s2">"General Dynamics"</span><span class="p">,</span>
+    <span class="s2">"model"</span><span class="p">:</span> <span class="s2">"100"</span><span class="p">,</span>
   <span class="p">})</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
@@ -613,23 +587,22 @@
     <span class="s">"need_id"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
     <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"1513005539000"</span><span class="p">,</span>
     <span class="s">"price"</span><span class="p">:</span> <span class="s">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
-    <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"kwh,kwh"</span><span class="p">,</span>
-    <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
-    <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"32.785889"</span><span class="p">,</span>
-    <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-79.935569"</span><span class="p">,</span>
-    <span class="s">"entrance_latitude"</span><span class="p">:</span> <span class="s">"32.785878"</span><span class="p">,</span>
-    <span class="s">"entrance_longitude"</span><span class="p">:</span> <span class="s">"-79.935558"</span><span class="p">,</span>
-    <span class="s">"exit_latitude"</span><span class="p">:</span> <span class="s">"32.785878"</span><span class="p">,</span>
-    <span class="s">"exit_longitude"</span><span class="p">:</span> <span class="s">"-79.935558"</span><span class="p">,</span>
-    <span class="s">"location_floor"</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span>
-    <span class="s">"location_name"</span><span class="p">:</span> <span class="s">"IKEA parking lot B"</span><span class="p">,</span>
+    <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"flat,flat"</span><span class="p">,</span>
+    <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Total price,Tax"</span><span class="p">,</span>
+    <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"38.066088"</span><span class="p">,</span>
+    <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-122.230219"</span><span class="p">,</span>
+    <span class="s">"entrance_latitude"</span><span class="p">:</span> <span class="s">"38.066088"</span><span class="p">,</span>
+    <span class="s">"entrance_longitude"</span><span class="p">:</span> <span class="s">"-122.230219"</span><span class="p">,</span>
+    <span class="s">"exit_latitude"</span><span class="p">:</span> <span class="s">"38.066088"</span><span class="p">,</span>
+    <span class="s">"exit_longitude"</span><span class="p">:</span> <span class="s">"-122.230219"</span><span class="p">,</span>
+    <span class="s">"location_name"</span><span class="p">:</span> <span class="s">"Marine Programs Naval Science"</span><span class="p">,</span>
     <span class="s">"location_name_lang"</span><span class="p">:</span> <span class="s">"eng"</span><span class="p">,</span>
-    <span class="s">"location_house_number"</span><span class="p">:</span> <span class="s">"372"</span><span class="p">,</span>
-    <span class="s">"location_street"</span><span class="p">:</span> <span class="s">"King"</span><span class="p">,</span>
-    <span class="s">"location_city"</span><span class="p">:</span> <span class="s">"Charleston"</span><span class="p">,</span>
-    <span class="s">"location_postal_code"</span><span class="p">:</span> <span class="s">"29401"</span><span class="p">,</span>
-    <span class="s">"location_county"</span><span class="p">:</span> <span class="s">"Charleston"</span><span class="p">,</span>
-    <span class="s">"location_state"</span><span class="p">:</span> <span class="s">"SC"</span><span class="p">,</span>
+    <span class="s">"location_house_number"</span><span class="p">:</span> <span class="s">"5"</span><span class="p">,</span>
+    <span class="s">"location_street"</span><span class="p">:</span> <span class="s">"Morrow Cove Drive"</span><span class="p">,</span>
+    <span class="s">"location_city"</span><span class="p">:</span> <span class="s">"Vallejo"</span><span class="p">,</span>
+    <span class="s">"location_postal_code"</span><span class="p">:</span> <span class="s">"94590"</span><span class="p">,</span>
+    <span class="s">"location_county"</span><span class="p">:</span> <span class="s">"Solano"</span><span class="p">,</span>
+    <span class="s">"location_state"</span><span class="p">:</span> <span class="s">"CA"</span><span class="p">,</span>
     <span class="s">"location_country"</span><span class="p">:</span> <span class="s">"USA"</span><span class="p">,</span>
     <span class="s">"available_from"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
     <span class="s">"available_until"</span><span class="p">:</span> <span class="s">"1513091934000"</span><span class="p">,</span>
@@ -637,13 +610,11 @@
     <span class="s">"width"</span><span class="p">:</span> <span class="s">"200"</span><span class="p">,</span>
     <span class="s">"length"</span><span class="p">:</span> <span class="s">"580"</span><span class="p">,</span>
     <span class="s">"weight"</span><span class="p">:</span> <span class="s">"10000"</span><span class="p">,</span>
-    <span class="s">"connectors"</span><span class="p">:</span> <span class="s">"tesla_hpwc,tesla_supercharger"</span><span class="p">,</span>
-    <span class="s">"charging_levels"</span><span class="p">:</span> <span class="s">"2,3"</span><span class="p">,</span>
-    <span class="s">"energy_source"</span><span class="p">:</span> <span class="s">"solar"</span><span class="p">,</span>
-    <span class="s">"amenities"</span><span class="p">:</span> <span class="s">"2,3,4,7,9"</span><span class="p">,</span>
-    <span class="s">"provider"</span><span class="p">:</span> <span class="s">"Tesla"</span><span class="p">,</span>
-    <span class="s">"manufacturer"</span><span class="p">:</span> <span class="s">"Tesla"</span><span class="p">,</span>
-    <span class="s">"model"</span><span class="p">:</span> <span class="s">"Supercharger"</span><span class="p">,</span>
+    <span class="s">"energy_source"</span><span class="p">:</span> <span class="s">"hydro"</span><span class="p">,</span>
+    <span class="s">"amenities"</span><span class="p">:</span> <span class="s">"2,3,4,6,8"</span><span class="p">,</span>
+    <span class="s">"provider"</span><span class="p">:</span> <span class="s">"General Dynamics"</span><span class="p">,</span>
+    <span class="s">"manufacturer"</span><span class="p">:</span> <span class="s">"General Dynamics"</span><span class="p">,</span>
+    <span class="s">"model"</span><span class="p">:</span> <span class="s">"100"</span><span class="p">,</span>
   <span class="p">}</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </code></pre>
@@ -660,7 +631,7 @@
       <code class="field">expires_at</code>
       <div class="type required">required</div>
     </td>
-    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -724,13 +695,6 @@
       <div class="type">optional</div>
     </td>
     <td>The longitude coordinate of the exit from the charging station</td>
-  </tr>
-  <tr>
-    <td>
-      <code class="field">location_floor</code>
-      <div class="type">optional</div>
-    </td>
-    <td>Which floor/level is the charging stations located on (for multistory buildings)</td>
   </tr>
   <tr>
     <td>
@@ -800,14 +764,14 @@
       <code class="field">available_from</code>
       <div class="type required">required</div>
     </td>
-    <td>The time from which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>The time from which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
       <code class="field">available_until</code>
       <div class="type">optional</div>
     </td>
-    <td>The time until which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>The time until which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -836,20 +800,6 @@
       <div class="type">optional</div>
     </td>
     <td>The maximum vehicle weight this station can accommodate. Specified as an integer representing kilograms</td>
-  </tr>
-  <tr>
-    <td>
-      <code class="field">connectors</code>
-      <div class="type required">required</div>
-    </td>
-    <td>A list of connector types available at this charging station. Specified as a comma separated list of connector ids. See <a href="#connector-types">Connector Types</a> for available values</td>
-  </tr>
-  <tr>
-    <td>
-      <code class="field">charging_levels</code>
-      <div class="type">optional</div>
-    </td>
-    <td>A list of charging levels as defined by SAE standards available at this charging station. Specified as a comma separated list of integers. See <a href="#charging-levels">Charging Levels</a></td>
   </tr>
   <tr>
     <td>
@@ -885,82 +835,6 @@
       <div class="type">optional</div>
     </td>
     <td>Name of the model of this charging station</td>
-  </tr>
-</table>
-<h1 id='connector-types'>Connector Types</h1>
-<p>Connector types and their unique identifier.</p>
-
-<table class="reference connectors">
-  <tr>
-    <th>Connector ID</th>
-    <th>Name</th>
-    <th>Charging Level</th>
-  </tr>
-  <tr>
-    <td><code>nema_5_15</code></td>
-    <td>NEMA 5-15 Wall Outlet</td>
-    <td>1</td>
-  </tr>
-  <tr>
-    <td><code>nema_5_20</code></td>
-    <td>NEMA 5-20 Wall Outlet</td>
-    <td>1</td>
-  </tr>
-  <tr>
-    <td><code>j1772</code></td>
-    <td>SAE J1772</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td><code>mennekes</code></td>
-    <td>SAE J3068 / IEC 62196 (Mennekes)</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td><code>nema_14_50</code></td>
-    <td>NEMA 14-50 (RV plug)    </td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td><code>chademo</code></td>
-    <td>CHAdeMO</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td><code>ccs</code></td>
-    <td>SAE Combined Charging System (CCS)</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td><code>tesla_hpwc</code></td>
-    <td>Tesla HPWC</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td><code>tesla_supercharger</code></td>
-    <td>Tesla supercharger</td>
-    <td>3</td>
-  </tr>
-</table>
-<h1 id='charging-levels'>Charging Levels</h1>
-<p>Available charging levels.</p>
-
-<table class="reference levels">
-  <tr>
-    <th>Level</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><code>1</code></td>
-    <td>Standard house outlet</td>
-  </tr>
-  <tr>
-    <td><code>2</code></td>
-    <td>240 volt AC charging</td>
-  </tr>
-  <tr>
-    <td><code>3</code></td>
-    <td>DC fast charging</td>
   </tr>
 </table>
 <h1 id='energy-sources'>Energy Sources</h1>
@@ -1018,26 +892,22 @@
   </tr>
   <tr>
     <td><code>4</code></td>
-    <td>Parking</td>
+    <td>Docking</td>
   </tr>
   <tr>
     <td><code>5</code></td>
-    <td>Valet Parking</td>
-  </tr>
-  <tr>
-    <td><code>6</code></td>
     <td>Park</td>
   </tr>
   <tr>
-    <td><code>7</code></td>
+    <td><code>6</code></td>
     <td>WiFi</td>
   </tr>
   <tr>
-    <td><code>8</code></td>
+    <td><code>7</code></td>
     <td>Shopping</td>
   </tr>
   <tr>
-    <td><code>9</code></td>
+    <td><code>8</code></td>
     <td>Grocery</td>
   </tr>
 </table>

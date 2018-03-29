@@ -385,6 +385,8 @@
     </span><span class="se">\"</span><span class="s2">weight</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">connector</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">tesla_supercharger</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">charging_level</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">3</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">battery_capacity</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">56</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">current_battery_charge</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">26</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">energy_source</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">solar</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">amenities</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
   }"</span>
@@ -403,6 +405,8 @@
     <span class="s2">"weight"</span><span class="p">:</span> <span class="s2">"1200"</span><span class="p">,</span>
     <span class="s2">"connector"</span><span class="p">:</span> <span class="s2">"tesla_supercharger"</span><span class="p">,</span>
     <span class="s2">"charging_level"</span><span class="p">:</span> <span class="s2">"3"</span><span class="p">,</span>
+    <span class="s2">"battery_capacity"</span><span class="p">:</span> <span class="s2">"56"</span><span class="p">,</span>
+    <span class="s2">"current_battery_charge"</span><span class="p">:</span> <span class="s2">"26"</span><span class="p">,</span>
     <span class="s2">"energy_source"</span><span class="p">:</span> <span class="s2">"solar"</span><span class="p">,</span>
     <span class="s2">"amenities"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
   <span class="p">})</span>
@@ -419,6 +423,8 @@
     <span class="s">"weight"</span><span class="p">:</span> <span class="s">"1200"</span><span class="p">,</span>
     <span class="s">"connector"</span><span class="p">:</span> <span class="s">"tesla_supercharger"</span><span class="p">,</span>
     <span class="s">"charging_level"</span><span class="p">:</span> <span class="s">"3"</span><span class="p">,</span>
+    <span class="s">"battery_capacity"</span><span class="p">:</span> <span class="s">"56"</span><span class="p">,</span>
+    <span class="s">"current_battery_charge"</span><span class="p">:</span> <span class="s">"26"</span><span class="p">,</span>
     <span class="s">"energy_source"</span><span class="p">:</span> <span class="s">"solar"</span><span class="p">,</span>
     <span class="s">"amenities"</span><span class="p">:</span> <span class="s">"2,3"</span><span class="p">,</span>
   <span class="p">}</span>
@@ -430,7 +436,7 @@
       <code class="field">start_at</code>
       <div class="type">optional</div>
     </td>
-    <td>The time at which the requester would like to arrive at charging station (if undefined, the arrival time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>The time at which the requester would like to arrive at charging station (if undefined, the arrival time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -660,7 +666,7 @@
       <code class="field">expires_at</code>
       <div class="type required">required</div>
     </td>
-    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -800,14 +806,14 @@
       <code class="field">available_from</code>
       <div class="type required">required</div>
     </td>
-    <td>The time from which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>The time from which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
       <code class="field">available_until</code>
       <div class="type">optional</div>
     </td>
-    <td>The time until which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>The time until which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
