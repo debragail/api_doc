@@ -151,6 +151,8 @@ curl "discovery_endpoint_here" \
     \"weight\": \"1200\", \
     \"connector\": \"tesla_supercharger\", \
     \"charging_level\": \"3\", \
+    \"battery_capacity\": \"56\", \
+    \"current_battery_charge\": \"26\", \
     \"energy_source\": \"solar\", \
     \"amenities\": \"2,3\", \
   }"
@@ -172,6 +174,8 @@ fetch(discoveryEndPoint, {
     "weight": "1200",
     "connector": "tesla_supercharger",
     "charging_level": "3",
+    "battery_capacity": "56",
+    "current_battery_charge": "26",
     "energy_source": "solar",
     "amenities": "2,3",
   })
@@ -191,6 +195,8 @@ payload = {
     "weight": "1200",
     "connector": "tesla_supercharger",
     "charging_level": "3",
+    "battery_capacity": "56",
+    "current_battery_charge": "26",
     "energy_source": "solar",
     "amenities": "2,3",
   }
@@ -203,7 +209,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">start_at</code>
       <div class="type">optional</div>
     </td>
-    <td>The time at which the requester would like to arrive at charging station (if undefined, the arrival time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>The time at which the requester would like to arrive at charging station (if undefined, the arrival time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -444,7 +450,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">expires_at</code>
       <div class="type required">required</div>
     </td>
-    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -584,14 +590,14 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">available_from</code>
       <div class="type required">required</div>
     </td>
-    <td>The time from which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>The time from which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
       <code class="field">available_until</code>
       <div class="type">optional</div>
     </td>
-    <td>The time until which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>The time until which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>

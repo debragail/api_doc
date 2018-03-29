@@ -241,7 +241,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <div class="type">optional</div>
     </td>
     <td>
-      The time at which the requester would like the insurance to be activated (if undefined, the activation will be immediate). This should be Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a>
+      The time at which the requester would like the insurance to be activated (if undefined, the activation will be immediate). This should be Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a>
     </td>
   </tr>
   <tr>
@@ -250,7 +250,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <div class="type required">required</div>
     </td>
     <td>
-      The time at which the requester would like the insurance to stop. This should be Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a>
+      The time at which the requester would like the insurance to stop. This should be Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a>
     </td>
   </tr>
   <tr>
@@ -490,7 +490,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">expires_at</code>
       <div class="type required">required</div>
     </td>
-    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>

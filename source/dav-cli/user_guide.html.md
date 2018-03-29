@@ -17,7 +17,7 @@ DAV CLI is written in and installed using Node.js but is useful not just for Nod
 
 # Installation
 
-Before you get started, make sure you have Node version 8 and up and npm installed.
+Before you get started, make sure you have Node version 8 and up and npm or Yarn installed.
 
 
 <ul>
