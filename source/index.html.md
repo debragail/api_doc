@@ -12,9 +12,9 @@ Here you will find instructions for running our command line interface, and our 
 
 # DAV CLI
 
-The DAV Command Line Interface was created to ease the development of applications and solutions that interact with DAV, and to enable to:
+The DAV Command Line Interface was created to ease the development of applications and solutions that interact with DAV, and allow you to:
 <ul>
-	<li>Easily run a local Ethereum node containing DAV contracts</li>
+	<li>Easily run a local testnet containing DAV contracts</li>
 	<li>Generate Identities secured by private public keys and register them on the blockchain</li>
 	<li>Easily scaffold a new project, or modify an existing one to interact with DAV (under development)</li>
 </ul>
