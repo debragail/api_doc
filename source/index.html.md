@@ -37,6 +37,7 @@ The following protocols govern the communication between different vehicles, ser
   <li><a href="./protocol/photo_shooting.html"><img src="images/thumbnails/photo_shooting_thumbnail.png" /></a></li>
   <li><a href="./protocol/ride_hailing.html"><img src="images/thumbnails/ride_hailing_thumbnail.png" /></a></li>
   <li><a href="./protocol/vehicle_locating.html"><img src="images/thumbnails/vehicle_locating_thumbnail.png" /></a>
+  <li><a href="./protocol/vessel_charging.html"><img src="images/thumbnails/vessel_charging_thumbnail.png" /></a>
 </ul>
 
 # Contribution
