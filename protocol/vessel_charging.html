@@ -1,0 +1,1092 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Vessel Charging</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="../images/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="../stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all.js"></script>
+  </head>
+
+  <body class="protocol protocol_vessel_charging" data-languages="[&quot;shell&quot;,&quot;javascript&quot;,&quot;python&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="/"><img src="../images/logo.png" class="logo" alt="Logo" /></a>
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="python">python</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#vessel-charging-protocol" class="toc-h1 toc-link" data-title="Vessel Charging Protocol">Vessel Charging Protocol</a>
+          </li>
+          <li>
+            <a href="#need" class="toc-h1 toc-link" data-title="Need">Need</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#arguments" class="toc-h2 toc-link" data-title="Arguments">Arguments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#bid" class="toc-h1 toc-link" data-title="Bid">Bid</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#arguments-2" class="toc-h2 toc-link" data-title="Arguments">Arguments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#connector-types" class="toc-h1 toc-link" data-title="Connector Types">Connector Types</a>
+          </li>
+          <li>
+            <a href="#charging-levels" class="toc-h1 toc-link" data-title="Charging Levels">Charging Levels</a>
+          </li>
+          <li>
+            <a href="#energy-sources" class="toc-h1 toc-link" data-title="Energy Sources">Energy Sources</a>
+          </li>
+          <li>
+            <a href="#amenities" class="toc-h1 toc-link" data-title="Amenities">Amenities</a>
+          </li>
+          <li>
+            <a href="#price-types" class="toc-h1 toc-link" data-title="Price Types">Price Types</a>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li>Parts of the Vessel Charging API were</li>
+            <li>inspired by the <a href="https://github.com/PlugShare/slate" target="blank">PlugShare API</a>.</li>
+            <li>Documentation powered by <a href="https://github.com/lord/slate" target="blank">Slate</a>.</li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <p class="header-image"><img src="../images/vessel_charging/header.png" alt="Vessel Charging"></p>
+<h1 id='vessel-charging-protocol'>Vessel Charging Protocol</h1>
+<p>The communication protocol for vessel charging describes the format of a request for a charging service (<code>need</code>), and the response sent by a charging provider (<code>bid</code>).</p>
+
+<p>For example, an autonomous boat might search for charging stations within 1 km of a given coordinate that support a Micro USB plug.</p>
+
+<blockquote>
+<p>Need</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.787793</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935005</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">radius</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">connector</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">tesla_supercharger</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">amenities</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">3</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
+    <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
+    <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-79.935005"</span><span class="p">,</span>
+    <span class="s2">"radius"</span><span class="p">:</span> <span class="s2">"1000"</span><span class="p">,</span>
+    <span class="s2">"connector"</span><span class="p">:</span> <span class="s2">"tesla_supercharger"</span><span class="p">,</span>
+    <span class="s2">"amenities"</span><span class="p">:</span> <span class="s2">"3"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
+    <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"32.787793"</span><span class="p">,</span>
+    <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-79.935005"</span><span class="p">,</span>
+    <span class="s">"radius"</span><span class="p">:</span> <span class="s">"1000"</span><span class="p">,</span>
+    <span class="s">"connector"</span><span class="p">:</span> <span class="s">"tesla_supercharger"</span><span class="p">,</span>
+    <span class="s">"amenities"</span><span class="p">:</span> <span class="s">"3"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"discovery_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre>
+<p>In response, a charging station might send back a bid with a price per mAh, and the full details of the services it offers.</p>
+
+<blockquote>
+<p>Bid</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">need_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005539000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2300000000000000000,30000000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">kwh,kwh</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Price per kWh,VAT per kWh</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785889</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935569</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">available_from</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">available_until</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513091934000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">connectors</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">tesla_hpwc,tesla_supercharger</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">charging_levels</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">amenities</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3,4,7,9</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
+    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
+    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
+    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"kwh,kwh"</span><span class="p">,</span>
+    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
+    <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"32.785889"</span><span class="p">,</span>
+    <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-79.935569"</span><span class="p">,</span>
+    <span class="s2">"available_from"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
+    <span class="s2">"available_until"</span><span class="p">:</span> <span class="s2">"1513091934000"</span><span class="p">,</span>
+    <span class="s2">"connectors"</span><span class="p">:</span> <span class="s2">"tesla_hpwc,tesla_supercharger"</span><span class="p">,</span>
+    <span class="s2">"charging_levels"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
+    <span class="s2">"amenities"</span><span class="p">:</span> <span class="s2">"2,3,4,7,9"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"need_id"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
+    <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"1513005539000"</span><span class="p">,</span>
+    <span class="s">"price"</span><span class="p">:</span> <span class="s">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
+    <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"kwh,kwh"</span><span class="p">,</span>
+    <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
+    <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"32.785889"</span><span class="p">,</span>
+    <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-79.935569"</span><span class="p">,</span>
+    <span class="s">"available_from"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
+    <span class="s">"available_until"</span><span class="p">:</span> <span class="s">"1513091934000"</span><span class="p">,</span>
+    <span class="s">"connectors"</span><span class="p">:</span> <span class="s">"tesla_hpwc,tesla_supercharger"</span><span class="p">,</span>
+    <span class="s">"charging_levels"</span><span class="p">:</span> <span class="s">"2,3"</span><span class="p">,</span>
+    <span class="s">"amenities"</span><span class="p">:</span> <span class="s">"2,3,4,7,9"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre><h1 id='need'>Need</h1>
+<p>A statement of need for charging stations. Typically this will be sent by an electric vehicle that is looking for a charging station around certain coordinates.</p>
+
+<p>This request is sent to the decentralized discovery engine which responds with status <code>200</code> and a unique identifier for this request. The details of this request are then broadcasted to DAV entities that can provide this service. <a href="#bid">Bids</a> are later received as separate calls.</p>
+<h2 id='arguments'>Arguments</h2>
+<blockquote>
+<p>Post request to a local/remote discovery endpoint</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"discovery_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">start_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.787793</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935005</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">radius</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">10000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">height</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">width</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">120</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">length</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">330</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">weight</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">connector</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">tesla_supercharger</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">charging_level</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">3</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">energy_source</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">solar</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">amenities</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
+    <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
+    <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-79.935005"</span><span class="p">,</span>
+    <span class="s2">"radius"</span><span class="p">:</span> <span class="s2">"10000"</span><span class="p">,</span>
+    <span class="s2">"height"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"120"</span><span class="p">,</span>
+    <span class="s2">"length"</span><span class="p">:</span> <span class="s2">"330"</span><span class="p">,</span>
+    <span class="s2">"weight"</span><span class="p">:</span> <span class="s2">"1200"</span><span class="p">,</span>
+    <span class="s2">"connector"</span><span class="p">:</span> <span class="s2">"tesla_supercharger"</span><span class="p">,</span>
+    <span class="s2">"charging_level"</span><span class="p">:</span> <span class="s2">"3"</span><span class="p">,</span>
+    <span class="s2">"energy_source"</span><span class="p">:</span> <span class="s2">"solar"</span><span class="p">,</span>
+    <span class="s2">"amenities"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"start_at"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
+    <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"32.787793"</span><span class="p">,</span>
+    <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-79.935005"</span><span class="p">,</span>
+    <span class="s">"radius"</span><span class="p">:</span> <span class="s">"10000"</span><span class="p">,</span>
+    <span class="s">"height"</span><span class="p">:</span> <span class="s">"200"</span><span class="p">,</span>
+    <span class="s">"width"</span><span class="p">:</span> <span class="s">"120"</span><span class="p">,</span>
+    <span class="s">"length"</span><span class="p">:</span> <span class="s">"330"</span><span class="p">,</span>
+    <span class="s">"weight"</span><span class="p">:</span> <span class="s">"1200"</span><span class="p">,</span>
+    <span class="s">"connector"</span><span class="p">:</span> <span class="s">"tesla_supercharger"</span><span class="p">,</span>
+    <span class="s">"charging_level"</span><span class="p">:</span> <span class="s">"3"</span><span class="p">,</span>
+    <span class="s">"energy_source"</span><span class="p">:</span> <span class="s">"solar"</span><span class="p">,</span>
+    <span class="s">"amenities"</span><span class="p">:</span> <span class="s">"2,3"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"discovery_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre>
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">start_at</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The time at which the requester would like to arrive at charging station (if undefined, the arrival time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">latitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The latitude coordinate around which to search</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">longitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The longitude coordinate around which to search</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">radius</code>
+      <div class="type required">required</div>
+    </td>
+    <td>Radius in meters around the search coordinates to limit the search to. Specified as an integer</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">height</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The height of this vehicle, and the minimum height clearance that this vehicle requires from the station. Specified as an integer representing centimeters</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">width</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The width of this vehicle, and the minimum width clearance that this vehicle requires from the station. Specified as an integer representing centimeters</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">length</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The length of this vehicle, and the minimum length clearance that this vehicle requires from the station. Specified as an integer representing centimeters</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">weight</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The weight of this vehicle. Stations that cannot support a vehicle weighing this much should not respond. Specified as an integer representing kilograms</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">connector</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The connector type required by the EV. Specified as a connector id. See <a href="#connector-types">Connector Types</a> for available values</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">charging_level</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The charging level as defined by SAE standards. Specified as an integer. See <a href="#charging-levels">Charging Levels</a></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">battery_capacity</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The vehicle's total battery capacity, specified in kWh</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_battery_charge</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The vehicle's current battery charge level, as it was at the time the request was sent. Specified in integer denoting percentage of full capacity</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">energy_source</code>
+      <div class="type">optional</div>
+    </td>
+    <td>Limit the request to only receive bids from stations using a specific source of the energy. Specified as an energy source id. See <a href="#energy-sources">Energy Sources</a></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">amenities</code>
+      <div class="type">optional</div>
+    </td>
+    <td>A list of amenities that need to be present at charging station. Specified as a comma separated list of amenity ids. See <a href="#amenities">Amenities</a></td>
+  </tr>
+</table>
+<h1 id='bid'>Bid</h1>
+<p>A bid to provide a charging service. Typically sent from a charging station to an electric vehicle.</p>
+<h2 id='arguments-2'>Arguments</h2>
+<blockquote>
+<p>Post request to a local/remote bidding endpoint</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"bidding_endpoint_here"</span> <span class="se">\</span>
+  --data <span class="s2">"{ </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">need_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ae7bd8f67f3089c</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">expires_at</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005539000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2300000000000000000,30000000000000000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">kwh,kwh</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Price per kWh,VAT per kWh</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785889</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935569</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">entrance_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785878</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">entrance_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935558</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">exit_latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">32.785878</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">exit_longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-79.935558</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_floor</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">IKEA parking lot B</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_name_lang</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">eng</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_house_number</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">372</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_street</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">King</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_city</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Charleston</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_postal_code</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">29401</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_county</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Charleston</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_state</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">SC</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">location_country</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">USA</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">available_from</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">available_until</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513091934000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">height</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">300</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">width</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">length</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">580</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">weight</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">10000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">connectors</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">tesla_hpwc,tesla_supercharger</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">charging_levels</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">energy_source</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">solar</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">amenities</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2,3,4,7,9</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">provider</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Tesla</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">manufacturer</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Tesla</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">model</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Supercharger</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
+  }"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
+    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
+    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
+    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"kwh,kwh"</span><span class="p">,</span>
+    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
+    <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"32.785889"</span><span class="p">,</span>
+    <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-79.935569"</span><span class="p">,</span>
+    <span class="s2">"entrance_latitude"</span><span class="p">:</span> <span class="s2">"32.785878"</span><span class="p">,</span>
+    <span class="s2">"entrance_longitude"</span><span class="p">:</span> <span class="s2">"-79.935558"</span><span class="p">,</span>
+    <span class="s2">"exit_latitude"</span><span class="p">:</span> <span class="s2">"32.785878"</span><span class="p">,</span>
+    <span class="s2">"exit_longitude"</span><span class="p">:</span> <span class="s2">"-79.935558"</span><span class="p">,</span>
+    <span class="s2">"location_floor"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="s2">"location_name"</span><span class="p">:</span> <span class="s2">"IKEA parking lot B"</span><span class="p">,</span>
+    <span class="s2">"location_name_lang"</span><span class="p">:</span> <span class="s2">"eng"</span><span class="p">,</span>
+    <span class="s2">"location_house_number"</span><span class="p">:</span> <span class="s2">"372"</span><span class="p">,</span>
+    <span class="s2">"location_street"</span><span class="p">:</span> <span class="s2">"King"</span><span class="p">,</span>
+    <span class="s2">"location_city"</span><span class="p">:</span> <span class="s2">"Charleston"</span><span class="p">,</span>
+    <span class="s2">"location_postal_code"</span><span class="p">:</span> <span class="s2">"29401"</span><span class="p">,</span>
+    <span class="s2">"location_county"</span><span class="p">:</span> <span class="s2">"Charleston"</span><span class="p">,</span>
+    <span class="s2">"location_state"</span><span class="p">:</span> <span class="s2">"SC"</span><span class="p">,</span>
+    <span class="s2">"location_country"</span><span class="p">:</span> <span class="s2">"USA"</span><span class="p">,</span>
+    <span class="s2">"available_from"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
+    <span class="s2">"available_until"</span><span class="p">:</span> <span class="s2">"1513091934000"</span><span class="p">,</span>
+    <span class="s2">"height"</span><span class="p">:</span> <span class="s2">"300"</span><span class="p">,</span>
+    <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"length"</span><span class="p">:</span> <span class="s2">"580"</span><span class="p">,</span>
+    <span class="s2">"weight"</span><span class="p">:</span> <span class="s2">"10000"</span><span class="p">,</span>
+    <span class="s2">"connectors"</span><span class="p">:</span> <span class="s2">"tesla_hpwc,tesla_supercharger"</span><span class="p">,</span>
+    <span class="s2">"charging_levels"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
+    <span class="s2">"energy_source"</span><span class="p">:</span> <span class="s2">"solar"</span><span class="p">,</span>
+    <span class="s2">"amenities"</span><span class="p">:</span> <span class="s2">"2,3,4,7,9"</span><span class="p">,</span>
+    <span class="s2">"provider"</span><span class="p">:</span> <span class="s2">"Tesla"</span><span class="p">,</span>
+    <span class="s2">"manufacturer"</span><span class="p">:</span> <span class="s2">"Tesla"</span><span class="p">,</span>
+    <span class="s2">"model"</span><span class="p">:</span> <span class="s2">"Supercharger"</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"need_id"</span><span class="p">:</span> <span class="s">"ae7bd8f67f3089c"</span><span class="p">,</span>
+    <span class="s">"expires_at"</span><span class="p">:</span> <span class="s">"1513005539000"</span><span class="p">,</span>
+    <span class="s">"price"</span><span class="p">:</span> <span class="s">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
+    <span class="s">"price_type"</span><span class="p">:</span> <span class="s">"kwh,kwh"</span><span class="p">,</span>
+    <span class="s">"price_description"</span><span class="p">:</span> <span class="s">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
+    <span class="s">"latitude"</span><span class="p">:</span> <span class="s">"32.785889"</span><span class="p">,</span>
+    <span class="s">"longitude"</span><span class="p">:</span> <span class="s">"-79.935569"</span><span class="p">,</span>
+    <span class="s">"entrance_latitude"</span><span class="p">:</span> <span class="s">"32.785878"</span><span class="p">,</span>
+    <span class="s">"entrance_longitude"</span><span class="p">:</span> <span class="s">"-79.935558"</span><span class="p">,</span>
+    <span class="s">"exit_latitude"</span><span class="p">:</span> <span class="s">"32.785878"</span><span class="p">,</span>
+    <span class="s">"exit_longitude"</span><span class="p">:</span> <span class="s">"-79.935558"</span><span class="p">,</span>
+    <span class="s">"location_floor"</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span>
+    <span class="s">"location_name"</span><span class="p">:</span> <span class="s">"IKEA parking lot B"</span><span class="p">,</span>
+    <span class="s">"location_name_lang"</span><span class="p">:</span> <span class="s">"eng"</span><span class="p">,</span>
+    <span class="s">"location_house_number"</span><span class="p">:</span> <span class="s">"372"</span><span class="p">,</span>
+    <span class="s">"location_street"</span><span class="p">:</span> <span class="s">"King"</span><span class="p">,</span>
+    <span class="s">"location_city"</span><span class="p">:</span> <span class="s">"Charleston"</span><span class="p">,</span>
+    <span class="s">"location_postal_code"</span><span class="p">:</span> <span class="s">"29401"</span><span class="p">,</span>
+    <span class="s">"location_county"</span><span class="p">:</span> <span class="s">"Charleston"</span><span class="p">,</span>
+    <span class="s">"location_state"</span><span class="p">:</span> <span class="s">"SC"</span><span class="p">,</span>
+    <span class="s">"location_country"</span><span class="p">:</span> <span class="s">"USA"</span><span class="p">,</span>
+    <span class="s">"available_from"</span><span class="p">:</span> <span class="s">"1513005534000"</span><span class="p">,</span>
+    <span class="s">"available_until"</span><span class="p">:</span> <span class="s">"1513091934000"</span><span class="p">,</span>
+    <span class="s">"height"</span><span class="p">:</span> <span class="s">"300"</span><span class="p">,</span>
+    <span class="s">"width"</span><span class="p">:</span> <span class="s">"200"</span><span class="p">,</span>
+    <span class="s">"length"</span><span class="p">:</span> <span class="s">"580"</span><span class="p">,</span>
+    <span class="s">"weight"</span><span class="p">:</span> <span class="s">"10000"</span><span class="p">,</span>
+    <span class="s">"connectors"</span><span class="p">:</span> <span class="s">"tesla_hpwc,tesla_supercharger"</span><span class="p">,</span>
+    <span class="s">"charging_levels"</span><span class="p">:</span> <span class="s">"2,3"</span><span class="p">,</span>
+    <span class="s">"energy_source"</span><span class="p">:</span> <span class="s">"solar"</span><span class="p">,</span>
+    <span class="s">"amenities"</span><span class="p">:</span> <span class="s">"2,3,4,7,9"</span><span class="p">,</span>
+    <span class="s">"provider"</span><span class="p">:</span> <span class="s">"Tesla"</span><span class="p">,</span>
+    <span class="s">"manufacturer"</span><span class="p">:</span> <span class="s">"Tesla"</span><span class="p">,</span>
+    <span class="s">"model"</span><span class="p">:</span> <span class="s">"Supercharger"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"bidding_endpoint_here"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre>
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">need_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'need' this bid is for. This ID arrives as part of the 'need' request</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">expires_at</code>
+      <div class="type required">required</div>
+    </td>
+    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">price</code>
+      <div class="type required">required</div>
+    </td>
+    <td>A comma separated list of prices. Specified as an integer representing DAV tokens without the decimal point padded to 18 decimals (1 DAV is 1000000000000000000)</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">price_type</code>
+      <div class="type required">required</div>
+    </td>
+    <td>A list of price types describing the <code>price</code> parameter(s). Specified as a comma separated list. See <a href="#price-types">Price Types</a> for available values</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">price_description</code>
+      <div class="type required">required</div>
+    </td>
+    <td>A comma separated list of strings describing the <code>price</code> parameter(s) in human readable terms</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">latitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The latitude coordinate of the charging station</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">longitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The longitude coordinate of the charging station</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">entrance_latitude</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The latitude coordinate of the entrance to the charging station</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">entrance_longitude</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The longitude coordinate of the entrance to the charging station</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">exit_latitude</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The latitude coordinate of the exit from the charging station</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">exit_longitude</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The longitude coordinate of the exit from the charging station</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">location_floor</code>
+      <div class="type">optional</div>
+    </td>
+    <td>Which floor/level is the charging stations located on (for multistory buildings)</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">location_name</code>
+      <div class="type">optional</div>
+    </td>
+    <td>A human readable name/description of the charging station location (e.g., Lund Train Station parking)</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">location_name_lang</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The language used in <code>location_name</code>. Specified using the 3 letter <a href="https://en.wikipedia.org/wiki/ISO_639-3" target="blank">ISO 639-3</a> language code</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">location_house_number</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The house number where the station is located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">location_street</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The street name where the station is located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">location_city</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The city where the station is located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">location_postal_code</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The postal code where the station is located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">location_county</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The county where the station is located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">location_state</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The state where the station is located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">location_country</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The country where the station is located</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">available_from</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The time from which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">available_until</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The time until which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch/Unix Time</a></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">height</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The maximum vehicle height this station can accommodate. Specified as an integer representing centimeters</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">width</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The maximum vehicle width this station can accommodate. Specified as an integer representing centimeters</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">length</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The maximum vehicle length this station can accommodate. Specified as an integer representing centimeters</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">weight</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The maximum vehicle weight this station can accommodate. Specified as an integer representing kilograms</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">connectors</code>
+      <div class="type required">required</div>
+    </td>
+    <td>A list of connector types available at this charging station. Specified as a comma separated list of connector ids. See <a href="#connector-types">Connector Types</a> for available values</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">charging_levels</code>
+      <div class="type">optional</div>
+    </td>
+    <td>A list of charging levels as defined by SAE standards available at this charging station. Specified as a comma separated list of integers. See <a href="#charging-levels">Charging Levels</a></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">energy_source</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The source of the energy used by this charging station. Specified as an energy source id. See <a href="#energy-sources">Energy Sources</a></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">amenities</code>
+      <div class="type">optional</div>
+    </td>
+    <td>A list of amenities that are present at this charging station. Specified as a comma separated list of amenity ids. See <a href="#amenities">Amenities</a></td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">provider</code>
+      <div class="type">optional</div>
+    </td>
+    <td>Name of the service provider or charging network operating this charging station</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">manufacturer</code>
+      <div class="type">optional</div>
+    </td>
+    <td>Name of the manufacturer of this charging station</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">model</code>
+      <div class="type">optional</div>
+    </td>
+    <td>Name of the model of this charging station</td>
+  </tr>
+</table>
+<h1 id='connector-types'>Connector Types</h1>
+<p>Connector types and their unique identifier.</p>
+
+<table class="reference connectors">
+  <tr>
+    <th>Connector ID</th>
+    <th>Name</th>
+    <th>Charging Level</th>
+  </tr>
+  <tr>
+    <td><code>nema_5_15</code></td>
+    <td>NEMA 5-15 Wall Outlet</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td><code>nema_5_20</code></td>
+    <td>NEMA 5-20 Wall Outlet</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td><code>j1772</code></td>
+    <td>SAE J1772</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td><code>mennekes</code></td>
+    <td>SAE J3068 / IEC 62196 (Mennekes)</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td><code>nema_14_50</code></td>
+    <td>NEMA 14-50 (RV plug)    </td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td><code>chademo</code></td>
+    <td>CHAdeMO</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td><code>ccs</code></td>
+    <td>SAE Combined Charging System (CCS)</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td><code>tesla_hpwc</code></td>
+    <td>Tesla HPWC</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td><code>tesla_supercharger</code></td>
+    <td>Tesla supercharger</td>
+    <td>3</td>
+  </tr>
+</table>
+<h1 id='charging-levels'>Charging Levels</h1>
+<p>Available charging levels.</p>
+
+<table class="reference levels">
+  <tr>
+    <th>Level</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>1</code></td>
+    <td>Standard house outlet</td>
+  </tr>
+  <tr>
+    <td><code>2</code></td>
+    <td>240 volt AC charging</td>
+  </tr>
+  <tr>
+    <td><code>3</code></td>
+    <td>DC fast charging</td>
+  </tr>
+</table>
+<h1 id='energy-sources'>Energy Sources</h1>
+<p>The energy source used by the station.</p>
+
+<table class="energy_sources">
+  <tr>
+    <th>Level</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>grid</code></td>
+    <td>Connected to the electrical grid and using an unspecified energy source, or an unspecified mix of energy source</td>
+  </tr>
+  <tr>
+    <td><code>renewable</code></td>
+    <td>Uses 100% renewable energy of an unspecified source, or a mix of different renewable energy sources</td>
+  </tr>
+  <tr>
+    <td><code>solar</code></td>
+    <td>Uses 100% solar energy</td>
+  </tr>
+  <tr>
+    <td><code>wind</code></td>
+    <td>Uses 100% wind energy</td>
+  </tr>
+  <tr>
+    <td><code>hydro</code></td>
+    <td>Uses 100% hydropower energy</td>
+  </tr>
+  <tr>
+    <td><code>geothermal</code></td>
+    <td>Uses 100% geothermal energy</td>
+  </tr>
+</table>
+<h1 id='amenities'>Amenities</h1>
+<p>A list of amentities can be included in both requests and responses.</p>
+
+<table class="reference">
+  <tr>
+    <th>ID</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>1</code></td>
+    <td>Lodging</td>
+  </tr>
+  <tr>
+    <td><code>2</code></td>
+    <td>Dining</td>
+  </tr>
+  <tr>
+    <td><code>3</code></td>
+    <td>Restrooms</td>
+  </tr>
+  <tr>
+    <td><code>4</code></td>
+    <td>Parking</td>
+  </tr>
+  <tr>
+    <td><code>5</code></td>
+    <td>Valet Parking</td>
+  </tr>
+  <tr>
+    <td><code>6</code></td>
+    <td>Park</td>
+  </tr>
+  <tr>
+    <td><code>7</code></td>
+    <td>WiFi</td>
+  </tr>
+  <tr>
+    <td><code>8</code></td>
+    <td>Shopping</td>
+  </tr>
+  <tr>
+    <td><code>9</code></td>
+    <td>Grocery</td>
+  </tr>
+</table>
+<h1 id='price-types'>Price Types</h1>
+<p>Price types and their unique identifier.</p>
+
+<table class="price_types">
+  <tr>
+    <th>Price Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>kwh</code></td>
+    <td>The listed <code>price</code> is per kWh</td>
+  </tr>
+  <tr>
+    <td><code>second</code></td>
+    <td>The listed <code>price</code> is per second</td>
+  </tr>
+  <tr>
+    <td><code>minute</code></td>
+    <td>The listed <code>price</code> is per minute</td>
+  </tr>
+  <tr>
+    <td><code>hour</code></td>
+    <td>The listed <code>price</code> is per hour</td>
+  </tr>
+  <tr>
+    <td><code>day</code></td>
+    <td>The listed <code>price</code> is per day</td>
+  </tr>
+  <tr>
+    <td><code>week</code></td>
+    <td>The listed <code>price</code> is per week</td>
+  </tr>
+  <tr>
+    <td><code>flat</code></td>
+    <td>The listed <code>price</code> is a flat price</td>
+  </tr>
+</table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="python">python</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
