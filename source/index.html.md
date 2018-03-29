@@ -1,16 +1,32 @@
 ---
-title: DAV Communication Protocols
+title: DAV Developer Portal
 
 search: false
 ---
 
-<p class="header-image"><img src="/images/header.png" alt="DAV Communication Protocols"></p>
+<p class="header-image"><img src="/images/header.png" alt="DAV Developer Portal"></p>
 
 Welcome to the DAV Developer Portal. 
 
-Here you will find API documentation for various protocols governing communication between the different vehicles, services, users, and applications using DAV.
+Here you will find instructions for running our command line interface, and our various communication protocols.
+
+# DAV CLI
+
+The DAV Command Line Interface was created to ease the development of applications and solutions that interact with DAV, and to enable to:
+<ul>
+	<li>Easily run a local Ethereum node containing DAV contracts</li>
+	<li>Generate Identities secured by private public keys and register them on the blockchain</li>
+	<li>Easily scaffold a new project, or modify an existing one to interact with DAV (under development)</li>
+</ul>
+
+<ul class="main-thumbs">
+  <li><a href="./dav-cli/user_guide.html"><img src="images/thumbnails/cli_user_guide_tumbnail.png" /></a></li>
+</ul>
 
 # Communication Protocols
+
+The following protocols govern the communication between different vehicles, services, users, and applications using DAV.
+
 
 <ul class="main-thumbs">
   <li><a href="./protocol/car_parking.html"><img src="images/thumbnails/car_parking_thumbnail.png" /></a></li>

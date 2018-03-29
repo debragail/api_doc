@@ -712,6 +712,13 @@ table.energy_sources {
   }
 }
 
+table.cli_options {
+  td:first-of-type, th:first-of-type {
+    text-align: left;
+    width: 40%
+  }
+}
+
 p.header-image {
   padding: 0;
   margin-bottom: -56px;
@@ -751,4 +758,10 @@ body.index {
 
 p a, td a {
   color: blue;
+}
+
+code.code-block {
+  display: block;
+  width: 97%;
+  padding: 10px 7px;
 }
