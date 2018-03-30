@@ -6,11 +6,13 @@ search: false
 
 <p class="header-image"><img src="/images/header.png" alt="DAV Developer Portal"></p>
 
+# DAV Developer Portal
+
 Welcome to the DAV Developer Portal. 
 
 Here you will find instructions for running our command line interface, and our various communication protocols.
 
-# DAV CLI
+# Command Line Interface
 
 The DAV Command Line Interface was created to ease the development of applications and solutions that interact with DAV, and to enable to:
 <ul>
