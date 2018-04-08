@@ -20,7 +20,7 @@ search: true
 
 The communication protocol for vessel charging describes the format of a request for a charging service (`need`), and the response sent by a charging provider (`bid`).
 
-For example, an autonomous boat might search for charging stations within 2 km of a given coordinate that is capable of docking a 1200 kg boat.
+For example, an autonomous boat might search for charging stations within 2 km of a given coordinate that are capable of docking a 1200 kg boat.
 
 > Need
 
