@@ -8,7 +8,7 @@ search: false
 
 # DAV Developer Portal
 
-Welcome to the DAV Developer Portal. 
+Welcome to the DAV Developer Portal.
 
 Here you will find instructions for running our command line interface, and our various communication protocols.
 
