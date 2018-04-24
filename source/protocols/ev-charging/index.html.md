@@ -785,7 +785,7 @@ The energy source used by the station.
   </tr>
   <tr>
     <td><code>hydro</code></td>
-    <td>Uses 100% hydropower energy</td>
+    <td>Uses 100% hydro power energy</td>
   </tr>
   <tr>
     <td><code>geothermal</code></td>
@@ -795,7 +795,7 @@ The energy source used by the station.
 
 # Amenities
 
-A list of amentities can be included in both requests and responses.
+A list of amenities can be included in both requests and responses.
 
 <table class="reference">
   <tr>

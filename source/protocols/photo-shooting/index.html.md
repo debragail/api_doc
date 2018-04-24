@@ -343,7 +343,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">price_type</code>
       <div class="type required">required</div>
     </td>
-    <td>A list of price types describing the <code>price</code> parameter(s). Specified as a comma separated list. Currently the only suppored price type is <code>flat</code></td>
+    <td>A list of price types describing the <code>price</code> parameter(s). Specified as a comma separated list. Currently the only supported price type is <code>flat</code></td>
   </tr>
   <tr>
     <td>
@@ -419,7 +419,7 @@ The operator of the camera during the photo shoot.
   </tr>
   <tr>
     <td><code>ugv</code></td>
-    <td>Unmanned ground vehicle. A vehicle that operates while in contact with the ground and without an onboard human presence
+    <td>Unmanned ground vehicle. A vehicle that operates while in contact with the ground and without an on board human presence
     </td>
   </tr>
 </table>

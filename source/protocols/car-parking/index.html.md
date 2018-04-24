@@ -615,7 +615,7 @@ Price types and their unique identifier.
 
 # Amenities
 
-A list of amentities can be included in both requests and responses.
+A list of amenities can be included in both requests and responses.
 
 <table class="reference">
   <tr>

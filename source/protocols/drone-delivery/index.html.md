@@ -496,7 +496,7 @@ requests.post("bidding_endpoint_here", data=payload)
 
 # Select Bid
 
-A selection of one bid that wins over the rest. Sent by the service requseter (a user that is looking to deliver a package using a drone)
+A selection of one bid that wins over the rest. Sent by the service requester (a user that is looking to deliver a package using a drone)
 
 ## Arguments
 
@@ -732,7 +732,7 @@ requests.post("discovery_endpoint_here", data=payload)
 
 # Status
 
-A status update sent by the service provider to the service requseter
+A status update sent by the service provider to the service requester
 
 ## Arguments
 
@@ -1189,7 +1189,7 @@ For a full listing of all available codes, read more about <a href="https://en.w
     <td><code>57</code></td>
     <td>IP57</td>
     <td>Protected from limited dust ingress</td>
-    <td>Protected from immersion between 15 centimetres and 1 metre in depth, limited ingress protection</td>
+    <td>Protected from immersion between 15 centimeters and 1 meter in depth, limited ingress protection</td>
   </tr>
   <tr>
     <td><code>58</code></td>
@@ -1243,7 +1243,7 @@ For a full listing of all available codes, read more about <a href="https://en.w
     <td><code>67</code></td>
     <td>IP67</td>
     <td>Protected from total dust ingress</td>
-    <td>Protected from immersion between 15 centimetres and 1 metre in depth, limited ingress protection</td>
+    <td>Protected from immersion between 15 centimeters and 1 meter in depth, limited ingress protection</td>
   </tr>
     <tr>
     <td><code>68</code></td>

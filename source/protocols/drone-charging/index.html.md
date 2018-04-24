@@ -740,7 +740,7 @@ For a full listing of all available codes, read more about <a href="https://en.w
     <td><code>57</code></td>
     <td>IP57</td>
     <td>Protected from limited dust ingress</td>
-    <td>Protected from immersion between 15 centimetres and 1 metre in depth, limited ingress protection</td>
+    <td>Protected from immersion between 15 centimeters and 1 meter in depth, limited ingress protection</td>
   </tr>
   <tr>
     <td><code>58</code></td>
@@ -794,7 +794,7 @@ For a full listing of all available codes, read more about <a href="https://en.w
     <td><code>67</code></td>
     <td>IP67</td>
     <td>Protected from total dust ingress</td>
-    <td>Protected from immersion between 15 centimetres and 1 metre in depth, limited ingress protection</td>
+    <td>Protected from immersion between 15 centimeters and 1 meter in depth, limited ingress protection</td>
   </tr>
     <tr>
     <td><code>68</code></td>
