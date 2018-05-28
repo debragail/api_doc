@@ -1,8 +1,7 @@
-all:
+FORCE:
 
-
-start:
+start: FORCE
 	bundle exec middleman server
 
-deploy:
+deploy: FORCE
 	./deploy.sh
