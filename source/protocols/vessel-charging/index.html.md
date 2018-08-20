@@ -252,21 +252,21 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">weight</code>
       <div class="type">optional</div>
     </td>
-    <td>The weight of this vehicle. Stations that cannot support a vehicle weighing this much should not respond. Specified as an integer representing kilograms</td>
+    <td>The weight of this vessel. Stations that cannot support vessels weighing this much should not respond. Specified as an integer representing kilograms</td>
   </tr>
   <tr>
     <td>
       <code class="field">battery_capacity</code>
       <div class="type">optional</div>
     </td>
-    <td>The vehicle's total battery capacity, specified in kWh</td>
+    <td>The vessel's total battery capacity, specified in kWh</td>
   </tr>
   <tr>
     <td>
       <code class="field">current_battery_charge</code>
       <div class="type">optional</div>
     </td>
-    <td>The vehicle's current battery charge level, as it was at the time the request was sent. Specified as an integer denoting percentage of full capacity</td>
+    <td>The vessel's current battery charge level, as it was at the time the request was sent. Specified as an integer denoting percentage of full capacity</td>
   </tr>
   <tr>
     <td>
@@ -554,42 +554,42 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">available_from</code>
       <div class="type required">required</div>
     </td>
-    <td>The time from which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>The time from which the charging station can be made available for the vessel requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
       <code class="field">available_until</code>
       <div class="type">optional</div>
     </td>
-    <td>The time until which the charging station can be made available for the vehicle requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>The time until which the charging station can be made available for the vessel requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
       <code class="field">height</code>
       <div class="type">optional</div>
     </td>
-    <td>The maximum vehicle height this station can accommodate. Specified as an integer representing centimeters</td>
+    <td>The maximum vessel height this station can accommodate. Specified as an integer representing centimeters</td>
   </tr>
   <tr>
     <td>
       <code class="field">width</code>
       <div class="type">optional</div>
     </td>
-    <td>The maximum vehicle width this station can accommodate. Specified as an integer representing centimeters</td>
+    <td>The maximum vessel width this station can accommodate. Specified as an integer representing centimeters</td>
   </tr>
   <tr>
     <td>
       <code class="field">length</code>
       <div class="type">optional</div>
     </td>
-    <td>The maximum vehicle length this station can accommodate. Specified as an integer representing centimeters</td>
+    <td>The maximum vessel length this station can accommodate. Specified as an integer representing centimeters</td>
   </tr>
   <tr>
     <td>
       <code class="field">weight</code>
       <div class="type">optional</div>
     </td>
-    <td>The maximum vehicle weight this station can accommodate. Specified as an integer representing kilograms</td>
+    <td>The maximum vessel weight this station can accommodate. Specified as an integer representing kilograms</td>
   </tr>
   <tr>
     <td>
