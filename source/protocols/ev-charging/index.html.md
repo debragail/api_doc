@@ -286,7 +286,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">current_battery_charge</code>
       <div class="type">optional</div>
     </td>
-    <td>The vehicle's current battery charge level, as it was at the time the request was sent. Specified in integer denoting percentage of full capacity</td>
+    <td>The vehicle's current battery charge level, as it was at the time the request was sent. Specified as an integer denoting percentage of full capacity</td>
   </tr>
   <tr>
     <td>
