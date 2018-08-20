@@ -237,21 +237,21 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">height</code>
       <div class="type">optional</div>
     </td>
-    <td>The height of this vehicle, and the minimum height clearance that this vehicle requires from the station. Specified as an integer representing centimeters</td>
+    <td>The minimum height clearance that this vehicle requires from the station. Specified as an integer representing centimeters</td>
   </tr>
   <tr>
     <td>
       <code class="field">width</code>
       <div class="type">optional</div>
     </td>
-    <td>The width of this vehicle, and the minimum width clearance that this vehicle requires from the station. Specified as an integer representing centimeters</td>
+    <td>The minimum width clearance that this vehicle requires from the station. Specified as an integer representing centimeters</td>
   </tr>
   <tr>
     <td>
       <code class="field">length</code>
       <div class="type">optional</div>
     </td>
-    <td>The length of this vehicle, and the minimum length clearance that this vehicle requires from the station. Specified as an integer representing centimeters</td>
+    <td>The minimum length clearance that this vehicle requires from the station. Specified as an integer representing centimeters</td>
   </tr>
   <tr>
     <td>
