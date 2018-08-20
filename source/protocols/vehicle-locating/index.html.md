@@ -441,34 +441,34 @@ Price types and their unique identifier.
   </tr>
   <tr>
     <td><code>second</code></td>
-    <td>The listed <code>price</code> is per second</td>
+    <td>Cost per second</td>
   </tr>
   <tr>
     <td><code>minute</code></td>
-    <td>The listed <code>price</code> is per minute</td>
+    <td>Cost per minute</td>
   </tr>
   <tr>
     <td><code>hour</code></td>
-    <td>The listed <code>price</code> is per hour</td>
+    <td>Cost per hour</td>
   </tr>
   <tr>
     <td><code>day</code></td>
-    <td>The listed <code>price</code> is per day</td>
+    <td>Cost per day</td>
   </tr>
   <tr>
     <td><code>week</code></td>
-    <td>The listed <code>price</code> is per week</td>
+    <td>Cost per week</td>
+  </tr>
+  <tr>
+    <td><code>km</code></td>
+    <td>Cost per km</td>
+  </tr>
+  <tr>
+    <td><code>mile</code></td>
+    <td>Cost per mile</td>
   </tr>
   <tr>
     <td><code>flat</code></td>
     <td>The listed <code>price</code> is a flat price</td>
-  </tr>
-  <tr>
-    <td><code>km</code></td>
-    <td>The listed <code>price</code> is per km</td>
-  </tr>
-  <tr>
-    <td><code>mile</code></td>
-    <td>The listed <code>price</code> is per mile</td>
   </tr>
 </table>
