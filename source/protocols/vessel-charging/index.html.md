@@ -34,7 +34,7 @@ curl "discovery_endpoint_here" \
     \"height\": \"200\", \
     \"width\": \"120\", \
     \"length\": \"330\", \
-    \"weight\": \"1200\", \
+    \"weight\": \"1200\" \
   }"
 ```
 
@@ -87,7 +87,7 @@ curl "bidding_endpoint_here" \
     \"longitude\": \"-122.230219\", \
     \"available_from\": \"1513005534000\", \
     \"available_until\": \"1513091934000\", \
-    \"amenities\": \"2,3,4,6,8\", \
+    \"amenities\": \"2,3,4,6,8\" \
   }"
 ```
 
@@ -152,7 +152,7 @@ curl "discovery_endpoint_here" \
     \"battery_capacity\": \"56\", \
     \"current_battery_charge\": \"26\", \
     \"energy_source\": \"hydro\", \
-    \"amenities\": \"2,3\", \
+    \"amenities\": \"2,3\" \
   }"
 ```
 
@@ -325,7 +325,7 @@ curl "bidding_endpoint_here" \
     \"amenities\": \"2,3,4,6,8\", \
     \"provider\": \"General Dynamics\", \
     \"manufacturer\": \"General Dynamics\", \
-    \"model\": \"100\", \
+    \"model\": \"100\" \
   }"
 ```
 

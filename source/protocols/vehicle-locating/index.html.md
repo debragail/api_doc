@@ -31,7 +31,7 @@ curl "discovery_endpoint_here" \
     \"vehicle_manufacturer\": \"Copter Express\", \
     \"vehicle_model\": \"COPTEREXPRESS X1\", \
     \"vehicle_color\": \"White\", \
-    \"vehicle_contact\": \"Andrei Ivanov, mobile: +7 555-338-5943\", \
+    \"vehicle_contact\": \"Andrei Ivanov, mobile: +7 555-338-5943\" \
   }"
 ```
 
@@ -83,7 +83,7 @@ curl "bidding_endpoint_here" \
     \"arrival_at\": \"1513005534000\", \
     \"vehicle_type\": \"robot\", \
     \"vehicle_manufacturer\": \"Husarion\", \
-    \"vehicle_model\": \"ROSBot\", \
+    \"vehicle_model\": \"ROSBot\" \
   }"
 ```
 
@@ -146,7 +146,7 @@ curl "discovery_endpoint_here" \
     \"vehicle_model\": \"Model S\", \
     \"vehicle_color\": \"Black\", \
     \"vehicle_license_number\": \"6GDG486\", \
-    \"vehicle_contact\": \"James McGill, mobile: 555-338-5943\", \
+    \"vehicle_contact\": \"James McGill, mobile: 555-338-5943\" \
   }"
 ```
 

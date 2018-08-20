@@ -29,7 +29,7 @@ curl "discovery_endpoint_here" \
     \"latitude\": \"32.787793\", \
     \"longitude\": \"-79.935005\", \
     \"radius\": \"1000\", \
-    \"length\": \"1200\", \
+    \"length\": \"1200\" \
   }"
 ```
 
@@ -80,7 +80,7 @@ curl "bidding_endpoint_here" \
     \"width\": \"300\", \
     \"length\": \"1900\", \
     \"weight\": \"100000\", \
-    \"amenities\": \"2,3,8\", \
+    \"amenities\": \"2,3,8\" \
   }"
 ```
 
@@ -302,7 +302,7 @@ curl "bidding_endpoint_here" \
     \"width\": \"200\", \
     \"length\": \"580\", \
     \"weight\": \"10000\", \
-    \"amenities\": \"2,3,8\", \
+    \"amenities\": \"2,3,8\" \
   }"
 ```
 

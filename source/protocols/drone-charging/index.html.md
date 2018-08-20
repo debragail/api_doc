@@ -29,7 +29,7 @@ curl "discovery_endpoint_here" \
     \"latitude\": \"32.787793\", \
     \"longitude\": \"-79.935005\", \
     \"radius\": \"2000\", \
-    \"plug_type\": \"bullet_2mm\", \
+    \"plug_type\": \"bullet_2mm\" \
   }"
 ```
 
@@ -75,7 +75,7 @@ curl "bidding_endpoint_here" \
     \"latitude\": \"32.785889\", \
     \"longitude\": \"-79.935569\", \
     \"available_from\": \"1513005534000\", \
-    \"available_until\": \"1513091934000\", \
+    \"available_until\": \"1513091934000\" \
   }"
 ```
 
@@ -141,7 +141,7 @@ curl "discovery_endpoint_here" \
     \"weight\": \"2500\", \
     \"charge_pad_type\": \"enclosed\", \
     \"droneport_protection_level\": \"56\" \
-    \"energy_source\": \"solar\", \
+    \"energy_source\": \"solar\" \
   }"
 ```
 
@@ -337,7 +337,7 @@ curl "bidding_endpoint_here" \
     \"energy_source\": \"solar\", \
     \"provider\": \"City Charge\", \
     \"manufacturer\": \"GeoCharge\", \
-    \"model\": \"gc2910\", \
+    \"model\": \"gc2910\" \
   }"
 ```
 

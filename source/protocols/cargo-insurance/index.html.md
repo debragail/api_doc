@@ -35,7 +35,7 @@ curl "discovery_endpoint_here" \
     \"vehicle_type\": \"drone\", \
     \"cargo_type\": \"11\", \
     \"insured_value\": \"3000.00\", \
-    \"insured_value_currency\": \"USD\", \
+    \"insured_value_currency\": \"USD\" \
   }"
 ```
 
@@ -91,7 +91,7 @@ curl "bidding_endpoint_here" \
     \"price\": \"100000000000000000\", \
     \"price_type\": \"flat\", \
     \"price_description\": \"Policy cost\", \
-    \"deductible\": \"1400000000000000000\", \
+    \"deductible\": \"1400000000000000000\" \
   }"
 ```
 
@@ -163,7 +163,7 @@ curl "discovery_endpoint_here" \
     \"length\": \"2\", \
     \"weight\": \"50\", \
     \"insured_value\": \"3000.00\", \
-    \"insured_value_currency\": \"USD\", \
+    \"insured_value_currency\": \"USD\" \
   }"
 ```
 
@@ -438,7 +438,7 @@ curl "bidding_endpoint_here" \
     \"price_description\": \"Price per minute,City tax\", \
     \"deductible\": \"1400000000000000000\", \
     \"insurer_contact\": \"Airsurance LTD, Tel: +1 415 982 3342\", \
-    \"insurer_dav_id\": \"0x17325a469aef3472aa58dfdcf672881d79b31d58\", \
+    \"insurer_dav_id\": \"0x17325a469aef3472aa58dfdcf672881d79b31d58\" \
   }"
 ```
 

@@ -31,7 +31,7 @@ curl "discovery_endpoint_here" \
     \"dropoff_latitude\": \"32.937778\", \
     \"dropoff_longitude\": \"-79.500593\", \
     \"cargo_type\": \"11\", \
-    \"hazardous_goods\": \"8\", \
+    \"hazardous_goods\": \"8\" \
   }"
 ```
 
@@ -79,7 +79,7 @@ curl "bidding_endpoint_here" \
     \"price_type\": \"second,flat\", \
     \"price_description\": \"Price per second,Tax\", \
     \"eta_pickup\": \"1513005719000\", \
-    \"eta_dropoff\": \"1513006460000\", \
+    \"eta_dropoff\": \"1513006460000\" \
   }"
 ```
 
@@ -144,7 +144,7 @@ curl "discovery_endpoint_here" \
     \"weight\": \"50\", \
     \"insurance_required\": \"true\", \
     \"insured_value\": \"675\", \
-    \"insured_value_currency\": \"USD\", \
+    \"insured_value_currency\": \"USD\" \
   }"
 ```
 
@@ -355,7 +355,7 @@ curl "bidding_endpoint_here" \
     \"insurer_dav_id\": \"0x17325a469aef3472aa58dfdcf672881d79b31d58\", \
     \"drone_contact\": \"Megadronix\", \
     \"drone_manufacturer\": \"DXY\", \
-    \"drone_model\": \"m6000\", \
+    \"drone_model\": \"m6000\" \
   }"
 ```
 
@@ -505,7 +505,7 @@ A selection of one bid that wins over the rest. Sent by the service requester (a
 ```shell
 curl "discovery_endpoint_here" \
   --data "{ \
-    \"bid_id\": \"bv43nmw65eef03e\", \
+    \"bid_id\": \"bv43nmw65eef03e\" \
   }"
 ```
 
@@ -555,7 +555,7 @@ curl "bidding_endpoint_here" \
     \"current_altitude\": \"80\", \
     \"azimuth_angle\": \"15\", \
     \"eta_pickup\": \"1513005719000\", \
-    \"eta_dropoff\": \"1513006460000\", \
+    \"eta_dropoff\": \"1513006460000\" \
   }"
 ```
 
@@ -653,7 +653,7 @@ A cancellation message sent by the service provider (the delivery drone) to the 
 ```shell
 curl "bidding_endpoint_here" \
   --data "{ \
-    \"bid_id\": \"bv43nmw65eef03e\", \
+    \"bid_id\": \"bv43nmw65eef03e\" \
   }"
 ```
 
@@ -697,7 +697,7 @@ A request message sent by the service requester to the service provider, asking 
 ```shell
 curl "discovery_endpoint_here" \
   --data "{ \
-    \"bid_id\": \"bv43nmw65eef03e\", \
+    \"bid_id\": \"bv43nmw65eef03e\" \
   }"
 ```
 
@@ -747,7 +747,7 @@ curl "bidding_endpoint_here" \
     \"current_altitude\": \"80\", \
     \"azimuth_angle\": \"15\", \
     \"eta_pickup\": \"1513005719000\", \
-    \"eta_dropoff\": \"1513006460000\", \
+    \"eta_dropoff\": \"1513006460000\" \
   }"
 ```
 
@@ -845,7 +845,7 @@ A message sent by the service provider to the service requester, notifying that 
 ```shell
 curl "bidding_endpoint_here" \
   --data "{ \
-    \"bid_id\": \"bv43nmw65eef03e\", \
+    \"bid_id\": \"bv43nmw65eef03e\" \
   }"
 ```
 
@@ -890,7 +890,7 @@ A message sent by the service provider to the service requester, notifying that 
 curl "bidding_endpoint_here" \
   --data "{ \
     \"bid_id\": \"bv43nmw65eef03e\", \
-    \"eta_dropoff\": \"1513006460000\", \
+    \"eta_dropoff\": \"1513006460000\" \
   }"
 ```
 
@@ -943,7 +943,7 @@ A message sent by the service provider to the service requester, notifying that 
 ```shell
 curl "bidding_endpoint_here" \
   --data "{ \
-    \"bid_id\": \"bv43nmw65eef03e\", \
+    \"bid_id\": \"bv43nmw65eef03e\" \
   }"
 ```
 
@@ -987,7 +987,7 @@ A message sent by the service provider to the service requester, notifying that 
 ```shell
 curl "bidding_endpoint_here" \
   --data "{ \
-    \"bid_id\": \"bv43nmw65eef03e\", \
+    \"bid_id\": \"bv43nmw65eef03e\" \
   }"
 ```
 

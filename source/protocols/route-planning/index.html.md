@@ -31,7 +31,7 @@ curl "discovery_endpoint_here" \
     \"end_latitude\": \"38.807643\", \
     \"end_longitude\": \"-116.587960\", \
     \"vehicle_type\": \"drone\", \
-    \"max_altitude\": \"400\", \
+    \"max_altitude\": \"400\" \
   }"
 ```
 
@@ -78,7 +78,7 @@ curl "bidding_endpoint_here" \
     \"price\": \"100000000000000000\", \
     \"price_type\": \"flat\", \
     \"price_description\": \"Total price\", \
-    \"eta\": \"1513178334000\", \
+    \"eta\": \"1513178334000\" \
   }"
 ```
 
@@ -134,7 +134,7 @@ curl "discovery_endpoint_here" \
     \"height\": \"11\", \
     \"width\": \"22\", \
     \"length\": \"28\", \
-    \"weight\": \"2\", \
+    \"weight\": \"2\" \
   }"
 ```
 
@@ -277,7 +277,7 @@ curl "bidding_endpoint_here" \
     \"price\": \"100000000000000000\", \
     \"price_type\": \"flat\", \
     \"price_description\": \"Total price\", \
-    \"eta\": \"1513178334000\", \
+    \"eta\": \"1513178334000\" \
   }"
 ```
 

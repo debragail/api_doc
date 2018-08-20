@@ -33,7 +33,7 @@ curl "discovery_endpoint_here" \
     \"azimuth_angle\": \"15\", \
     \"elevation_angle\": \"-20\", \
     \"distance\": \"30\", \
-    \"min_resolution\": \"1366,768\", \
+    \"min_resolution\": \"1366,768\" \
   }"
 ```
 
@@ -88,7 +88,7 @@ curl "bidding_endpoint_here" \
     \"camera_model\": \"ZENMUSE X5S\", \
     \"photo_resolution\": \"2720,1530\", \
     \"camera_operator\": \"controlled_drone\", \
-    \"operator_model\": \"DJI Matrice 210\", \
+    \"operator_model\": \"DJI Matrice 210\" \
   }"
 ```
 
@@ -150,7 +150,7 @@ curl "discovery_endpoint_here" \
     \"azimuth_angle\": \"15\", \
     \"elevation_angle\": \"-20\", \
     \"distance\": \"30\", \
-    \"min_resolution\": \"1366,768\", \
+    \"min_resolution\": \"1366,768\" \
   }"
 ```
 
@@ -275,7 +275,7 @@ curl "bidding_endpoint_here" \
     \"camera_model\": \"ZENMUSE X5S\", \
     \"photo_resolution\": \"2720,1530\", \
     \"camera_operator\": \"controlled_drone\", \
-    \"operator_model\": \"DJI Matrice 210\", \
+    \"operator_model\": \"DJI Matrice 210\" \
   }"
 ```
 

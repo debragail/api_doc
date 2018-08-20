@@ -31,7 +31,7 @@ curl "discovery_endpoint_here" \
     \"destination_latitude\": \"32.7693531\", \
     \"destination_longitude\": \"-79.9296352\", \
     \"radius\": \"3000\", \
-    \"additional_features\": \"pet_transport\", \
+    \"additional_features\": \"pet_transport\" \
   }"
 ```
 
@@ -85,7 +85,7 @@ curl "bidding_endpoint_here" \
     \"vehicle_manufacturer\": \"Luxor\", \
     \"vehicle_model\": \"Suave\", \
     \"vehicle_color\": \"Sapphire\", \
-    \"vehicle_license_number\": \"92 321 87\", \
+    \"vehicle_license_number\": \"92 321 87\" \
   }"
 ```
 
@@ -171,7 +171,7 @@ curl "discovery_endpoint_here" \
     \"destination_location_name_lang\": \"eng\", \
     \"vehicle_type\": \"suv\", \
     \"passengers\": \"3\", \
-    \"additional_features\": \"assisted\", \
+    \"additional_features\": \"assisted\" \
   }"
 ```
 
@@ -463,7 +463,7 @@ curl "bidding_endpoint_here" \
     \"vehicle_color\": \"Sapphire\", \
     \"vehicle_license_number\": \"92 321 87\", \
     \"vehicle_contact\": \"James McGill, mobile: 555-338-5943\", \
-    \"additional_features\": \"assisted\", \
+    \"additional_features\": \"assisted\" \
   }"
 ```
 

@@ -32,7 +32,7 @@ curl "discovery_endpoint_here" \
     \"longitude\": \"-79.935005\", \
     \"radius\": \"1000\", \
     \"connector\": \"tesla_supercharger\", \
-    \"amenities\": \"3\", \
+    \"amenities\": \"3\" \
   }"
 ```
 
@@ -83,7 +83,7 @@ curl "bidding_endpoint_here" \
     \"available_until\": \"1513091934000\", \
     \"connectors\": \"tesla_hpwc,tesla_supercharger\", \
     \"charging_levels\": \"2,3\", \
-    \"amenities\": \"2,3,4,7,9\", \
+    \"amenities\": \"2,3,4,7,9\" \
   }"
 ```
 
@@ -154,7 +154,7 @@ curl "discovery_endpoint_here" \
     \"battery_capacity\": \"56\", \
     \"current_battery_charge\": \"26\", \
     \"energy_source\": \"solar\", \
-    \"amenities\": \"2,3\", \
+    \"amenities\": \"2,3\" \
   }"
 ```
 
@@ -348,7 +348,7 @@ curl "bidding_endpoint_here" \
     \"amenities\": \"2,3,4,7,9\", \
     \"provider\": \"Tesla\", \
     \"manufacturer\": \"Tesla\", \
-    \"model\": \"Supercharger\", \
+    \"model\": \"Supercharger\" \
   }"
 ```
 
