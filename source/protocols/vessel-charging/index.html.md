@@ -284,9 +284,9 @@ requests.post("discovery_endpoint_here", data=payload)
   </tr>
 </table>
 
-# Listen for Needs
+# Need filter
 
-Begin listening for incoming needs. Typically this will be a charging station subscribing to incoming needs from electric boats.
+Begin listening for incoming needs that match certain requirements. Typically this will be a charging station subscribing to incoming needs from electric boats.
 
 ## Arguments
 
@@ -342,49 +342,49 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">latitude</code>
       <div class="type required">required</div>
     </td>
-    <td>The latitude coordinate around which to search</td>
+    <td>The latitude coordinate in which to listen for bids</td>
   </tr>
   <tr>
     <td>
       <code class="field">longitude</code>
       <div class="type required">required</div>
     </td>
-    <td>The longitude coordinate around which to search</td>
+    <td>The longitude coordinate in which to listen for bids</td>
   </tr>
   <tr>
     <td>
       <code class="field">radius</code>
       <div class="type required">required</div>
     </td>
-    <td>Radius in meters around the search coordinates to limit the search to. Specified as an integer</td>
+    <td>Radius in meters around the coordinates in which to listen for bids. Specified as an integer</td>
   </tr>
   <tr>
     <td>
       <code class="field">max_height</code>
       <div class="type">optional</div>
     </td>
-    <td>The minimum height clearance that this vessel requires from the charger. Specified as an integer representing centimeters</td>
+    <td>The maximum height clearance that this charger can accomodate. Specified as an integer representing centimeters</td>
   </tr>
   <tr>
     <td>
       <code class="field">max_width</code>
       <div class="type">optional</div>
     </td>
-    <td>The minimum width clearance that this vessel requires from the charger. Specified as an integer representing centimeters</td>
+    <td>The maximum width clearance that this charger can accomodate. Specified as an integer representing centimeters</td>
   </tr>
   <tr>
     <td>
       <code class="field">max_length</code>
       <div class="type">optional</div>
     </td>
-    <td>The minimum length clearance that this vessel requires from the charger. Specified as an integer representing centimeters</td>
+    <td>The maximum length clearance that this charger can accomodate. Specified as an integer representing centimeters</td>
   </tr>
   <tr>
     <td>
       <code class="field">max_weight</code>
       <div class="type">optional</div>
     </td>
-    <td>The weight of this vessel. Chargers that cannot support vessels weighing this much should not respond. Specified as an integer representing kilograms</td>
+    <td>The maximal weight this charger can accomodate. Specified as an integer representing kilograms</td>
   </tr>
 </table>
 
