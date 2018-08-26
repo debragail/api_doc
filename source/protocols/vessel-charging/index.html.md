@@ -716,6 +716,50 @@ requests.post("bidding_endpoint_here", data=payload)
   </tr>
 </table>
 
+# Decline
+
+A cancellation message sent by the service provider (the charging station) to the service requester, notifying it that the mission has been declined
+
+## Arguments
+
+> Post request to a local/remote endpoint representing the service requester
+
+```shell
+curl "bidding_endpoint_here" \
+  --data "{ \
+    \"bid_id\": \"bv43nmw65eef03e\" \
+  }"
+```
+
+```javascript
+const biddingEndPoint = "bidding_endpoint_here";
+
+fetch(biddingEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "bid_id": "bv43nmw65eef03e",
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "bid_id": "bv43nmw65eef03e",
+  }
+requests.post("bidding_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that declined the delivery mission</td>
+  </tr>
+</table>
+
 # Energy Sources
 
 The energy source used by the station.
