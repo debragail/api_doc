@@ -284,6 +284,110 @@ requests.post("discovery_endpoint_here", data=payload)
   </tr>
 </table>
 
+# Listen for Needs
+
+Begin listening for incoming needs. Typically this will be a charging station subscribing to incoming needs from electric boats.
+
+## Arguments
+
+> Post request to a local/remote discovery endpoint
+
+```shell
+curl "discovery_endpoint_here" \
+  --data "{ \
+    \"latitude\": \"38.066516\", \
+    \"longitude\": \"-122.240688\", \
+    \"radius\": \"2000\", \
+    \"max_height\": \"200\", \
+    \"max_width\": \"120\", \
+    \"max_length\": \"330\", \
+    \"max_weight\": \"1200\" \
+  }"
+```
+
+```javascript
+const discoveryEndPoint = "discovery_endpoint_here";
+
+fetch(discoveryEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "latitude": "38.066516",
+    "longitude": "-122.240688",
+    "radius": "2000",
+    "max_height": "200",
+    "max_width": "120",
+    "max_length": "330",
+    "max_weight": "1200"
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "latitude": "38.066516",
+    "longitude": "-122.240688",
+    "radius": "2000",
+    "max_height": "200",
+    "max_width": "120",
+    "max_length": "330",
+    "max_weight": "1200"
+  }
+requests.post("discovery_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">latitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The latitude coordinate around which to search</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">longitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The longitude coordinate around which to search</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">radius</code>
+      <div class="type required">required</div>
+    </td>
+    <td>Radius in meters around the search coordinates to limit the search to. Specified as an integer</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">max_height</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The minimum height clearance that this vessel requires from the charger. Specified as an integer representing centimeters</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">max_width</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The minimum width clearance that this vessel requires from the charger. Specified as an integer representing centimeters</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">max_length</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The minimum length clearance that this vessel requires from the charger. Specified as an integer representing centimeters</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">max_weight</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The weight of this vessel. Chargers that cannot support vessels weighing this much should not respond. Specified as an integer representing kilograms</td>
+  </tr>
+</table>
+
 # Bid
 
 A bid to provide a charging service. Typically sent from a charger to an electric boat.
