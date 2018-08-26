@@ -946,6 +946,158 @@ requests.post("bidding_endpoint_here", data=payload)
   </tr>
 </table>
 
+# Charging Arrival
+
+A message sent by the service requester to the service provider, notifying it that the vessel has arrived at the charger's location
+
+## Arguments
+
+> Post request to a local/remote endpoint representing the service requester
+
+```shell
+curl "bidding_endpoint_here" \
+  --data "{ \
+    \"bid_id\": \"bv43nmw65eef03e\" \
+  }"
+```
+
+```javascript
+const biddingEndPoint = "bidding_endpoint_here";
+
+fetch(biddingEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "bid_id": "bv43nmw65eef03e",
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "bid_id": "bv43nmw65eef03e",
+  }
+requests.post("bidding_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that is currently on the delivery mission</td>
+  </tr>
+</table>
+
+# Charging Started
+
+A message sent by the service provider to the service requester, notifying it that charging has begun and is now in progress
+
+## Arguments
+
+> Post request to a local/remote endpoint representing the service requester
+
+```shell
+curl "bidding_endpoint_here" \
+  --data "{ \
+    \"bid_id\": \"bv43nmw65eef03e\", \
+    \"eta_dropoff\": \"1513006460000\" \
+  }"
+```
+
+```javascript
+const biddingEndPoint = "bidding_endpoint_here";
+
+fetch(biddingEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "bid_id": "bv43nmw65eef03e",
+    "eta_dropoff": "1513006460000",
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "bid_id": "bv43nmw65eef03e",
+    "eta_dropoff": "1513006460000",
+  }
+requests.post("bidding_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that is currently on the delivery mission</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">eta_dropoff</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The estimate time of arrival at the dropoff location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+  </tr>
+</table>
+
+# Charging Complete
+
+A message sent by the service provider to the service requester, notifying it that charging has completed
+
+## Arguments
+
+> Post request to a local/remote endpoint representing the service requester
+
+```shell
+curl "bidding_endpoint_here" \
+  --data "{ \
+    \"bid_id\": \"bv43nmw65eef03e\", \
+    \"eta_dropoff\": \"1513006460000\" \
+  }"
+```
+
+```javascript
+const biddingEndPoint = "bidding_endpoint_here";
+
+fetch(biddingEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "bid_id": "bv43nmw65eef03e",
+    "eta_dropoff": "1513006460000",
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "bid_id": "bv43nmw65eef03e",
+    "eta_dropoff": "1513006460000",
+  }
+requests.post("bidding_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that is currently on the delivery mission</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">eta_dropoff</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The estimate time of arrival at the dropoff location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+  </tr>
+</table>
+
 # Energy Sources
 
 The energy source used by the charger.
