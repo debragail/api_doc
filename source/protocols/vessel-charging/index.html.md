@@ -130,7 +130,7 @@ requests.post("bidding_endpoint_here", data=payload)
 
 # Need
 
-A statement of need for charging stations. Typically this will be sent by an electric boat that is looking for a charging station around certain coordinates.
+A statement of need for charging services. Typically this will be sent by an electric boat that is looking for a charging station around certain coordinates.
 
 This request is sent to the decentralized discovery engine which responds with status `200` and a unique identifier for this request. The details of this request are then broadcasted to DAV entities that can provide this service. <a href="#bid">Bids</a> are later received as separate calls.
 
@@ -203,7 +203,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">start_at</code>
       <div class="type">optional</div>
     </td>
-    <td>The time at which the requester would like to arrive at charging station (if undefined, the arrival time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>The time at which the requester would like to arrive at charger (if undefined, the arrival time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -231,28 +231,28 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">height</code>
       <div class="type">optional</div>
     </td>
-    <td>The minimum height clearance that this vessel requires from the station. Specified as an integer representing centimeters</td>
+    <td>The minimum height clearance that this vessel requires from the charger. Specified as an integer representing centimeters</td>
   </tr>
   <tr>
     <td>
       <code class="field">width</code>
       <div class="type">optional</div>
     </td>
-    <td>The minimum width clearance that this vessel requires from the station. Specified as an integer representing centimeters</td>
+    <td>The minimum width clearance that this vessel requires from the charger. Specified as an integer representing centimeters</td>
   </tr>
   <tr>
     <td>
       <code class="field">length</code>
       <div class="type">optional</div>
     </td>
-    <td>The minimum length clearance that this vessel requires from the station. Specified as an integer representing centimeters</td>
+    <td>The minimum length clearance that this vessel requires from the charger. Specified as an integer representing centimeters</td>
   </tr>
   <tr>
     <td>
       <code class="field">weight</code>
       <div class="type">optional</div>
     </td>
-    <td>The weight of this vessel. Stations that cannot support vessels weighing this much should not respond. Specified as an integer representing kilograms</td>
+    <td>The weight of this vessel. Chargers that cannot support vessels weighing this much should not respond. Specified as an integer representing kilograms</td>
   </tr>
   <tr>
     <td>
@@ -273,7 +273,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">energy_source</code>
       <div class="type">optional</div>
     </td>
-    <td>Limit the request to only receive bids from stations using a specific source of the energy. Specified as an energy source id. See <a href="#energy-sources">Energy Sources</a></td>
+    <td>Limit the request to only receive bids from chargers using a specific source of the energy. Specified as an energy source id. See <a href="#energy-sources">Energy Sources</a></td>
   </tr>
   <tr>
     <td>
@@ -286,7 +286,7 @@ requests.post("discovery_endpoint_here", data=payload)
 
 # Bid
 
-A bid to provide a charging service. Typically sent from a charging station to an electric boat.
+A bid to provide a charging service. Typically sent from a charger to an electric boat.
 
 ## Arguments
 
@@ -449,49 +449,49 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">latitude</code>
       <div class="type required">required</div>
     </td>
-    <td>The latitude coordinate of the charging station</td>
+    <td>The latitude coordinate of the charger</td>
   </tr>
   <tr>
     <td>
       <code class="field">longitude</code>
       <div class="type required">required</div>
     </td>
-    <td>The longitude coordinate of the charging station</td>
+    <td>The longitude coordinate of the charger</td>
   </tr>
   <tr>
     <td>
       <code class="field">entrance_latitude</code>
       <div class="type">optional</div>
     </td>
-    <td>The latitude coordinate of the entrance to the charging station</td>
+    <td>The latitude coordinate of the entrance to the charger</td>
   </tr>
   <tr>
     <td>
       <code class="field">entrance_longitude</code>
       <div class="type">optional</div>
     </td>
-    <td>The longitude coordinate of the entrance to the charging station</td>
+    <td>The longitude coordinate of the entrance to the charger</td>
   </tr>
   <tr>
     <td>
       <code class="field">exit_latitude</code>
       <div class="type">optional</div>
     </td>
-    <td>The latitude coordinate of the exit from the charging station</td>
+    <td>The latitude coordinate of the exit from the charger</td>
   </tr>
   <tr>
     <td>
       <code class="field">exit_longitude</code>
       <div class="type">optional</div>
     </td>
-    <td>The longitude coordinate of the exit from the charging station</td>
+    <td>The longitude coordinate of the exit from the charger</td>
   </tr>
   <tr>
     <td>
       <code class="field">location_name</code>
       <div class="type">optional</div>
     </td>
-    <td>A human readable name/description of the charging station location (e.g., Lund Train Station parking)</td>
+    <td>A human readable name/description of the charger location (e.g., Cal Maritime Dock C)</td>
   </tr>
   <tr>
     <td>
@@ -533,98 +533,98 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">location_county</code>
       <div class="type">optional</div>
     </td>
-    <td>The county where the station is located</td>
+    <td>The county where the charger is located</td>
   </tr>
   <tr>
     <td>
       <code class="field">location_state</code>
       <div class="type">optional</div>
     </td>
-    <td>The state where the station is located</td>
+    <td>The state where the charger is located</td>
   </tr>
   <tr>
     <td>
       <code class="field">location_country</code>
       <div class="type">optional</div>
     </td>
-    <td>The country where the station is located</td>
+    <td>The country where the charger is located</td>
   </tr>
   <tr>
     <td>
       <code class="field">available_from</code>
       <div class="type required">required</div>
     </td>
-    <td>The time from which the charging station can be made available for the vessel requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>The time from which the charger can be made available for the vessel requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
       <code class="field">available_until</code>
       <div class="type">optional</div>
     </td>
-    <td>The time until which the charging station can be made available for the vessel requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>The time until which the charger can be made available for the vessel requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
       <code class="field">height</code>
       <div class="type">optional</div>
     </td>
-    <td>The maximum vessel height this station can accommodate. Specified as an integer representing centimeters</td>
+    <td>The maximum vessel height this charger can accommodate. Specified as an integer representing centimeters</td>
   </tr>
   <tr>
     <td>
       <code class="field">width</code>
       <div class="type">optional</div>
     </td>
-    <td>The maximum vessel width this station can accommodate. Specified as an integer representing centimeters</td>
+    <td>The maximum vessel width this charger can accommodate. Specified as an integer representing centimeters</td>
   </tr>
   <tr>
     <td>
       <code class="field">length</code>
       <div class="type">optional</div>
     </td>
-    <td>The maximum vessel length this station can accommodate. Specified as an integer representing centimeters</td>
+    <td>The maximum vessel length this charger can accommodate. Specified as an integer representing centimeters</td>
   </tr>
   <tr>
     <td>
       <code class="field">weight</code>
       <div class="type">optional</div>
     </td>
-    <td>The maximum vessel weight this station can accommodate. Specified as an integer representing kilograms</td>
+    <td>The maximum vessel weight this charger can accommodate. Specified as an integer representing kilograms</td>
   </tr>
   <tr>
     <td>
       <code class="field">energy_source</code>
       <div class="type">optional</div>
     </td>
-    <td>The source of the energy used by this charging station. Specified as an energy source id. See <a href="#energy-sources">Energy Sources</a></td>
+    <td>The source of the energy used by this charger. Specified as an energy source id. See <a href="#energy-sources">Energy Sources</a></td>
   </tr>
   <tr>
     <td>
       <code class="field">amenities</code>
       <div class="type">optional</div>
     </td>
-    <td>A list of amenities that are present at this charging station. Specified as a comma separated list of amenity ids. See <a href="#amenities">Amenities</a></td>
+    <td>A list of amenities that are present at this charger. Specified as a comma separated list of amenity ids. See <a href="#amenities">Amenities</a></td>
   </tr>
   <tr>
     <td>
       <code class="field">provider</code>
       <div class="type">optional</div>
     </td>
-    <td>Name of the service provider or charging network operating this charging station</td>
+    <td>Name of the service provider or charging network operating this charger</td>
   </tr>
   <tr>
     <td>
       <code class="field">manufacturer</code>
       <div class="type">optional</div>
     </td>
-    <td>Name of the manufacturer of this charging station</td>
+    <td>Name of the manufacturer of this charger</td>
   </tr>
   <tr>
     <td>
       <code class="field">model</code>
       <div class="type">optional</div>
     </td>
-    <td>Name of the model of this charging station</td>
+    <td>Name of the model of this charger</td>
   </tr>
 </table>
 
@@ -674,7 +674,7 @@ requests.post("discovery_endpoint_here", data=payload)
 
 # Starting
 
-A message sent by the service provider (the charging station) to the service requester, notifying it that the mission has started
+A message sent by the service provider (the charger) to the service requester, notifying it that the mission has started
 
 ## Arguments
 
@@ -718,7 +718,7 @@ requests.post("bidding_endpoint_here", data=payload)
 
 # Decline
 
-A cancellation message sent by the service provider (the charging station) to the service requester, notifying it that the mission has been declined
+A cancellation message sent by the service provider (the charger) to the service requester, notifying it that the mission has been declined
 
 ## Arguments
 
@@ -762,7 +762,7 @@ requests.post("bidding_endpoint_here", data=payload)
 
 # Energy Sources
 
-The energy source used by the station.
+The energy source used by the charger.
 
 <table class="energy_sources">
   <tr>
