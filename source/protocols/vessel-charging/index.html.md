@@ -308,8 +308,6 @@ curl "bidding_endpoint_here" \
     \"exit_longitude\": \"-122.230219\", \
     \"location_name\": \"Marine Programs Naval Science\", \
     \"location_name_lang\": \"eng\", \
-    \"location_house_number\": \"5\", \
-    \"location_street\": \"Morrow Cove Drive\", \
     \"location_city\": \"Vallejo\", \
     \"location_postal_code\": \"94590\", \
     \"location_county\": \"Solano\", \
@@ -348,8 +346,6 @@ fetch(biddingEndPoint, {
     "exit_longitude": "-122.230219",
     "location_name": "Marine Programs Naval Science",
     "location_name_lang": "eng",
-    "location_house_number": "5",
-    "location_street": "Morrow Cove Drive",
     "location_city": "Vallejo",
     "location_postal_code": "94590",
     "location_county": "Solano",
@@ -386,8 +382,6 @@ payload = {
     "exit_longitude": "-122.230219",
     "location_name": "Marine Programs Naval Science",
     "location_name_lang": "eng",
-    "location_house_number": "5",
-    "location_street": "Morrow Cove Drive",
     "location_city": "Vallejo",
     "location_postal_code": "94590",
     "location_county": "Solano",
