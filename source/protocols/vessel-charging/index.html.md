@@ -712,7 +712,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">bid_id</code>
       <div class="type required">required</div>
     </td>
-    <td>The unique identifier of the 'bid' that initiated the delivery mission</td>
+    <td>The unique identifier of the 'bid' that initiated the mission</td>
   </tr>
 </table>
 
@@ -756,7 +756,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">bid_id</code>
       <div class="type required">required</div>
     </td>
-    <td>The unique identifier of the 'bid' that declined the delivery mission</td>
+    <td>The unique identifier of the 'bid' that declined the mission</td>
   </tr>
 </table>
 
