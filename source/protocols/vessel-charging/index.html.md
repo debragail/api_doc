@@ -754,6 +754,198 @@ requests.post("bidding_endpoint_here", data=payload)
   </tr>
 </table>
 
+# Request Status
+
+A request message sent by either party, asking the other a status update
+
+## Arguments
+
+> Post request to a local/remote endpoint representing the other party
+
+```shell
+curl "discovery_endpoint_here" \
+  --data "{ \
+    \"bid_id\": \"bv43nmw65eef03e\" \
+  }"
+```
+
+```javascript
+const discoveryEndPoint = "discovery_endpoint_here";
+
+fetch(discoveryEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "bid_id": "bv43nmw65eef03e",
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "bid_id": "bv43nmw65eef03e",
+  }
+requests.post("discovery_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that is currently on the mission</td>
+  </tr>
+</table>
+
+# Provider Status
+
+A status update sent by the service provider to the service requester
+
+## Arguments
+
+> Post request to a local/remote endpoint representing the service requester
+
+```shell
+curl "bidding_endpoint_here" \
+  --data "{ \
+    \"bid_id\": \"bv43nmw65eef03e\", \
+    \"current_latitude\": \"32.785889\", \
+    \"current_longitude\": \"-79.935569\", \
+    \"current_altitude\": \"80\" \
+  }"
+```
+
+```javascript
+const biddingEndPoint = "bidding_endpoint_here";
+
+fetch(biddingEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "bid_id": "bv43nmw65eef03e",
+    "current_latitude": "32.785889",
+    "current_longitude": "-79.935569",
+    "current_altitude": "80"
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "bid_id": "bv43nmw65eef03e",
+    "current_latitude": "32.785889",
+    "current_longitude": "-79.935569",
+    "current_altitude": "80"
+  }
+requests.post("bidding_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that is currently on the mission</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_latitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The latitude coordinate the charger is currently located at</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_longitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The longitude coordinate the charger is currently located at</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_altitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The current altitude of the charger. Specified as meters above sea level. For example, if the charger is located 50 meters above sea level, the <code>current_altitude</code> will be <code>50</code></td>
+  </tr>
+</table>
+
+# Vessel Status
+
+A status update sent by the service requester (the vessel) to the service provider (charger)
+
+## Arguments
+
+> Post request to a local/remote endpoint representing the service requester
+
+```shell
+curl "bidding_endpoint_here" \
+  --data "{ \
+    \"bid_id\": \"bv43nmw65eef03e\", \
+    \"current_latitude\": \"32.785889\", \
+    \"current_longitude\": \"-79.935569\", \
+    \"current_altitude\": \"80\" \
+  }"
+```
+
+```javascript
+const biddingEndPoint = "bidding_endpoint_here";
+
+fetch(biddingEndPoint, {
+  method: "POST",
+  body: JSON.stringify({
+    "bid_id": "bv43nmw65eef03e",
+    "current_latitude": "32.785889",
+    "current_longitude": "-79.935569",
+    "current_altitude": "80"
+  })
+});
+```
+
+```python
+import requests
+payload = {
+    "bid_id": "bv43nmw65eef03e",
+    "current_latitude": "32.785889",
+    "current_longitude": "-79.935569",
+    "current_altitude": "80"
+  }
+requests.post("bidding_endpoint_here", data=payload)
+```
+
+<table class="arguments">
+  <tr>
+    <td>
+      <code class="field">bid_id</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The unique identifier of the 'bid' that is currently on the mission</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_latitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The latitude coordinate the charger is currently located at</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_longitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The longitude coordinate the charger is currently located at</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">current_altitude</code>
+      <div class="type required">required</div>
+    </td>
+    <td>The current altitude of the charger. Specified as meters above sea level. For example, if the charger is located 50 meters above sea level, the <code>current_altitude</code> will be <code>50</code></td>
+  </tr>
+</table>
+
 # Energy Sources
 
 The energy source used by the charger.
