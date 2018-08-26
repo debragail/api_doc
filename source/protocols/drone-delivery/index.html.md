@@ -540,7 +540,7 @@ requests.post("discovery_endpoint_here", data=payload)
 
 # Starting
 
-A message sent by the service provider (the delivery drone) to the service requester, notifying that the delivery mission has started
+A message sent by the service provider (the delivery drone) to the service requester, notifying it that the delivery mission has started
 
 ## Arguments
 
@@ -644,7 +644,7 @@ requests.post("bidding_endpoint_here", data=payload)
 
 # Decline
 
-A cancellation message sent by the service provider (the delivery drone) to the service requester, notifying that the mission has been declined
+A cancellation message sent by the service provider (the delivery drone) to the service requester, notifying it that the mission has been declined
 
 ## Arguments
 
@@ -836,7 +836,7 @@ requests.post("bidding_endpoint_here", data=payload)
 
 # Pickup Arrival
 
-A message sent by the service provider to the service requester, notifying that the drone has arrived at the pickup location (for the user to load the package)
+A message sent by the service provider to the service requester, notifying it that the drone has arrived at the pickup location (for the user to load the package)
 
 ## Arguments
 
@@ -880,7 +880,7 @@ requests.post("bidding_endpoint_here", data=payload)
 
 # Pickup Leave
 
-A message sent by the service provider to the service requester, notifying that the drone has left the pickup location
+A message sent by the service provider to the service requester, notifying it that the drone has left the pickup location
 
 ## Arguments
 
@@ -934,7 +934,7 @@ requests.post("bidding_endpoint_here", data=payload)
 
 # Dropoff Arrival
 
-A message sent by the service provider to the service requester, notifying that the drone has arrived at the dropoff location
+A message sent by the service provider to the service requester, notifying it that the drone has arrived at the dropoff location
 
 ## Arguments
 
@@ -978,7 +978,7 @@ requests.post("bidding_endpoint_here", data=payload)
 
 # Dropoff Leave
 
-A message sent by the service provider to the service requester, notifying that the drone has left the dropoff location
+A message sent by the service provider to the service requester, notifying it that the drone has left the dropoff location
 
 ## Arguments
 
