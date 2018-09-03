@@ -6,8 +6,6 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - typescript
 
 toc_footers:
-  - Parts of the Vessel Charging API were
-  - inspired by the <a href="https://github.com/PlugShare/slate" target="blank">PlugShare API</a>.
   - Documentation powered by <a href="https://github.com/lord/slate" target="blank">Slate</a>.
 
 search: true
