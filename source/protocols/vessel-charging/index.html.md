@@ -582,7 +582,7 @@ mission.sendMessage(providerStatusMessageParams);
       <code class="field">finishEta</code>
       <div class="type required">required</div>
     </td>
-    <td>The estimate time of finnish charging. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>The estimated time at which charging will be complete. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
 </table>
 
