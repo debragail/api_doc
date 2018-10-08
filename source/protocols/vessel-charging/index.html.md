@@ -245,65 +245,73 @@ A bid to provide a charging service. Typically sent from a charger to an electri
 > Using the vessel-charging/BidParams class
 
 ```javascript
-const bidParams = new BidParams({
-  price: '100000000000000000',
-  vehicleId: this.davId,
-  entranceLocation: {
-    lat: 32.050382,
-    long: 34.766149,
-  },
-  exitLocation: {
-    lat: 32.050382,
-    long: 34.766149,
-  },
-  locationName: 'Marine Programs Naval Science'
-  locationNameLang: 'eng'
-  locationCity: 'Vallejo',
-  locationPostalCode: '94590',
-  locationCounty: 'Solano',
-  locationState: 'CA',
-  locationCountry: 'USA',
-  ttl: 5000,
-  availableFrom: Date.now(),
-  availableUntil: Date.now() + 3600000,
-  energySource: EnergySources.Hydro,
-  amenities: [Amenities.Park],
-  provider: 'N3m0',
-  manufacturer: 'manufacturer_name',
-  model: 'model_name',
+needs.subscribe(need => {
+  const bidParams = new BidParams({
+    ttl: Date.now() + 3600000,
+    price: [
+      '15000000000000000000',
+      { amount: '1000000000000000000', type: 'flat', description: 'Tax' },
+    ],
+    entranceLocation: {
+      lat: 32.050382,
+      long: 34.766149,
+    },
+    exitLocation: {
+      lat: 32.050382,
+      long: 34.766149,
+    },
+    locationName: 'Marine Programs Naval Science'
+    locationNameLang: 'eng'
+    locationCity: 'Vallejo',
+    locationPostalCode: '94590',
+    locationCounty: 'Solano',
+    locationState: 'CA',
+    locationCountry: 'USA',
+    availableFrom: Date.now(),
+    availableUntil: Date.now() + 3600000,
+    energySource: EnergySources.Hydro,
+    amenities: [Amenities.Park],
+    provider: 'HoldenCharge',
+    manufacturer: 'Holden Tech LLC',
+    model: 'MegaBolt',
+  });
+  const bid = await need.createBid(bidParams);
 });
-const bid = await need.createBid(bidParams);
 ```
 
 ```typescript
-const bidParams = new BidParams({
-  price: '100000000000000000',
-  vehicleId: this.davId,
-  entranceLocation: {
-    lat: 32.050382,
-    long: 34.766149,
-  },
-  exitLocation: {
-    lat: 32.050382,
-    long: 34.766149,
-  },
-  locationName: 'Marine Programs Naval Science'
-  locationNameLang: 'eng'
-  locationCity: 'Vallejo',
-  locationPostalCode: '94590',
-  locationCounty: 'Solano',
-  locationState: 'CA',
-  locationCountry: 'USA',
-  ttl: 5000,
-  availableFrom: Date.now(),
-  availableUntil: Date.now() + 3600000,
-  energySource: EnergySources.Hydro,
-  amenities: [Amenities.Park],
-  provider: 'N3m0',
-  manufacturer: 'manufacturer_name',
-  model: 'model_name',
+needs.subscribe(need => {
+  const bidParams = new BidParams({
+    ttl: Date.now() + 3600000,
+    price: [
+      '15000000000000000000',
+      { amount: '1000000000000000000', type: 'flat', description: 'Tax' },
+    ],
+    entranceLocation: {
+      lat: 32.050382,
+      long: 34.766149,
+    },
+    exitLocation: {
+      lat: 32.050382,
+      long: 34.766149,
+    },
+    locationName: 'Marine Programs Naval Science'
+    locationNameLang: 'eng'
+    locationCity: 'Vallejo',
+    locationPostalCode: '94590',
+    locationCounty: 'Solano',
+    locationState: 'CA',
+    locationCountry: 'USA',
+    availableFrom: Date.now(),
+    availableUntil: Date.now() + 3600000,
+    energySource: EnergySources.Hydro,
+    amenities: [Amenities.Park],
+    provider: 'HoldenCharge',
+    manufacturer: 'Holden Tech LLC',
+    model: 'MegaBolt',
+  });
+  const bid = await need.createBid(bidParams);
 });
-const bid = await need.createBid(bidParams);
 ```
 
 <table class="arguments">
