@@ -39,6 +39,7 @@ const DAV = SDKFactory({
   kafkaSeedUrls,
 });
 const boat = await DAV.getIdentity(boatDavId);
+
 const needParams = new NeedParams({
   location: {
     lat: 32.050382,
@@ -68,6 +69,7 @@ const DAV = SDKFactory({
   kafkaSeedUrls,
 });
 const boat = await DAV.getIdentity(boatDavId);
+
 const needParams = new NeedParams({
   location: {
     lat: 32.050382,
@@ -164,53 +166,54 @@ Begin listening for incoming needs that match certain requirements. Typically th
 > Using the SDK identity and the vessel-charging/NeedFilterParams class
 
 ```javascript
-const identity = await davSDK.getIdentity(davId);
+const { SDKFactory } = require('dav-js');
+const { NeedFilterParams } = require('dav-js/dist/vessel-charging');
+const DAV = SDKFactory({
+  apiSeedUrls,
+  kafkaSeedUrls,
+});
+const charger = await DAV.getIdentity(chargerDavId);
+
 const needFilterParams = new NeedFilterParams({
   location: {
     lat: 32.050382,
     long: 34.766149,
   },
-  radius: 4000,
-  ttl: 5000,
-  davId: '0xC4aCC1E6fcAdB903D313C4D1C51C756F918e093D',
-  maxDimensions: {
-    length: 1,
-    width: 1,
-    height: 2,
-    weight: 5,
+  radius: 1000,
+  dimensions: {
+    length: 120,
+    width: 80,
+    height: 100,
   },
 });
-const needs = await identity.needsForType(needFilterParams, NeedParams);
+const needs = await charger.needsForType(needFilterParams);
 ```
 
 ```typescript
-const identity = await davSDK.getIdentity(davId);
+const { SDKFactory } = require('dav-js');
+const { NeedFilterParams } = require('dav-js/dist/vessel-charging');
+const DAV = SDKFactory({
+  apiSeedUrls,
+  kafkaSeedUrls,
+});
+const charger = await DAV.getIdentity(chargerDavId);
+
 const needFilterParams = new NeedFilterParams({
   location: {
     lat: 32.050382,
     long: 34.766149,
   },
-  radius: 4000,
-  ttl: 5000,
-  davId: '0xC4aCC1E6fcAdB903D313C4D1C51C756F918e093D',
-  maxDimensions: {
-    length: 1,
-    width: 1,
-    height: 2,
-    weight: 5,
+  radius: 1000,
+  dimensions: {
+    length: 120,
+    width: 80,
+    height: 100,
   },
 });
-const needs = await identity.needsForType(needFilterParams, NeedParams);
+const needs = await charger.needsForType(needFilterParams);
 ```
 
 <table class="arguments">
-  <tr>
-    <td>
-      <code class="field">ttl</code>
-      <div class="type">optional</div>
-    </td>
-    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
-  </tr>
   <tr>
     <td>
       <code class="field">location</code>
@@ -227,18 +230,10 @@ const needs = await identity.needsForType(needFilterParams, NeedParams);
   </tr>
   <tr>
     <td>
-      <code class="field">davId</code>
-      <div class="type required">required</div>
-    </td>
-    <td>Provider Dav ID (valid Ethereum address)</td>
-  </tr>
-  <tr>
-    <td>
       <code class="field">maxDimensions</code>
       <div class="type required">required</div>
     </td>
-    <td>The maximum dimensions clearance that this charger can accomodate. Specified as an integer representing centimeters or kilograms</td>
-  </tr>
+    <td>The maximum length, width, and height clearance that this charger can accomodate. Specified as an object containing integers representing centimeters</td>
 </table>
 
 # Bid
