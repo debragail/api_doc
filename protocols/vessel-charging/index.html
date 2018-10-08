@@ -361,8 +361,8 @@
   <span class="na">amenities</span><span class="p">:</span> <span class="p">[</span><span class="nx">enums</span><span class="p">.</span><span class="nx">Amenities</span><span class="p">.</span><span class="nx">Docking</span><span class="p">],</span>
 <span class="p">});</span>
 <span class="kr">const</span> <span class="nx">need</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">boat</span><span class="p">.</span><span class="nx">publishNeed</span><span class="p">(</span><span class="nx">needParams</span><span class="p">);</span>
-</code></pre><pre class="highlight typescript tab-typescript"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">SDKFactory</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'dav-js'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="p">{</span> <span class="nx">NeedParams</span><span class="p">,</span> <span class="nx">enums</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">);</span>
+</code></pre><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">SDKFactory</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'dav-js'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">NeedParams</span><span class="p">,</span> <span class="nx">enums</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">DAV</span> <span class="o">=</span> <span class="nx">SDKFactory</span><span class="p">({</span>
   <span class="nx">apiSeedUrls</span><span class="p">,</span>
   <span class="nx">kafkaSeedUrls</span><span class="p">,</span>
@@ -477,8 +477,8 @@
   <span class="p">},</span>
 <span class="p">});</span>
 <span class="kr">const</span> <span class="nx">needs</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">charger</span><span class="p">.</span><span class="nx">needsForType</span><span class="p">(</span><span class="nx">needFilterParams</span><span class="p">);</span>
-</code></pre><pre class="highlight typescript tab-typescript"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">SDKFactory</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'dav-js'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="p">{</span> <span class="nx">NeedFilterParams</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">);</span>
+</code></pre><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">SDKFactory</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'dav-js'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">NeedFilterParams</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">DAV</span> <span class="o">=</span> <span class="nx">SDKFactory</span><span class="p">({</span>
   <span class="nx">apiSeedUrls</span><span class="p">,</span>
   <span class="nx">kafkaSeedUrls</span><span class="p">,</span>
@@ -557,9 +557,9 @@
   <span class="p">});</span>
   <span class="kr">const</span> <span class="nx">bid</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">need</span><span class="p">.</span><span class="nx">createBid</span><span class="p">(</span><span class="nx">bidParams</span><span class="p">);</span>
 <span class="p">});</span>
-</code></pre><pre class="highlight typescript tab-typescript"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">BidParams</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">);</span>
+</code></pre><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">BidParams</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">;</span>
 
-<span class="nx">needs</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">need</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="nx">needs</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">need</span><span class="p">:</span> <span class="nx">Need</span><span class="o">&lt;</span><span class="nx">NeedParams</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">bidParams</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BidParams</span><span class="p">({</span>
     <span class="na">ttl</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3600000</span><span class="p">,</span>
     <span class="na">price</span><span class="p">:</span> <span class="p">[</span>
@@ -741,7 +741,7 @@
 
 <span class="kr">const</span> <span class="nx">startingMessage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">StartingMessageParams</span><span class="p">();</span>
 <span class="nx">mission</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">(</span><span class="nx">startingMessage</span><span class="p">);</span>
-</code></pre><pre class="highlight typescript tab-typescript"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">StartingMessageParams</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">);</span>
+</code></pre><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">StartingMessageParams</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">;</span>
 
 <span class="kd">const</span> <span class="nx">startingMessageParams</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">StartingMessageParams</span><span class="p">();</span>
 <span class="nx">mission</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">(</span><span class="nx">startingMessage</span><span class="p">);</span>
@@ -757,7 +757,7 @@
 
 <span class="kr">const</span> <span class="nx">statusRequestMessage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">StatusRequestMessageParams</span><span class="p">({});</span>
 <span class="nx">mission</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">(</span><span class="nx">statusRequestMessage</span><span class="p">);</span>
-</code></pre><pre class="highlight typescript tab-typescript"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">StatusRequestMessageParams</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">);</span>
+</code></pre><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">StatusRequestMessageParams</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">;</span>
 
 <span class="kd">const</span> <span class="nx">statusRequestMessage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">StatusRequestMessageParams</span><span class="p">({});</span>
 <span class="nx">mission</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">(</span><span class="nx">statusRequestMessage</span><span class="p">);</span>
@@ -775,7 +775,7 @@
   <span class="na">chargeCompletionEstimatedTime</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">5000</span><span class="p">,</span>
 <span class="p">});</span>
 <span class="nx">mission</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">(</span><span class="nx">providerStatusMessage</span><span class="p">);</span>
-</code></pre><pre class="highlight typescript tab-typescript"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">ProviderStatusMessageParams</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">);</span>
+</code></pre><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ProviderStatusMessageParams</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">;</span>
 
 <span class="kd">const</span> <span class="nx">providerStatusMessage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ProviderStatusMessageParams</span><span class="p">({</span>
   <span class="na">chargeCompletionEstimatedTime</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">5000</span><span class="p">,</span>
@@ -802,7 +802,7 @@
   <span class="p">},</span>
 <span class="p">});</span>
 <span class="nx">mission</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">(</span><span class="nx">vesselStatusMessage</span><span class="p">);</span>
-</code></pre><pre class="highlight typescript tab-typescript"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">VesselStatusMessageParams</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">);</span>
+</code></pre><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">VesselStatusMessageParams</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">;</span>
 
 <span class="kd">const</span> <span class="nx">vesselStatusMessage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VesselStatusMessageParams</span><span class="p">({</span>
   <span class="na">location</span><span class="p">:</span> <span class="p">{</span>
@@ -827,7 +827,7 @@
 
 <span class="kr">const</span> <span class="nx">chargingArrivalMessage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChargingArrivalMessageParams</span><span class="p">();</span>
 <span class="nx">mission</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">(</span><span class="nx">chargingArrivalMessage</span><span class="p">);</span>
-</code></pre><pre class="highlight typescript tab-typescript"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">ChargingArrivalMessageParams</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">);</span>
+</code></pre><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ChargingArrivalMessageParams</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">;</span>
 
 <span class="kd">const</span> <span class="nx">chargingArrivalMessage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChargingArrivalMessageParams</span><span class="p">();</span>
 <span class="nx">mission</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">(</span><span class="nx">chargingArrivalMessage</span><span class="p">);</span>
@@ -839,7 +839,7 @@
 </table>
 <h1 id='charging-started'>Charging Started</h1>
 <p>A message sent by the service provider to the service requester, notifying it that charging has begun</p>
-<h2 id='arguments-9'>Arguments</h2><pre class="highlight typescript tab-typescript"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">ChargingStartedMessageParams</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">);</span>
+<h2 id='arguments-9'>Arguments</h2><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ChargingStartedMessageParams</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">;</span>
 
 <span class="kd">const</span> <span class="nx">chargingStartedMessage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChargingStartedMessageParams</span><span class="p">();</span>
 <span class="nx">mission</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">(</span><span class="nx">chargingStartedMessage</span><span class="p">);</span>
@@ -861,9 +861,7 @@
 
 <span class="kr">const</span> <span class="nx">chargingCompleteMessage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChargingCompleteMessageParams</span><span class="p">();</span>
 <span class="nx">mission</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">(</span><span class="nx">chargingCompleteMessage</span><span class="p">);</span>
-</code></pre><pre class="highlight typescript tab-typescript"><code><span class="kd">const</span> <span class="p">{</span>
-  <span class="nx">ChargingCompleteMessageParams</span><span class="p">,</span>
-<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">);</span>
+</code></pre><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ChargingCompleteMessageParams</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'dav-js/dist/vessel-charging'</span><span class="p">;</span>
 
 <span class="kd">const</span> <span class="nx">chargingCompleteMessage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChargingCompleteMessageParams</span><span class="p">();</span>
 <span class="nx">mission</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">(</span><span class="nx">chargingCompleteMessage</span><span class="p">);</span>
