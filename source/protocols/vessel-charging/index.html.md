@@ -29,8 +29,6 @@ This request is sent to the discovery engine which broadcasts the need to DAV id
 
 ## Arguments
 
-> Using the SDK identity and the vessel-charging/NeedParams class
-
 ```javascript
 const { SDKFactory } = require('dav-js');
 const { NeedParams, enums } = require('dav-js/dist/vessel-charging');
@@ -163,8 +161,6 @@ Begin listening for incoming needs that match certain requirements. Typically th
 
 ## Arguments
 
-> Using the SDK identity and the vessel-charging/NeedFilterParams class
-
 ```javascript
 const { SDKFactory } = require('dav-js');
 const { NeedFilterParams } = require('dav-js/dist/vessel-charging');
@@ -242,9 +238,9 @@ A bid to provide a charging service. Typically sent from a charger to an electri
 
 ## Arguments
 
-> Using the vessel-charging/BidParams class
-
 ```javascript
+const { BidParams } = require('dav-js/dist/vessel-charging');
+
 needs.subscribe(need => {
   const bidParams = new BidParams({
     ttl: Date.now() + 3600000,
@@ -280,6 +276,8 @@ needs.subscribe(need => {
 ```
 
 ```typescript
+const { BidParams } = require('dav-js/dist/vessel-charging');
+
 needs.subscribe(need => {
   const bidParams = new BidParams({
     ttl: Date.now() + 3600000,
@@ -464,16 +462,18 @@ A message sent by the service provider (the charger) to the service requester, n
 
 ## Arguments
 
-> Using the vessel-charging/messages/StartingMessageParams class
-
 ```javascript
-const startingMessageParams = new StartingMessageParams();
-mission.sendMessage(startingMessageParams);
+const { StartingMessageParams } = require('dav-js/dist/vessel-charging');
+
+const startingMessage = new StartingMessageParams();
+mission.sendMessage(startingMessage);
 ```
 
 ```typescript
+const { StartingMessageParams } = require('dav-js/dist/vessel-charging');
+
 const startingMessageParams = new StartingMessageParams();
-mission.sendMessage(startingMessageParams);
+mission.sendMessage(startingMessage);
 ```
 
 <table class="arguments">
