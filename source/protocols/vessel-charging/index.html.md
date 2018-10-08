@@ -319,7 +319,7 @@ const bid = await need.createBid(bidParams);
       <code class="field">price</code>
       <div class="type required">required</div>
     </td>
-    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci
+    <td>A single price or an array containing prices. If an array is given, all the prices will be charged (e.g., a price per kWh plus a flat rate tax). Each price is specified as either an string representing Vinci, or a price object containing amount, <a href="#price-types">price type</a>, and an optional description
     <br>1 DAV == 1e18 Vinci == 1000000000000000000 Vinci</td>
   </tr>
   <tr>
