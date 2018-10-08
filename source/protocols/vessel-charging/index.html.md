@@ -484,20 +484,22 @@ mission.sendMessage(startingMessage);
 
 # Request Status
 
-A request message sent by either party, asking the other a status update
+A request message sent by either party, asking the other party for a status update
 
 ## Arguments
 
-> Using the vessel-charging/messages/StatusRequestMessageParams class
-
 ```javascript
-const statusRequestMessageParams = new StatusRequestMessageParams({});
-mission.sendMessage(statusRequestMessageParams);
+const { StatusRequestMessageParams } = require('dav-js/dist/vessel-charging');
+
+const statusRequestMessage = new StatusRequestMessageParams({});
+mission.sendMessage(statusRequestMessage);
 ```
 
 ```typescript
-const statusRequestMessageParams = new StatusRequestMessageParams({});
-mission.sendMessage(statusRequestMessageParams);
+const { StatusRequestMessageParams } = require('dav-js/dist/vessel-charging');
+
+const statusRequestMessage = new StatusRequestMessageParams({});
+mission.sendMessage(statusRequestMessage);
 ```
 
 <table class="arguments">
