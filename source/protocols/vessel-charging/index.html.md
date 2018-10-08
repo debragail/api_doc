@@ -153,7 +153,7 @@ const need = await boat.publishNeed(needParams);
       <code class="field">amenities</code>
       <div class="type">optional</div>
     </td>
-    <td>A list of amenities that need to be present at charging station. Specified as a comma separated list of amenity ids. See <a href="#amenities">Amenities</a></td>
+    <td>A list of amenities that need to be present at charging station. Specified as an array of amenity ids. See <a href="#amenities">Amenities</a></td>
   </tr>
 </table>
 
@@ -425,7 +425,7 @@ const bid = await need.createBid(bidParams);
       <code class="field">amenities</code>
       <div class="type">optional</div>
     </td>
-    <td>A list of amenities that are present at this charger. Specified as a comma separated list of amenity ids. See <a href="#amenities">Amenities</a></td>
+    <td>A list of amenities that are present at this charger. Specified as an array of amenity ids. See <a href="#amenities">Amenities</a></td>
   </tr>
   <tr>
     <td>
