@@ -25,75 +25,71 @@ In response, a charging station might send back a bid with a price for the servi
 
 A statement of need for charging services. Typically this will be sent by an electric boat that is looking for a charging station around certain coordinates.
 
-This request is sent to the decentralized discovery engine which responds with status `200` and a unique identifier for this request. The details of this request are then broadcasted to DAV entities that can provide this service. <a href="#bid">Bids</a> are later received as separate calls.
+This request is sent to the discovery engine which broadcasts the need to DAV identities that can provide this service. <a href="#bid">Bids</a> are later received in response.
 
 ## Arguments
 
 > Using the SDK identity and the vessel-charging/NeedParams class
 
 ```javascript
-const identity = await davSDK.getIdentity(davId);
+const { SDKFactory } = require('dav-js');
+const { NeedParams, enums } = require('dav-js/dist/vessel-charging');
+const DAV = SDKFactory({
+  apiSeedUrls,
+  kafkaSeedUrls,
+});
+const boat = await DAV.getIdentity(boatDavId);
 const needParams = new NeedParams({
   location: {
     lat: 32.050382,
     long: 34.766149,
   },
   radius: 20,
-  ttl: 5000,
-  startAt: Date.now(),
+  startAt: 1538995253092,
   dimensions: {
-    length: 1,
-    width: 1,
-    height: 1,
-    weight: 2,
+    length: 50,
+    width: 15,
+    height: 20,
   },
-  batteryCapacity: 40,
-  currentBatteryCharge: 10,
-  energySource: EnergySources.hydro,
-  amenities: [Amenities.Park],
+  weight: 50000,
+  batteryCapacity: 4,
+  currentBatteryCharge: 45,
+  energySource: enums.EnergySources.Solar,
+  amenities: [enums.Amenities.Docking],
 });
-const need = await identity.publishNeed(needParams);
+const need = await boat.publishNeed(needParams);
 ```
 
 ```typescript
-const identity = await davSDK.getIdentity(davId);
+const { SDKFactory } = require('dav-js');
+const { NeedParams, enums } = require('dav-js/dist/vessel-charging');
+const DAV = SDKFactory({
+  apiSeedUrls,
+  kafkaSeedUrls,
+});
+const boat = await DAV.getIdentity(boatDavId);
 const needParams = new NeedParams({
   location: {
     lat: 32.050382,
     long: 34.766149,
   },
   radius: 20,
-  ttl: 5000,
-  startAt: Date.now(),
+  startAt: 1538995253092,
   dimensions: {
-    length: 1,
-    width: 1,
-    height: 1,
-    weight: 2,
+    length: 50,
+    width: 15,
+    height: 20,
   },
-  batteryCapacity: 40,
-  currentBatteryCharge: 10,
-  energySource: EnergySources.hydro,
-  amenities: [Amenities.Park],
+  weight: 50000,
+  batteryCapacity: 4,
+  currentBatteryCharge: 45,
+  energySource: enums.EnergySources.Solar,
+  amenities: [enums.Amenities.Docking],
 });
-const need = await identity.publishNeed(needParams);
+const need = await boat.publishNeed(needParams);
 ```
 
 <table class="arguments">
-  <tr>
-    <td>
-      <code class="field">ttl</code>
-      <div class="type">optional</div>
-    </td>
-    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
-  </tr>
-  <tr>
-    <td>
-      <code class="field">startAt</code>
-      <div class="type">optional</div>
-    </td>
-    <td>The time at which the requester would like to arrive at charger (if undefined, the arrival time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
-  </tr>
   <tr>
     <td>
       <code class="field">location</code>
@@ -110,10 +106,24 @@ const need = await identity.publishNeed(needParams);
   </tr>
   <tr>
     <td>
+      <code class="field">startAt</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The time at which the requester would like to arrive at charger (if undefined, the arrival time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+  </tr>
+  <tr>
+    <td>
       <code class="field">dimensions</code>
       <div class="type">optional</div>
     </td>
-    <td>The minimum dimensions clearance that this vessel requires from the charger. Specified as an integer representing centimeters</td>
+    <td>The minimum length, width, and height clearance that this vessel requires from the charger. Specified as an object containing integers representing centimeters</td>
+  </tr>
+  <tr>
+    <td>
+      <code class="field">weight</code>
+      <div class="type">optional</div>
+    </td>
+    <td>The weight of this vessel. Specified as an integer representing grams</td>
   </tr>
   <tr>
     <td>
@@ -134,7 +144,7 @@ const need = await identity.publishNeed(needParams);
       <code class="field">energySource</code>
       <div class="type">optional</div>
     </td>
-    <td>Limit the request to only receive bids from chargers using a specific source of the energy. Specified as an energy source id. See <a href="#energy-sources">Energy Sources</a></td>
+    <td>Limit the request to only receive bids from chargers using a specific source of energy. Specified as an energy source id. See <a href="#energy-sources">Energy Sources</a></td>
   </tr>
   <tr>
     <td>
@@ -261,7 +271,7 @@ const bidParams = new BidParams({
   ttl: 5000,
   availableFrom: Date.now(),
   availableUntil: Date.now() + 3600000,
-  energySource: EnergySources.hydro,
+  energySource: EnergySources.Hydro,
   amenities: [Amenities.Park],
   provider: 'N3m0',
   manufacturer: 'manufacturer_name',
@@ -292,7 +302,7 @@ const bidParams = new BidParams({
   ttl: 5000,
   availableFrom: Date.now(),
   availableUntil: Date.now() + 3600000,
-  energySource: EnergySources.hydro,
+  energySource: EnergySources.Hydro,
   amenities: [Amenities.Park],
   provider: 'N3m0',
   manufacturer: 'manufacturer_name',
