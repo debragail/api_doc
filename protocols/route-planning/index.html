@@ -276,19 +276,19 @@
     </span><span class="se">\"</span><span class="s2">vehicle_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">drone</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">max_altitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">400</span><span class="se">\"</span><span class="s2"> </span><span class="se">\</span><span class="s2">
   }"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s1">'discovery_endpoint_here'</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
-    <span class="s2">"start_latitude"</span><span class="p">:</span> <span class="s2">"38.802610"</span><span class="p">,</span>
-    <span class="s2">"start_longitude"</span><span class="p">:</span> <span class="s2">"-116.419389"</span><span class="p">,</span>
-    <span class="s2">"end_latitude"</span><span class="p">:</span> <span class="s2">"38.807643"</span><span class="p">,</span>
-    <span class="s2">"end_longitude"</span><span class="p">:</span> <span class="s2">"-116.587960"</span><span class="p">,</span>
-    <span class="s2">"vehicle_type"</span><span class="p">:</span> <span class="s2">"drone"</span><span class="p">,</span>
-    <span class="s2">"max_altitude"</span><span class="p">:</span> <span class="s2">"400"</span><span class="p">,</span>
-  <span class="p">})</span>
+    <span class="na">start_at</span><span class="p">:</span> <span class="s1">'1513005534000'</span><span class="p">,</span>
+    <span class="na">start_latitude</span><span class="p">:</span> <span class="s1">'38.802610'</span><span class="p">,</span>
+    <span class="na">start_longitude</span><span class="p">:</span> <span class="s1">'-116.419389'</span><span class="p">,</span>
+    <span class="na">end_latitude</span><span class="p">:</span> <span class="s1">'38.807643'</span><span class="p">,</span>
+    <span class="na">end_longitude</span><span class="p">:</span> <span class="s1">'-116.587960'</span><span class="p">,</span>
+    <span class="na">vehicle_type</span><span class="p">:</span> <span class="s1">'drone'</span><span class="p">,</span>
+    <span class="na">max_altitude</span><span class="p">:</span> <span class="s1">'400'</span><span class="p">,</span>
+  <span class="p">}),</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -316,18 +316,18 @@
     </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Total price</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">eta</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513178334000</span><span class="se">\"</span><span class="s2"> </span><span class="se">\</span><span class="s2">
   }"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s1">'bidding_endpoint_here'</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
-    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"100000000000000000"</span><span class="p">,</span>
-    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"flat"</span><span class="p">,</span>
-    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Total price"</span><span class="p">,</span>
-    <span class="s2">"eta"</span><span class="p">:</span> <span class="s2">"1513178334000"</span><span class="p">,</span>
-  <span class="p">})</span>
+    <span class="na">need_id</span><span class="p">:</span> <span class="s1">'ae7bd8f67f3089c'</span><span class="p">,</span>
+    <span class="na">expires_at</span><span class="p">:</span> <span class="s1">'1513005539000'</span><span class="p">,</span>
+    <span class="na">price</span><span class="p">:</span> <span class="s1">'100000000000000000'</span><span class="p">,</span>
+    <span class="na">price_type</span><span class="p">:</span> <span class="s1">'flat'</span><span class="p">,</span>
+    <span class="na">price_description</span><span class="p">:</span> <span class="s1">'Total price'</span><span class="p">,</span>
+    <span class="na">eta</span><span class="p">:</span> <span class="s1">'1513178334000'</span><span class="p">,</span>
+  <span class="p">}),</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -361,23 +361,23 @@
     </span><span class="se">\"</span><span class="s2">length</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">28</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">weight</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2</span><span class="se">\"</span><span class="s2"> </span><span class="se">\</span><span class="s2">
   }"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s1">'discovery_endpoint_here'</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
-    <span class="s2">"start_latitude"</span><span class="p">:</span> <span class="s2">"38.802610"</span><span class="p">,</span>
-    <span class="s2">"start_longitude"</span><span class="p">:</span> <span class="s2">"-116.419389"</span><span class="p">,</span>
-    <span class="s2">"end_latitude"</span><span class="p">:</span> <span class="s2">"38.807643"</span><span class="p">,</span>
-    <span class="s2">"end_longitude"</span><span class="p">:</span> <span class="s2">"-116.587960"</span><span class="p">,</span>
-    <span class="s2">"vehicle_type"</span><span class="p">:</span> <span class="s2">"drone"</span><span class="p">,</span>
-    <span class="s2">"max_altitude"</span><span class="p">:</span> <span class="s2">"400"</span><span class="p">,</span>
-    <span class="s2">"height"</span><span class="p">:</span> <span class="s2">"11"</span><span class="p">,</span>
-    <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"22"</span><span class="p">,</span>
-    <span class="s2">"length"</span><span class="p">:</span> <span class="s2">"28"</span><span class="p">,</span>
-    <span class="s2">"weight"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
-  <span class="p">})</span>
+    <span class="na">start_at</span><span class="p">:</span> <span class="s1">'1513005534000'</span><span class="p">,</span>
+    <span class="na">start_latitude</span><span class="p">:</span> <span class="s1">'38.802610'</span><span class="p">,</span>
+    <span class="na">start_longitude</span><span class="p">:</span> <span class="s1">'-116.419389'</span><span class="p">,</span>
+    <span class="na">end_latitude</span><span class="p">:</span> <span class="s1">'38.807643'</span><span class="p">,</span>
+    <span class="na">end_longitude</span><span class="p">:</span> <span class="s1">'-116.587960'</span><span class="p">,</span>
+    <span class="na">vehicle_type</span><span class="p">:</span> <span class="s1">'drone'</span><span class="p">,</span>
+    <span class="na">max_altitude</span><span class="p">:</span> <span class="s1">'400'</span><span class="p">,</span>
+    <span class="na">height</span><span class="p">:</span> <span class="s1">'11'</span><span class="p">,</span>
+    <span class="na">width</span><span class="p">:</span> <span class="s1">'22'</span><span class="p">,</span>
+    <span class="na">length</span><span class="p">:</span> <span class="s1">'28'</span><span class="p">,</span>
+    <span class="na">weight</span><span class="p">:</span> <span class="s1">'2'</span><span class="p">,</span>
+  <span class="p">}),</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -493,18 +493,18 @@
     </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Total price</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">eta</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513178334000</span><span class="se">\"</span><span class="s2"> </span><span class="se">\</span><span class="s2">
   }"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s1">'bidding_endpoint_here'</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
-    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"100000000000000000"</span><span class="p">,</span>
-    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"flat"</span><span class="p">,</span>
-    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Total price"</span><span class="p">,</span>
-    <span class="s2">"eta"</span><span class="p">:</span> <span class="s2">"1513178334000"</span><span class="p">,</span>
-  <span class="p">})</span>
+    <span class="na">need_id</span><span class="p">:</span> <span class="s1">'ae7bd8f67f3089c'</span><span class="p">,</span>
+    <span class="na">expires_at</span><span class="p">:</span> <span class="s1">'1513005539000'</span><span class="p">,</span>
+    <span class="na">price</span><span class="p">:</span> <span class="s1">'100000000000000000'</span><span class="p">,</span>
+    <span class="na">price_type</span><span class="p">:</span> <span class="s1">'flat'</span><span class="p">,</span>
+    <span class="na">price_description</span><span class="p">:</span> <span class="s1">'Total price'</span><span class="p">,</span>
+    <span class="na">eta</span><span class="p">:</span> <span class="s1">'1513178334000'</span><span class="p">,</span>
+  <span class="p">}),</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -537,7 +537,8 @@
       <code class="field">price</code>
       <div class="type required">required</div>
     </td>
-    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci (1 DAV token equals 1000000000000000000 Vinci equals 1e18 Vinci)</td>
+    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci
+    <br>1 DAV == 1e18 Vinci == 1000000000000000000 Vinci</td>
   </tr>
     <tr>
     <td>

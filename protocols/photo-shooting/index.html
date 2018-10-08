@@ -275,21 +275,21 @@
     </span><span class="se">\"</span><span class="s2">distance</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">30</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">min_resolution</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1366,768</span><span class="se">\"</span><span class="s2"> </span><span class="se">\</span><span class="s2">
   }"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s1">'discovery_endpoint_here'</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
-    <span class="s2">"end_at"</span><span class="p">:</span> <span class="s2">"1513008000000"</span><span class="p">,</span>
-    <span class="s2">"object_latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
-    <span class="s2">"object_longitude"</span><span class="p">:</span> <span class="s2">"-79.935005"</span><span class="p">,</span>
-    <span class="s2">"object_altitude"</span><span class="p">:</span> <span class="s2">"80"</span><span class="p">,</span>
-    <span class="s2">"azimuth_angle"</span><span class="p">:</span> <span class="s2">"15"</span><span class="p">,</span>
-    <span class="s2">"elevation_angle"</span><span class="p">:</span> <span class="s2">"-20"</span><span class="p">,</span>
-    <span class="s2">"distance"</span><span class="p">:</span> <span class="s2">"30"</span><span class="p">,</span>
-    <span class="s2">"min_resolution"</span><span class="p">:</span> <span class="s2">"1366,768"</span><span class="p">,</span>
-  <span class="p">})</span>
+    <span class="na">start_at</span><span class="p">:</span> <span class="s1">'1513005534000'</span><span class="p">,</span>
+    <span class="na">end_at</span><span class="p">:</span> <span class="s1">'1513008000000'</span><span class="p">,</span>
+    <span class="na">object_latitude</span><span class="p">:</span> <span class="s1">'32.787793'</span><span class="p">,</span>
+    <span class="na">object_longitude</span><span class="p">:</span> <span class="s1">'-79.935005'</span><span class="p">,</span>
+    <span class="na">object_altitude</span><span class="p">:</span> <span class="s1">'80'</span><span class="p">,</span>
+    <span class="na">azimuth_angle</span><span class="p">:</span> <span class="s1">'15'</span><span class="p">,</span>
+    <span class="na">elevation_angle</span><span class="p">:</span> <span class="s1">'-20'</span><span class="p">,</span>
+    <span class="na">distance</span><span class="p">:</span> <span class="s1">'30'</span><span class="p">,</span>
+    <span class="na">min_resolution</span><span class="p">:</span> <span class="s1">'1366,768'</span><span class="p">,</span>
+  <span class="p">}),</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -323,22 +323,22 @@
     </span><span class="se">\"</span><span class="s2">camera_operator</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">controlled_drone</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">operator_model</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">DJI Matrice 210</span><span class="se">\"</span><span class="s2"> </span><span class="se">\</span><span class="s2">
   }"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s1">'bidding_endpoint_here'</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
-    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"20000000000000000,4000000000000000"</span><span class="p">,</span>
-    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"flat,flat"</span><span class="p">,</span>
-    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Total price,VAT"</span><span class="p">,</span>
-    <span class="s2">"eta"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
-    <span class="s2">"camera_model"</span><span class="p">:</span> <span class="s2">"ZENMUSE X5S"</span><span class="p">,</span>
-    <span class="s2">"photo_resolution"</span><span class="p">:</span> <span class="s2">"2720,1530"</span><span class="p">,</span>
-    <span class="s2">"camera_operator"</span><span class="p">:</span> <span class="s2">"controlled_drone"</span><span class="p">,</span>
-    <span class="s2">"operator_model"</span><span class="p">:</span> <span class="s2">"DJI Matrice 210"</span><span class="p">,</span>
-  <span class="p">})</span>
+    <span class="na">need_id</span><span class="p">:</span> <span class="s1">'ae7bd8f67f3089c'</span><span class="p">,</span>
+    <span class="na">expires_at</span><span class="p">:</span> <span class="s1">'1513005539000'</span><span class="p">,</span>
+    <span class="na">price</span><span class="p">:</span> <span class="s1">'20000000000000000,4000000000000000'</span><span class="p">,</span>
+    <span class="na">price_type</span><span class="p">:</span> <span class="s1">'flat,flat'</span><span class="p">,</span>
+    <span class="na">price_description</span><span class="p">:</span> <span class="s1">'Total price,VAT'</span><span class="p">,</span>
+    <span class="na">eta</span><span class="p">:</span> <span class="s1">'1513005534000'</span><span class="p">,</span>
+    <span class="na">camera_model</span><span class="p">:</span> <span class="s1">'ZENMUSE X5S'</span><span class="p">,</span>
+    <span class="na">photo_resolution</span><span class="p">:</span> <span class="s1">'2720,1530'</span><span class="p">,</span>
+    <span class="na">camera_operator</span><span class="p">:</span> <span class="s1">'controlled_drone'</span><span class="p">,</span>
+    <span class="na">operator_model</span><span class="p">:</span> <span class="s1">'DJI Matrice 210'</span><span class="p">,</span>
+  <span class="p">}),</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -374,21 +374,21 @@
     </span><span class="se">\"</span><span class="s2">distance</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">30</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">min_resolution</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1366,768</span><span class="se">\"</span><span class="s2"> </span><span class="se">\</span><span class="s2">
   }"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s1">'discovery_endpoint_here'</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
-    <span class="s2">"end_at"</span><span class="p">:</span> <span class="s2">"1513008000000"</span><span class="p">,</span>
-    <span class="s2">"object_latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
-    <span class="s2">"object_longitude"</span><span class="p">:</span> <span class="s2">"-79.935005"</span><span class="p">,</span>
-    <span class="s2">"object_altitude"</span><span class="p">:</span> <span class="s2">"80"</span><span class="p">,</span>
-    <span class="s2">"azimuth_angle"</span><span class="p">:</span> <span class="s2">"15"</span><span class="p">,</span>
-    <span class="s2">"elevation_angle"</span><span class="p">:</span> <span class="s2">"-20"</span><span class="p">,</span>
-    <span class="s2">"distance"</span><span class="p">:</span> <span class="s2">"30"</span><span class="p">,</span>
-    <span class="s2">"min_resolution"</span><span class="p">:</span> <span class="s2">"1366,768"</span><span class="p">,</span>
-  <span class="p">})</span>
+    <span class="na">start_at</span><span class="p">:</span> <span class="s1">'1513005534000'</span><span class="p">,</span>
+    <span class="na">end_at</span><span class="p">:</span> <span class="s1">'1513008000000'</span><span class="p">,</span>
+    <span class="na">object_latitude</span><span class="p">:</span> <span class="s1">'32.787793'</span><span class="p">,</span>
+    <span class="na">object_longitude</span><span class="p">:</span> <span class="s1">'-79.935005'</span><span class="p">,</span>
+    <span class="na">object_altitude</span><span class="p">:</span> <span class="s1">'80'</span><span class="p">,</span>
+    <span class="na">azimuth_angle</span><span class="p">:</span> <span class="s1">'15'</span><span class="p">,</span>
+    <span class="na">elevation_angle</span><span class="p">:</span> <span class="s1">'-20'</span><span class="p">,</span>
+    <span class="na">distance</span><span class="p">:</span> <span class="s1">'30'</span><span class="p">,</span>
+    <span class="na">min_resolution</span><span class="p">:</span> <span class="s1">'1366,768'</span><span class="p">,</span>
+  <span class="p">}),</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -438,7 +438,7 @@
       <code class="field">object_altitude</code>
       <div class="type required">required</div>
     </td>
-    <td>The altitude coordinate of the object that needs to be photographed. Specified as meters above sea level. For example, if the object is located 50 meters above sea level, the <code>object_altitude</code> will be <code>50</code></td>
+    <td>The altitude of the object that needs to be photographed. Specified as meters above sea level. For example, if the object is located 50 meters above sea level, the <code>object_altitude</code> will be <code>50</code></td>
   </tr>
   <tr>
     <td>
@@ -488,22 +488,22 @@
     </span><span class="se">\"</span><span class="s2">camera_operator</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">controlled_drone</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">operator_model</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">DJI Matrice 210</span><span class="se">\"</span><span class="s2"> </span><span class="se">\</span><span class="s2">
   }"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s1">'bidding_endpoint_here'</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
-    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"20000000000000000,4000000000000000"</span><span class="p">,</span>
-    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"flat,flat"</span><span class="p">,</span>
-    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Total price,VAT"</span><span class="p">,</span>
-    <span class="s2">"eta"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
-    <span class="s2">"camera_model"</span><span class="p">:</span> <span class="s2">"ZENMUSE X5S"</span><span class="p">,</span>
-    <span class="s2">"photo_resolution"</span><span class="p">:</span> <span class="s2">"2720,1530"</span><span class="p">,</span>
-    <span class="s2">"camera_operator"</span><span class="p">:</span> <span class="s2">"controlled_drone"</span><span class="p">,</span>
-    <span class="s2">"operator_model"</span><span class="p">:</span> <span class="s2">"DJI Matrice 210"</span><span class="p">,</span>
-  <span class="p">})</span>
+    <span class="na">need_id</span><span class="p">:</span> <span class="s1">'ae7bd8f67f3089c'</span><span class="p">,</span>
+    <span class="na">expires_at</span><span class="p">:</span> <span class="s1">'1513005539000'</span><span class="p">,</span>
+    <span class="na">price</span><span class="p">:</span> <span class="s1">'20000000000000000,4000000000000000'</span><span class="p">,</span>
+    <span class="na">price_type</span><span class="p">:</span> <span class="s1">'flat,flat'</span><span class="p">,</span>
+    <span class="na">price_description</span><span class="p">:</span> <span class="s1">'Total price,VAT'</span><span class="p">,</span>
+    <span class="na">eta</span><span class="p">:</span> <span class="s1">'1513005534000'</span><span class="p">,</span>
+    <span class="na">camera_model</span><span class="p">:</span> <span class="s1">'ZENMUSE X5S'</span><span class="p">,</span>
+    <span class="na">photo_resolution</span><span class="p">:</span> <span class="s1">'2720,1530'</span><span class="p">,</span>
+    <span class="na">camera_operator</span><span class="p">:</span> <span class="s1">'controlled_drone'</span><span class="p">,</span>
+    <span class="na">operator_model</span><span class="p">:</span> <span class="s1">'DJI Matrice 210'</span><span class="p">,</span>
+  <span class="p">}),</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -540,7 +540,8 @@
       <code class="field">price</code>
       <div class="type required">required</div>
     </td>
-    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci (1 DAV token equals 1000000000000000000 Vinci equals 1e18 Vinci)</td>
+    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci
+    <br>1 DAV == 1e18 Vinci == 1000000000000000000 Vinci</td>
   </tr>
     <tr>
     <td>

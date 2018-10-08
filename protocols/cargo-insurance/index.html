@@ -292,23 +292,24 @@
     </span><span class="se">\"</span><span class="s2">insured_value</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">3000.00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">insured_value_currency</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">USD</span><span class="se">\"</span><span class="s2"> </span><span class="se">\</span><span class="s2">
   }"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s1">'discovery_endpoint_here'</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
-    <span class="s2">"end_at"</span><span class="p">:</span> <span class="s2">"1513008000000"</span><span class="p">,</span>
-    <span class="s2">"pickup_latitude"</span><span class="p">:</span> <span class="s2">"40.958123"</span><span class="p">,</span>
-    <span class="s2">"pickup_longitude"</span><span class="p">:</span> <span class="s2">"-74.169388"</span><span class="p">,</span>
-    <span class="s2">"dropoff_latitude"</span><span class="p">:</span> <span class="s2">"40.875103"</span><span class="p">,</span>
-    <span class="s2">"dropoff_longitude"</span><span class="p">:</span> <span class="s2">"-74.570389"</span><span class="p">,</span>
-    <span class="s2">"planned_path"</span><span class="p">:</span> <span class="s2">"40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389"</span><span class="p">,</span>
-    <span class="s2">"vehicle_type"</span><span class="p">:</span> <span class="s2">"drone"</span><span class="p">,</span>
-    <span class="s2">"cargo_type"</span><span class="p">:</span> <span class="s2">"11"</span><span class="p">,</span>
-    <span class="s2">"insured_value"</span><span class="p">:</span> <span class="s2">"3000.00"</span><span class="p">,</span>
-    <span class="s2">"insured_value_currency"</span><span class="p">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-  <span class="p">})</span>
+    <span class="na">start_at</span><span class="p">:</span> <span class="s1">'1513005534000'</span><span class="p">,</span>
+    <span class="na">end_at</span><span class="p">:</span> <span class="s1">'1513008000000'</span><span class="p">,</span>
+    <span class="na">pickup_latitude</span><span class="p">:</span> <span class="s1">'40.958123'</span><span class="p">,</span>
+    <span class="na">pickup_longitude</span><span class="p">:</span> <span class="s1">'-74.169388'</span><span class="p">,</span>
+    <span class="na">dropoff_latitude</span><span class="p">:</span> <span class="s1">'40.875103'</span><span class="p">,</span>
+    <span class="na">dropoff_longitude</span><span class="p">:</span> <span class="s1">'-74.570389'</span><span class="p">,</span>
+    <span class="na">planned_path</span><span class="p">:</span>
+      <span class="s1">'40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389'</span><span class="p">,</span>
+    <span class="na">vehicle_type</span><span class="p">:</span> <span class="s1">'drone'</span><span class="p">,</span>
+    <span class="na">cargo_type</span><span class="p">:</span> <span class="s1">'11'</span><span class="p">,</span>
+    <span class="na">insured_value</span><span class="p">:</span> <span class="s1">'3000.00'</span><span class="p">,</span>
+    <span class="na">insured_value_currency</span><span class="p">:</span> <span class="s1">'USD'</span><span class="p">,</span>
+  <span class="p">}),</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -341,19 +342,19 @@
     </span><span class="se">\"</span><span class="s2">price_description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Policy cost</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">deductible</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1400000000000000000</span><span class="se">\"</span><span class="s2"> </span><span class="se">\</span><span class="s2">
   }"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s1">'bidding_endpoint_here'</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
-    <span class="s2">"coverage_type"</span><span class="p">:</span> <span class="s2">"all_risk"</span><span class="p">,</span>
-    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"100000000000000000"</span><span class="p">,</span>
-    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"flat"</span><span class="p">,</span>
-    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Policy cost"</span><span class="p">,</span>
-    <span class="s2">"deductible"</span><span class="p">:</span> <span class="s2">"1400000000000000000"</span><span class="p">,</span>
-  <span class="p">})</span>
+    <span class="na">need_id</span><span class="p">:</span> <span class="s1">'ae7bd8f67f3089c'</span><span class="p">,</span>
+    <span class="na">expires_at</span><span class="p">:</span> <span class="s1">'1513005539000'</span><span class="p">,</span>
+    <span class="na">coverage_type</span><span class="p">:</span> <span class="s1">'all_risk'</span><span class="p">,</span>
+    <span class="na">price</span><span class="p">:</span> <span class="s1">'100000000000000000'</span><span class="p">,</span>
+    <span class="na">price_type</span><span class="p">:</span> <span class="s1">'flat'</span><span class="p">,</span>
+    <span class="na">price_description</span><span class="p">:</span> <span class="s1">'Policy cost'</span><span class="p">,</span>
+    <span class="na">deductible</span><span class="p">:</span> <span class="s1">'1400000000000000000'</span><span class="p">,</span>
+  <span class="p">}),</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -402,37 +403,38 @@
     </span><span class="se">\"</span><span class="s2">insured_value</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">3000.00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">insured_value_currency</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">USD</span><span class="se">\"</span><span class="s2"> </span><span class="se">\</span><span class="s2">
   }"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s1">'discovery_endpoint_here'</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
-    <span class="s2">"end_at"</span><span class="p">:</span> <span class="s2">"1513008000000"</span><span class="p">,</span>
-    <span class="s2">"start_latitude"</span><span class="p">:</span> <span class="s2">"40.746217"</span><span class="p">,</span>
-    <span class="s2">"start_longitude"</span><span class="p">:</span> <span class="s2">"-73.970261"</span><span class="p">,</span>
-    <span class="s2">"pickup_latitude"</span><span class="p">:</span> <span class="s2">"40.958123"</span><span class="p">,</span>
-    <span class="s2">"pickup_longitude"</span><span class="p">:</span> <span class="s2">"-74.169388"</span><span class="p">,</span>
-    <span class="s2">"dropoff_latitude"</span><span class="p">:</span> <span class="s2">"40.875103"</span><span class="p">,</span>
-    <span class="s2">"dropoff_longitude"</span><span class="p">:</span> <span class="s2">"-74.570389"</span><span class="p">,</span>
-    <span class="s2">"end_latitude"</span><span class="p">:</span> <span class="s2">"40.746217"</span><span class="p">,</span>
-    <span class="s2">"end_longitude"</span><span class="p">:</span> <span class="s2">"-73.970261"</span><span class="p">,</span>
-    <span class="s2">"planned_path"</span><span class="p">:</span> <span class="s2">"40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389"</span><span class="p">,</span>
-    <span class="s2">"requester_name"</span><span class="p">:</span> <span class="s2">"Megadronix"</span><span class="p">,</span>
-    <span class="s2">"requester_phone_number"</span><span class="p">:</span> <span class="s2">"+31-338-594332"</span><span class="p">,</span>
-    <span class="s2">"external_reference_id"</span><span class="p">:</span> <span class="s2">"200982447"</span><span class="p">,</span>
-    <span class="s2">"vehicle_type"</span><span class="p">:</span> <span class="s2">"drone,ship,drone"</span><span class="p">,</span>
-    <span class="s2">"vehicle_is_autonomous"</span><span class="p">:</span> <span class="s2">"true,false,true"</span><span class="p">,</span>
-    <span class="s2">"cargo_type"</span><span class="p">:</span> <span class="s2">"11"</span><span class="p">,</span>
-    <span class="s2">"hazardous_goods"</span><span class="p">:</span> <span class="s2">"8"</span><span class="p">,</span>
-    <span class="s2">"ip_protection_level"</span><span class="p">:</span> <span class="s2">"68"</span><span class="p">,</span>
-    <span class="s2">"height"</span><span class="p">:</span> <span class="s2">"8"</span><span class="p">,</span>
-    <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
-    <span class="s2">"length"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
-    <span class="s2">"weight"</span><span class="p">:</span> <span class="s2">"50"</span><span class="p">,</span>
-    <span class="s2">"insured_value"</span><span class="p">:</span> <span class="s2">"3000.00"</span><span class="p">,</span>
-    <span class="s2">"insured_value_currency"</span><span class="p">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-  <span class="p">})</span>
+    <span class="na">start_at</span><span class="p">:</span> <span class="s1">'1513005534000'</span><span class="p">,</span>
+    <span class="na">end_at</span><span class="p">:</span> <span class="s1">'1513008000000'</span><span class="p">,</span>
+    <span class="na">start_latitude</span><span class="p">:</span> <span class="s1">'40.746217'</span><span class="p">,</span>
+    <span class="na">start_longitude</span><span class="p">:</span> <span class="s1">'-73.970261'</span><span class="p">,</span>
+    <span class="na">pickup_latitude</span><span class="p">:</span> <span class="s1">'40.958123'</span><span class="p">,</span>
+    <span class="na">pickup_longitude</span><span class="p">:</span> <span class="s1">'-74.169388'</span><span class="p">,</span>
+    <span class="na">dropoff_latitude</span><span class="p">:</span> <span class="s1">'40.875103'</span><span class="p">,</span>
+    <span class="na">dropoff_longitude</span><span class="p">:</span> <span class="s1">'-74.570389'</span><span class="p">,</span>
+    <span class="na">end_latitude</span><span class="p">:</span> <span class="s1">'40.746217'</span><span class="p">,</span>
+    <span class="na">end_longitude</span><span class="p">:</span> <span class="s1">'-73.970261'</span><span class="p">,</span>
+    <span class="na">planned_path</span><span class="p">:</span>
+      <span class="s1">'40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389'</span><span class="p">,</span>
+    <span class="na">requester_name</span><span class="p">:</span> <span class="s1">'Megadronix'</span><span class="p">,</span>
+    <span class="na">requester_phone_number</span><span class="p">:</span> <span class="s1">'+31-338-594332'</span><span class="p">,</span>
+    <span class="na">external_reference_id</span><span class="p">:</span> <span class="s1">'200982447'</span><span class="p">,</span>
+    <span class="na">vehicle_type</span><span class="p">:</span> <span class="s1">'drone,ship,drone'</span><span class="p">,</span>
+    <span class="na">vehicle_is_autonomous</span><span class="p">:</span> <span class="s1">'true,false,true'</span><span class="p">,</span>
+    <span class="na">cargo_type</span><span class="p">:</span> <span class="s1">'11'</span><span class="p">,</span>
+    <span class="na">hazardous_goods</span><span class="p">:</span> <span class="s1">'8'</span><span class="p">,</span>
+    <span class="na">ip_protection_level</span><span class="p">:</span> <span class="s1">'68'</span><span class="p">,</span>
+    <span class="na">height</span><span class="p">:</span> <span class="s1">'8'</span><span class="p">,</span>
+    <span class="na">width</span><span class="p">:</span> <span class="s1">'2'</span><span class="p">,</span>
+    <span class="na">length</span><span class="p">:</span> <span class="s1">'2'</span><span class="p">,</span>
+    <span class="na">weight</span><span class="p">:</span> <span class="s1">'50'</span><span class="p">,</span>
+    <span class="na">insured_value</span><span class="p">:</span> <span class="s1">'3000.00'</span><span class="p">,</span>
+    <span class="na">insured_value_currency</span><span class="p">:</span> <span class="s1">'USD'</span><span class="p">,</span>
+  <span class="p">}),</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -666,21 +668,21 @@
     </span><span class="se">\"</span><span class="s2">insurer_contact</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Airsurance LTD, Tel: +1 415 982 3342</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">insurer_dav_id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">0x17325a469aef3472aa58dfdcf672881d79b31d58</span><span class="se">\"</span><span class="s2"> </span><span class="se">\</span><span class="s2">
   }"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s1">'bidding_endpoint_here'</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
-    <span class="s2">"coverage_type"</span><span class="p">:</span> <span class="s2">"all_risk"</span><span class="p">,</span>
-    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"20000000000000000,100000000000000000"</span><span class="p">,</span>
-    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"minute,flat"</span><span class="p">,</span>
-    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per minute,City tax"</span><span class="p">,</span>
-    <span class="s2">"deductible"</span><span class="p">:</span> <span class="s2">"1400000000000000000"</span><span class="p">,</span>
-    <span class="s2">"insurer_contact"</span><span class="p">:</span> <span class="s2">"Airsurance LTD, Tel: +1 415 982 3342"</span><span class="p">,</span>
-    <span class="s2">"insurer_dav_id"</span><span class="p">:</span> <span class="s2">"0x17325a469aef3472aa58dfdcf672881d79b31d58"</span><span class="p">,</span>
-  <span class="p">})</span>
+    <span class="na">need_id</span><span class="p">:</span> <span class="s1">'ae7bd8f67f3089c'</span><span class="p">,</span>
+    <span class="na">expires_at</span><span class="p">:</span> <span class="s1">'1513005539000'</span><span class="p">,</span>
+    <span class="na">coverage_type</span><span class="p">:</span> <span class="s1">'all_risk'</span><span class="p">,</span>
+    <span class="na">price</span><span class="p">:</span> <span class="s1">'20000000000000000,100000000000000000'</span><span class="p">,</span>
+    <span class="na">price_type</span><span class="p">:</span> <span class="s1">'minute,flat'</span><span class="p">,</span>
+    <span class="na">price_description</span><span class="p">:</span> <span class="s1">'Price per minute,City tax'</span><span class="p">,</span>
+    <span class="na">deductible</span><span class="p">:</span> <span class="s1">'1400000000000000000'</span><span class="p">,</span>
+    <span class="na">insurer_contact</span><span class="p">:</span> <span class="s1">'Airsurance LTD, Tel: +1 415 982 3342'</span><span class="p">,</span>
+    <span class="na">insurer_dav_id</span><span class="p">:</span> <span class="s1">'0x17325a469aef3472aa58dfdcf672881d79b31d58'</span><span class="p">,</span>
+  <span class="p">}),</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -723,7 +725,8 @@
       <code class="field">price</code>
       <div class="type required">required</div>
     </td>
-    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci (1 DAV token equals 1000000000000000000 Vinci equals 1e18 Vinci)</td>
+    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci
+    <br>1 DAV == 1e18 Vinci == 1000000000000000000 Vinci</td>
   </tr>
     <tr>
     <td>
@@ -744,7 +747,8 @@
       <code class="field">deductible</code>
       <div class="type required">required</div>
     </td>
-    <td>The amount that must be paid by the policy holder before an insurance provider will pay any expenses. A comma Specified as an integer representing Vinci (1 DAV token equals 1000000000000000000 Vinci equals 1e18 Vinci)</td>
+    <td>The amount that must be paid by the policy holder before an insurance provider will pay any expenses. A comma Specified as an integer representing Vinci
+    <br>1 DAV == 1e18 Vinci == 1000000000000000000 Vinci</td>
   </tr>
   <tr>
     <td>

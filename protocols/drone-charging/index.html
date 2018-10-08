@@ -280,17 +280,17 @@
     </span><span class="se">\"</span><span class="s2">radius</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">plug_type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">bullet_2mm</span><span class="se">\"</span><span class="s2"> </span><span class="se">\</span><span class="s2">
   }"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s2">"discovery_endpoint_here"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">discoveryEndPoint</span> <span class="o">=</span> <span class="s1">'discovery_endpoint_here'</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">discoveryEndPoint</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"start_at"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
-    <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"32.787793"</span><span class="p">,</span>
-    <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-79.935005"</span><span class="p">,</span>
-    <span class="s2">"radius"</span><span class="p">:</span> <span class="s2">"2000"</span><span class="p">,</span>
-    <span class="s2">"plug_type"</span><span class="p">:</span> <span class="s2">"bullet_2mm"</span><span class="p">,</span>
-  <span class="p">})</span>
+    <span class="na">start_at</span><span class="p">:</span> <span class="s1">'1513005534000'</span><span class="p">,</span>
+    <span class="na">latitude</span><span class="p">:</span> <span class="s1">'32.787793'</span><span class="p">,</span>
+    <span class="na">longitude</span><span class="p">:</span> <span class="s1">'-79.935005'</span><span class="p">,</span>
+    <span class="na">radius</span><span class="p">:</span> <span class="s1">'2000'</span><span class="p">,</span>
+    <span class="na">plug_type</span><span class="p">:</span> <span class="s1">'bullet_2mm'</span><span class="p">,</span>
+  <span class="p">}),</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -319,21 +319,21 @@
     </span><span class="se">\"</span><span class="s2">available_from</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513005534000</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">available_until</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1513091934000</span><span class="se">\"</span><span class="s2"> </span><span class="se">\</span><span class="s2">
   }"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s1">'bidding_endpoint_here'</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
-    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
-    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"kwh,kwh"</span><span class="p">,</span>
-    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
-    <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"32.785889"</span><span class="p">,</span>
-    <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-79.935569"</span><span class="p">,</span>
-    <span class="s2">"available_from"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
-    <span class="s2">"available_until"</span><span class="p">:</span> <span class="s2">"1513091934000"</span><span class="p">,</span>
-  <span class="p">})</span>
+    <span class="na">need_id</span><span class="p">:</span> <span class="s1">'ae7bd8f67f3089c'</span><span class="p">,</span>
+    <span class="na">expires_at</span><span class="p">:</span> <span class="s1">'1513005539000'</span><span class="p">,</span>
+    <span class="na">price</span><span class="p">:</span> <span class="s1">'2300000000000000000,30000000000000000'</span><span class="p">,</span>
+    <span class="na">price_type</span><span class="p">:</span> <span class="s1">'kwh,kwh'</span><span class="p">,</span>
+    <span class="na">price_description</span><span class="p">:</span> <span class="s1">'Price per kWh,VAT per kWh'</span><span class="p">,</span>
+    <span class="na">latitude</span><span class="p">:</span> <span class="s1">'32.785889'</span><span class="p">,</span>
+    <span class="na">longitude</span><span class="p">:</span> <span class="s1">'-79.935569'</span><span class="p">,</span>
+    <span class="na">available_from</span><span class="p">:</span> <span class="s1">'1513005534000'</span><span class="p">,</span>
+    <span class="na">available_until</span><span class="p">:</span> <span class="s1">'1513091934000'</span><span class="p">,</span>
+  <span class="p">}),</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -559,39 +559,39 @@
     </span><span class="se">\"</span><span class="s2">manufacturer</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">GeoCharge</span><span class="se">\"</span><span class="s2">, </span><span class="se">\</span><span class="s2">
     </span><span class="se">\"</span><span class="s2">model</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">gc2910</span><span class="se">\"</span><span class="s2"> </span><span class="se">\</span><span class="s2">
   }"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s2">"bidding_endpoint_here"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">biddingEndPoint</span> <span class="o">=</span> <span class="s1">'bidding_endpoint_here'</span><span class="p">;</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="nx">biddingEndPoint</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="s2">"need_id"</span><span class="p">:</span> <span class="s2">"ae7bd8f67f3089c"</span><span class="p">,</span>
-    <span class="s2">"expires_at"</span><span class="p">:</span> <span class="s2">"1513005539000"</span><span class="p">,</span>
-    <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"2300000000000000000,30000000000000000"</span><span class="p">,</span>
-    <span class="s2">"price_type"</span><span class="p">:</span> <span class="s2">"kwh,kwh"</span><span class="p">,</span>
-    <span class="s2">"price_description"</span><span class="p">:</span> <span class="s2">"Price per kWh,VAT per kWh"</span><span class="p">,</span>
-    <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"32.785889"</span><span class="p">,</span>
-    <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-79.935569"</span><span class="p">,</span>
-    <span class="s2">"available_from"</span><span class="p">:</span> <span class="s2">"1513005534000"</span><span class="p">,</span>
-    <span class="s2">"available_until"</span><span class="p">:</span> <span class="s2">"1513091934000"</span><span class="p">,</span>
-    <span class="s2">"location_name"</span><span class="p">:</span> <span class="s2">"IKEA parking lot B"</span><span class="p">,</span>
-    <span class="s2">"location_name_lang"</span><span class="p">:</span> <span class="s2">"eng"</span><span class="p">,</span>
-    <span class="s2">"location_house_number"</span><span class="p">:</span> <span class="s2">"372"</span><span class="p">,</span>
-    <span class="s2">"location_street"</span><span class="p">:</span> <span class="s2">"King"</span><span class="p">,</span>
-    <span class="s2">"location_city"</span><span class="p">:</span> <span class="s2">"Charleston"</span><span class="p">,</span>
-    <span class="s2">"location_postal_code"</span><span class="p">:</span> <span class="s2">"29401"</span><span class="p">,</span>
-    <span class="s2">"location_county"</span><span class="p">:</span> <span class="s2">"Charleston"</span><span class="p">,</span>
-    <span class="s2">"location_state"</span><span class="p">:</span> <span class="s2">"SC"</span><span class="p">,</span>
-    <span class="s2">"location_country"</span><span class="p">:</span> <span class="s2">"USA"</span><span class="p">,</span>
-    <span class="s2">"height"</span><span class="p">:</span> <span class="s2">"5000"</span><span class="p">,</span>
-    <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"1000"</span><span class="p">,</span>
-    <span class="s2">"length"</span><span class="p">:</span> <span class="s2">"1000"</span><span class="p">,</span>
-    <span class="s2">"weight"</span><span class="p">:</span> <span class="s2">"100000"</span><span class="p">,</span>
-    <span class="s2">"plug_types"</span><span class="p">:</span> <span class="s2">"bullet_2mm,bullet_3_5mm,bullet_4mm"</span><span class="p">,</span>
-    <span class="s2">"energy_source"</span><span class="p">:</span> <span class="s2">"solar"</span><span class="p">,</span>
-    <span class="s2">"provider"</span><span class="p">:</span> <span class="s2">"City Charge"</span><span class="p">,</span>
-    <span class="s2">"manufacturer"</span><span class="p">:</span> <span class="s2">"GeoCharge"</span><span class="p">,</span>
-    <span class="s2">"model"</span><span class="p">:</span> <span class="s2">"gc2910"</span><span class="p">,</span>
-  <span class="p">})</span>
+    <span class="na">need_id</span><span class="p">:</span> <span class="s1">'ae7bd8f67f3089c'</span><span class="p">,</span>
+    <span class="na">expires_at</span><span class="p">:</span> <span class="s1">'1513005539000'</span><span class="p">,</span>
+    <span class="na">price</span><span class="p">:</span> <span class="s1">'2300000000000000000,30000000000000000'</span><span class="p">,</span>
+    <span class="na">price_type</span><span class="p">:</span> <span class="s1">'kwh,kwh'</span><span class="p">,</span>
+    <span class="na">price_description</span><span class="p">:</span> <span class="s1">'Price per kWh,VAT per kWh'</span><span class="p">,</span>
+    <span class="na">latitude</span><span class="p">:</span> <span class="s1">'32.785889'</span><span class="p">,</span>
+    <span class="na">longitude</span><span class="p">:</span> <span class="s1">'-79.935569'</span><span class="p">,</span>
+    <span class="na">available_from</span><span class="p">:</span> <span class="s1">'1513005534000'</span><span class="p">,</span>
+    <span class="na">available_until</span><span class="p">:</span> <span class="s1">'1513091934000'</span><span class="p">,</span>
+    <span class="na">location_name</span><span class="p">:</span> <span class="s1">'IKEA parking lot B'</span><span class="p">,</span>
+    <span class="na">location_name_lang</span><span class="p">:</span> <span class="s1">'eng'</span><span class="p">,</span>
+    <span class="na">location_house_number</span><span class="p">:</span> <span class="s1">'372'</span><span class="p">,</span>
+    <span class="na">location_street</span><span class="p">:</span> <span class="s1">'King'</span><span class="p">,</span>
+    <span class="na">location_city</span><span class="p">:</span> <span class="s1">'Charleston'</span><span class="p">,</span>
+    <span class="na">location_postal_code</span><span class="p">:</span> <span class="s1">'29401'</span><span class="p">,</span>
+    <span class="na">location_county</span><span class="p">:</span> <span class="s1">'Charleston'</span><span class="p">,</span>
+    <span class="na">location_state</span><span class="p">:</span> <span class="s1">'SC'</span><span class="p">,</span>
+    <span class="na">location_country</span><span class="p">:</span> <span class="s1">'USA'</span><span class="p">,</span>
+    <span class="na">height</span><span class="p">:</span> <span class="s1">'5000'</span><span class="p">,</span>
+    <span class="na">width</span><span class="p">:</span> <span class="s1">'1000'</span><span class="p">,</span>
+    <span class="na">length</span><span class="p">:</span> <span class="s1">'1000'</span><span class="p">,</span>
+    <span class="na">weight</span><span class="p">:</span> <span class="s1">'100000'</span><span class="p">,</span>
+    <span class="na">plug_types</span><span class="p">:</span> <span class="s1">'bullet_2mm,bullet_3_5mm,bullet_4mm'</span><span class="p">,</span>
+    <span class="na">energy_source</span><span class="p">:</span> <span class="s1">'solar'</span><span class="p">,</span>
+    <span class="na">provider</span><span class="p">:</span> <span class="s1">'City Charge'</span><span class="p">,</span>
+    <span class="na">manufacturer</span><span class="p">:</span> <span class="s1">'GeoCharge'</span><span class="p">,</span>
+    <span class="na">model</span><span class="p">:</span> <span class="s1">'gc2910'</span><span class="p">,</span>
+  <span class="p">}),</span>
 <span class="p">});</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -645,7 +645,8 @@
       <code class="field">price</code>
       <div class="type required">required</div>
     </td>
-    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci (1 DAV token equals 1000000000000000000 Vinci equals 1e18 Vinci)</td>
+    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci
+    <br>1 DAV == 1e18 Vinci == 1000000000000000000 Vinci</td>
   </tr>
   <tr>
     <td>
