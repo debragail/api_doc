@@ -432,7 +432,8 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">price</code>
       <div class="type required">required</div>
     </td>
-    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci (1 DAV token equals 1000000000000000000 Vinci equals 1e18 Vinci)</td>
+    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci
+    <br>1 DAV == 1e18 Vinci == 1000000000000000000 Vinci</td>
   </tr>
   <tr>
     <td>
