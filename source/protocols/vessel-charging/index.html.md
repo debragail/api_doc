@@ -482,36 +482,6 @@ mission.sendMessage(startingMessage);
   </tr>
 </table>
 
-# Decline
-
-A cancellation message sent by the service provider (the charger) to the service requester, notifying it that the mission has been declined
-
-## Arguments
-
-> Using the vessel-charging/messages/DeclineMessageParams class
-
-```javascript
-const missions = await bid.missions(MissionParams);
-missions.subscribe(async mission => {
-  const declineMessageParams = new DeclineMessageParams({});
-  mission.sendMessage(declineMessageParams);
-});
-```
-
-```typescript
-const missions = await bid.missions(MissionParams);
-missions.subscribe(async mission => {
-  const declineMessageParams = new DeclineMessageParams({});
-  mission.sendMessage(declineMessageParams);
-});
-```
-
-<table class="arguments">
-  <tr>
-    <td>None</td>
-  </tr>
-</table>
-
 # Request Status
 
 A request message sent by either party, asking the other a status update
