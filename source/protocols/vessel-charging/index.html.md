@@ -278,7 +278,7 @@ needs.subscribe(need => {
 ```typescript
 import { BidParams } from 'dav-js/dist/vessel-charging';
 
-needs.subscribe(need => {
+needs.subscribe((need: Need<NeedParams>) => {
   const bidParams = new BidParams({
     ttl: Date.now() + 3600000,
     price: [
