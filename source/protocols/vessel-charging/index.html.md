@@ -453,13 +453,13 @@ A selection of one bid that wins over the rest. Sent by the service requester (a
 > Using the vessel-charging/MissionParams class
 
 ```javascript
-const privateKey = '0xedeecadc79dd08009a4e89e3604424858a2084e4af1e31832c9c38fb10f8e538'
+const privateKey = '0xab....cd';
 const missionParams = new MissionParams({});
 const mission = await bid.accept(missionParams, privateKey);
 ```
 
 ```typescript
-const privateKey = '0xedeecadc79dd08009a4e89e3604424858a2084e4af1e31832c9c38fb10f8e538'
+const privateKey = '0xab....cd';
 const missionParams = new MissionParams({});
 const mission = await bid.accept(missionParams, privateKey);
 ```
@@ -484,7 +484,7 @@ A message sent by the service provider (the charger) to the service requester, n
 
 ```javascript
 const missions = await bid.missions(MissionParams);
-missions.subscribe(async (mission) => {
+missions.subscribe(async mission => {
   const startingMessageParams = new StartingMessageParams({});
   mission.sendMessage(startingMessageParams);
 });
@@ -492,7 +492,7 @@ missions.subscribe(async (mission) => {
 
 ```typescript
 const missions = await bid.missions(MissionParams);
-missions.subscribe(async (mission) => {
+missions.subscribe(async mission => {
   const startingMessageParams = new StartingMessageParams({});
   mission.sendMessage(startingMessageParams);
 });
@@ -514,7 +514,7 @@ A cancellation message sent by the service provider (the charger) to the service
 
 ```javascript
 const missions = await bid.missions(MissionParams);
-missions.subscribe(async (mission) => {
+missions.subscribe(async mission => {
   const declineMessageParams = new DeclineMessageParams({});
   mission.sendMessage(declineMessageParams);
 });
@@ -522,7 +522,7 @@ missions.subscribe(async (mission) => {
 
 ```typescript
 const missions = await bid.missions(MissionParams);
-missions.subscribe(async (mission) => {
+missions.subscribe(async mission => {
   const declineMessageParams = new DeclineMessageParams({});
   mission.sendMessage(declineMessageParams);
 });
@@ -567,12 +567,16 @@ A status update sent by the service provider to the service requester
 > Using the vessel-charging/messages/ProviderStatusMessageParams class
 
 ```javascript
-const providerStatusMessageParams = new ProviderStatusMessageParams({finishEta: Date.now() + 5000});
+const providerStatusMessageParams = new ProviderStatusMessageParams({
+  finishEta: Date.now() + 5000,
+});
 mission.sendMessage(providerStatusMessageParams);
 ```
 
 ```typescript
-const providerStatusMessageParams = new ProviderStatusMessageParams({finishEta: Date.now() + 5000});
+const providerStatusMessageParams = new ProviderStatusMessageParams({
+  finishEta: Date.now() + 5000,
+});
 mission.sendMessage(providerStatusMessageParams);
 ```
 

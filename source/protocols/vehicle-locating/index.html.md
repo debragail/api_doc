@@ -14,7 +14,7 @@ search: true
 
 <p class="header-image"><img src="/images/vehicle_locating/header.png" alt="Vehicle Locating"></p>
 
-#  Vehicle Locating Protocol
+# Vehicle Locating Protocol
 
 The Vehicle Locating communication protocol describes the format of a request (also referred to as `need`) for locating a lost vehicle, and the response (`bid`) sent by other vehicles that are able to help locating it. The need would typically be sent by the vehicle owner, the vehicle itself, or a rescue service.
 
@@ -36,19 +36,19 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "last_latitude": "55.770279",
-    "last_longitude": "37.781467",
-    "vehicle_type": "drone",
-    "vehicle_manufacturer": "Copter Express",
-    "vehicle_model": "COPTEREXPRESS X1",
-    "vehicle_color": "White",
-    "vehicle_contact": "Andrei Ivanov, mobile: +7 555-338-5943",
-  })
+    last_latitude: '55.770279',
+    last_longitude: '37.781467',
+    vehicle_type: 'drone',
+    vehicle_manufacturer: 'Copter Express',
+    vehicle_model: 'COPTEREXPRESS X1',
+    vehicle_color: 'White',
+    vehicle_contact: 'Andrei Ivanov, mobile: +7 555-338-5943',
+  }),
 });
 ```
 
@@ -88,23 +88,23 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "price": "20000000000000000,10000000000000",
-    "price_type": "flat,minute",
-    "price_description": "Finders fee,Price per minute",
-    "current_latitude": "55.756951",
-    "current_longitude": "37.633839",
-    "arrival_at": "1513005534000",
-    "vehicle_type": "robot",
-    "vehicle_manufacturer": "Husarion",
-    "vehicle_model": "ROSBot",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    price: '20000000000000000,10000000000000',
+    price_type: 'flat,minute',
+    price_description: 'Finders fee,Price per minute',
+    current_latitude: '55.756951',
+    current_longitude: '37.633839',
+    arrival_at: '1513005534000',
+    vehicle_type: 'robot',
+    vehicle_manufacturer: 'Husarion',
+    vehicle_model: 'ROSBot',
+  }),
 });
 ```
 
@@ -151,20 +151,20 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "last_latitude": "43.610159",
-    "last_longitude": "-116.783196",
-    "vehicle_type": "car",
-    "vehicle_manufacturer": "Tesla",
-    "vehicle_model": "Model S",
-    "vehicle_color": "Black",
-    "vehicle_license_number": "6GDG486",
-    "vehicle_contact": "James McGill, mobile: 555-338-5943",
-  })
+    last_latitude: '43.610159',
+    last_longitude: '-116.783196',
+    vehicle_type: 'car',
+    vehicle_manufacturer: 'Tesla',
+    vehicle_model: 'Model S',
+    vehicle_color: 'Black',
+    vehicle_license_number: '6GDG486',
+    vehicle_contact: 'James McGill, mobile: 555-338-5943',
+  }),
 });
 ```
 
@@ -270,24 +270,24 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "price": "20000000000000000,10000000000000",
-    "price_type": "flat,minute",
-    "price_description": "Finders fee,Price per minute",
-    "current_latitude": "43.611626",
-    "current_longitude": "-116.392593",
-    "arrival_at": "1513005534000",
-    "vehicle_type": "drone",
-    "vehicle_manufacturer": "Dronster",
-    "vehicle_model": "Res-Q",
-    "vehicle_contact": "Dronster Rescue Missions LTD. www.dronster.com",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    price: '20000000000000000,10000000000000',
+    price_type: 'flat,minute',
+    price_description: 'Finders fee,Price per minute',
+    current_latitude: '43.611626',
+    current_longitude: '-116.392593',
+    arrival_at: '1513005534000',
+    vehicle_type: 'drone',
+    vehicle_manufacturer: 'Dronster',
+    vehicle_model: 'Res-Q',
+    vehicle_contact: 'Dronster Rescue Missions LTD. www.dronster.com',
+  }),
 });
 ```
 

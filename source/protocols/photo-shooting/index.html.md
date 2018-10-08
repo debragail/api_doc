@@ -38,21 +38,21 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "start_at": "1513005534000",
-    "end_at": "1513008000000",
-    "object_latitude": "32.787793",
-    "object_longitude": "-79.935005",
-    "object_altitude": "80",
-    "azimuth_angle": "15",
-    "elevation_angle": "-20",
-    "distance": "30",
-    "min_resolution": "1366,768",
-  })
+    start_at: '1513005534000',
+    end_at: '1513008000000',
+    object_latitude: '32.787793',
+    object_longitude: '-79.935005',
+    object_altitude: '80',
+    azimuth_angle: '15',
+    elevation_angle: '-20',
+    distance: '30',
+    min_resolution: '1366,768',
+  }),
 });
 ```
 
@@ -93,22 +93,22 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "price": "20000000000000000,4000000000000000",
-    "price_type": "flat,flat",
-    "price_description": "Total price,VAT",
-    "eta": "1513005534000",
-    "camera_model": "ZENMUSE X5S",
-    "photo_resolution": "2720,1530",
-    "camera_operator": "controlled_drone",
-    "operator_model": "DJI Matrice 210",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    price: '20000000000000000,4000000000000000',
+    price_type: 'flat,flat',
+    price_description: 'Total price,VAT',
+    eta: '1513005534000',
+    camera_model: 'ZENMUSE X5S',
+    photo_resolution: '2720,1530',
+    camera_operator: 'controlled_drone',
+    operator_model: 'DJI Matrice 210',
+  }),
 });
 ```
 
@@ -155,21 +155,21 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "start_at": "1513005534000",
-    "end_at": "1513008000000",
-    "object_latitude": "32.787793",
-    "object_longitude": "-79.935005",
-    "object_altitude": "80",
-    "azimuth_angle": "15",
-    "elevation_angle": "-20",
-    "distance": "30",
-    "min_resolution": "1366,768",
-  })
+    start_at: '1513005534000',
+    end_at: '1513008000000',
+    object_latitude: '32.787793',
+    object_longitude: '-79.935005',
+    object_altitude: '80',
+    azimuth_angle: '15',
+    elevation_angle: '-20',
+    distance: '30',
+    min_resolution: '1366,768',
+  }),
 });
 ```
 
@@ -280,22 +280,22 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "price": "20000000000000000,4000000000000000",
-    "price_type": "flat,flat",
-    "price_description": "Total price,VAT",
-    "eta": "1513005534000",
-    "camera_model": "ZENMUSE X5S",
-    "photo_resolution": "2720,1530",
-    "camera_operator": "controlled_drone",
-    "operator_model": "DJI Matrice 210",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    price: '20000000000000000,4000000000000000',
+    price_type: 'flat,flat',
+    price_description: 'Total price,VAT',
+    eta: '1513005534000',
+    camera_model: 'ZENMUSE X5S',
+    photo_resolution: '2720,1530',
+    camera_operator: 'controlled_drone',
+    operator_model: 'DJI Matrice 210',
+  }),
 });
 ```
 

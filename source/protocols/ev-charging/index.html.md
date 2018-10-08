@@ -37,18 +37,18 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "start_at": "1513005534000",
-    "latitude": "32.787793",
-    "longitude": "-79.935005",
-    "radius": "1000",
-    "connector": "tesla_supercharger",
-    "amenities": "3",
-  })
+    start_at: '1513005534000',
+    latitude: '32.787793',
+    longitude: '-79.935005',
+    radius: '1000',
+    connector: 'tesla_supercharger',
+    amenities: '3',
+  }),
 });
 ```
 
@@ -88,24 +88,24 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "price": "2300000000000000000,30000000000000000",
-    "price_type": "kwh,kwh",
-    "price_description": "Price per kWh,VAT per kWh",
-    "latitude": "32.785889",
-    "longitude": "-79.935569",
-    "available_from": "1513005534000",
-    "available_until": "1513091934000",
-    "connectors": "tesla_hpwc,tesla_supercharger",
-    "charging_levels": "2,3",
-    "amenities": "2,3,4,7,9",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    price: '2300000000000000000,30000000000000000',
+    price_type: 'kwh,kwh',
+    price_description: 'Price per kWh,VAT per kWh',
+    latitude: '32.785889',
+    longitude: '-79.935569',
+    available_from: '1513005534000',
+    available_until: '1513091934000',
+    connectors: 'tesla_hpwc,tesla_supercharger',
+    charging_levels: '2,3',
+    amenities: '2,3,4,7,9',
+  }),
 });
 ```
 
@@ -159,26 +159,26 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "start_at": "1513005534000",
-    "latitude": "32.787793",
-    "longitude": "-79.935005",
-    "radius": "10000",
-    "height": "200",
-    "width": "120",
-    "length": "330",
-    "weight": "1200",
-    "connector": "tesla_supercharger",
-    "charging_level": "3",
-    "battery_capacity": "56",
-    "current_battery_charge": "26",
-    "energy_source": "solar",
-    "amenities": "2,3",
-  })
+    start_at: '1513005534000',
+    latitude: '32.787793',
+    longitude: '-79.935005',
+    radius: '10000',
+    height: '200',
+    width: '120',
+    length: '330',
+    weight: '1200',
+    connector: 'tesla_supercharger',
+    charging_level: '3',
+    battery_capacity: '56',
+    current_battery_charge: '26',
+    energy_source: 'solar',
+    amenities: '2,3',
+  }),
 });
 ```
 
@@ -353,46 +353,46 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "price": "2300000000000000000,30000000000000000",
-    "price_type": "kwh,kwh",
-    "price_description": "Price per kWh,VAT per kWh",
-    "latitude": "32.785889",
-    "longitude": "-79.935569",
-    "entrance_latitude": "32.785878",
-    "entrance_longitude": "-79.935558",
-    "exit_latitude": "32.785878",
-    "exit_longitude": "-79.935558",
-    "location_floor": "2",
-    "location_name": "IKEA parking lot B",
-    "location_name_lang": "eng",
-    "location_house_number": "372",
-    "location_street": "King",
-    "location_city": "Charleston",
-    "location_postal_code": "29401",
-    "location_county": "Charleston",
-    "location_state": "SC",
-    "location_country": "USA",
-    "available_from": "1513005534000",
-    "available_until": "1513091934000",
-    "height": "300",
-    "width": "200",
-    "length": "580",
-    "weight": "10000",
-    "connectors": "tesla_hpwc,tesla_supercharger",
-    "charging_levels": "2,3",
-    "energy_source": "solar",
-    "amenities": "2,3,4,7,9",
-    "provider": "Tesla",
-    "manufacturer": "Tesla",
-    "model": "Supercharger",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    price: '2300000000000000000,30000000000000000',
+    price_type: 'kwh,kwh',
+    price_description: 'Price per kWh,VAT per kWh',
+    latitude: '32.785889',
+    longitude: '-79.935569',
+    entrance_latitude: '32.785878',
+    entrance_longitude: '-79.935558',
+    exit_latitude: '32.785878',
+    exit_longitude: '-79.935558',
+    location_floor: '2',
+    location_name: 'IKEA parking lot B',
+    location_name_lang: 'eng',
+    location_house_number: '372',
+    location_street: 'King',
+    location_city: 'Charleston',
+    location_postal_code: '29401',
+    location_county: 'Charleston',
+    location_state: 'SC',
+    location_country: 'USA',
+    available_from: '1513005534000',
+    available_until: '1513091934000',
+    height: '300',
+    width: '200',
+    length: '580',
+    weight: '10000',
+    connectors: 'tesla_hpwc,tesla_supercharger',
+    charging_levels: '2,3',
+    energy_source: 'solar',
+    amenities: '2,3,4,7,9',
+    provider: 'Tesla',
+    manufacturer: 'Tesla',
+    model: 'Supercharger',
+  }),
 });
 ```
 
