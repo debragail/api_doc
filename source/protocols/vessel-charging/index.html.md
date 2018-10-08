@@ -510,31 +510,33 @@ mission.sendMessage(statusRequestMessage);
 
 # Provider Status
 
-A status update sent by the service provider to the service requester
+A status update sent by the service provider (usually a charging station) to the vessel
 
 ## Arguments
 
-> Using the vessel-charging/messages/ProviderStatusMessageParams class
-
 ```javascript
-const providerStatusMessageParams = new ProviderStatusMessageParams({
-  finishEta: Date.now() + 5000,
+const { ProviderStatusMessageParams } = require('dav-js/dist/vessel-charging');
+
+const providerStatusMessage = new ProviderStatusMessageParams({
+  chargeCompletionEstimatedTime: Date.now() + 5000,
 });
-mission.sendMessage(providerStatusMessageParams);
+mission.sendMessage(providerStatusMessage);
 ```
 
 ```typescript
-const providerStatusMessageParams = new ProviderStatusMessageParams({
-  finishEta: Date.now() + 5000,
+const { ProviderStatusMessageParams } = require('dav-js/dist/vessel-charging');
+
+const providerStatusMessage = new ProviderStatusMessageParams({
+  chargeCompletionEstimatedTime: Date.now() + 5000,
 });
-mission.sendMessage(providerStatusMessageParams);
+mission.sendMessage(providerStatusMessage);
 ```
 
 <table class="arguments">
   <tr>
     <td>
-      <code class="field">finishEta</code>
-      <div class="type required">required</div>
+      <code class="field">chargeCompletionEstimatedTime</code>
+      <div class="type">optional</div>
     </td>
     <td>The estimated time at which charging will be complete. Specified as time in seconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
@@ -546,35 +548,37 @@ A status update sent by the service requester (the vessel) to the service provid
 
 ## Arguments
 
-> Using the vessel-charging/messages/VesselStatusMessageParams class
-
 ```javascript
-const vesselStatusMessageParams = new VesselStatusMessageParams({
+const { VesselStatusMessageParams } = require('dav-js/dist/vessel-charging');
+
+const vesselStatusMessage = new VesselStatusMessageParams({
   location: {
     lat: 32.050382,
     long: 34.766149,
   },
 });
-mission.sendMessage(vesselStatusMessageParams);
+mission.sendMessage(vesselStatusMessage);
 ```
 
 ```typescript
-const vesselStatusMessageParams = new VesselStatusMessageParams({
+const { VesselStatusMessageParams } = require('dav-js/dist/vessel-charging');
+
+const vesselStatusMessage = new VesselStatusMessageParams({
   location: {
     lat: 32.050382,
     long: 34.766149,
   },
 });
-mission.sendMessage(vesselStatusMessageParams);
+mission.sendMessage(vesselStatusMessage);
 ```
 
 <table class="arguments">
   <tr>
     <td>
       <code class="field">location</code>
-      <div class="type required">required</div>
+      <div class="type">optional</div>
     </td>
-    <td>The coordinates of the vehicle's current location</td>
+    <td>The current coordinates of the vehicle's location</td>
   </tr>
 </table>
 
