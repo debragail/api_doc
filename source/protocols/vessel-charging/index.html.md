@@ -458,36 +458,6 @@ needs.subscribe(need => {
   </tr>
 </table>
 
-# Select Bid
-
-A selection of one bid that wins over the rest. Sent by the service requester (a vessel looking for charging)
-
-## Arguments
-
-> Using the vessel-charging/MissionParams class
-
-```javascript
-const privateKey = '0xab....cd';
-const missionParams = new MissionParams({});
-const mission = await bid.accept(missionParams, privateKey);
-```
-
-```typescript
-const privateKey = '0xab....cd';
-const missionParams = new MissionParams({});
-const mission = await bid.accept(missionParams, privateKey);
-```
-
-<table class="arguments">
-  <tr>
-    <td>
-      <code class="field">privateKey</code>
-      <div class="type required">required</div>
-    </td>
-    <td>The consumer wallet address private key</td>
-  </tr>
-</table>
-
 # Starting
 
 A message sent by the service provider (the charger) to the service requester, notifying it that the mission has started
