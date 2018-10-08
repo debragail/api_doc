@@ -40,23 +40,24 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "start_at": "1513005534000",
-    "end_at": "1513008000000",
-    "pickup_latitude": "40.958123",
-    "pickup_longitude": "-74.169388",
-    "dropoff_latitude": "40.875103",
-    "dropoff_longitude": "-74.570389",
-    "planned_path": "40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389",
-    "vehicle_type": "drone",
-    "cargo_type": "11",
-    "insured_value": "3000.00",
-    "insured_value_currency": "USD",
-  })
+    start_at: '1513005534000',
+    end_at: '1513008000000',
+    pickup_latitude: '40.958123',
+    pickup_longitude: '-74.169388',
+    dropoff_latitude: '40.875103',
+    dropoff_longitude: '-74.570389',
+    planned_path:
+      '40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389',
+    vehicle_type: 'drone',
+    cargo_type: '11',
+    insured_value: '3000.00',
+    insured_value_currency: 'USD',
+  }),
 });
 ```
 
@@ -96,19 +97,19 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "coverage_type": "all_risk",
-    "price": "100000000000000000",
-    "price_type": "flat",
-    "price_description": "Policy cost",
-    "deductible": "1400000000000000000",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    coverage_type: 'all_risk',
+    price: '100000000000000000',
+    price_type: 'flat',
+    price_description: 'Policy cost',
+    deductible: '1400000000000000000',
+  }),
 });
 ```
 
@@ -168,37 +169,38 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "start_at": "1513005534000",
-    "end_at": "1513008000000",
-    "start_latitude": "40.746217",
-    "start_longitude": "-73.970261",
-    "pickup_latitude": "40.958123",
-    "pickup_longitude": "-74.169388",
-    "dropoff_latitude": "40.875103",
-    "dropoff_longitude": "-74.570389",
-    "end_latitude": "40.746217",
-    "end_longitude": "-73.970261",
-    "planned_path": "40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389",
-    "requester_name": "Megadronix",
-    "requester_phone_number": "+31-338-594332",
-    "external_reference_id": "200982447",
-    "vehicle_type": "drone,ship,drone",
-    "vehicle_is_autonomous": "true,false,true",
-    "cargo_type": "11",
-    "hazardous_goods": "8",
-    "ip_protection_level": "68",
-    "height": "8",
-    "width": "2",
-    "length": "2",
-    "weight": "50",
-    "insured_value": "3000.00",
-    "insured_value_currency": "USD",
-  })
+    start_at: '1513005534000',
+    end_at: '1513008000000',
+    start_latitude: '40.746217',
+    start_longitude: '-73.970261',
+    pickup_latitude: '40.958123',
+    pickup_longitude: '-74.169388',
+    dropoff_latitude: '40.875103',
+    dropoff_longitude: '-74.570389',
+    end_latitude: '40.746217',
+    end_longitude: '-73.970261',
+    planned_path:
+      '40.958123,-74.169388,40.7899,-74.463272,40.875103,-74.570389',
+    requester_name: 'Megadronix',
+    requester_phone_number: '+31-338-594332',
+    external_reference_id: '200982447',
+    vehicle_type: 'drone,ship,drone',
+    vehicle_is_autonomous: 'true,false,true',
+    cargo_type: '11',
+    hazardous_goods: '8',
+    ip_protection_level: '68',
+    height: '8',
+    width: '2',
+    length: '2',
+    weight: '50',
+    insured_value: '3000.00',
+    insured_value_currency: 'USD',
+  }),
 });
 ```
 
@@ -443,21 +445,21 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "coverage_type": "all_risk",
-    "price": "20000000000000000,100000000000000000",
-    "price_type": "minute,flat",
-    "price_description": "Price per minute,City tax",
-    "deductible": "1400000000000000000",
-    "insurer_contact": "Airsurance LTD, Tel: +1 415 982 3342",
-    "insurer_dav_id": "0x17325a469aef3472aa58dfdcf672881d79b31d58",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    coverage_type: 'all_risk',
+    price: '20000000000000000,100000000000000000',
+    price_type: 'minute,flat',
+    price_description: 'Price per minute,City tax',
+    deductible: '1400000000000000000',
+    insurer_contact: 'Airsurance LTD, Tel: +1 415 982 3342',
+    insurer_dav_id: '0x17325a469aef3472aa58dfdcf672881d79b31d58',
+  }),
 });
 ```
 
@@ -504,7 +506,8 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">price</code>
       <div class="type required">required</div>
     </td>
-    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci (1 DAV token equals 1000000000000000000 Vinci equals 1e18 Vinci)</td>
+    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci
+    <br>1 DAV == 1e18 Vinci == 1000000000000000000 Vinci</td>
   </tr>
     <tr>
     <td>
@@ -525,7 +528,8 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">deductible</code>
       <div class="type required">required</div>
     </td>
-    <td>The amount that must be paid by the policy holder before an insurance provider will pay any expenses. A comma Specified as an integer representing Vinci (1 DAV token equals 1000000000000000000 Vinci equals 1e18 Vinci)</td>
+    <td>The amount that must be paid by the policy holder before an insurance provider will pay any expenses. A comma Specified as an integer representing Vinci
+    <br>1 DAV == 1e18 Vinci == 1000000000000000000 Vinci</td>
   </tr>
   <tr>
     <td>

@@ -15,6 +15,7 @@ Here you will find instructions for running our command line interface, and our 
 # Command Line Interface
 
 The DAV Command Line Interface was created to ease the development of applications and solutions that interact with DAV, and allow you to:
+
 <ul>
 	<li>Easily run a local testnet containing DAV contracts</li>
 	<li>Generate Identities secured by private public keys and register them on the blockchain</li>
@@ -28,7 +29,6 @@ The DAV Command Line Interface was created to ease the development of applicatio
 # Communication Protocols
 
 The following protocols govern the communication between different vehicles, services, users, and applications using DAV.
-
 
 <ul class="main-thumbs">
   <li><a href="./protocols/car-parking"><img src="images/thumbnails/car_parking_thumbnail.png" /></a></li>

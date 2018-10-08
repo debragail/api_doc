@@ -36,19 +36,19 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "start_at": "1513005534000",
-    "start_latitude": "38.802610",
-    "start_longitude": "-116.419389",
-    "end_latitude": "38.807643",
-    "end_longitude": "-116.587960",
-    "vehicle_type": "drone",
-    "max_altitude": "400",
-  })
+    start_at: '1513005534000',
+    start_latitude: '38.802610',
+    start_longitude: '-116.419389',
+    end_latitude: '38.807643',
+    end_longitude: '-116.587960',
+    vehicle_type: 'drone',
+    max_altitude: '400',
+  }),
 });
 ```
 
@@ -83,18 +83,18 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "price": "100000000000000000",
-    "price_type": "flat",
-    "price_description": "Total price",
-    "eta": "1513178334000",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    price: '100000000000000000',
+    price_type: 'flat',
+    price_description: 'Total price',
+    eta: '1513178334000',
+  }),
 });
 ```
 
@@ -139,23 +139,23 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "start_at": "1513005534000",
-    "start_latitude": "38.802610",
-    "start_longitude": "-116.419389",
-    "end_latitude": "38.807643",
-    "end_longitude": "-116.587960",
-    "vehicle_type": "drone",
-    "max_altitude": "400",
-    "height": "11",
-    "width": "22",
-    "length": "28",
-    "weight": "2",
-  })
+    start_at: '1513005534000',
+    start_latitude: '38.802610',
+    start_longitude: '-116.419389',
+    end_latitude: '38.807643',
+    end_longitude: '-116.587960',
+    vehicle_type: 'drone',
+    max_altitude: '400',
+    height: '11',
+    width: '22',
+    length: '28',
+    weight: '2',
+  }),
 });
 ```
 
@@ -282,18 +282,18 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "price": "100000000000000000",
-    "price_type": "flat",
-    "price_description": "Total price",
-    "eta": "1513178334000",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    price: '100000000000000000',
+    price_type: 'flat',
+    price_description: 'Total price',
+    eta: '1513178334000',
+  }),
 });
 ```
 
@@ -330,7 +330,8 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">price</code>
       <div class="type required">required</div>
     </td>
-    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci (1 DAV token equals 1000000000000000000 Vinci equals 1e18 Vinci)</td>
+    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci
+    <br>1 DAV == 1e18 Vinci == 1000000000000000000 Vinci</td>
   </tr>
     <tr>
     <td>

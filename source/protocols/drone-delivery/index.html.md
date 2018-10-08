@@ -36,19 +36,19 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "pickup_at": "1513005534000",
-    "pickup_latitude": "32.787793",
-    "pickup_longitude": "-79.500593",
-    "dropoff_latitude": "32.937778",
-    "dropoff_longitude": "-79.500593",
-    "cargo_type": "11",
-    "hazardous_goods": "8",
-  })
+    pickup_at: '1513005534000',
+    pickup_latitude: '32.787793',
+    pickup_longitude: '-79.500593',
+    dropoff_latitude: '32.937778',
+    dropoff_longitude: '-79.500593',
+    cargo_type: '11',
+    hazardous_goods: '8',
+  }),
 });
 ```
 
@@ -84,19 +84,19 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "price": "2000000000000000,20000000000000000",
-    "price_type": "second,flat",
-    "price_description": "Price per second,Tax",
-    "eta_pickup": "1513005719000",
-    "eta_dropoff": "1513006460000",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    price: '2000000000000000,20000000000000000',
+    price_type: 'second,flat',
+    price_description: 'Price per second,Tax',
+    eta_pickup: '1513005719000',
+    eta_dropoff: '1513006460000',
+  }),
 });
 ```
 
@@ -149,30 +149,30 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "pickup_at": "1513005534000",
-    "pickup_latitude": "32.787793",
-    "pickup_longitude": "-79.500593",
-    "dropoff_latitude": "32.937778",
-    "dropoff_longitude": "-79.500593",
-    "requester_name": "Jessie Bourne",
-    "requester_phone_number": "+1 415 123 5983",
-    "external_reference_id": "jb84723",
-    "cargo_type": "11",
-    "hazardous_goods": "8",
-    "ip_protection_level": "68",
-    "height": "8",
-    "width": "2",
-    "length": "2",
-    "weight": "50",
-    "insurance_required": "true",
-    "insured_value": "675",
-    "insured_value_currency": "USD",
-  })
+    pickup_at: '1513005534000',
+    pickup_latitude: '32.787793',
+    pickup_longitude: '-79.500593',
+    dropoff_latitude: '32.937778',
+    dropoff_longitude: '-79.500593',
+    requester_name: 'Jessie Bourne',
+    requester_phone_number: '+1 415 123 5983',
+    external_reference_id: 'jb84723',
+    cargo_type: '11',
+    hazardous_goods: '8',
+    ip_protection_level: '68',
+    height: '8',
+    width: '2',
+    length: '2',
+    weight: '50',
+    insurance_required: 'true',
+    insured_value: '675',
+    insured_value_currency: 'USD',
+  }),
 });
 ```
 
@@ -360,24 +360,24 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1519093577681",
-    "price": "2000000000000000,20000000000000000",
-    "price_type": "second,flat",
-    "price_description": "Price per second,Tax",
-    "eta_pickup": "1513005719000",
-    "eta_dropoff": "1513006460000",
-    "insured": "true",
-    "insurer_dav_id": "0x17325a469aef3472aa58dfdcf672881d79b31d58",
-    "drone_contact": "Megadronix",
-    "drone_manufacturer": "DXY",
-    "drone_model": "m6000",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1519093577681',
+    price: '2000000000000000,20000000000000000',
+    price_type: 'second,flat',
+    price_description: 'Price per second,Tax',
+    eta_pickup: '1513005719000',
+    eta_dropoff: '1513006460000',
+    insured: 'true',
+    insurer_dav_id: '0x17325a469aef3472aa58dfdcf672881d79b31d58',
+    drone_contact: 'Megadronix',
+    drone_manufacturer: 'DXY',
+    drone_model: 'm6000',
+  }),
 });
 ```
 
@@ -420,7 +420,8 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">price</code>
       <div class="type required">required</div>
     </td>
-    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci (1 DAV token equals 1000000000000000000 Vinci equals 1e18 Vinci)</td>
+    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci
+    <br>1 DAV == 1e18 Vinci == 1000000000000000000 Vinci</td>
   </tr>
   <tr>
     <td>
@@ -510,13 +511,13 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "bid_id": "bv43nmw65eef03e",
-  })
+    bid_id: 'bv43nmw65eef03e',
+  }),
 });
 ```
 
@@ -560,19 +561,19 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "bid_id": "bv43nmw65eef03e",
-    "current_latitude": "32.785889",
-    "current_longitude": "-79.935569",
-    "current_altitude": "80",
-    "azimuth_angle": "15",
-    "eta_pickup": "1513005719000",
-    "eta_dropoff": "1513006460000",
-  })
+    bid_id: 'bv43nmw65eef03e',
+    current_latitude: '32.785889',
+    current_longitude: '-79.935569',
+    current_altitude: '80',
+    azimuth_angle: '15',
+    eta_pickup: '1513005719000',
+    eta_dropoff: '1513006460000',
+  }),
 });
 ```
 
@@ -617,7 +618,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">current_altitude</code>
       <div class="type required">required</div>
     </td>
-    <td>The current altitude coordinate of the drone. Specified as meters above sea level. For example, if the drone is located 50 meters above sea level, the <code>current_altitude</code> will be <code>50</code></td>
+    <td>The current altitude of the drone. Specified as meters above sea level. For example, if the drone is located 50 meters above sea level, the <code>current_altitude</code> will be <code>50</code></td>
   </tr>
   <tr>
     <td>
@@ -658,13 +659,13 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "bid_id": "bv43nmw65eef03e",
-  })
+    bid_id: 'bv43nmw65eef03e',
+  }),
 });
 ```
 
@@ -702,13 +703,13 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "bid_id": "bv43nmw65eef03e",
-  })
+    bid_id: 'bv43nmw65eef03e',
+  }),
 });
 ```
 
@@ -752,19 +753,19 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "bid_id": "bv43nmw65eef03e",
-    "current_latitude": "32.785889",
-    "current_longitude": "-79.935569",
-    "current_altitude": "80",
-    "azimuth_angle": "15",
-    "eta_pickup": "1513005719000",
-    "eta_dropoff": "1513006460000",
-  })
+    bid_id: 'bv43nmw65eef03e',
+    current_latitude: '32.785889',
+    current_longitude: '-79.935569',
+    current_altitude: '80',
+    azimuth_angle: '15',
+    eta_pickup: '1513005719000',
+    eta_dropoff: '1513006460000',
+  }),
 });
 ```
 
@@ -809,7 +810,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">current_altitude</code>
       <div class="type required">required</div>
     </td>
-    <td>The current altitude coordinate of the drone. Specified as meters above sea level. For example, if the drone is located 50 meters above sea level, the <code>current_altitude</code> will be <code>50</code></td>
+    <td>The current altitude of the drone. Specified as meters above sea level. For example, if the drone is located 50 meters above sea level, the <code>current_altitude</code> will be <code>50</code></td>
   </tr>
   <tr>
     <td>
@@ -850,13 +851,13 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "bid_id": "bv43nmw65eef03e",
-  })
+    bid_id: 'bv43nmw65eef03e',
+  }),
 });
 ```
 
@@ -895,14 +896,14 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "bid_id": "bv43nmw65eef03e",
-    "eta_dropoff": "1513006460000",
-  })
+    bid_id: 'bv43nmw65eef03e',
+    eta_dropoff: '1513006460000',
+  }),
 });
 ```
 
@@ -948,13 +949,13 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "bid_id": "bv43nmw65eef03e",
-  })
+    bid_id: 'bv43nmw65eef03e',
+  }),
 });
 ```
 
@@ -992,13 +993,13 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "bid_id": "bv43nmw65eef03e",
-  })
+    bid_id: 'bv43nmw65eef03e',
+  }),
 });
 ```
 

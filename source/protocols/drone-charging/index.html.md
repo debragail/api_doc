@@ -34,17 +34,17 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "start_at": "1513005534000",
-    "latitude": "32.787793",
-    "longitude": "-79.935005",
-    "radius": "2000",
-    "plug_type": "bullet_2mm",
-  })
+    start_at: '1513005534000',
+    latitude: '32.787793',
+    longitude: '-79.935005',
+    radius: '2000',
+    plug_type: 'bullet_2mm',
+  }),
 });
 ```
 
@@ -80,21 +80,21 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "price": "2300000000000000000,30000000000000000",
-    "price_type": "kwh,kwh",
-    "price_description": "Price per kWh,VAT per kWh",
-    "latitude": "32.785889",
-    "longitude": "-79.935569",
-    "available_from": "1513005534000",
-    "available_until": "1513091934000",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    price: '2300000000000000000,30000000000000000',
+    price_type: 'kwh,kwh',
+    price_description: 'Price per kWh,VAT per kWh',
+    latitude: '32.785889',
+    longitude: '-79.935569',
+    available_from: '1513005534000',
+    available_until: '1513091934000',
+  }),
 });
 ```
 
@@ -342,39 +342,39 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "price": "2300000000000000000,30000000000000000",
-    "price_type": "kwh,kwh",
-    "price_description": "Price per kWh,VAT per kWh",
-    "latitude": "32.785889",
-    "longitude": "-79.935569",
-    "available_from": "1513005534000",
-    "available_until": "1513091934000",
-    "location_name": "IKEA parking lot B",
-    "location_name_lang": "eng",
-    "location_house_number": "372",
-    "location_street": "King",
-    "location_city": "Charleston",
-    "location_postal_code": "29401",
-    "location_county": "Charleston",
-    "location_state": "SC",
-    "location_country": "USA",
-    "height": "5000",
-    "width": "1000",
-    "length": "1000",
-    "weight": "100000",
-    "plug_types": "bullet_2mm,bullet_3_5mm,bullet_4mm",
-    "energy_source": "solar",
-    "provider": "City Charge",
-    "manufacturer": "GeoCharge",
-    "model": "gc2910",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    price: '2300000000000000000,30000000000000000',
+    price_type: 'kwh,kwh',
+    price_description: 'Price per kWh,VAT per kWh',
+    latitude: '32.785889',
+    longitude: '-79.935569',
+    available_from: '1513005534000',
+    available_until: '1513091934000',
+    location_name: 'IKEA parking lot B',
+    location_name_lang: 'eng',
+    location_house_number: '372',
+    location_street: 'King',
+    location_city: 'Charleston',
+    location_postal_code: '29401',
+    location_county: 'Charleston',
+    location_state: 'SC',
+    location_country: 'USA',
+    height: '5000',
+    width: '1000',
+    length: '1000',
+    weight: '100000',
+    plug_types: 'bullet_2mm,bullet_3_5mm,bullet_4mm',
+    energy_source: 'solar',
+    provider: 'City Charge',
+    manufacturer: 'GeoCharge',
+    model: 'gc2910',
+  }),
 });
 ```
 
@@ -432,7 +432,8 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">price</code>
       <div class="type required">required</div>
     </td>
-    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci (1 DAV token equals 1000000000000000000 Vinci equals 1e18 Vinci)</td>
+    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci
+    <br>1 DAV == 1e18 Vinci == 1000000000000000000 Vinci</td>
   </tr>
   <tr>
     <td>

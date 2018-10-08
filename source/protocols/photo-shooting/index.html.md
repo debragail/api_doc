@@ -14,7 +14,7 @@ search: true
 
 <p class="header-image"><img src="/images/photo_shooting/header.png" alt="Photo Shooting"></p>
 
-#  Photo Shooting Protocol
+# Photo Shooting Protocol
 
 The communication protocol for photo shooting describes the format of a request for a photo shoot (also referred to as `need`) sent by a user, and the response (`bid`) sent by the photographer (can be a human controlled device or an autonomous one).
 
@@ -38,21 +38,21 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "start_at": "1513005534000",
-    "end_at": "1513008000000",
-    "object_latitude": "32.787793",
-    "object_longitude": "-79.935005",
-    "object_altitude": "80",
-    "azimuth_angle": "15",
-    "elevation_angle": "-20",
-    "distance": "30",
-    "min_resolution": "1366,768",
-  })
+    start_at: '1513005534000',
+    end_at: '1513008000000',
+    object_latitude: '32.787793',
+    object_longitude: '-79.935005',
+    object_altitude: '80',
+    azimuth_angle: '15',
+    elevation_angle: '-20',
+    distance: '30',
+    min_resolution: '1366,768',
+  }),
 });
 ```
 
@@ -93,22 +93,22 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "price": "20000000000000000,4000000000000000",
-    "price_type": "flat,flat",
-    "price_description": "Total price,VAT",
-    "eta": "1513005534000",
-    "camera_model": "ZENMUSE X5S",
-    "photo_resolution": "2720,1530",
-    "camera_operator": "controlled_drone",
-    "operator_model": "DJI Matrice 210",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    price: '20000000000000000,4000000000000000',
+    price_type: 'flat,flat',
+    price_description: 'Total price,VAT',
+    eta: '1513005534000',
+    camera_model: 'ZENMUSE X5S',
+    photo_resolution: '2720,1530',
+    camera_operator: 'controlled_drone',
+    operator_model: 'DJI Matrice 210',
+  }),
 });
 ```
 
@@ -155,21 +155,21 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "start_at": "1513005534000",
-    "end_at": "1513008000000",
-    "object_latitude": "32.787793",
-    "object_longitude": "-79.935005",
-    "object_altitude": "80",
-    "azimuth_angle": "15",
-    "elevation_angle": "-20",
-    "distance": "30",
-    "min_resolution": "1366,768",
-  })
+    start_at: '1513005534000',
+    end_at: '1513008000000',
+    object_latitude: '32.787793',
+    object_longitude: '-79.935005',
+    object_altitude: '80',
+    azimuth_angle: '15',
+    elevation_angle: '-20',
+    distance: '30',
+    min_resolution: '1366,768',
+  }),
 });
 ```
 
@@ -223,7 +223,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">object_altitude</code>
       <div class="type required">required</div>
     </td>
-    <td>The altitude coordinate of the object that needs to be photographed. Specified as meters above sea level. For example, if the object is located 50 meters above sea level, the <code>object_altitude</code> will be <code>50</code></td>
+    <td>The altitude of the object that needs to be photographed. Specified as meters above sea level. For example, if the object is located 50 meters above sea level, the <code>object_altitude</code> will be <code>50</code></td>
   </tr>
   <tr>
     <td>
@@ -280,22 +280,22 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "price": "20000000000000000,4000000000000000",
-    "price_type": "flat,flat",
-    "price_description": "Total price,VAT",
-    "eta": "1513005534000",
-    "camera_model": "ZENMUSE X5S",
-    "photo_resolution": "2720,1530",
-    "camera_operator": "controlled_drone",
-    "operator_model": "DJI Matrice 210",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    price: '20000000000000000,4000000000000000',
+    price_type: 'flat,flat',
+    price_description: 'Total price,VAT',
+    eta: '1513005534000',
+    camera_model: 'ZENMUSE X5S',
+    photo_resolution: '2720,1530',
+    camera_operator: 'controlled_drone',
+    operator_model: 'DJI Matrice 210',
+  }),
 });
 ```
 
@@ -336,7 +336,8 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">price</code>
       <div class="type required">required</div>
     </td>
-    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci (1 DAV token equals 1000000000000000000 Vinci equals 1e18 Vinci)</td>
+    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci
+    <br>1 DAV == 1e18 Vinci == 1000000000000000000 Vinci</td>
   </tr>
     <tr>
     <td>

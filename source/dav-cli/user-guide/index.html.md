@@ -9,7 +9,7 @@ search: true
 
 <p class="header-image"><img src="/images/dav_cli/header.png" alt="DAV CLI User Guide"></p>
 
-#  DAV CLI User Guide
+# DAV CLI User Guide
 
 This is the user guide for the DAV Command Line Interface (CLI).
 
@@ -18,7 +18,6 @@ DAV CLI is written in and installed using Node.js but is useful not just for Nod
 # Installation
 
 Before you get started, make sure you have Node version 8 and up and npm or Yarn installed.
-
 
 <ul>
 	<li>To install DAV CLI using <b>npm</b>, run the following command:
@@ -68,13 +67,17 @@ The following table describes the various options that are available using the D
 ### Examples
 
 To start a local Ethereum node on the default port:
+
 <p><code class="code-block">$ dav-cli --start</code></p>
 
 Start a local Ethereum node on port 1234:
+
 <p><code class="code-block">$ dav-cli --start --port 1234</code></p>
 
 Generate a new private-public key pair and save it to the ~/.dav directory:
+
 <p><code class="code-block">$ dav-cli --genkey ~/.dav</code></p>
 
 Register a new Identity on the blockchain:
+
 <p><code class="code-block">$ dav-cli --register ~/.dav/0xd14e3aca4d62c8e7b150fc63dabb8fb4b3485263</code></p>

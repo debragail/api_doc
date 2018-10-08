@@ -14,11 +14,11 @@ search: true
 
 <p class="header-image"><img src="/images/ride_hailing/header.png" alt="Ride Hailing"></p>
 
-#  Ride Hailing Protocol
+# Ride Hailing Protocol
 
 The communication protocol for ride hailing describes the format of a request for a ride (also referred to as `need`) sent by a user, and the response (`bid`) sent by vehicle, driver, or car owner.
 
-For example, a user might search for a ride together with her pet dog, within a radius of 3 km of a given coordinate to a destination 2 km away.
+For example, a user might search for a ride together with her pet dog, within a radius of 3 km of the given coordinates to a destination 2 km away.
 
 > Need
 
@@ -36,19 +36,19 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "pickup_at": "1513005534000",
-    "pickup_latitude": "32.787793",
-    "pickup_longitude": "-79.935005",
-    "destination_latitude": "32.7693531",
-    "destination_longitude": "-79.9296352",
-    "radius": "3000",
-    "additional_features": "pet_transport",
-  })
+    pickup_at: '1513005534000',
+    pickup_latitude: '32.787793',
+    pickup_longitude: '-79.935005',
+    destination_latitude: '32.7693531',
+    destination_longitude: '-79.9296352',
+    radius: '3000',
+    additional_features: 'pet_transport',
+  }),
 });
 ```
 
@@ -90,25 +90,25 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "price": "20000000000000000,20000000000000000",
-    "price_type": "km,flat",
-    "price_description": "Price per km,City tax",
-    "current_latitude": "32.785889",
-    "current_longitude": "-79.935569",
-    "pickup_at": "1513005534000",
-    "vehicle_type": "suv",
-    "vehicle_manufacturer": "Luxor",
-    "vehicle_model": "Suave",
-    "vehicle_color": "Sapphire",
-    "vehicle_license_number": "92 321 87",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    price: '20000000000000000,20000000000000000',
+    price_type: 'km,flat',
+    price_description: 'Price per km,City tax',
+    current_latitude: '32.785889',
+    current_longitude: '-79.935569',
+    pickup_at: '1513005534000',
+    vehicle_type: 'suv',
+    vehicle_manufacturer: 'Luxor',
+    vehicle_model: 'Suave',
+    vehicle_color: 'Sapphire',
+    vehicle_license_number: '92 321 87',
+  }),
 });
 ```
 
@@ -176,39 +176,39 @@ curl "discovery_endpoint_here" \
 ```
 
 ```javascript
-const discoveryEndPoint = "discovery_endpoint_here";
+const discoveryEndPoint = 'discovery_endpoint_here';
 
 fetch(discoveryEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "pickup_at": "1513005534000",
-    "pickup_latitude": "32.787793",
-    "pickup_longitude": "-79.935005",
-    "pickup_street": "King",
-    "pickup_house_number": "372",
-    "pickup_city": "Charleston",
-    "pickup_postal_code": "29401",
-    "pickup_county": "Charleston",
-    "pickup_state": "SC",
-    "pickup_country": "USA",
-    "pickup_location_name": "IKEA parking lot B",
-    "pickup_location_name_lang": "eng",
-    "radius": "1500",
-    "destination_latitude": "32.7693531",
-    "destination_longitude": "-79.9296352",
-    "destination_street": "Murray Blvd",
-    "destination_house_number": "2",
-    "destination_city": "Charleston",
-    "destination_postal_code": "29401",
-    "destination_county": "Charleston",
-    "destination_state": "SC",
-    "destination_country": "USA",
-    "destination_location_name": "Oyster Point",
-    "destination_location_name_lang": "eng",
-    "vehicle_type": "suv",
-    "passengers": "3",
-    "additional_features": "assisted",
-  })
+    pickup_at: '1513005534000',
+    pickup_latitude: '32.787793',
+    pickup_longitude: '-79.935005',
+    pickup_street: 'King',
+    pickup_house_number: '372',
+    pickup_city: 'Charleston',
+    pickup_postal_code: '29401',
+    pickup_county: 'Charleston',
+    pickup_state: 'SC',
+    pickup_country: 'USA',
+    pickup_location_name: 'IKEA parking lot B',
+    pickup_location_name_lang: 'eng',
+    radius: '1500',
+    destination_latitude: '32.7693531',
+    destination_longitude: '-79.9296352',
+    destination_street: 'Murray Blvd',
+    destination_house_number: '2',
+    destination_city: 'Charleston',
+    destination_postal_code: '29401',
+    destination_county: 'Charleston',
+    destination_state: 'SC',
+    destination_country: 'USA',
+    destination_location_name: 'Oyster Point',
+    destination_location_name_lang: 'eng',
+    vehicle_type: 'suv',
+    passengers: '3',
+    additional_features: 'assisted',
+  }),
 });
 ```
 
@@ -468,27 +468,27 @@ curl "bidding_endpoint_here" \
 ```
 
 ```javascript
-const biddingEndPoint = "bidding_endpoint_here";
+const biddingEndPoint = 'bidding_endpoint_here';
 
 fetch(biddingEndPoint, {
-  method: "POST",
+  method: 'POST',
   body: JSON.stringify({
-    "need_id": "ae7bd8f67f3089c",
-    "expires_at": "1513005539000",
-    "price": "20000000000000000,4000000000000000",
-    "price_type": "km,km",
-    "price_description": "Price per km,VAT per km",
-    "current_latitude": "32.785889",
-    "current_longitude": "-79.935569",
-    "pickup_at": "1513005534000",
-    "vehicle_type": "suv",
-    "vehicle_manufacturer": "Luxor",
-    "vehicle_model": "Suave",
-    "vehicle_color": "Sapphire",
-    "vehicle_license_number": "92 321 87",
-    "vehicle_contact": "James McGill, mobile: 555-338-5943",
-    "additional_features": "assisted",
-  })
+    need_id: 'ae7bd8f67f3089c',
+    expires_at: '1513005539000',
+    price: '20000000000000000,4000000000000000',
+    price_type: 'km,km',
+    price_description: 'Price per km,VAT per km',
+    current_latitude: '32.785889',
+    current_longitude: '-79.935569',
+    pickup_at: '1513005534000',
+    vehicle_type: 'suv',
+    vehicle_manufacturer: 'Luxor',
+    vehicle_model: 'Suave',
+    vehicle_color: 'Sapphire',
+    vehicle_license_number: '92 321 87',
+    vehicle_contact: 'James McGill, mobile: 555-338-5943',
+    additional_features: 'assisted',
+  }),
 });
 ```
 
@@ -534,7 +534,8 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">price</code>
       <div class="type required">required</div>
     </td>
-    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci (1 DAV token equals 1000000000000000000 Vinci equals 1e18 Vinci)</td>
+    <td>A comma separated list of prices. Each price is specified as an integer representing Vinci
+    <br>1 DAV == 1e18 Vinci == 1000000000000000000 Vinci</td>
   </tr>
     <tr>
     <td>
