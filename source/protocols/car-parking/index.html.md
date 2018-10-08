@@ -14,11 +14,11 @@ search: true
 
 <p class="header-image"><img src="/images/car_parking/header.png" alt="Car Parking"></p>
 
-#  Car Parking Protocol
+# Car Parking Protocol
 
 The communication protocol for car parking describes the format of a request for a parking space (also referred to as `need`) sent by a vehicle, and the response sent by a parking space, usually an automated parking management system (`bid`).
 
-For example, a heavy goods truck might search for an available parking space within 1 km of a given coordinate that can fit a 12 meters long vehicle.
+For example, a heavy goods truck might search for an available parking space within 1 km of the given coordinates that can fit a 12 meters long vehicle.
 
 > Need
 

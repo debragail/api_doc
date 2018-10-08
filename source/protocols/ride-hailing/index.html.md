@@ -14,11 +14,11 @@ search: true
 
 <p class="header-image"><img src="/images/ride_hailing/header.png" alt="Ride Hailing"></p>
 
-#  Ride Hailing Protocol
+# Ride Hailing Protocol
 
 The communication protocol for ride hailing describes the format of a request for a ride (also referred to as `need`) sent by a user, and the response (`bid`) sent by vehicle, driver, or car owner.
 
-For example, a user might search for a ride together with her pet dog, within a radius of 3 km of a given coordinate to a destination 2 km away.
+For example, a user might search for a ride together with her pet dog, within a radius of 3 km of the given coordinates to a destination 2 km away.
 
 > Need
 

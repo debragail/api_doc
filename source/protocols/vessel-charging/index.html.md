@@ -17,7 +17,7 @@ search: true
 
 The communication protocol for vessel charging describes the format of a request for a charging service (`need`), and the response sent by a charging provider (`bid`).
 
-For example, an autonomous boat might search for charging stations within 2 km of a given coordinate that are capable of docking a 1200 kg boat.
+For example, an autonomous boat might search for charging stations within 2 km of the given coordinates that are capable of docking a 1200 kg boat.
 
 In response, a charging station might send back a bid with a price for the service, the opening and closing times, and the full list of services it offers.
 
@@ -99,7 +99,7 @@ const need = await identity.publishNeed(needParams);
       <code class="field">location</code>
       <div class="type required">required</div>
     </td>
-    <td>The location coordinate around which to search</td>
+    <td>The coordinates around which to search</td>
   </tr>
   <tr>
     <td>
@@ -206,7 +206,7 @@ const needs = await identity.needsForType(needFilterParams, NeedParams);
       <code class="field">location</code>
       <div class="type required">required</div>
     </td>
-    <td>The location coordinate in which to listen for bids</td>
+    <td>The coordinates around which to listen for bids</td>
   </tr>
   <tr>
     <td>
@@ -321,14 +321,14 @@ const bid = await need.createBid(bidParams);
       <code class="field">entranceLocation</code>
       <div class="type">optional</div>
     </td>
-    <td>The coordinate of the charger entrance</td>
+    <td>The coordinates of the charger entrance</td>
   </tr>
   <tr>
     <td>
       <code class="field">exitLocation</code>
       <div class="type">optional</div>
     </td>
-    <td>The coordinate of the exit from to the charger</td>
+    <td>The coordinates of the exit from to the charger</td>
   </tr>
   <tr>
     <td>
@@ -620,7 +620,7 @@ mission.sendMessage(vesselStatusMessageParams);
       <code class="field">location</code>
       <div class="type required">required</div>
     </td>
-    <td>The location coordinate, the vessel is currently located at</td>
+    <td>The coordinates of the vehicle's current location</td>
   </tr>
 </table>
 

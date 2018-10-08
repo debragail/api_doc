@@ -14,7 +14,7 @@ search: true
 
 <p class="header-image"><img src="/images/photo_shooting/header.png" alt="Photo Shooting"></p>
 
-#  Photo Shooting Protocol
+# Photo Shooting Protocol
 
 The communication protocol for photo shooting describes the format of a request for a photo shoot (also referred to as `need`) sent by a user, and the response (`bid`) sent by the photographer (can be a human controlled device or an autonomous one).
 
@@ -223,7 +223,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">object_altitude</code>
       <div class="type required">required</div>
     </td>
-    <td>The altitude coordinate of the object that needs to be photographed. Specified as meters above sea level. For example, if the object is located 50 meters above sea level, the <code>object_altitude</code> will be <code>50</code></td>
+    <td>The altitude of the object that needs to be photographed. Specified as meters above sea level. For example, if the object is located 50 meters above sea level, the <code>object_altitude</code> will be <code>50</code></td>
   </tr>
   <tr>
     <td>

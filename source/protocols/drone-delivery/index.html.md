@@ -617,7 +617,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">current_altitude</code>
       <div class="type required">required</div>
     </td>
-    <td>The current altitude coordinate of the drone. Specified as meters above sea level. For example, if the drone is located 50 meters above sea level, the <code>current_altitude</code> will be <code>50</code></td>
+    <td>The current altitude of the drone. Specified as meters above sea level. For example, if the drone is located 50 meters above sea level, the <code>current_altitude</code> will be <code>50</code></td>
   </tr>
   <tr>
     <td>
@@ -809,7 +809,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">current_altitude</code>
       <div class="type required">required</div>
     </td>
-    <td>The current altitude coordinate of the drone. Specified as meters above sea level. For example, if the drone is located 50 meters above sea level, the <code>current_altitude</code> will be <code>50</code></td>
+    <td>The current altitude of the drone. Specified as meters above sea level. For example, if the drone is located 50 meters above sea level, the <code>current_altitude</code> will be <code>50</code></td>
   </tr>
   <tr>
     <td>
