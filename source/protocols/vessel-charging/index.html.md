@@ -111,7 +111,7 @@ const need = await boat.publishNeed(needParams);
       <code class="field">startAt</code>
       <div class="type">optional</div>
     </td>
-    <td>The time at which the requester would like to arrive at charger (if undefined, the arrival time will be ASAP). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>The time at which the requester would like to arrive at charger (if undefined, the arrival time will be ASAP). Specified as time in seconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -312,7 +312,7 @@ const bid = await need.createBid(bidParams);
       <code class="field">ttl</code>
       <div class="type">optional</div>
     </td>
-    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>This bid will expire at this time. Specified as time in seconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -404,14 +404,14 @@ const bid = await need.createBid(bidParams);
       <code class="field">availableFrom</code>
       <div class="type required">required</div>
     </td>
-    <td>The time from which the charger can be made available for the vessel requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>The time from which the charger can be made available for the vessel requesting a charge. Specified as time in seconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
       <code class="field">availableUntil</code>
       <div class="type">optional</div>
     </td>
-    <td>The time until which the charger can be made available for the vessel requesting a charge. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>The time until which the charger can be made available for the vessel requesting a charge. Specified as time in seconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -592,7 +592,7 @@ mission.sendMessage(providerStatusMessageParams);
       <code class="field">finishEta</code>
       <div class="type required">required</div>
     </td>
-    <td>The estimated time at which charging will be complete. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>The estimated time at which charging will be complete. Specified as time in seconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
 </table>
 
