@@ -584,20 +584,22 @@ mission.sendMessage(vesselStatusMessage);
 
 # Charging Arrival
 
-A message sent by the service requester to the service provider, notifying it that the vessel has arrived at the charger's location
+A message sent by the service requester (the vessel) to the service provider (charger), notifying it that it has arrived at the charger's location
 
 ## Arguments
 
-> Using the vessel-charging/messages/ChargingArrivalMessageParams class
-
 ```javascript
-const chargingArrivalMessageParams = new ChargingArrivalMessageParams({});
-mission.sendMessage(chargingArrivalMessageParams);
+const { ChargingArrivalMessageParams } = require('dav-js/dist/vessel-charging');
+
+const chargingArrivalMessage = new ChargingArrivalMessageParams();
+mission.sendMessage(chargingArrivalMessage);
 ```
 
 ```typescript
-const chargingArrivalMessageParams = new ChargingArrivalMessageParams({});
-mission.sendMessage(chargingArrivalMessageParams);
+const { ChargingArrivalMessageParams } = require('dav-js/dist/vessel-charging');
+
+const chargingArrivalMessage = new ChargingArrivalMessageParams();
+mission.sendMessage(chargingArrivalMessage);
 ```
 
 <table class="arguments">
@@ -608,20 +610,22 @@ mission.sendMessage(chargingArrivalMessageParams);
 
 # Charging Started
 
-A message sent by the service provider to the service requester, notifying it that charging has begun and is now in progress
+A message sent by the service provider to the service requester, notifying it that charging has begun
 
 ## Arguments
 
-> Using the vessel-charging/messages/ChargingStartedMessageParams class
-
 ```typescript
-const chargingStartedMessageParams = new ChargingStartedMessageParams({});
-mission.sendMessage(chargingStartedMessageParams);
+const { ChargingStartedMessageParams } = require('dav-js/dist/vessel-charging');
+
+const chargingStartedMessage = new ChargingStartedMessageParams();
+mission.sendMessage(chargingStartedMessage);
 ```
 
 ```javascript
-const chargingStartedMessageParams = new ChargingStartedMessageParams({});
-mission.sendMessage(chargingStartedMessageParams);
+const { ChargingStartedMessageParams } = require('dav-js/dist/vessel-charging');
+
+const chargingStartedMessage = new ChargingStartedMessageParams();
+mission.sendMessage(chargingStartedMessage);
 ```
 
 <table class="arguments">
@@ -636,16 +640,22 @@ A message sent by the service provider to the service requester, notifying it th
 
 ## Arguments
 
-> Using the vessel-charging/messages/ChargingCompleteMessageParams class
-
 ```javascript
-const chargingCompleteMessageParams = new ChargingCompleteMessageParams({});
-mission.sendMessage(chargingCompleteMessageParams);
+const {
+  ChargingCompleteMessageParams,
+} = require('dav-js/dist/vessel-charging');
+
+const chargingCompleteMessage = new ChargingCompleteMessageParams();
+mission.sendMessage(chargingCompleteMessage);
 ```
 
 ```typescript
-const chargingCompleteMessageParams = new ChargingCompleteMessageParams({});
-mission.sendMessage(chargingCompleteMessageParams);
+const {
+  ChargingCompleteMessageParams,
+} = require('dav-js/dist/vessel-charging');
+
+const chargingCompleteMessage = new ChargingCompleteMessageParams();
+mission.sendMessage(chargingCompleteMessage);
 ```
 
 <table class="arguments">
