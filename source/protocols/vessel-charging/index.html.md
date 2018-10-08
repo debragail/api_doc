@@ -60,8 +60,8 @@ const need = await boat.publishNeed(needParams);
 ```
 
 ```typescript
-const { SDKFactory } = require('dav-js');
-const { NeedParams, enums } = require('dav-js/dist/vessel-charging');
+import { SDKFactory } from 'dav-js';
+import { NeedParams, enums } from 'dav-js/dist/vessel-charging';
 const DAV = SDKFactory({
   apiSeedUrls,
   kafkaSeedUrls,
@@ -186,8 +186,8 @@ const needs = await charger.needsForType(needFilterParams);
 ```
 
 ```typescript
-const { SDKFactory } = require('dav-js');
-const { NeedFilterParams } = require('dav-js/dist/vessel-charging');
+import { SDKFactory } from 'dav-js';
+import { NeedFilterParams } from 'dav-js/dist/vessel-charging';
 const DAV = SDKFactory({
   apiSeedUrls,
   kafkaSeedUrls,
@@ -276,7 +276,7 @@ needs.subscribe(need => {
 ```
 
 ```typescript
-const { BidParams } = require('dav-js/dist/vessel-charging');
+import { BidParams } from 'dav-js/dist/vessel-charging';
 
 needs.subscribe(need => {
   const bidParams = new BidParams({
@@ -470,7 +470,7 @@ mission.sendMessage(startingMessage);
 ```
 
 ```typescript
-const { StartingMessageParams } = require('dav-js/dist/vessel-charging');
+import { StartingMessageParams } from 'dav-js/dist/vessel-charging';
 
 const startingMessageParams = new StartingMessageParams();
 mission.sendMessage(startingMessage);
@@ -496,7 +496,7 @@ mission.sendMessage(statusRequestMessage);
 ```
 
 ```typescript
-const { StatusRequestMessageParams } = require('dav-js/dist/vessel-charging');
+import { StatusRequestMessageParams } from 'dav-js/dist/vessel-charging';
 
 const statusRequestMessage = new StatusRequestMessageParams({});
 mission.sendMessage(statusRequestMessage);
@@ -524,7 +524,7 @@ mission.sendMessage(providerStatusMessage);
 ```
 
 ```typescript
-const { ProviderStatusMessageParams } = require('dav-js/dist/vessel-charging');
+import { ProviderStatusMessageParams } from 'dav-js/dist/vessel-charging';
 
 const providerStatusMessage = new ProviderStatusMessageParams({
   chargeCompletionEstimatedTime: Date.now() + 5000,
@@ -561,7 +561,7 @@ mission.sendMessage(vesselStatusMessage);
 ```
 
 ```typescript
-const { VesselStatusMessageParams } = require('dav-js/dist/vessel-charging');
+import { VesselStatusMessageParams } from 'dav-js/dist/vessel-charging';
 
 const vesselStatusMessage = new VesselStatusMessageParams({
   location: {
@@ -596,7 +596,7 @@ mission.sendMessage(chargingArrivalMessage);
 ```
 
 ```typescript
-const { ChargingArrivalMessageParams } = require('dav-js/dist/vessel-charging');
+import { ChargingArrivalMessageParams } from 'dav-js/dist/vessel-charging';
 
 const chargingArrivalMessage = new ChargingArrivalMessageParams();
 mission.sendMessage(chargingArrivalMessage);
@@ -615,7 +615,7 @@ A message sent by the service provider to the service requester, notifying it th
 ## Arguments
 
 ```typescript
-const { ChargingStartedMessageParams } = require('dav-js/dist/vessel-charging');
+import { ChargingStartedMessageParams } from 'dav-js/dist/vessel-charging';
 
 const chargingStartedMessage = new ChargingStartedMessageParams();
 mission.sendMessage(chargingStartedMessage);
@@ -650,9 +650,7 @@ mission.sendMessage(chargingCompleteMessage);
 ```
 
 ```typescript
-const {
-  ChargingCompleteMessageParams,
-} = require('dav-js/dist/vessel-charging');
+import { ChargingCompleteMessageParams } from 'dav-js/dist/vessel-charging';
 
 const chargingCompleteMessage = new ChargingCompleteMessageParams();
 mission.sendMessage(chargingCompleteMessage);
