@@ -184,7 +184,7 @@ requests.post("discovery_endpoint_here", data=payload)
       <div class="type">optional</div>
     </td>
     <td>
-      The time at which the requester would like to start the trip (if undefined, start time will be set by the route planner). This should be Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a>
+      The time at which the requester would like to start the trip (if undefined, start time will be set by the route planner). This should be Specified as time in seconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a>
     </td>
   </tr>
   <tr>
@@ -323,7 +323,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">expires_at</code>
       <div class="type required">required</div>
     </td>
-    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>This bid will expire at this time. Specified as time in seconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -352,7 +352,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">eta</code>
       <div class="type required">required</div>
     </td>
-    <td>The estimated time of when the route plan will be delivered. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>The estimated time of when the route plan will be delivered. Specified as time in seconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
 </table>
 

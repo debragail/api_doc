@@ -195,14 +195,14 @@ requests.post("discovery_endpoint_here", data=payload)
       <code class="field">start_at</code>
       <div class="type">optional</div>
     </td>
-    <td>The earliest time at which the photo shoot can start (if undefined, photo shoot can start immediately). Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>The earliest time at which the photo shoot can start (if undefined, photo shoot can start immediately). Specified as time in seconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
       <code class="field">end_at</code>
       <div class="type required">required</div>
     </td>
-    <td>The latest time at which the photo shoot should end. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>The latest time at which the photo shoot should end. Specified as time in seconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -329,7 +329,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">expires_at</code>
       <div class="type required">required</div>
     </td>
-    <td>This bid will expire at this time. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>This bid will expire at this time. Specified as time in seconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
@@ -358,7 +358,7 @@ requests.post("bidding_endpoint_here", data=payload)
       <code class="field">eta</code>
       <div class="type required">required</div>
     </td>
-    <td>The estimated time of arrival at the photo shoot location. Specified as time in milliseconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
+    <td>The estimated time of arrival at the photo shoot location. Specified as time in seconds since <a href="https://en.wikipedia.org/wiki/Unix_time" target="blank">Epoch/Unix Time</a></td>
   </tr>
   <tr>
     <td>
