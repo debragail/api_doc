@@ -467,19 +467,13 @@ A message sent by the service provider (the charger) to the service requester, n
 > Using the vessel-charging/messages/StartingMessageParams class
 
 ```javascript
-const missions = await bid.missions(MissionParams);
-missions.subscribe(async mission => {
-  const startingMessageParams = new StartingMessageParams({});
-  mission.sendMessage(startingMessageParams);
-});
+const startingMessageParams = new StartingMessageParams();
+mission.sendMessage(startingMessageParams);
 ```
 
 ```typescript
-const missions = await bid.missions(MissionParams);
-missions.subscribe(async mission => {
-  const startingMessageParams = new StartingMessageParams({});
-  mission.sendMessage(startingMessageParams);
-});
+const startingMessageParams = new StartingMessageParams();
+mission.sendMessage(startingMessageParams);
 ```
 
 <table class="arguments">
