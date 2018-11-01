@@ -227,7 +227,7 @@ const needs = await charger.needsForType(needFilterParams);
   <tr>
     <td>
       <code class="field">maxDimensions</code>
-      <div class="type required">required</div>
+      <div class="type">optional</div>
     </td>
     <td>The maximum length, width, and height clearance that this charger can accomodate. Specified as an object containing integers representing centimeters</td>
 </table>
