@@ -176,7 +176,7 @@ const needFilterParams = new NeedFilterParams({
     long: 34.766149,
   },
   radius: 1000,
-  dimensions: {
+  maxDimensions: {
     length: 120,
     width: 80,
     height: 100,
@@ -200,7 +200,7 @@ const needFilterParams = new NeedFilterParams({
     long: 34.766149,
   },
   radius: 1000,
-  dimensions: {
+  maxDimensions: {
     length: 120,
     width: 80,
     height: 100,
