@@ -45,3 +45,7 @@ When you are creating a bug report, please include as much detail as possible.
 We track discussions of new features, proposed changes, and other ideas as [GitHub issues](https://github.com/DAVfoundation/api_doc/issues). If you would like to discuss one of those, please first look through existing open and closed [GitHub issues](https://github.com/DAVfoundation/api_doc/issues?q=is%3Aissue) and see if there is already a discussion on this topic which you can join. If there isn't, please open a [new issue](https://github.com/DAVfoundation/api_doc/issues/new).
 
 When discussing new ideas or proposing changes, please take the time to be as descriptive as possible about the topic at hand. Please take the time to explain the issue you are facing, or the problem you propose to solve in as much detail as possible.
+
+Feel free to join us on Gitter and join the community!
+
+https://gitter.im/DAVFoundation/DAV-Contributors
