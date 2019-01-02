@@ -46,6 +46,4 @@ We track discussions of new features, proposed changes, and other ideas as [GitH
 
 When discussing new ideas or proposing changes, please take the time to be as descriptive as possible about the topic at hand. Please take the time to explain the issue you are facing, or the problem you propose to solve in as much detail as possible.
 
-Feel free to join us on Gitter and join the community!
-
-https://gitter.im/DAVFoundation/DAV-Contributors
+Join the community conversation on Gitter!  https://gitter.im/DAVFoundation/DAV-Contributors
